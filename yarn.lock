@@ -415,6 +415,12 @@
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/@types/redux-actions/-/redux-actions-2.2.4.tgz#7794077a91df223c9dccc035a2d3e9b88d8bc18e"
 
+"@types/redux-thunk@^2.1.0":
+  version "2.1.0"
+  resolved "http://registry.npmjs.org/@types/redux-thunk/-/redux-thunk-2.1.0.tgz#bc2b6e972961831afb82a9bf4f06726e351f9416"
+  dependencies:
+    redux-thunk "*"
+
 abab@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -4439,6 +4445,10 @@ redux-actions@^2.3.0:
     lodash "^4.13.1"
     lodash-es "^4.17.4"
     reduce-reducers "^0.1.0"
+
+redux-thunk@*:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
 redux@^3.6.0:
   version "3.7.2"
