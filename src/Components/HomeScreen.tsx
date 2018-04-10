@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { View, Text, Button } from "react-native";
+import { NavigationScreenProps } from "react-navigation";
+import * as routes from "../Routes";
 
-interface HomeScreenState {
-    counter: number;
-}
-
-export default class HomeScreen extends Component<{}, HomeScreenState> {
+export default class HomeScreen extends Component<NavigationScreenProps> {
     static navigationOptions = {
         title: "Home",
     };
@@ -18,13 +16,9 @@ export default class HomeScreen extends Component<{}, HomeScreenState> {
         };
     }
 
-    increment = () => {
-        this.setState({ counter: this.state.counter + 1 });
-    }
-
     render() {
         return <Button 
-            onPress={this.increment}
-            title={this.state.counter.toString()} />
+            onPress={() => this.props.navigation.navigate(routes.Other)}
+            title={"Navigate to other"} />
     }
 }

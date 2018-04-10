@@ -6,6 +6,10 @@ import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } fro
 
 export const AppNavigator = StackNavigator(routes);
 
+export const initialNavigationState = AppNavigator.router.getStateForAction(
+    AppNavigator.router.getActionForPathAndParams("Home")
+);
+
 export const navigationMiddleware = createReactNavigationReduxMiddleware(
     "root",
     state => state.nav,
