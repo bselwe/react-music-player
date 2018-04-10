@@ -1,10 +1,12 @@
-import React, { Component } from "react";
-import { Text } from "react-native";
+import React from "react";
+import { Provider } from "react-redux";
+import AppNavigation from "./Infrastructure/Navigation/Navigation";
+import store from "./Store";
 
-export default class App extends Component {
-    render() {
-        return (
-            <Text>Application</Text>
-        )
-    }
+export default function AppContainer() {
+    return (
+        <Provider store={store}>
+            <AppNavigation />
+        </Provider>
+  );
 }
