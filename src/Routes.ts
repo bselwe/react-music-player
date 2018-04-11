@@ -1,12 +1,12 @@
-import HomeScreen from "./Components/HomeScreen";
-import OtherScreen from "./Components/OtherScreen";
+import HomeScreen from "./Containers/HomeScreen";
+import SongScreen from "./Containers/SongScreen";
 
 export const Home = "Home";
-export const Other = "Other";
+export const Song = "Song";
 
 const Routes = {
     [Home]: { screen: HomeScreen },
-    [Other]: { screen: OtherScreen }
+    [Song]: { screen: SongScreen }
 };
 
 export default Routes;

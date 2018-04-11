@@ -1417,7 +1417,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/index.js";
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/index.js";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -1442,7 +1442,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/index.js",
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/index.js",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -32784,7 +32784,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ActivityIndicator/ActivityIndicator.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -33262,7 +33262,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ProgressBarAndroid/ProgressBarAndroid.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ProgressBarAndroid/ProgressBarAndroid.android.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -35982,7 +35982,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/View/View.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/View/View.js";
 
   var NativeMethodsMixin = _require2(_dependencyMap[0], 'NativeMethodsMixin');
 
@@ -36550,7 +36550,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/ART/ReactNativeART.js",
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/ART/ReactNativeART.js",
       _class2,
       _temp2;
 
@@ -36581,7 +36581,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/ART/ReactNativeART.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/ART/ReactNativeART.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -38065,7 +38065,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Button.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Button.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38082,7 +38082,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Button.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Button.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -38256,7 +38256,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require2, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Text/Text.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Text/Text.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -38509,7 +38509,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Touchable/Touchable.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Touchable/Touchable.js";
 
   var BoundingDimensions = _require(_dependencyMap[0], 'BoundingDimensions');
 
@@ -39537,7 +39537,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Touchable/TouchableOpacity.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -43603,7 +43603,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -43623,7 +43623,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Animated/src/createAnimatedComponent.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -43813,7 +43813,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
 __d(function (global, _require2, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Image/Image.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Image/Image.android.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -44015,7 +44015,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ScrollView/ScrollView.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45022,7 +45022,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -45041,7 +45041,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ScrollView/ScrollViewStickyHeader.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -45209,7 +45209,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/CheckBox/CheckBox.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/CheckBox/CheckBox.android.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45306,7 +45306,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.android.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -45325,7 +45325,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/DatePicker/DatePickerIOS.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -45405,7 +45405,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/DrawerAndroid/DrawerLayoutAndroid.android.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45647,7 +45647,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/StatusBar/StatusBar.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/StatusBar/StatusBar.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -45890,7 +45890,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/FlatList.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/FlatList.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -45909,7 +45909,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index3.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/FlatList.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/FlatList.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -46247,7 +46247,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/MetroListView.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/MetroListView.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -46264,7 +46264,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/MetroListView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/MetroListView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -46481,7 +46481,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/ListView/ListView.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/ListView/ListView.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -47281,7 +47281,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/StaticRenderer.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/StaticRenderer.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -47366,7 +47366,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/RefreshControl/RefreshControl.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/RefreshControl/RefreshControl.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -47475,7 +47475,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
   var _class,
       _temp,
       _initialiseProps,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/VirtualizedList.js",
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/VirtualizedList.js",
       _class2,
       _temp3,
       _class3,
@@ -47504,7 +47504,7 @@ __d(function (global, _require2, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index3.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/VirtualizedList.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/VirtualizedList.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -49710,7 +49710,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Image/ImageBackground.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Image/ImageBackground.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -49731,7 +49731,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Image/ImageBackground.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Image/ImageBackground.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -49912,7 +49912,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Keyboard/KeyboardAvoidingView.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -50141,7 +50141,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -50160,7 +50160,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/UnimplementedViews/UnimplementedView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -50234,7 +50234,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Modal/Modal.js",
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Modal/Modal.js",
       _container;
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -50254,7 +50254,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Modal/Modal.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Modal/Modal.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -50464,7 +50464,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/ReactNative/AppContainer.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/ReactNative/AppContainer.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50481,7 +50481,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/ReactNative/AppContainer.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/ReactNative/AppContainer.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -50672,7 +50672,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var _class,
       _temp,
       _initialiseProps,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/Inspector.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/Inspector.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -50689,7 +50689,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/Inspector.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/Inspector.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -51029,7 +51029,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51046,7 +51046,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/InspectorOverlay.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -51171,7 +51171,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/ElementBox.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/ElementBox.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -51190,7 +51190,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/ElementBox.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/ElementBox.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -51325,7 +51325,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/BorderBox.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/BorderBox.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -51344,7 +51344,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/BorderBox.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/BorderBox.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -51461,7 +51461,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/InspectorPanel.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/InspectorPanel.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -51483,7 +51483,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/InspectorPanel.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/InspectorPanel.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -51781,7 +51781,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/ElementProperties.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/ElementProperties.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51798,7 +51798,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/ElementProperties.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/ElementProperties.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -52066,7 +52066,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/BoxInspector.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/BoxInspector.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -52088,7 +52088,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/BoxInspector.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/BoxInspector.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -52358,7 +52358,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/StyleInspector.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/StyleInspector.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -52377,7 +52377,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/StyleInspector.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/StyleInspector.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -52518,7 +52518,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -52752,7 +52752,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -52771,7 +52771,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/NetworkOverlay.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -53836,7 +53836,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -53855,7 +53855,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Inspector/PerformanceOverlay.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -53983,7 +53983,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/ReactNative/YellowBox.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/ReactNative/YellowBox.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -54002,7 +54002,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/ReactNative/YellowBox.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/ReactNative/YellowBox.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -54794,7 +54794,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
       _temp,
       _class2,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Picker/Picker.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Picker/Picker.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -54816,7 +54816,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Picker/Picker.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Picker/Picker.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -54963,7 +54963,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var _class,
       _temp,
       _initialiseProps,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Picker/PickerAndroid.android.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Picker/PickerAndroid.android.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -54982,7 +54982,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Picker/PickerAndroid.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Picker/PickerAndroid.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -55164,7 +55164,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.android.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -55183,7 +55183,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ProgressViewIOS/ProgressViewIOS.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -55275,7 +55275,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/SectionList.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/SectionList.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -55294,7 +55294,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/SectionList.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/SectionList.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -55421,7 +55421,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55441,7 +55441,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Lists/VirtualizedSectionList.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -55891,7 +55891,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.android.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -55910,7 +55910,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/SegmentedControlIOS/SegmentedControlIOS.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -55990,7 +55990,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Slider/Slider.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Slider/Slider.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -56129,7 +56129,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/Switch/Switch.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/Switch/Switch.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -56261,7 +56261,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -56278,7 +56278,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableFlatList.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -56444,7 +56444,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableRow.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableRow.js";
 
   var Animated = _require(_dependencyMap[0], 'Animated');
 
@@ -56907,7 +56907,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -56924,7 +56924,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Experimental/SwipeableRow/SwipeableListView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -57217,7 +57217,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.android.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.android.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -57234,7 +57234,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarIOS.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -57301,7 +57301,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.android.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -57320,7 +57320,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/TabBarIOS/TabBarItemIOS.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -57391,7 +57391,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require2, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/TextInput/TextInput.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/TextInput/TextInput.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -58402,7 +58402,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ToolbarAndroid/ToolbarAndroid.android.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ToolbarAndroid/ToolbarAndroid.android.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -58531,7 +58531,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ViewPager/ViewPagerAndroid.android.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ViewPager/ViewPagerAndroid.android.js";
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -58548,7 +58548,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/ViewPager/ViewPagerAndroid.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/ViewPager/ViewPagerAndroid.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -58695,7 +58695,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/WebView/WebView.android.js",
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/WebView/WebView.android.js",
       _class,
       _temp2;
 
@@ -58714,7 +58714,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/Components/WebView/WebView.android.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/Components/WebView/WebView.android.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -59379,7 +59379,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native/Libraries/ReactNative/renderApplication.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native/Libraries/ReactNative/renderApplication.js";
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -60721,7 +60721,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/src/App.tsx";
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/App.tsx";
     exports.default = AppContainer;
 
     var _react = _require(_dependencyMap[0], "react");
@@ -60758,7 +60758,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             })
         );
     }
-},490,[12,491,519,600],"src/App.tsx");
+},490,[12,491,519,626],"src/App.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -62562,8 +62562,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.navigationMiddleware = exports.AppNavigator = undefined;
-    var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/src/Infrastructure/Navigation/Navigation.tsx";
+    exports.navigationMiddleware = exports.initialNavigationState = exports.AppNavigator = undefined;
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Infrastructure/Navigation/Navigation.tsx";
 
     var _react = _require(_dependencyMap[0], "react");
 
@@ -62575,13 +62575,16 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _Routes = _require(_dependencyMap[3], "../../Routes");
 
-    var _Routes2 = _interopRequireDefault(_Routes);
+    var routes = _interopRequireWildcard(_Routes);
 
     var _reactNavigationReduxHelpers = _require(_dependencyMap[4], "react-navigation-redux-helpers");
 
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    var AppNavigator = exports.AppNavigator = (0, _reactNavigation.StackNavigator)(_Routes2.default);
+    var AppNavigator = exports.AppNavigator = (0, _reactNavigation.StackNavigator)(routes.default);
+    var initialNavigationState = exports.initialNavigationState = AppNavigator.router.getStateForAction(AppNavigator.router.getActionForPathAndParams(routes.Home));
     var navigationMiddleware = exports.navigationMiddleware = (0, _reactNavigationReduxHelpers.createReactNavigationReduxMiddleware)("root", function (state) {
         return state.nav;
     });
@@ -62598,7 +62601,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             }),
             __source: {
                 fileName: _jsxFileName,
-                lineNumber: 9
+                lineNumber: 10
             }
         });
     };
@@ -62610,7 +62613,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     };
 
     exports.default = (0, _reactRedux.connect)(mapStateToProps)(AppNavigatorWithState);
-},519,[12,491,520,594,596],"src/Infrastructure/Navigation/Navigation.tsx");
+},519,[12,491,520,594,622],"src/Infrastructure/Navigation/Navigation.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   module.exports = {
     get createNavigationContainer() {
@@ -62742,7 +62745,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/createNavigationContainer.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/createNavigationContainer.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -62782,7 +62785,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/createNavigationContainer.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/createNavigationContainer.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -63477,7 +63480,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/navigators/createNavigator.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/navigators/createNavigator.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -63499,7 +63502,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/navigators/createNavigator.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/navigators/createNavigator.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -63551,7 +63554,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/navigators/StackNavigator.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/navigators/StackNavigator.js";
 
   var _react = _require(_dependencyMap[0], "react");
 
@@ -63646,7 +63649,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/CardStackTransitioner.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/CardStackTransitioner.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -63681,7 +63684,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/CardStackTransitioner.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/CardStackTransitioner.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -63783,7 +63786,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/CardStack.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/CardStack.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -63846,7 +63849,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/CardStack.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/CardStack.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -64355,7 +64358,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/Card.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/Card.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -64380,7 +64383,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/Card.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/Card.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -64463,7 +64466,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/PointerEventsContainer.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/PointerEventsContainer.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -64493,7 +64496,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/CardStack/PointerEventsContainer.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/CardStack/PointerEventsContainer.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -64662,7 +64665,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Header/Header.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Header/Header.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -64711,7 +64714,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Header/Header.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Header/Header.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -65353,7 +65356,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-safe-area-view/index.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-safe-area-view/index.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -65378,7 +65381,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-safe-area-view/index.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-safe-area-view/index.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -65747,7 +65750,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-safe-area-view/withOrientation.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-safe-area-view/withOrientation.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -65834,7 +65837,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-safe-area-view/withOrientation.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-safe-area-view/withOrientation.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -65859,7 +65862,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Header/HeaderTitle.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Header/HeaderTitle.js";
 
   var _react = _require(_dependencyMap[0], "react");
 
@@ -65918,7 +65921,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Header/HeaderBackButton.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Header/HeaderBackButton.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -65941,7 +65944,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Header/HeaderBackButton.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Header/HeaderBackButton.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -66113,7 +66116,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TouchableItem.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TouchableItem.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -66134,7 +66137,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TouchableItem.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TouchableItem.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -66239,7 +66242,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Header/ModularHeaderBackButton.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Header/ModularHeaderBackButton.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -66262,7 +66265,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Header/ModularHeaderBackButton.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Header/ModularHeaderBackButton.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -66644,7 +66647,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/withOrientation.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/withOrientation.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -66729,7 +66732,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/withOrientation.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/withOrientation.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -66914,7 +66917,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/SceneView.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/SceneView.js";
 
   var _propTypes = _require(_dependencyMap[2], "prop-types");
 
@@ -66935,7 +66938,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/SceneView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/SceneView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -67296,7 +67299,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Transitioner.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Transitioner.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -67327,7 +67330,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Transitioner.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Transitioner.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -68915,7 +68918,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/navigators/SwitchNavigator.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/navigators/SwitchNavigator.js";
 
   var _react = _require(_dependencyMap[0], "react");
 
@@ -69314,7 +69317,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/SwitchView/SwitchView.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/SwitchView/SwitchView.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -69341,7 +69344,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/SwitchView/SwitchView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/SwitchView/SwitchView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -69401,7 +69404,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/withCachedChildNavigation.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/withCachedChildNavigation.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -69430,7 +69433,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/withCachedChildNavigation.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/withCachedChildNavigation.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -69537,7 +69540,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/navigators/TabNavigator.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/navigators/TabNavigator.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -69978,7 +69981,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabView.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabView.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -70011,7 +70014,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -70280,7 +70283,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var _class,
       _temp,
       _initialiseProps,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewAnimated.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewAnimated.js";
 
   var _propTypes = _require(_dependencyMap[2], "prop-types");
 
@@ -70309,7 +70312,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewAnimated.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewAnimated.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -70611,7 +70614,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -70634,7 +70637,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -70811,7 +70814,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var _class,
       _temp,
       _initialiseProps,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerScroll.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerScroll.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -70834,7 +70837,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerScroll.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerScroll.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -71037,7 +71040,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerPan.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerPan.js";
 
   var _propTypes = _require(_dependencyMap[2], "prop-types");
 
@@ -71066,7 +71069,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerPan.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerPan.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -71309,7 +71312,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerExperimental.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerExperimental.js";
 
   var _propTypes = _require(_dependencyMap[2], "prop-types");
 
@@ -71338,7 +71341,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabViewPagerExperimental.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabViewPagerExperimental.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -71562,7 +71565,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var _class,
       _temp,
       _initialiseProps,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabBar.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabBar.js";
 
   var _propTypes = _require(_dependencyMap[2], "prop-types");
 
@@ -71595,7 +71598,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TabBar.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TabBar.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -72183,7 +72186,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TouchableItem.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TouchableItem.js";
 
   var _propTypes = _require(_dependencyMap[2], "prop-types");
 
@@ -72210,7 +72213,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/TouchableItem.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/TouchableItem.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -72321,7 +72324,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/SceneMap.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/SceneMap.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -72345,7 +72348,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-native-tab-view/src/SceneMap.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-tab-view/src/SceneMap.js",
     components: _components,
     locals: [module],
     imports: [React.default]
@@ -72405,7 +72408,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/ResourceSavingSceneView.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/ResourceSavingSceneView.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -72440,7 +72443,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/ResourceSavingSceneView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/ResourceSavingSceneView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -72642,7 +72645,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabBarTop.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabBarTop.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -72669,7 +72672,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabBarTop.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabBarTop.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -72856,7 +72859,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabBarIcon.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabBarIcon.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -72879,7 +72882,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabBarIcon.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabBarIcon.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -73013,7 +73016,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _class,
       _temp2,
-      _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabBarBottom.js";
+      _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabBarBottom.js";
 
   var _reactNative = _require(_dependencyMap[2], "react-native");
 
@@ -73050,7 +73053,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/TabView/TabBarBottom.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/TabView/TabBarBottom.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -73445,7 +73448,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/navigators/DrawerNavigator.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/navigators/DrawerNavigator.js";
 
   var _react = _require(_dependencyMap[0], "react");
 
@@ -73618,7 +73621,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -73645,7 +73648,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -73709,7 +73712,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Drawer/DrawerView.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Drawer/DrawerView.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -73746,7 +73749,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Drawer/DrawerView.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Drawer/DrawerView.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -73973,7 +73976,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _index2 = _interopRequireDefault(_index);
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js";
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -74012,7 +74015,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -74162,7 +74165,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/Drawer/DrawerNavigatorItems.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/Drawer/DrawerNavigatorItems.js";
 
   var _react = _require(_dependencyMap[0], "react");
 
@@ -74340,7 +74343,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/withNavigation.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/withNavigation.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -74370,7 +74373,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/withNavigation.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/withNavigation.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -74432,7 +74435,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
   var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-  var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/withNavigationFocus.js";
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/withNavigationFocus.js";
 
   var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -74466,7 +74469,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   };
 
   var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
-    filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/node_modules/react-navigation/src/views/withNavigationFocus.js",
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-navigation/src/views/withNavigationFocus.js",
     components: _components,
     locals: [module],
     imports: [_react3.default]
@@ -74556,20 +74559,31 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
+    exports.Song = exports.Home = undefined;
 
-    var _HomeScreen = _require(_dependencyMap[0], "./Components/HomeScreen");
+    var _Routes;
+
+    var _HomeScreen = _require(_dependencyMap[0], "./Containers/HomeScreen");
 
     var _HomeScreen2 = _interopRequireDefault(_HomeScreen);
 
+    var _SongScreen = _require(_dependencyMap[1], "./Containers/SongScreen");
+
+    var _SongScreen2 = _interopRequireDefault(_SongScreen);
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    var Routes = {
-        Home: {
-            screen: _HomeScreen2.default
-        }
-    };
+    function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+    var Home = exports.Home = "Home";
+    var Song = exports.Song = "Song";
+    var Routes = (_Routes = {}, _defineProperty(_Routes, Home, {
+        screen: _HomeScreen2.default
+    }), _defineProperty(_Routes, Song, {
+        screen: _SongScreen2.default
+    }), _Routes);
     exports.default = Routes;
-},594,[595],"src/Routes.ts");
+},594,[595,621],"src/Routes.ts");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -74579,15 +74593,31 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _react3 = _interopRequireDefault(_react2);
 
-    var _index = _require(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js");
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
 
     var _index2 = _interopRequireDefault(_index);
 
-    var _jsxFileName = "/Users/mateuszsadowski/Documents/GitHub/react-music-player/src/Components/HomeScreen.tsx";
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/HomeScreen/index.tsx";
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
     var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactNavigation = _require(_dependencyMap[3], "react-navigation");
+
+    var _Routes = _require(_dependencyMap[4], "../../Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    var _reactRedux = _require(_dependencyMap[5], "react-redux");
+
+    var _reducers = _require(_dependencyMap[6], "./reducers");
+
+    var _SongItem = _require(_dependencyMap[7], "../../Components/SongItem");
+
+    var _SongItem2 = _interopRequireDefault(_SongItem);
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -74604,7 +74634,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     };
 
     var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
-        filename: "/Users/mateuszsadowski/Documents/GitHub/react-music-player/src/Components/HomeScreen.tsx",
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/HomeScreen/index.tsx",
         components: _components,
         locals: [module],
         imports: [_react3.default]
@@ -74622,31 +74652,36 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         function HomeScreen(props) {
             _classCallCheck(this, HomeScreen);
 
-            var _this = _possibleConstructorReturn(this, (HomeScreen.__proto__ || Object.getPrototypeOf(HomeScreen)).call(this, props));
-
-            _this.increment = function () {
-                console.log(_this.state.counter);
-
-                _this.setState({
-                    counter: _this.state.counter + 1
-                });
-            };
-
-            _this.state = {
-                counter: 0
-            };
-            return _this;
+            return _possibleConstructorReturn(this, (HomeScreen.__proto__ || Object.getPrototypeOf(HomeScreen)).call(this, props));
         }
 
         _createClass(HomeScreen, [{
             key: "render",
             value: function render() {
-                return _react3.default.createElement(_reactNative.Button, {
-                    onPress: this.increment,
-                    title: this.state.counter.toString(),
+                var _this2 = this;
+
+                return _react3.default.createElement(_reactNative.FlatList, {
+                    data: this.props.songs,
+                    keyExtractor: function keyExtractor(item, index) {
+                        return item.id;
+                    },
+                    renderItem: function renderItem(_ref) {
+                        var item = _ref.item;
+                        return _react3.default.createElement(_SongItem2.default, {
+                            name: item.name,
+                            image: item.image,
+                            onPress: function onPress() {
+                                return _this2.props.navigateToSong(item.id);
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 13
+                            }
+                        });
+                    },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 15
+                        lineNumber: 13
                     }
                 });
             }
@@ -74655,11 +74690,1132 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         return HomeScreen;
     }(_react2.Component));
 
-    exports.default = HomeScreen;
     HomeScreen.navigationOptions = {
-        title: "Home"
+        title: "Songs"
     };
-},595,[12,22,176],"src/Components/HomeScreen.tsx");
+
+    var mapStateToProps = function mapStateToProps(_ref2) {
+        var app = _ref2.app;
+        return {
+            songs: app.songs
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+        return {
+            navigateToSong: function navigateToSong(songId) {
+                dispatch((0, _reducers.SelectSong)(songId));
+                dispatch(_reactNavigation.NavigationActions.navigate({
+                    routeName: routes.Song
+                }));
+            }
+        };
+    };
+
+    var HomeScreenContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomeScreen);
+    exports.default = HomeScreenContainer;
+},595,[12,22,176,520,594,491,596,630],"src/Containers/HomeScreen/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.SelectSong = exports.homeReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var homeReducers = exports.homeReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(homeReducers);
+    var SelectSong = exports.SelectSong = (0, _reduxActions.createAction)("HOME/SELECT_SONG", function (songId) {
+        return {
+            songId: songId
+        };
+    });
+    addReducer(SelectSong, function (state, action) {
+        var song = state.songs.find(function (s) {
+            return s.id == action.payload.songId;
+        });
+        return _extends({}, state, {
+            currentSong: song
+        });
+    });
+},596,[597,620],"src/Containers/HomeScreen/reducers.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.combineActions = exports.handleActions = exports.handleAction = exports.createActions = exports.createAction = undefined;
+
+  var _createAction = _require(_dependencyMap[0], './createAction');
+
+  var _createAction2 = _interopRequireDefault(_createAction);
+
+  var _handleAction = _require(_dependencyMap[1], './handleAction');
+
+  var _handleAction2 = _interopRequireDefault(_handleAction);
+
+  var _handleActions = _require(_dependencyMap[2], './handleActions');
+
+  var _handleActions2 = _interopRequireDefault(_handleActions);
+
+  var _combineActions = _require(_dependencyMap[3], './combineActions');
+
+  var _combineActions2 = _interopRequireDefault(_combineActions);
+
+  var _createActions = _require(_dependencyMap[4], './createActions');
+
+  var _createActions2 = _interopRequireDefault(_createActions);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  exports.createAction = _createAction2.default;
+  exports.createActions = _createActions2.default;
+  exports.handleAction = _handleAction2.default;
+  exports.handleActions = _handleActions2.default;
+  exports.combineActions = _combineActions2.default;
+},597,[598,600,609,607,617],"node_modules/redux-actions/lib/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = createAction;
+
+  var _identity = _require(_dependencyMap[0], 'lodash/identity');
+
+  var _identity2 = _interopRequireDefault(_identity);
+
+  var _isFunction = _require(_dependencyMap[1], 'lodash/isFunction');
+
+  var _isFunction2 = _interopRequireDefault(_isFunction);
+
+  var _isNull = _require(_dependencyMap[2], 'lodash/isNull');
+
+  var _isNull2 = _interopRequireDefault(_isNull);
+
+  var _invariant = _require(_dependencyMap[3], 'invariant');
+
+  var _invariant2 = _interopRequireDefault(_invariant);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function createAction(type) {
+    var payloadCreator = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _identity2.default;
+    var metaCreator = arguments[2];
+    (0, _invariant2.default)((0, _isFunction2.default)(payloadCreator) || (0, _isNull2.default)(payloadCreator), 'Expected payloadCreator to be a function, undefined or null');
+    var finalPayloadCreator = (0, _isNull2.default)(payloadCreator) || payloadCreator === _identity2.default ? _identity2.default : function (head) {
+      for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+
+      return head instanceof Error ? head : payloadCreator.apply(undefined, [head].concat(args));
+    };
+    var hasMeta = (0, _isFunction2.default)(metaCreator);
+    var typeString = type.toString();
+
+    var actionCreator = function actionCreator() {
+      var payload = finalPayloadCreator.apply(undefined, arguments);
+      var action = {
+        type: type
+      };
+
+      if (payload instanceof Error) {
+        action.error = true;
+      }
+
+      if (payload !== undefined) {
+        action.payload = payload;
+      }
+
+      if (hasMeta) {
+        action.meta = metaCreator.apply(undefined, arguments);
+      }
+
+      return action;
+    };
+
+    actionCreator.toString = function () {
+      return typeString;
+    };
+
+    return actionCreator;
+  }
+},598,[138,48,599,497],"node_modules/redux-actions/lib/createAction.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  function isNull(value) {
+    return value === null;
+  }
+
+  module.exports = isNull;
+},599,[],"node_modules/lodash/isNull.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if ((typeof Symbol === "function" ? Symbol.iterator : "@@iterator") in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  exports.default = handleAction;
+
+  var _isFunction = _require(_dependencyMap[0], 'lodash/isFunction');
+
+  var _isFunction2 = _interopRequireDefault(_isFunction);
+
+  var _isPlainObject = _require(_dependencyMap[1], 'lodash/isPlainObject');
+
+  var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+
+  var _identity = _require(_dependencyMap[2], 'lodash/identity');
+
+  var _identity2 = _interopRequireDefault(_identity);
+
+  var _isNil = _require(_dependencyMap[3], 'lodash/isNil');
+
+  var _isNil2 = _interopRequireDefault(_isNil);
+
+  var _isUndefined = _require(_dependencyMap[4], 'lodash/isUndefined');
+
+  var _isUndefined2 = _interopRequireDefault(_isUndefined);
+
+  var _includes = _require(_dependencyMap[5], 'lodash/includes');
+
+  var _includes2 = _interopRequireDefault(_includes);
+
+  var _invariant = _require(_dependencyMap[6], 'invariant');
+
+  var _invariant2 = _interopRequireDefault(_invariant);
+
+  var _combineActions = _require(_dependencyMap[7], './combineActions');
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function handleAction(type) {
+    var reducer = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : _identity2.default;
+    var defaultState = arguments[2];
+    var types = type.toString().split(_combineActions.ACTION_TYPE_DELIMITER);
+    (0, _invariant2.default)(!(0, _isUndefined2.default)(defaultState), 'defaultState for reducer handling ' + types.join(', ') + ' should be defined');
+    (0, _invariant2.default)((0, _isFunction2.default)(reducer) || (0, _isPlainObject2.default)(reducer), 'Expected reducer to be a function or object with next and throw reducers');
+
+    var _ref = (0, _isFunction2.default)(reducer) ? [reducer, reducer] : [reducer.next, reducer.throw].map(function (aReducer) {
+      return (0, _isNil2.default)(aReducer) ? _identity2.default : aReducer;
+    }),
+        _ref2 = _slicedToArray(_ref, 2),
+        nextReducer = _ref2[0],
+        throwReducer = _ref2[1];
+
+    return function () {
+      var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+      var action = arguments[1];
+      var actionType = action.type;
+
+      if (!actionType || !(0, _includes2.default)(types, actionType.toString())) {
+        return state;
+      }
+
+      return (action.error === true ? throwReducer : nextReducer)(state, action);
+    };
+  }
+},600,[48,504,138,601,602,603,497,607],"node_modules/redux-actions/lib/handleAction.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  function isNil(value) {
+    return value == null;
+  }
+
+  module.exports = isNil;
+},601,[],"node_modules/lodash/isNil.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  function isUndefined(value) {
+    return value === undefined;
+  }
+
+  module.exports = isUndefined;
+},602,[],"node_modules/lodash/isUndefined.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  var baseIndexOf = _require(_dependencyMap[0], './_baseIndexOf'),
+      isArrayLike = _require(_dependencyMap[1], './isArrayLike'),
+      isString = _require(_dependencyMap[2], './isString'),
+      toInteger = _require(_dependencyMap[3], './toInteger'),
+      values = _require(_dependencyMap[4], './values');
+
+  var nativeMax = Math.max;
+
+  function includes(collection, value, fromIndex, guard) {
+    collection = isArrayLike(collection) ? collection : values(collection);
+    fromIndex = fromIndex && !guard ? toInteger(fromIndex) : 0;
+    var length = collection.length;
+
+    if (fromIndex < 0) {
+      fromIndex = nativeMax(length + fromIndex, 0);
+    }
+
+    return isString(collection) ? fromIndex <= length && collection.indexOf(value, fromIndex) > -1 : !!length && baseIndexOf(collection, value, fromIndex) > -1;
+  }
+
+  module.exports = includes;
+},603,[165,113,604,144,605],"node_modules/lodash/includes.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    var baseGetTag = _require(_dependencyMap[0], './_baseGetTag'),
+        isArray = _require(_dependencyMap[1], './isArray'),
+        isObjectLike = _require(_dependencyMap[2], './isObjectLike');
+
+    var stringTag = '[object String]';
+
+    function isString(value) {
+        return typeof value == 'string' || !isArray(value) && isObjectLike(value) && baseGetTag(value) == stringTag;
+    }
+
+    module.exports = isString;
+},604,[49,91,100],"node_modules/lodash/isString.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  var baseValues = _require(_dependencyMap[0], './_baseValues'),
+      keys = _require(_dependencyMap[1], './keys');
+
+  function values(object) {
+    return object == null ? [] : baseValues(object, keys(object));
+  }
+
+  module.exports = values;
+},605,[606,95],"node_modules/lodash/values.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  var arrayMap = _require(_dependencyMap[0], './_arrayMap');
+
+  function baseValues(object, props) {
+    return arrayMap(props, function (key) {
+      return object[key];
+    });
+  }
+
+  module.exports = baseValues;
+},606,[133],"node_modules/lodash/_baseValues.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ACTION_TYPE_DELIMITER = undefined;
+  exports.default = combineActions;
+
+  var _isString = _require(_dependencyMap[0], 'lodash/isString');
+
+  var _isString2 = _interopRequireDefault(_isString);
+
+  var _isFunction = _require(_dependencyMap[1], 'lodash/isFunction');
+
+  var _isFunction2 = _interopRequireDefault(_isFunction);
+
+  var _isEmpty = _require(_dependencyMap[2], 'lodash/isEmpty');
+
+  var _isEmpty2 = _interopRequireDefault(_isEmpty);
+
+  var _toString = _require(_dependencyMap[3], 'lodash/toString');
+
+  var _toString2 = _interopRequireDefault(_toString);
+
+  var _isSymbol = _require(_dependencyMap[4], 'lodash/isSymbol');
+
+  var _isSymbol2 = _interopRequireDefault(_isSymbol);
+
+  var _invariant = _require(_dependencyMap[5], 'invariant');
+
+  var _invariant2 = _interopRequireDefault(_invariant);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  var ACTION_TYPE_DELIMITER = exports.ACTION_TYPE_DELIMITER = '||';
+
+  function isValidActionType(type) {
+    return (0, _isString2.default)(type) || (0, _isFunction2.default)(type) || (0, _isSymbol2.default)(type);
+  }
+
+  function isValidActionTypes(types) {
+    if ((0, _isEmpty2.default)(types)) {
+      return false;
+    }
+
+    return types.every(isValidActionType);
+  }
+
+  function combineActions() {
+    for (var _len = arguments.length, actionsTypes = Array(_len), _key = 0; _key < _len; _key++) {
+      actionsTypes[_key] = arguments[_key];
+    }
+
+    (0, _invariant2.default)(isValidActionTypes(actionsTypes), 'Expected action types to be strings, symbols, or action creators');
+    var combinedActionType = actionsTypes.map(_toString2.default).join(ACTION_TYPE_DELIMITER);
+    return {
+      toString: function toString() {
+        return combinedActionType;
+      }
+    };
+  }
+},607,[604,48,608,131,127,497],"node_modules/redux-actions/lib/combineActions.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  var baseKeys = _require(_dependencyMap[0], './_baseKeys'),
+      getTag = _require(_dependencyMap[1], './_getTag'),
+      isArguments = _require(_dependencyMap[2], './isArguments'),
+      isArray = _require(_dependencyMap[3], './isArray'),
+      isArrayLike = _require(_dependencyMap[4], './isArrayLike'),
+      isBuffer = _require(_dependencyMap[5], './isBuffer'),
+      isPrototype = _require(_dependencyMap[6], './_isPrototype'),
+      isTypedArray = _require(_dependencyMap[7], './isTypedArray');
+
+  var mapTag = '[object Map]',
+      setTag = '[object Set]';
+  var objectProto = Object.prototype;
+  var hasOwnProperty = objectProto.hasOwnProperty;
+
+  function isEmpty(value) {
+    if (value == null) {
+      return true;
+    }
+
+    if (isArrayLike(value) && (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' || isBuffer(value) || isTypedArray(value) || isArguments(value))) {
+      return !value.length;
+    }
+
+    var tag = getTag(value);
+
+    if (tag == mapTag || tag == setTag) {
+      return !value.size;
+    }
+
+    if (isPrototype(value)) {
+      return !baseKeys(value).length;
+    }
+
+    for (var key in value) {
+      if (hasOwnProperty.call(value, key)) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  module.exports = isEmpty;
+},608,[109,114,98,91,113,101,110,104],"node_modules/lodash/isEmpty.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = handleActions;
+
+  var _isPlainObject = _require(_dependencyMap[0], 'lodash/isPlainObject');
+
+  var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+
+  var _isMap = _require(_dependencyMap[1], 'lodash/isMap');
+
+  var _isMap2 = _interopRequireDefault(_isMap);
+
+  var _reduceReducers = _require(_dependencyMap[2], 'reduce-reducers');
+
+  var _reduceReducers2 = _interopRequireDefault(_reduceReducers);
+
+  var _invariant = _require(_dependencyMap[3], 'invariant');
+
+  var _invariant2 = _interopRequireDefault(_invariant);
+
+  var _handleAction = _require(_dependencyMap[4], './handleAction');
+
+  var _handleAction2 = _interopRequireDefault(_handleAction);
+
+  var _ownKeys = _require(_dependencyMap[5], './ownKeys');
+
+  var _ownKeys2 = _interopRequireDefault(_ownKeys);
+
+  var _flattenUtils = _require(_dependencyMap[6], './flattenUtils');
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function _toConsumableArray(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+        arr2[i] = arr[i];
+      }
+
+      return arr2;
+    } else {
+      return Array.from(arr);
+    }
+  }
+
+  function get(key, x) {
+    return (0, _isMap2.default)(x) ? x.get(key) : x[key];
+  }
+
+  function handleActions(handlers, defaultState) {
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    (0, _invariant2.default)((0, _isPlainObject2.default)(handlers) || (0, _isMap2.default)(handlers), 'Expected handlers to be a plain object.');
+    var flattenedReducerMap = (0, _flattenUtils.flattenReducerMap)(handlers, options);
+    var reducers = (0, _ownKeys2.default)(flattenedReducerMap).map(function (type) {
+      return (0, _handleAction2.default)(type, get(type, flattenedReducerMap), defaultState);
+    });
+
+    var reducer = _reduceReducers2.default.apply(undefined, _toConsumableArray(reducers));
+
+    return function () {
+      var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+      var action = arguments[1];
+      return reducer(state, action);
+    };
+  }
+},609,[504,610,612,497,600,613,614],"node_modules/redux-actions/lib/handleActions.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  var baseIsMap = _require(_dependencyMap[0], './_baseIsMap'),
+      baseUnary = _require(_dependencyMap[1], './_baseUnary'),
+      nodeUtil = _require(_dependencyMap[2], './_nodeUtil');
+
+  var nodeIsMap = nodeUtil && nodeUtil.isMap;
+  var isMap = nodeIsMap ? baseUnary(nodeIsMap) : baseIsMap;
+  module.exports = isMap;
+},610,[611,107,108],"node_modules/lodash/isMap.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  var getTag = _require(_dependencyMap[0], './_getTag'),
+      isObjectLike = _require(_dependencyMap[1], './isObjectLike');
+
+  var mapTag = '[object Map]';
+
+  function baseIsMap(value) {
+    return isObjectLike(value) && getTag(value) == mapTag;
+  }
+
+  module.exports = baseIsMap;
+},611,[114,100],"node_modules/lodash/_baseIsMap.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  "use strict";
+
+  exports.__esModule = true;
+  exports["default"] = reduceReducers;
+
+  function reduceReducers() {
+    for (var _len = arguments.length, reducers = Array(_len), _key = 0; _key < _len; _key++) {
+      reducers[_key] = arguments[_key];
+    }
+
+    return function (previous, current) {
+      return reducers.reduce(function (p, r) {
+        return r(p, current);
+      }, previous);
+    };
+  }
+
+  module.exports = exports["default"];
+},612,[],"node_modules/reduce-reducers/lib/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = ownKeys;
+
+  var _isMap = _require(_dependencyMap[0], 'lodash/isMap');
+
+  var _isMap2 = _interopRequireDefault(_isMap);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function ownKeys(object) {
+    if ((0, _isMap2.default)(object)) {
+      return Array.from(object.keys());
+    }
+
+    if (typeof Reflect !== 'undefined' && typeof Reflect.ownKeys === 'function') {
+      return Reflect.ownKeys(object);
+    }
+
+    var keys = Object.getOwnPropertyNames(object);
+
+    if (typeof Object.getOwnPropertySymbols === 'function') {
+      keys = keys.concat(Object.getOwnPropertySymbols(object));
+    }
+
+    return keys;
+  }
+},613,[610],"node_modules/redux-actions/lib/ownKeys.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.unflattenActionCreators = exports.flattenReducerMap = exports.flattenActionMap = exports.defaultNamespace = undefined;
+
+  var _camelCase = _require(_dependencyMap[0], './camelCase');
+
+  var _camelCase2 = _interopRequireDefault(_camelCase);
+
+  var _ownKeys = _require(_dependencyMap[1], './ownKeys');
+
+  var _ownKeys2 = _interopRequireDefault(_ownKeys);
+
+  var _hasGeneratorInterface = _require(_dependencyMap[2], './hasGeneratorInterface');
+
+  var _hasGeneratorInterface2 = _interopRequireDefault(_hasGeneratorInterface);
+
+  var _isPlainObject = _require(_dependencyMap[3], 'lodash/isPlainObject');
+
+  var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+
+  var _isMap = _require(_dependencyMap[4], 'lodash/isMap');
+
+  var _isMap2 = _interopRequireDefault(_isMap);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  var defaultNamespace = exports.defaultNamespace = '/';
+
+  function get(key, x) {
+    return (0, _isMap2.default)(x) ? x.get(key) : x[key];
+  }
+
+  var flattenWhenNode = function flattenWhenNode(predicate) {
+    return function flatten(map) {
+      var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+          _ref$namespace = _ref.namespace,
+          namespace = _ref$namespace === undefined ? defaultNamespace : _ref$namespace,
+          prefix = _ref.prefix;
+
+      var partialFlatMap = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      var partialFlatActionType = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+      function connectNamespace(type) {
+        return partialFlatActionType ? '' + partialFlatActionType + namespace + type : type;
+      }
+
+      function connectPrefix(type) {
+        if (partialFlatActionType || !prefix) {
+          return type;
+        }
+
+        return '' + prefix + namespace + type;
+      }
+
+      (0, _ownKeys2.default)(map).forEach(function (type) {
+        var nextNamespace = connectPrefix(connectNamespace(type));
+        var mapValue = get(type, map);
+
+        if (!predicate(mapValue)) {
+          partialFlatMap[nextNamespace] = mapValue;
+        } else {
+          flatten(mapValue, {
+            namespace: namespace,
+            prefix: prefix
+          }, partialFlatMap, nextNamespace);
+        }
+      });
+      return partialFlatMap;
+    };
+  };
+
+  var flattenActionMap = flattenWhenNode(_isPlainObject2.default);
+  var flattenReducerMap = flattenWhenNode(function (node) {
+    return ((0, _isPlainObject2.default)(node) || (0, _isMap2.default)(node)) && !(0, _hasGeneratorInterface2.default)(node);
+  });
+
+  function unflattenActionCreators(flatActionCreators) {
+    var _ref2 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+        _ref2$namespace = _ref2.namespace,
+        namespace = _ref2$namespace === undefined ? defaultNamespace : _ref2$namespace,
+        prefix = _ref2.prefix;
+
+    function unflatten(flatActionType) {
+      var partialNestedActionCreators = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var partialFlatActionTypePath = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+      var nextNamespace = (0, _camelCase2.default)(partialFlatActionTypePath.shift());
+
+      if (partialFlatActionTypePath.length) {
+        if (!partialNestedActionCreators[nextNamespace]) {
+          partialNestedActionCreators[nextNamespace] = {};
+        }
+
+        unflatten(flatActionType, partialNestedActionCreators[nextNamespace], partialFlatActionTypePath);
+      } else {
+        partialNestedActionCreators[nextNamespace] = flatActionCreators[flatActionType];
+      }
+    }
+
+    var nestedActionCreators = {};
+    Object.getOwnPropertyNames(flatActionCreators).forEach(function (type) {
+      var unprefixedType = prefix ? type.replace('' + prefix + namespace, '') : type;
+      return unflatten(type, nestedActionCreators, unprefixedType.split(namespace));
+    });
+    return nestedActionCreators;
+  }
+
+  exports.flattenActionMap = flattenActionMap;
+  exports.flattenReducerMap = flattenReducerMap;
+  exports.unflattenActionCreators = unflattenActionCreators;
+},614,[615,613,616,504,610],"node_modules/redux-actions/lib/flattenUtils.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var wordPattern = /[A-Z\xc0-\xd6\xd8-\xde]?[a-z\xdf-\xf6\xf8-\xff]+(?:['’](?:d|ll|m|re|s|t|ve))?(?=[\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000]|[A-Z\xc0-\xd6\xd8-\xde]|$)|(?:[A-Z\xc0-\xd6\xd8-\xde]|[^\ud800-\udfff\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\d+\u2700-\u27bfa-z\xdf-\xf6\xf8-\xffA-Z\xc0-\xd6\xd8-\xde])+(?:['’](?:D|LL|M|RE|S|T|VE))?(?=[\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000]|[A-Z\xc0-\xd6\xd8-\xde](?:[a-z\xdf-\xf6\xf8-\xff]|[^\ud800-\udfff\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\d+\u2700-\u27bfa-z\xdf-\xf6\xf8-\xffA-Z\xc0-\xd6\xd8-\xde])|$)|[A-Z\xc0-\xd6\xd8-\xde]?(?:[a-z\xdf-\xf6\xf8-\xff]|[^\ud800-\udfff\xac\xb1\xd7\xf7\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\xbf\u2000-\u206f \t\x0b\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\d+\u2700-\u27bfa-z\xdf-\xf6\xf8-\xffA-Z\xc0-\xd6\xd8-\xde])+(?:['’](?:d|ll|m|re|s|t|ve))?|[A-Z\xc0-\xd6\xd8-\xde]+(?:['’](?:D|LL|M|RE|S|T|VE))?|\d*(?:(?:1ST|2ND|3RD|(?![123])\dTH)\b)|\d*(?:(?:1st|2nd|3rd|(?![123])\dth)\b)|\d+|(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe2f\u20d0-\u20ff]|\ud83c[\udffb-\udfff])?(?:\u200d(?:[^\ud800-\udfff]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe2f\u20d0-\u20ff]|\ud83c[\udffb-\udfff])?)*/g;
+  var namespacer = '/';
+
+  function camelCase(string) {
+    return string.match(wordPattern).reduce(function (camelCased, word, index) {
+      return camelCased + (index === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.substring(1).toLowerCase());
+    }, '');
+  }
+
+  exports.default = function (type) {
+    return type.split(namespacer).map(camelCase).join(namespacer);
+  };
+},615,[],"node_modules/redux-actions/lib/camelCase.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = hasGeneratorInterface;
+
+  var _ownKeys = _require(_dependencyMap[0], './ownKeys');
+
+  var _ownKeys2 = _interopRequireDefault(_ownKeys);
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function hasGeneratorInterface(handler) {
+    var keys = (0, _ownKeys2.default)(handler);
+    var hasOnlyInterfaceNames = keys.every(function (ownKey) {
+      return ownKey === 'next' || ownKey === 'throw';
+    });
+    return keys.length && keys.length <= 2 && hasOnlyInterfaceNames;
+  }
+},616,[613],"node_modules/redux-actions/lib/hasGeneratorInterface.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _slicedToArray = function () {
+    function sliceIterator(arr, i) {
+      var _arr = [];
+      var _n = true;
+      var _d = false;
+      var _e = undefined;
+
+      try {
+        for (var _i = arr[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+          _arr.push(_s.value);
+
+          if (i && _arr.length === i) break;
+        }
+      } catch (err) {
+        _d = true;
+        _e = err;
+      } finally {
+        try {
+          if (!_n && _i["return"]) _i["return"]();
+        } finally {
+          if (_d) throw _e;
+        }
+      }
+
+      return _arr;
+    }
+
+    return function (arr, i) {
+      if (Array.isArray(arr)) {
+        return arr;
+      } else if ((typeof Symbol === "function" ? Symbol.iterator : "@@iterator") in Object(arr)) {
+        return sliceIterator(arr, i);
+      } else {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+    };
+  }();
+
+  var _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  exports.default = createActions;
+
+  var _camelCase = _require(_dependencyMap[0], './camelCase');
+
+  var _camelCase2 = _interopRequireDefault(_camelCase);
+
+  var _identity = _require(_dependencyMap[1], 'lodash/identity');
+
+  var _identity2 = _interopRequireDefault(_identity);
+
+  var _isPlainObject = _require(_dependencyMap[2], 'lodash/isPlainObject');
+
+  var _isPlainObject2 = _interopRequireDefault(_isPlainObject);
+
+  var _isArray = _require(_dependencyMap[3], 'lodash/isArray');
+
+  var _isArray2 = _interopRequireDefault(_isArray);
+
+  var _last = _require(_dependencyMap[4], 'lodash/last');
+
+  var _last2 = _interopRequireDefault(_last);
+
+  var _isString = _require(_dependencyMap[5], 'lodash/isString');
+
+  var _isString2 = _interopRequireDefault(_isString);
+
+  var _isFunction = _require(_dependencyMap[6], 'lodash/isFunction');
+
+  var _isFunction2 = _interopRequireDefault(_isFunction);
+
+  var _isNil = _require(_dependencyMap[7], 'lodash/isNil');
+
+  var _isNil2 = _interopRequireDefault(_isNil);
+
+  var _createAction = _require(_dependencyMap[8], './createAction');
+
+  var _createAction2 = _interopRequireDefault(_createAction);
+
+  var _invariant = _require(_dependencyMap[9], 'invariant');
+
+  var _invariant2 = _interopRequireDefault(_invariant);
+
+  var _arrayToObject = _require(_dependencyMap[10], './arrayToObject');
+
+  var _arrayToObject2 = _interopRequireDefault(_arrayToObject);
+
+  var _flattenUtils = _require(_dependencyMap[11], './flattenUtils');
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _toConsumableArray(arr) {
+    if (Array.isArray(arr)) {
+      for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+        arr2[i] = arr[i];
+      }
+
+      return arr2;
+    } else {
+      return Array.from(arr);
+    }
+  }
+
+  function createActions(actionMap) {
+    for (var _len = arguments.length, identityActions = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      identityActions[_key - 1] = arguments[_key];
+    }
+
+    var options = (0, _isPlainObject2.default)((0, _last2.default)(identityActions)) ? identityActions.pop() : {};
+    (0, _invariant2.default)(identityActions.every(_isString2.default) && ((0, _isString2.default)(actionMap) || (0, _isPlainObject2.default)(actionMap)), 'Expected optional object followed by string action types');
+
+    if ((0, _isString2.default)(actionMap)) {
+      return actionCreatorsFromIdentityActions([actionMap].concat(identityActions), options);
+    }
+
+    return _extends({}, actionCreatorsFromActionMap(actionMap, options), actionCreatorsFromIdentityActions(identityActions, options));
+  }
+
+  function actionCreatorsFromActionMap(actionMap, options) {
+    var flatActionMap = (0, _flattenUtils.flattenActionMap)(actionMap, options);
+    var flatActionCreators = actionMapToActionCreators(flatActionMap);
+    return (0, _flattenUtils.unflattenActionCreators)(flatActionCreators, options);
+  }
+
+  function actionMapToActionCreators(actionMap) {
+    var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+        prefix = _ref.prefix,
+        _ref$namespace = _ref.namespace,
+        namespace = _ref$namespace === undefined ? _flattenUtils.defaultNamespace : _ref$namespace;
+
+    function isValidActionMapValue(actionMapValue) {
+      if ((0, _isFunction2.default)(actionMapValue) || (0, _isNil2.default)(actionMapValue)) {
+        return true;
+      } else if ((0, _isArray2.default)(actionMapValue)) {
+        var _actionMapValue = _slicedToArray(actionMapValue, 2),
+            _actionMapValue$ = _actionMapValue[0],
+            payload = _actionMapValue$ === undefined ? _identity2.default : _actionMapValue$,
+            meta = _actionMapValue[1];
+
+        return (0, _isFunction2.default)(payload) && (0, _isFunction2.default)(meta);
+      }
+
+      return false;
+    }
+
+    return (0, _arrayToObject2.default)(Object.keys(actionMap), function (partialActionCreators, type) {
+      var actionMapValue = actionMap[type];
+      (0, _invariant2.default)(isValidActionMapValue(actionMapValue), 'Expected function, undefined, null, or array with payload and meta ' + ('functions for ' + type));
+      var prefixedType = prefix ? '' + prefix + namespace + type : type;
+      var actionCreator = (0, _isArray2.default)(actionMapValue) ? _createAction2.default.apply(undefined, [prefixedType].concat(_toConsumableArray(actionMapValue))) : (0, _createAction2.default)(prefixedType, actionMapValue);
+      return _extends({}, partialActionCreators, _defineProperty({}, type, actionCreator));
+    });
+  }
+
+  function actionCreatorsFromIdentityActions(identityActions, options) {
+    var actionMap = (0, _arrayToObject2.default)(identityActions, function (partialActionMap, type) {
+      return _extends({}, partialActionMap, _defineProperty({}, type, _identity2.default));
+    });
+    var actionCreators = actionMapToActionCreators(actionMap, options);
+    return (0, _arrayToObject2.default)(Object.keys(actionCreators), function (partialActionCreators, type) {
+      return _extends({}, partialActionCreators, _defineProperty({}, (0, _camelCase2.default)(type), actionCreators[type]));
+    });
+  }
+},617,[615,138,504,91,618,604,48,601,598,497,619,614],"node_modules/redux-actions/lib/createActions.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  function last(array) {
+    var length = array == null ? 0 : array.length;
+    return length ? array[length - 1] : undefined;
+  }
+
+  module.exports = last;
+},618,[],"node_modules/lodash/last.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  exports.default = function (array, callback) {
+    return array.reduce(function (partialObject, element) {
+      return callback(partialObject, element);
+    }, {});
+  };
+},619,[],"node_modules/redux-actions/lib/arrayToObject.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.addReducerFactory = addReducerFactory;
+
+    function addReducerFactory(reducers) {
+        function addReducer(action, reducer) {
+            reducers[action.toString()] = reducer;
+        }
+
+        return addReducer;
+    }
+},620,[],"src/Utils/AddReducer.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/SongScreen/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactRedux = _require(_dependencyMap[3], "react-redux");
+
+    var _styles = _require(_dependencyMap[4], "./styles");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        SongScreen: {
+            displayName: "SongScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/SongScreen/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var SongScreen = _wrapComponent("SongScreen")(function (_Component) {
+        _inherits(SongScreen, _Component);
+
+        function SongScreen() {
+            _classCallCheck(this, SongScreen);
+
+            return _possibleConstructorReturn(this, (SongScreen.__proto__ || Object.getPrototypeOf(SongScreen)).apply(this, arguments));
+        }
+
+        _createClass(SongScreen, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 7
+                        }
+                    },
+                    _react3.default.createElement(_reactNative.Image, {
+                        source: {
+                            uri: this.props.song.image
+                        },
+                        style: _styles.styles.image,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 8
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            style: _styles.styles.title,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 9
+                            }
+                        },
+                        this.props.song.name
+                    )
+                );
+            }
+        }]);
+
+        return SongScreen;
+    }(_react2.Component));
+
+    SongScreen.navigationOptions = {
+        title: "Song"
+    };
+
+    var mapStateToProps = function mapStateToProps(_ref) {
+        var app = _ref.app;
+        return {
+            song: app.currentSong
+        };
+    };
+
+    var SongScreenContainer = (0, _reactRedux.connect)(mapStateToProps, undefined)(SongScreen);
+    exports.default = SongScreenContainer;
+},621,[12,22,176,491,632],"src/Containers/SongScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74693,8 +75849,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var _reducer = _require(_dependencyMap[2], "./reducer");
 
   exports.createNavigationReducer = _reducer.createNavigationReducer;
-},596,[597,598,599],"node_modules/react-navigation-redux-helpers/src/index.js");
-__d(function (global, _require, module, exports, _dependencyMap) {},597,[],"node_modules/react-navigation-redux-helpers/src/types.js");
+},622,[623,624,625],"node_modules/react-navigation-redux-helpers/src/index.js");
+__d(function (global, _require, module, exports, _dependencyMap) {},623,[],"node_modules/react-navigation-redux-helpers/src/types.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74773,7 +75929,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   exports.createReactNavigationReduxMiddleware = createReactNavigationReduxMiddleware;
   exports.createReduxBoundAddListener = createReduxBoundAddListener;
   exports.initializeListeners = initializeListeners;
-},598,[497,599],"node_modules/react-navigation-redux-helpers/src/middleware.js");
+},624,[497,625],"node_modules/react-navigation-redux-helpers/src/middleware.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -74796,31 +75952,53 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   ;
   exports.createNavigationReducer = createNavigationReducer;
   exports.initAction = initAction;
-},599,[520],"node_modules/react-navigation-redux-helpers/src/reducer.js");
+},625,[520],"node_modules/react-navigation-redux-helpers/src/reducer.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
 
-    var _Navigation = _require(_dependencyMap[0], "./Infrastructure/Navigation/Navigation");
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-    var _redux = _require(_dependencyMap[1], "redux");
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
 
-    var _reduxThunk = _require(_dependencyMap[2], "redux-thunk");
+    var _reducers = _require(_dependencyMap[1], "./Containers/HomeScreen/reducers");
+
+    var _Navigation = _require(_dependencyMap[2], "./Infrastructure/Navigation/Navigation");
+
+    var _redux = _require(_dependencyMap[3], "redux");
+
+    var _reduxThunk = _require(_dependencyMap[4], "redux-thunk");
 
     var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-    var _Reducers = _require(_dependencyMap[3], "./Infrastructure/Navigation/Reducers");
+    var _Reducers = _require(_dependencyMap[5], "./Infrastructure/Navigation/Reducers");
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    var initialState = {};
+    var initialState = {
+        songs: [{
+            id: "empty-bottles",
+            name: "Empty bottles - Yelawolf",
+            image: "https://i2.wp.com/truetoo.co/wp-content/uploads/2015/05/YELAWOLF-LS-COVER-DARK-PA-650x650.jpg?fit=500%2C300"
+        }, {
+            id: "take-me-out",
+            name: "Take me out - Franz Ferdinand",
+            image: "http://i3.ytimg.com/vi/GhCXAiNz9Jo/maxresdefault.jpg"
+        }, {
+            id: "the-less-i-know-the-better",
+            name: "The Less I Know The Better - Tame Impala",
+            image: "https://www.jambase.com/wp-content/uploads/2015/11/tameimpalavideo-1480x832.jpg"
+        }]
+    };
+    var appReducer = (0, _reduxActions.handleActions)(_extends({}, _reducers.homeReducers), initialState);
     var reducers = (0, _redux.combineReducers)({
-        nav: _Reducers.routerReducer
+        nav: _Reducers.routerReducer,
+        app: appReducer
     });
-    var store = (0, _redux.createStore)(reducers, initialState, (0, _redux.applyMiddleware)(_reduxThunk2.default, _Navigation.navigationMiddleware));
+    var store = (0, _redux.createStore)(reducers, (0, _redux.applyMiddleware)(_reduxThunk2.default, _Navigation.navigationMiddleware));
     exports.default = store;
-},600,[519,502,601,602],"src/Store.ts");
+},626,[597,596,519,502,627,628],"src/Store.ts");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -74845,7 +76023,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   var thunk = createThunkMiddleware();
   thunk.withExtraArgument = createThunkMiddleware;
   exports['default'] = thunk;
-},601,[],"node_modules/redux-thunk/lib/index.js");
+},627,[],"node_modules/redux-thunk/lib/index.js");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -74854,11 +76032,159 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _Navigation = _require(_dependencyMap[0], "./Navigation");
 
-    var routerReducer = exports.routerReducer = function routerReducer(state, action) {
+    var routerReducer = exports.routerReducer = function routerReducer() {
+        var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _Navigation.initialNavigationState;
+        var action = arguments[1];
+
         var nextState = _Navigation.AppNavigator.router.getStateForAction(action, state);
 
         return nextState || state;
     };
-},602,[519],"src/Infrastructure/Navigation/Reducers.ts");
+},628,[519],"src/Infrastructure/Navigation/Reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/SongItem/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _styles = _require(_dependencyMap[3], "./styles");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        SongItem: {
+            displayName: "SongItem"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/SongItem/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var SongItem = _wrapComponent("SongItem")(function (_Component) {
+        _inherits(SongItem, _Component);
+
+        function SongItem() {
+            _classCallCheck(this, SongItem);
+
+            return _possibleConstructorReturn(this, (SongItem.__proto__ || Object.getPrototypeOf(SongItem)).apply(this, arguments));
+        }
+
+        _createClass(SongItem, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.TouchableOpacity,
+                    {
+                        onPress: this.props.onPress,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 6
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.ImageBackground,
+                        {
+                            source: {
+                                uri: this.props.image
+                            },
+                            style: _styles.styles.image,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 7
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.title,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 8
+                                }
+                            },
+                            this.props.name
+                        )
+                    )
+                );
+            }
+        }]);
+
+        return SongItem;
+    }(_react2.Component));
+
+    exports.default = SongItem;
+},630,[12,22,176,631],"src/Components/SongItem/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        image: {
+            width: "100%",
+            height: 200,
+            flex: 1,
+            justifyContent: "flex-end"
+        },
+        title: {
+            fontSize: 18,
+            padding: 12,
+            color: "white",
+            backgroundColor: "black"
+        }
+    });
+},631,[176],"src/Components/SongItem/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        image: {
+            width: "100%",
+            height: 240
+        },
+        title: {
+            textAlign: "center",
+            paddingTop: 24,
+            fontSize: 18
+        }
+    });
+},632,[176],"src/Containers/SongScreen/styles.ts");
 require(186);
 require(11);

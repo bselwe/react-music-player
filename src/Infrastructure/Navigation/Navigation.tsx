@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addNavigationHelpers, StackNavigator, NavigationScreenProp } from "react-navigation";
-import routes from "../../Routes";
+import Routes, * as routes from "../../Routes";
 import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from "react-navigation-redux-helpers";
 
-export const AppNavigator = StackNavigator(routes);
+export const AppNavigator = StackNavigator(Routes);
 
 export const initialNavigationState = AppNavigator.router.getStateForAction(
-    AppNavigator.router.getActionForPathAndParams("Home")
+    AppNavigator.router.getActionForPathAndParams(routes.Home)
 );
 
 export const navigationMiddleware = createReactNavigationReduxMiddleware(
