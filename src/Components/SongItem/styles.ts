@@ -1,16 +1,27 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-    image: {
+    albumCover: {
         width: "100%",
-        height: 200,
-        flex: 1,
-        justifyContent: "flex-end"
+        height: 80,
+        display: "flex"
     },
-    title: {
-        fontSize: 18,
-        padding: 12,
+    shader: {
+        flexGrow: 1,
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "rgba(52, 52, 52, 0.6)",
+    },
+    name: {
+        fontSize: 20,
+        fontWeight: "bold",
+        paddingLeft: 20,
         color: "white",
-        backgroundColor: "black"
+    },
+    artist: {
+        fontSize: 20,
+        paddingLeft: 20,
+        fontStyle: "italic",
+        color: "white",
     }
 });

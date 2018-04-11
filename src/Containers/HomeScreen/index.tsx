@@ -32,6 +32,7 @@ class HomeScreen extends Component<HomeScreenProps> {
             renderItem={({ item } : { item: Song }) => 
                 <SongItem
                     name={item.name}
+                    artist={item.artist}
                     image={item.image}
                     onPress={() => this.props.navigateToSong(item.id)} />}
         />
