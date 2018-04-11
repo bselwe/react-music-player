@@ -11,7 +11,9 @@ interface SongItemProps {
 
 export default class SongItem extends Component<SongItemProps> {
     render() {
-        return <TouchableOpacity onPress={this.props.onPress}>
+        return <TouchableOpacity 
+            onPress={this.props.onPress}
+            style={styles.container}>
             <ImageBackground
                 source={{ uri: this.props.image }}
                 style={styles.albumCover}>

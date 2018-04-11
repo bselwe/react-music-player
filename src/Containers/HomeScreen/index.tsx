@@ -25,10 +25,22 @@ class HomeScreen extends Component<HomeScreenProps> {
         super(props);
     }
 
+    renderSeparator = () => {
+        return (
+          <View
+            style={{
+              height: 1,
+              backgroundColor: "#CED0CE",
+            }}
+          />
+        );
+      };
+
     render() {
         return <FlatList
             data={this.props.songs}
             keyExtractor={(item, index) => item.id}
+            ItemSeparatorComponent={this.renderSeparator}
             renderItem={({ item } : { item: Song }) => 
                 <SongItem
                     name={item.name}
