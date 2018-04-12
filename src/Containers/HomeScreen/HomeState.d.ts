@@ -1,6 +1,8 @@
 interface Song {
     readonly id: string;
     readonly name: string;
+    readonly artist: string;
+    readonly album: string;
     readonly image: string;
 }
 

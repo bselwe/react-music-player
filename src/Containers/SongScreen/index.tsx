@@ -18,6 +18,7 @@ class SongScreen extends Component<SongScreenStateProps> {
                 source={{ uri: this.props.song.image }}
                 style={styles.image} />
             <Text style={styles.title}>{this.props.song.name}</Text>
+            <Text style={styles.subtitle}>{this.props.song.artist} - {this.props.song.album}</Text>
         </View>;
     }
 }
