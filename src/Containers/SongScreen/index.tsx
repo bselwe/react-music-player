@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Image } from "react-native";
+import { Icon } from "react-native-elements"
 import { connect } from "react-redux";
 import { styles } from "./styles";
 
@@ -19,6 +20,7 @@ class SongScreen extends Component<SongScreenStateProps> {
                 style={styles.image} />
             <Text style={styles.title}>{this.props.song.name}</Text>
             <Text style={styles.subtitle}>{this.props.song.artist} - {this.props.song.album}</Text>
+            <Icon name="playlist-play" />
         </View>;
     }
 }
