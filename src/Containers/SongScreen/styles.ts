@@ -4,11 +4,24 @@ export const styles = StyleSheet.create({
     container: {
         display: "flex",
         flex: 1,
-        flexDirection: "column"
+        flexDirection: "column",
+        alignItems: "center"
     },
     image: {
         width: "100%",
         height: 240
+    },
+    progressContainer: {
+        marginTop: 40,
+        alignSelf: "center"
+    },    
+    progress: {
+        width: 300
+    },   
+    time: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between"
     },
     title: {
         textAlign: "center",
@@ -21,10 +34,9 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        flexGrow: 2
+        flexGrow: 1
     },
     subtitle: {
-        textAlign: "center",
         paddingTop: 8,
         fontSize: 18
     },
@@ -37,8 +49,7 @@ export const styles = StyleSheet.create({
     },
     sound: {
         width: 300,
-        flexGrow: 1,
-        alignSelf: "center"
+        flexGrow: 1
     },
     iconSound: {
         fontSize: 21,
