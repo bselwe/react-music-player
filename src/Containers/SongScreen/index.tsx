@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Image } from "react-native";
-import { Icon } from "react-native-elements"
+import EntypoIcon from "react-native-vector-icons/Entypo";
 import { connect } from "react-redux";
 import { styles } from "./styles";
 
@@ -14,13 +14,17 @@ class SongScreen extends Component<SongScreenStateProps> {
     };
 
     render() {
-        return <View>
+        return <View style={styles.container}>
             <Image
                 source={{ uri: this.props.song.image }}
                 style={styles.image} />
             <Text style={styles.title}>{this.props.song.name}</Text>
             <Text style={styles.subtitle}>{this.props.song.artist} - {this.props.song.album}</Text>
-            <Icon name="playlist-play" />
+            <View style={styles.controlls}>
+                <EntypoIcon name="controller-fast-backward" style={styles.iconFastForwardBackword}/>
+                <EntypoIcon name="controller-play" style={styles.iconControllerPlay}/>
+                <EntypoIcon name="controller-fast-forward" style={styles.iconFastForwardBackword}/>
+            </View>
         </View>;
     }
 }
