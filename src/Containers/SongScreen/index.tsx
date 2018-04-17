@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableNativeFeedback, TouchableOpacity } from "react-native";
+import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import { connect } from "react-redux";
 import { styles } from "./styles";
@@ -20,6 +20,8 @@ class SongScreen extends Component<SongScreenStateProps> {
                 style={styles.image} />
             <Text style={styles.title}>{this.props.song.name}</Text>
             <Text style={styles.subtitle}>{this.props.song.artist} - {this.props.song.album}</Text>
+            <ProgressBarAndroid
+                progress={0.4} />
             <View style={styles.controlls}>
                 <TouchableOpacity>
                     <EntypoIcon name="controller-fast-backward" style={styles.iconFastForwardBackword}/>
@@ -30,6 +32,15 @@ class SongScreen extends Component<SongScreenStateProps> {
                 <TouchableOpacity>
                     <EntypoIcon name="controller-fast-forward" style={styles.iconFastForwardBackword}/>
                 </TouchableOpacity>
+            </View>
+            <View style={styles.sound}>
+                <Slider 
+                    step={1}
+                    maximumValue={100}
+                    value={60}
+                    thumbTintColor={"#ffb74d"}
+                    minimumTrackTintColor={"grey"} />
+                <EntypoIcon name="sound" style={styles.iconSound}/>
             </View>
         </View>;
     }

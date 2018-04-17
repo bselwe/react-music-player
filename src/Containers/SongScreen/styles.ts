@@ -34,5 +34,15 @@ export const styles = StyleSheet.create({
     },
     iconFastForwardBackword: {
         fontSize: 55
+    },
+    sound: {
+        width: 300,
+        flexGrow: 1,
+        alignSelf: "center"
+    },
+    iconSound: {
+        fontSize: 21,
+        marginTop: 5,
+        alignSelf: "center"
     }
 });
