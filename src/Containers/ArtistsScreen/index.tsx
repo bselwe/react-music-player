@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { View, Text, Button, FlatList } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
-import * as routes from "../../Routes";
 import { connect, Dispatch } from "react-redux";
 import { SelectArtist } from "./reducers";
 import ArtistItem from "../../Components/ArtistItem"
+import * as routes from "../../Infrastructure/Navigation/ArtistsNavigation";
 
 interface ArtistsScreenStateProps {
     artists: Artist[];

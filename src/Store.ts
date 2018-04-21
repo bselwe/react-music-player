@@ -4,7 +4,8 @@ import { createStore, applyMiddleware, combineReducers, Store } from "redux";
 import thunk from "redux-thunk";
 import { songsMiddleware, songsRouterReducer } from './Infrastructure/Navigation/SongsNavigation';
 import { tabMiddleware, tabRouterReducer } from './Infrastructure/Navigation/TabNavigation';
-import { albumsMiddleware, AlbumsNavigator } from './Infrastructure/Navigation/AlbumsNavigation';
+import { albumsMiddleware, AlbumsNavigator, albumsRouterReducer } from './Infrastructure/Navigation/AlbumsNavigation';
+import { artistsRouterReducer, artistsMiddleware } from './Infrastructure/Navigation/ArtistsNavigation';
 
 const initialState: AppState = {
     songs: [
@@ -67,7 +68,7 @@ const initialState: AppState = {
             { id: "dna", name: "DNA", artist: "Kendrick Lamar", album: "DAMN.", image: "https://www.vladtv.com/images/size_fs/video-226925.jpg" },
             { id: "tamagochi", name: "Tamagochi", artist: "TACONAFIDE", album: "Single", image: "https://i.ytimg.com/vi/odWxQ5eEnfE/maxresdefault.jpg" },
             { id: "aint-no-rest", name: "Ain't No Rest for the Wicked", artist: "Cage the Elephant", album: "Cage the Elephant", image: "https://sosimpullsitebin.s3.amazonaws.com/wp-content/uploads/2017/08/hqdefault.jpg" }],
-        image: "http://i3.ytimg.com/vi/GhCXAiNz9Jo/maxresdefault.jpg" },
+        image: "http://i3.ytimg.com/vi/GhCXAiNz9Jo/maxresdefault.jpg" }
     ],
     artists: [
         { id: "artist1", name: "Yelawolf", albums: [
@@ -134,7 +135,8 @@ const appReducer = handleActions({
 const reducers = combineReducers({
     tab: tabRouterReducer,
     songs: songsRouterReducer,
-    albums: (state, action) => AlbumsNavigator.router.getStateForAction(action,state),
+    albums: albumsRouterReducer,
+    artists: artistsRouterReducer,
     app: appReducer
 });
 
@@ -143,7 +145,9 @@ let store: Store<any> = createStore(
     applyMiddleware(
         thunk, 
         tabMiddleware,
-        songsMiddleware
+        songsMiddleware,
+        albumsMiddleware,
+        artistsMiddleware
     )
 );
 
