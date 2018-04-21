@@ -4,13 +4,16 @@ import SongsNavigation from "./SongsNavigation";
 import AlbumsNavigation from "./AlbumsNavigation";
 import { connect } from "react-redux";
 import { createReduxBoundAddListener, createReactNavigationReduxMiddleware } from "react-navigation-redux-helpers";
+import ArtistsNavigation from "./ArtistsNavigation";
 
 export const SongsNav = "SongsNavigation";
 export const AlbumsNav = "AlbumsNavigation";
+export const ArtistsNav = "ArtistsNavigation";
 
 export const routes = {
     [SongsNav]: { screen: SongsNavigation },
-    [AlbumsNav]: { screen: AlbumsNavigation}
+    [AlbumsNav]: { screen: AlbumsNavigation },
+    [ArtistsNav]: { screen: ArtistsNavigation }
 };
   
 export const TabBar = TabNavigator(routes, {
