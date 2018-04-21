@@ -6,10 +6,10 @@ interface Song {
     readonly image: string;
 }
 
-interface HomeState {
+interface SongsState {
     readonly songs?: Song[];
     readonly currentSong?: Song;
 }
 
-interface AppState extends HomeState {
+interface AppState extends SongsState {
 }

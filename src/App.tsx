@@ -1,12 +1,12 @@
 import React from "react";
 import { Provider } from "react-redux";
-import AppNavigation from "./Infrastructure/Navigation/Navigation";
 import store from "./Store";
+import TabNavigation from "./Infrastructure/Navigation/TabNavigation";
 
 export default function AppContainer() {
     return (
         <Provider store={store}>
-            <AppNavigation />
+            <TabNavigation />
         </Provider>
   );
 }

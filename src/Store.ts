@@ -1,9 +1,9 @@
+import { songsReducers, SelectSong } from './Containers/SongsScreen/reducers';
 import { handleActions } from "redux-actions";
-import { homeReducers, SelectSong } from "./Containers/HomeScreen/reducers";
-import { navigationMiddleware } from "./Infrastructure/Navigation/Navigation";
 import { createStore, applyMiddleware, combineReducers, Store } from "redux";
 import thunk from "redux-thunk";
-import { routerReducer } from "./Infrastructure/Navigation/Reducers";
+import { songsMiddleware, songsRouterReducer } from './Infrastructure/Navigation/SongsNavigation';
+import { tabMiddleware, tabRouterReducer } from './Infrastructure/Navigation/TabNavigation';
 
 const initialState: AppState = {
     songs: [
@@ -71,17 +71,22 @@ const initialState: AppState = {
 };
 
 const appReducer = handleActions({
-    ...homeReducers
+    ...songsReducers
 }, initialState);
 
 const reducers = combineReducers({
-    nav: routerReducer,
+    tab: tabRouterReducer,
+    songs: songsRouterReducer,
     app: appReducer
 });
 
 let store: Store<any> = createStore(
     reducers,
-    applyMiddleware(thunk, navigationMiddleware)
+    applyMiddleware(
+        thunk, 
+        tabMiddleware,
+        songsMiddleware
+    )
 );
 
 export default store;

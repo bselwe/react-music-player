@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import { View, Text, Button, FlatList } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
-import * as routes from "../../Routes";
 import { connect, Dispatch } from "react-redux";
 import { SelectSong } from "./reducers";
 import SongItem from "../../Components/SongItem"
+import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 
-interface HomeScreenStateProps {
+interface SongsScreenStateProps {
     songs: Song[];
 }
 
-interface HomeScreenDispatchProps {
+interface SongsScreenDispatchProps {
     navigateToSong: (songId: string) => void;
 }
 
-type HomeScreenProps = HomeScreenStateProps & HomeScreenDispatchProps; // & NavigationScreenProps;
+type SongsScreenProps = SongsScreenStateProps & SongsScreenDispatchProps; // & NavigationScreenProps;
 
-class HomeScreen extends Component<HomeScreenProps> {
+class SongsScreen extends Component<SongsScreenProps> {
     static navigationOptions = {
         title: "Songs",
     };
@@ -51,13 +51,13 @@ class HomeScreen extends Component<HomeScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }): HomeScreenStateProps => {
+const mapStateToProps = ({ app }): SongsScreenStateProps => {
     return {
         songs: app.songs
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>): HomeScreenDispatchProps => {
+const mapDispatchToProps = (dispatch: Dispatch<any>): SongsScreenDispatchProps => {
     return {
         navigateToSong: (songId: string) => {
             dispatch(SelectSong(songId));
@@ -66,9 +66,9 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): HomeScreenDispatchProps =>
     }
 }
 
-const HomeScreenContainer = connect(
+const SongsScreenContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(HomeScreen);
+)(SongsScreen);
 
-export default HomeScreenContainer;
+export default SongsScreenContainer;
