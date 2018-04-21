@@ -6,17 +6,17 @@ import { connect, Dispatch } from "react-redux";
 import { SelectAlbum } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
 
-interface AlbumScreenStateProps {
+interface AlbumsScreenStateProps {
     albums: Song[];
 }
 
-interface AlbumScreenDispatchProps {
+interface AlbumsScreenDispatchProps {
     navigateToAlbum: (albumId: string) => void;
 }
 
-type AlbumScreenProps = AlbumScreenStateProps & AlbumScreenDispatchProps; // & NavigationScreenProps;
+type AlbumsScreenProps = AlbumsScreenStateProps & AlbumsScreenDispatchProps; // & NavigationScreenProps;
 
-class AlbumScreen extends Component<AlbumScreenProps> {
+class AlbumsScreen extends Component<AlbumsScreenProps> {
     static navigationOptions = {
         title: "Albums",
     };
@@ -51,24 +51,24 @@ class AlbumScreen extends Component<AlbumScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }): AlbumScreenStateProps => {
+const mapStateToProps = ({ app }): AlbumsScreenStateProps => {
     return {
         albums: app.albums
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumScreenDispatchProps => {
+const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumsScreenDispatchProps => {
     return {
         navigateToAlbum: (albumId: string) => {
             dispatch(SelectAlbum(albumId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Album }));
+            dispatch(NavigationActions.navigate({ routeName: routes.Albums }));
         }
     }
 }
 
-const AlbumScreenContainer = connect(
+const AlbumsScreenContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(AlbumScreen);
+)(AlbumsScreen);
 
-export default AlbumScreenContainer;
+export default AlbumsScreenContainer;

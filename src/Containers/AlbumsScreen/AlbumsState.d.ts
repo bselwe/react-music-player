@@ -6,10 +6,10 @@ interface Album {
     readonly image: string;
 }
 
-interface AlbumState {
+interface AlbumsState {
     readonly albums?: Album[];
     readonly currentAlbum?: Album;
 }
 
-interface AppState extends AlbumState {
+interface AppState extends AlbumsState {
 }

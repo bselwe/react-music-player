@@ -1,13 +1,13 @@
 import HomeScreen from "./Containers/HomeScreen";
 import SongScreen from "./Containers/SongScreen";
-import AlbumScreen from "./Containers/AlbumScreen";
+import AlbumsScreen from "./Containers/AlbumsScreen";
 
 export const Home = "Home";
 export const Song = "Song";
-export const Album = "Album";
+export const Albums = "Albums";
 
 const Routes = {
-    [Album]: { screen: AlbumScreen},
+    [Albums]: { screen: AlbumsScreen},
     [Home]: { screen: HomeScreen },
     [Song]: { screen: SongScreen }
 };
