@@ -7,14 +7,15 @@ export const styles = StyleSheet.create({
     },
     albumCover: {
         width: "100%",
-        height: 300,
-        display: "flex"
+        height: 200,
+        display: "flex",
+        justifyContent: "flex-end"
     },
     shader: {
-        flexGrow: 1,
+        height: 60,
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "rgba(52, 52, 52, 0.6)",
+        backgroundColor: "rgba(52, 52, 52, 0.6)"
     },
     name: {
         fontSize: 20,
