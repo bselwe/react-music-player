@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Button, FlatList } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
-import * as routes from "../../Routes";
 import { connect, Dispatch } from "react-redux";
 import { SelectAlbum } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
@@ -61,7 +60,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumsScreenDispatchProps 
     return {
         navigateToAlbum: (albumId: string) => {
             dispatch(SelectAlbum(albumId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Albums }));
+            // dispatch(NavigationActions.navigate({ routeName: routes.Album }));
         }
     }
 }

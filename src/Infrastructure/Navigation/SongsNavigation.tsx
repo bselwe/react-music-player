@@ -4,6 +4,7 @@ import { addNavigationHelpers, StackNavigator, NavigationScreenProp } from "reac
 import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from "react-navigation-redux-helpers";
 import SongsScreen from "../../Containers/SongsScreen";
 import SongScreen from "../../Containers/SongScreen";
+import SongIcon from "react-native-vector-icons/Entypo";
 
 export const Songs = "Songs";
 export const Song = "Song";
@@ -31,13 +32,23 @@ export const songsMiddleware = createReactNavigationReduxMiddleware(
 
 const addListener = createReduxBoundAddListener("Songs");
 
-const SongsNavigatorWithState = ({ dispatch, nav }) => (
-    <SongsNavigator navigation={addNavigationHelpers({
-        dispatch: dispatch,
-        state: nav,
-        addListener
-    })} />
-);
+class SongsNavigatorWithState extends React.Component<any> {
+    static navigationOptions = {
+        tabBarLabel: "Songs",
+        tabBarIcon: ({ tintColor }) => <SongIcon size={28} name="folder-music" color={ tintColor }/>
+    }
+
+    render() {
+        const { dispatch, nav } = this.props
+        return (
+            <SongsNavigator navigation={addNavigationHelpers({
+                dispatch: dispatch,
+                state: nav,
+                addListener
+            })} />
+        )
+    }
+}
   
 const mapStateToProps = state => ({
     nav: state.songs,

@@ -4,6 +4,7 @@ import { createStore, applyMiddleware, combineReducers, Store } from "redux";
 import thunk from "redux-thunk";
 import { songsMiddleware, songsRouterReducer } from './Infrastructure/Navigation/SongsNavigation';
 import { tabMiddleware, tabRouterReducer } from './Infrastructure/Navigation/TabNavigation';
+import { albumsMiddleware, AlbumsNavigator } from './Infrastructure/Navigation/AlbumsNavigation';
 
 const initialState: AppState = {
     songs: [
@@ -77,6 +78,7 @@ const appReducer = handleActions({
 const reducers = combineReducers({
     tab: tabRouterReducer,
     songs: songsRouterReducer,
+    albums: (state, action) => AlbumsNavigator.router.getStateForAction(action,state),
     app: appReducer
 });
 
