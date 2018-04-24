@@ -9,10 +9,10 @@ export const styles = StyleSheet.create({
     },
     image: {
         width: "100%",
-        height: 240
+        height: "38%"
     },
     progressContainer: {
-        marginTop: 40,
+        marginTop: 36,
         alignSelf: "center"
     },    
     progress: {
@@ -41,11 +41,11 @@ export const styles = StyleSheet.create({
         fontSize: 18
     },
     iconControllerPlay: {
-        fontSize: 90,
+        fontSize: 50,
         marginHorizontal: 20
     },
     iconFastForwardBackword: {
-        fontSize: 55
+        fontSize: 50
     },
     sound: {
         width: 300,
