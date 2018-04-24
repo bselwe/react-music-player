@@ -1,4 +1,4 @@
-interface Artist {
+interface Song {
     readonly id: string;
     readonly name: string;
     readonly artist: string;
@@ -7,8 +7,9 @@ interface Artist {
 }
 
 interface SongsState {
-    readonly songs?: Artist[];
-    readonly currentSong?: Artist;
+    readonly songs?: Song[];
+    readonly currentSong?: Song;
+    readonly songDisplayed: boolean;
 }
 
 interface AppState extends SongsState {
