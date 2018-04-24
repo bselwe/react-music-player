@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { styles } from "./styles";
 
 interface SongScreenStateProps {
-    song: Song;
+    song: Artist;
 }
 
 class SongScreen extends Component<SongScreenStateProps> {

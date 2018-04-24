@@ -7,7 +7,7 @@ import SongItem from "../../Components/SongItem"
 import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 
 interface SongsScreenStateProps {
-    songs: Song[];
+    songs: Artist[];
 }
 
 interface SongsScreenDispatchProps {
@@ -41,7 +41,7 @@ class SongsScreen extends Component<SongsScreenProps> {
             data={this.props.songs}
             keyExtractor={(item, index) => item.id}
             ItemSeparatorComponent={this.renderSeparator}
-            renderItem={({ item } : { item: Song }) => 
+            renderItem={({ item } : { item: Artist }) => 
                 <SongItem
                     name={item.name}
                     artist={item.artist}
