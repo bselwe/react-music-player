@@ -60,7 +60,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistsScreenDispatchProps
     return {
         navigateToArtist: (artistId: string) => {
             dispatch(SelectArtist(artistId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Artists }));
+            dispatch(NavigationActions.navigate({ routeName: routes.Artist }));
         }
     }
 }

@@ -2,7 +2,7 @@ interface Album {
     readonly id: string;
     readonly name: string;
     readonly artist: string;
-    readonly songs: Song[];
+    readonly songs: Artist[];
     readonly image: string;
 }
 

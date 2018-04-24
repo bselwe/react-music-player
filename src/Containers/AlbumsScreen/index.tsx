@@ -6,7 +6,7 @@ import { SelectAlbum } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
 
 interface AlbumsScreenStateProps {
-    albums: Song[];
+    albums: Artist[];
 }
 
 interface AlbumsScreenDispatchProps {

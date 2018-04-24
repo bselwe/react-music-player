@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { addNavigationHelpers, StackNavigator, NavigationScreenProp } from "react-navigation";
 import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from "react-navigation-redux-helpers";
 import ArtistsScreen from "../../Containers/ArtistsScreen";
+import ArtistScreen from "../../Containers/ArtistScreen";
 import ArtistIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export const Artists = "Artists";
+export const Artist = "Artist";
 
 export const routes = {
     [Artists]: { screen: ArtistsScreen },
+    [Artist]: {screen: ArtistScreen}
 };
 
 export const ArtistsNavigator = StackNavigator(routes);
