@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid, FlatList } from "react-native";
+import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid, FlatList, ScrollView, SectionList } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import * as Progress from "react-native-progress";
@@ -27,32 +27,30 @@ class AlbumScreen extends Component<AlbumScreenProps> {
 
     renderSeparator = () => {
         return (
-          <View
-            style={{
-              height: 1,
-              backgroundColor: "#CED0CE",
-            }}
-          />
+            <View
+                style={{
+                    height: 1,
+                    backgroundColor: "#CED0CE",
+                }}
+            />
         );
-      };
+    };
 
     render() {
-        return <View style={styles.container}>
+        return <ScrollView contentContainerStyle={styles.container}>
             <Image
                 source={{ uri: this.props.album.image }}
                 style={styles.image} />
             <Text style={styles.title}>{this.props.album.name}</Text>
             <Text style={styles.subtitle}>{this.props.album.artist}</Text>
-            <FlatList
-            data={this.props.album.songs}
-            keyExtractor={(item, index) => item.id}
-            ItemSeparatorComponent={this.renderSeparator}
-            renderItem={({ item } : { item: Song }) => 
-                <SongItemAlbumScreen
-                    name={item.name}
-                    onPress={() => this.props.navigateToSong(item.id)} />}
-            />
-        </View>;
+            <View style={styles.listContainer}>
+                {this.props.album.songs.map(song => <View key={song.id}>
+                    {this.renderSeparator()}
+                    <SongItemAlbumScreen
+                        name={song.name}
+                        onPress={() => this.props.navigateToSong(song.id)} /></View>)}
+            </View>
+        </ScrollView>;
     }
 }
 

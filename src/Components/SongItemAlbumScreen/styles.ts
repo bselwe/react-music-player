@@ -6,10 +6,8 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 0
     },
     name: {
-        fontSize: 20,
-        fontWeight: "bold",
-        paddingLeft: 20,
-        color: "white",
+        padding: 5,
+        fontSize: 20
     },
     id: {
         fontSize: 20,

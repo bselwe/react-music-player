@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableWithoutFeedback, Image, ImageBackground } from "react-native";
+import { View, Text, TouchableWithoutFeedback, TouchableNativeFeedback, Image, ImageBackground } from "react-native";
 import { styles } from "./styles";
 
 interface SongItemAlbumScreenProps {
@@ -9,13 +9,13 @@ interface SongItemAlbumScreenProps {
 
 export default class SongItemAlbumScreen extends Component<SongItemAlbumScreenProps> {
     render() {
-        return <TouchableWithoutFeedback 
+        return <TouchableNativeFeedback 
             onPress={this.props.onPress}
             style={styles.container}>
             <View>
                 <Text style={styles.name}>{this.props.name}</Text>
             </View>
         {/* <Text style={styles.id}>{this.props.id}</Text> */}
-        </TouchableWithoutFeedback>;
+        </TouchableNativeFeedback>;
     }
 }
