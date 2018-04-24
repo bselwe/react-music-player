@@ -7,7 +7,7 @@ import SongItem from "../../Components/SongItem"
 import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 
 interface SongsScreenStateProps {
-    songs: Artist[];
+    songs: Song[];
 }
 
 interface SongsScreenDispatchProps {
@@ -20,7 +20,7 @@ class SongsScreen extends Component<SongsScreenProps> {
     static navigationOptions = {
         title: "Songs",
     };
-    
+
     constructor(props) {
         super(props);
     }
@@ -34,14 +34,14 @@ class SongsScreen extends Component<SongsScreenProps> {
             }}
           />
         );
-      };
+    };
 
     render() {
         return <FlatList
             data={this.props.songs}
             keyExtractor={(item, index) => item.id}
             ItemSeparatorComponent={this.renderSeparator}
-            renderItem={({ item } : { item: Artist }) => 
+            renderItem={({ item } : { item: Song }) => 
                 <SongItem
                     name={item.name}
                     artist={item.artist}
@@ -61,7 +61,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): SongsScreenDispatchProps =
     return {
         navigateToSong: (songId: string) => {
             dispatch(SelectSong(songId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Song }));
+            // dispatch(NavigationActions.navigate({ routeName: routes.Song }));
         }
     }
 }

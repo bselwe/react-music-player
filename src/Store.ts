@@ -1,4 +1,5 @@
-import { songsReducers, SelectSong } from './Containers/SongsScreen/reducers';
+import { songReducers } from './Containers/SongScreen/reducers';
+import { songsReducers } from './Containers/SongsScreen/reducers';
 import { handleActions } from "redux-actions";
 import { createStore, applyMiddleware, combineReducers, Store } from "redux";
 import thunk from "redux-thunk";
@@ -134,6 +135,7 @@ const initialState: AppState = {
 
 const appReducer = handleActions({
     ...songsReducers,
+    ...songReducers,
     ...artistReducers
 }, initialState);
 

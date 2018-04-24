@@ -4,7 +4,7 @@ import { addReducerFactory } from "../../Utils/AddReducer";
 export let artistReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(artistReducers);
 
-export const SelectArtist = createAction("HOME/SELECT_ARTIST", (artistId: string) => ({ artistId }));
+export const SelectArtist = createAction("ARTISTS/SELECT_ARTIST", (artistId: string) => ({ artistId }));
 addReducer(SelectArtist,
     (state, action) => {
         let artist = state.artists.find(s => s.id == action.payload.artistId);

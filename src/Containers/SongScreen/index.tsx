@@ -3,17 +3,32 @@ import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid } from 
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import * as Progress from "react-native-progress";
-import { connect } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
+import { ToggleSong } from "./reducers";
 
 interface SongScreenStateProps {
-    song: Artist;
+    song: Song;
 }
 
-class SongScreen extends Component<SongScreenStateProps> {
+interface SongScreenDispatchProps {
+    toggleSong: (displayed: boolean) => void;
+}
+
+type SongScreenProps = SongScreenStateProps & SongScreenDispatchProps;
+
+class SongScreen extends React.Component<SongScreenProps> {
     static navigationOptions = {
         title: "Song",
     };
+
+    componentWillMount() {
+        this.props.toggleSong(true);
+    }
+
+    componentWillUnmount() {
+        this.props.toggleSong(false);
+    }
 
     render() {
         return <View style={styles.container}>
@@ -65,9 +80,17 @@ const mapStateToProps = ({ app }): SongScreenStateProps => {
     }
 }
 
+const mapDispatchToProps = (dispatch: Dispatch<any>): SongScreenDispatchProps => {
+    return {
+        toggleSong: (displayed: boolean) => {
+            dispatch(ToggleSong(displayed));
+        }
+    }
+}
+
 const SongScreenContainer = connect(
     mapStateToProps,
-    undefined
+    mapDispatchToProps
 )(SongScreen);
 
 export default SongScreenContainer;
