@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import { addNavigationHelpers, StackNavigator, NavigationScreenProp } from "react-navigation";
 import { createReactNavigationReduxMiddleware, createReduxBoundAddListener } from "react-navigation-redux-helpers";
 import AlbumsScreen from "../../Containers/AlbumsScreen";
+import AlbumScreen from "../../Containers/AlbumScreen";
 import AlbumIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export const Albums = "Albums";
+export const Album = "Album"
 
 export const routes = {
     [Albums]: { screen: AlbumsScreen },
+    [Album]: { screen: AlbumScreen}
 };
 
 export const AlbumsNavigator = StackNavigator(routes);

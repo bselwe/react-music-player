@@ -8,11 +8,9 @@ import { tabMiddleware, tabRouterReducer } from './Infrastructure/Navigation/Tab
 import { albumsMiddleware, AlbumsNavigator, albumsRouterReducer } from './Infrastructure/Navigation/AlbumsNavigation';
 import { artistsRouterReducer, artistsMiddleware } from './Infrastructure/Navigation/ArtistsNavigation';
 import { artistReducers } from './Containers/ArtistsScreen/reducers';
+import { albumReducers } from './Containers/AlbumsScreen/reducers';
 
 const initialState: AppState = {
-    
-    
-    
     songs: [
         { id: "empty-bottles", name: "Empty Bottles", artist: "Yelawolf", album: "Love Story",image: "https://i2.wp.com/truetoo.co/wp-content/uploads/2015/05/YELAWOLF-LS-COVER-DARK-PA-650x650.jpg?fit=500%2C300" },
         { id: "take-me-out", name: "Take Me Out", artist: "Franz Ferdinand", album: "Franz Ferdinand",image: "http://i3.ytimg.com/vi/GhCXAiNz9Jo/maxresdefault.jpg" },
@@ -144,7 +142,8 @@ const initialState: AppState = {
 const appReducer = handleActions({
     ...songsReducers,
     ...songReducers,
-    ...artistReducers
+    ...artistReducers,
+    ...albumReducers
 }, initialState);
 
 const reducers = combineReducers({
