@@ -4,7 +4,7 @@ import { styles } from "./styles";
 
 interface AlbumItemArtistScreenProps {
     name: string;
-    //image: string;
+    image: string;
     onPress: () => void;
 }
 
@@ -13,9 +13,18 @@ export default class AlbumItemArtistScreen extends Component<AlbumItemArtistScre
         return <TouchableNativeFeedback 
         onPress={this.props.onPress}
         style={styles.container}>
-        <View>
-            <Text style={styles.name}>{this.props.name}</Text>
-        </View>
+       
+          
+            <ImageBackground  source={{ uri: this.props.image }} style={styles.albumCover}>
+                <ImageBackground
+                source={undefined}
+                style={styles.shader}>
+                    <Text style={styles.name}>{this.props.name}</Text>
+                    
+                </ImageBackground>
+             </ImageBackground>
+            
+        
         </TouchableNativeFeedback>;
     }
 }

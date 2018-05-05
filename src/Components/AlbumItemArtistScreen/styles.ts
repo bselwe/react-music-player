@@ -7,9 +7,9 @@ export const styles = StyleSheet.create({
     },
     albumCover: {
         width: "100%",
-        height: 200,
-        display: "flex",
-        justifyContent: "flex-end"
+        height: 80,
+        display: "flex"
+        
     },
     shader: {
         height: 60,
@@ -19,14 +19,10 @@ export const styles = StyleSheet.create({
     },
     name: {
         fontSize: 20,
-        fontWeight: "bold",
+        fontStyle: "italic",
         paddingLeft: 20,
-        color: "white",
+        color: "black",
     },
-    // artist: {
-    //     fontSize: 20,
-    //     paddingLeft: 20,
-    //     fontStyle: "italic",
-    //     color: "white",
-    // }
+    
+   
 });

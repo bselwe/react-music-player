@@ -81,15 +81,24 @@ const initialState: AppState = {
     ],
     artists: [
         { id: "artist1", name: "Yelawolf", albums: [
-            { id: "album1", name: "Co Za Mixtape", artist: "Many", songs: [
+            { id: "album1", name: "Co Za Mixtape",image: "https://img.wennermedia.com/article-leads-horizontal/franz-ferdinand-12cea9f4-03d0-4edb-a60c-26c2ec846e8b.jpg", artist: "Many", songs: [
                 { id: "empty-bottles", name: "Empty Bottles", artist: "Yelawolf", album: "Love Story",image: "https://i2.wp.com/truetoo.co/wp-content/uploads/2015/05/YELAWOLF-LS-COVER-DARK-PA-650x650.jpg?fit=500%2C300" },
                 { id: "take-me-out", name: "Take Me Out", artist: "Franz Ferdinand", album: "Franz Ferdinand",image: "http://i3.ytimg.com/vi/GhCXAiNz9Jo/maxresdefault.jpg" },
                 { id: "the-less-i-know-the-better", name: "The Less I Know The Better", artist: "Tame Impala", album: "Currents", image: "https://www.jambase.com/wp-content/uploads/2015/11/tameimpalavideo-1480x832.jpg" },
                 { id: "dna", name: "DNA", artist: "Kendrick Lamar", album: "DAMN.", image: "https://www.vladtv.com/images/size_fs/video-226925.jpg" },
                 { id: "tamagochi", name: "Tamagochi", artist: "TACONAFIDE", album: "Single", image: "https://i.ytimg.com/vi/odWxQ5eEnfE/maxresdefault.jpg" },
                 { id: "aint-no-rest", name: "Ain't No Rest for the Wicked", artist: "Cage the Elephant", album: "Cage the Elephant", image: "https://sosimpullsitebin.s3.amazonaws.com/wp-content/uploads/2017/08/hqdefault.jpg" }
-            ]}],
+            ]},
+            { id: "album5", name: "Ferdinand Franz",  image: "https://img.wennermedia.com/article-leads-horizontal/franz-ferdinand-12cea9f4-03d0-4edb-a60c-26c2ec846e8b.jpg", artist: "Franz Ferdinand", songs: [
+                { id: "empty-bottles", name: "Empty Bottles", artist: "Yelawolf", album: "Love Story",image: "https://i2.wp.com/truetoo.co/wp-content/uploads/2015/05/YELAWOLF-LS-COVER-DARK-PA-650x650.jpg?fit=500%2C300" },
+                { id: "take-me-out", name: "Take Me Out", artist: "Franz Ferdinand", album: "Franz Ferdinand",image: "http://i3.ytimg.com/vi/GhCXAiNz9Jo/maxresdefault.jpg" },
+                { id: "the-less-i-know-the-better", name: "The Less I Know The Better", artist: "Tame Impala", album: "Currents", image: "https://www.jambase.com/wp-content/uploads/2015/11/tameimpalavideo-1480x832.jpg" },
+                { id: "dna", name: "DNA", artist: "Kendrick Lamar", album: "DAMN.", image: "https://www.vladtv.com/images/size_fs/video-226925.jpg" },
+                { id: "tamagochi", name: "Tamagochi", artist: "TACONAFIDE", album: "Single", image: "https://i.ytimg.com/vi/odWxQ5eEnfE/maxresdefault.jpg" },
+                { id: "aint-no-rest", name: "Ain't No Rest for the Wicked", artist: "Cage the Elephant", album: "Cage the Elephant", image: "https://sosimpullsitebin.s3.amazonaws.com/wp-content/uploads/2017/08/hqdefault.jpg" }
+        ]}],
             image: "http://www.southpawer.com/wp-content/uploads/2016/12/yelawolf-mwa-new-stage-name-sober-up-rehab.jpg"
+            
         },
         { id: "artist2", name: "Kendrick Lamar", albums: [
             { id: "album1", name: "Co Za Mixtape", artist: "Many", songs: [
