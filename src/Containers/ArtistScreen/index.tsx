@@ -9,7 +9,6 @@ import AlbumItemArtistScreen from "../../Components/AlbumItemArtistScreen"
 import { styles } from "./styles";
 import { SelectAlbum } from "../AlbumsScreen/reducers";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
-import { PhotoGrid } from './PhotoGrid';
 interface ArtistScreenStateProps {
     artist: Artist;
 }
@@ -24,16 +23,7 @@ class ArtistScreen extends Component<ArtistScreenProps> {
         title: "Artist",
     };
 
-    renderSeparator = () => {
-        return (
-          <View
-            style={{
-              height: 1,
-              backgroundColor: "#CED0CE",
-            }}
-          />
-        );
-      };
+    
 
     render() {
         
@@ -42,22 +32,15 @@ class ArtistScreen extends Component<ArtistScreenProps> {
                 source={{ uri: this.props.artist.image }}
                 style={styles.image} />
             <Text style={styles.title}>{this.props.artist.name}</Text>
-            <PhotoGrid 
-                PhotosList= {this.props.artist.albums.map(album => <View key={album.id}>
-                    {this.renderSeparator()}
-                    <AlbumItemArtistScreen
-                        name={album.name}
-                        image={album.image}
-                        onPress={() => this.props.navigateToAlbum(album.id)} /></View>)}
-            />        
+           
             <View style={styles.listContainer}>
-                {this.props.artist.albums.map(album => <View key={album.id}>
-                    {this.renderSeparator()}
-                    <AlbumItemArtistScreen
+                {this.props.artist.albums.map(album => <View key={album.id} style={{paddingTop: 12,paddingBottom: 12,paddingRight: 8,paddingLeft: 8,width: "50%"}}>
+                    <AlbumItemArtistScreen 
                         name={album.name}
                         image={album.image}
                         onPress={() => this.props.navigateToAlbum(album.id)} /></View>)}
             </View>
+            
     
         </ScrollView>;
     }

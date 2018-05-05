@@ -15,7 +15,8 @@ export default class AlbumItemArtistScreen extends Component<AlbumItemArtistScre
         style={styles.container}>
        
           
-            <ImageBackground  source={{ uri: this.props.image }} style={styles.albumCover}>
+            <ImageBackground  source={{ uri: this.props.image }} 
+            style={styles.albumCover}>
                 <ImageBackground
                 source={undefined}
                 style={styles.shader}>

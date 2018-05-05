@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         
     },
     shader: {
-        height: 60,
+        height: "100%",
         display: "flex",
         justifyContent: "center",
         backgroundColor: "rgba(52, 52, 52, 0.6)"
@@ -20,8 +20,9 @@ export const styles = StyleSheet.create({
     name: {
         fontSize: 20,
         fontStyle: "italic",
+        paddingRight: 20,
         paddingLeft: 20,
-        color: "black",
+        color: "white",
     },
     
    

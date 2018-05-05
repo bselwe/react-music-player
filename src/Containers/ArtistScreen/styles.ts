@@ -13,6 +13,9 @@ export const styles = StyleSheet.create({
     listContainer: {
         marginTop: 20,
         width: "100%",
+        justifyContent: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
     },    
     progressContainer: {
         marginTop: 40,
