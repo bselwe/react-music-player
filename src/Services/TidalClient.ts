@@ -1,10 +1,10 @@
-import Tidal from "tidal-api-wrapper";
+import Tidal from "./Tidal";
 import config from "../../TidalConfig.json";
 
-const client = new Tidal({
-    countryCode: "PL",
+const tidalClient = new Tidal({
+    username: config.username,
+    password: config.password,
+    countryCode: "PL"
 });
 
-client.login(config.username, config.password);
-
-export default client;
+export default tidalClient;

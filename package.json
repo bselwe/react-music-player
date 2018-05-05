@@ -20,7 +20,7 @@
     "react-redux": "^5.0.7",
     "redux": "^3.6.0",
     "redux-actions": "^2.3.0",
-    "tidal-api-wrapper": "^1.6.1"
+    "tidalapi": "^0.2.3"
   },
   "devDependencies": {
     "@types/react": "^16.0.40",
