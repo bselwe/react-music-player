@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Button, FlatList } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
+import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
 import { SelectSong } from "./reducers";
 import SongItem from "../../Components/SongItem"
@@ -27,27 +28,31 @@ class SongsScreen extends Component<SongsScreenProps> {
 
     renderSeparator = () => {
         return (
-          <View
-            style={{
-              height: 1,
-              backgroundColor: "#CED0CE",
-            }}
-          />
+            <View
+                style={{
+                    height: 1,
+                    backgroundColor: "#CED0CE",
+                }}
+            />
         );
     };
 
     render() {
-        return <FlatList
-            data={this.props.songs}
-            keyExtractor={(item, index) => item.id}
-            ItemSeparatorComponent={this.renderSeparator}
-            renderItem={({ item } : { item: Song }) => 
-                <SongItem
-                    name={item.name}
-                    artist={item.artist}
-                    image={item.image}
-                    onPress={() => this.props.navigateToSong(item.id)} />}
-        />
+        return <View>
+            <SearchBar
+                placeholder='Search' />
+            <FlatList
+                data={this.props.songs}
+                keyExtractor={(item, index) => item.id}
+                ItemSeparatorComponent={this.renderSeparator}
+                renderItem={({ item }: { item: Song }) =>
+                    <SongItem
+                        name={item.name}
+                        artist={item.artist}
+                        image={item.image}
+                        onPress={() => this.props.navigateToSong(item.id)} />}
+            />
+        </View>
     }
 }
 

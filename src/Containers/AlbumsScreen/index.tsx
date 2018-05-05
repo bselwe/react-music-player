@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, Button, FlatList } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
+import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
 import { SelectAlbum } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
@@ -20,34 +21,38 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
     static navigationOptions = {
         title: "Albums",
     };
-    
+
     constructor(props) {
         super(props);
     }
 
     renderSeparator = () => {
         return (
-          <View
-            style={{
-              height: 1,
-              backgroundColor: "#CED0CE",
-            }}
-          />
+            <View
+                style={{
+                    height: 1,
+                    backgroundColor: "#CED0CE",
+                }}
+            />
         );
-      };
+    };
 
     render() {
-        return <FlatList
-            data={this.props.albums}
-            keyExtractor={(item, index) => item.id}
-            ItemSeparatorComponent={this.renderSeparator}
-            renderItem={({ item } : { item: Album }) => 
-                <AlbumItem
-                    name={item.name}
-                    artist={item.artist}
-                    image={item.image}
-                    onPress={() => this.props.navigateToAlbum(item.id)} />}
-        />
+        return <View>
+            <SearchBar
+                placeholder='Search' />
+            <FlatList
+                data={this.props.albums}
+                keyExtractor={(item, index) => item.id}
+                ItemSeparatorComponent={this.renderSeparator}
+                renderItem={({ item }: { item: Album }) =>
+                    <AlbumItem
+                        name={item.name}
+                        artist={item.artist}
+                        image={item.image}
+                        onPress={() => this.props.navigateToAlbum(item.id)} />}
+            />
+        </View>
     }
 }
 
