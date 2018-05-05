@@ -21,6 +21,12 @@ declare module "tidal-api-wrapper" {
         readonly popularity: number;
     }
 
+    export interface ArtistPictureUrl {
+        readonly sm: string;
+        readonly md: string;
+        readonly lg: string;
+    }
+
     export interface AlbumInfo {
         readonly id: number;
         readonly title: string; 
@@ -38,6 +44,13 @@ declare module "tidal-api-wrapper" {
         readonly popularity: number;
         readonly artist: ArtistInfo;
         readonly artists: ArtistInfo[];
+    }
+
+    export interface AlbumArtUrl {
+        readonly sm: string;
+        readonly md: string;
+        readonly lg: string;
+        readonly xl: string;
     }
 
     export interface Track {
@@ -75,5 +88,25 @@ declare module "tidal-api-wrapper" {
         search(query: string, type: "albums", limit?: number): Promise<Album[]>;
         search(query: string, type: "tracks", limit?: number): Promise<Track[]>;
         search(query: string, type: "playlists", limit?: number): Promise<Playlist[]>;
+        getTrack(id: number): Promise<Track>;
+        getFavoriteTracks(): Promise<Track[]>;
+        getAlbum(id: number): Promise<Album>;
+        getAlbumTracks(id: number): Promise<Track[]>;
+        getTopAlbums(): Promise<Album[]>;
+        getNewAlbums(): Promise<Album[]>;
+        getStaffPickAlbums(): Promise<Album[]>;
+        getFavoriteAlbums(): Promise<Album[]>;
+        getArtist(id: number): Promise<Artist>;
+        getArtistAlbums(id: number): Promise<Album[]>;
+        getArtistEPsAndSingles(id: number): Promise<Album[]>;
+        getArtistCompilations(id: number): Promise<Album[]>;
+        getArtistTopTracks(id: number, limit?: number): Promise<Track[]>;
+        getSimilarArtists(id: number): Promise<Artist[]>;
+        getFavoriteArtists(id: number): Promise<Artist[]>;
+        getPlaylist(uuid: string): Promise<Playlist>;
+        getPlaylistTracks(uuid: string): Promise<Track[]>;
+        getFavoritePlaylists(): Promise<Playlist[]>;
+        artistPicToUrl(uuid: string): ArtistPictureUrl;
+        albumArtToUrl(uuid: string): AlbumArtUrl;
     }
 }
