@@ -66,7 +66,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumScreenDispatchProps =
     return {
         navigateToSong: (songId: string) => {
             dispatch(SelectSong(songId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Song }));
+            //dispatch(NavigationActions.navigate({ routeName: routes.Song }));
         }
     }
 }
