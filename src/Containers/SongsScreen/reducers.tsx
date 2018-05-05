@@ -2,9 +2,9 @@ import { ReducerMap, createAction } from "redux-actions";
 import { addReducerFactory } from "../../Utils/AddReducer";
 import Tidal from "../../Services/TidalClient";
 
-// Tidal.search("Yelawolf", "artists").then(results => {
-//     console.log(results);
-// });
+Tidal.search("Yelawolf", "albums").then(results => {
+    console.log(results);
+});
 
 export let songsReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(songsReducers);
