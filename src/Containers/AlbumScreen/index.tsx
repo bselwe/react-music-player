@@ -37,6 +37,7 @@ class AlbumScreen extends Component<AlbumScreenProps> {
     };
 
     render() {
+        let i = 1;
         return <ScrollView contentContainerStyle={styles.container}>
             <Image
                 source={{ uri: this.props.album.image }}
@@ -47,6 +48,7 @@ class AlbumScreen extends Component<AlbumScreenProps> {
                 {this.props.album.songs.map(song => <View key={song.id}>
                     {this.renderSeparator()}
                     <SongItemAlbumScreen
+                        id={i++}
                         name={song.name}
                         onPress={() => this.props.navigateToSong(song.id)} /></View>)}
             </View>

@@ -3,7 +3,9 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         borderTopWidth: 0,
-        borderBottomWidth: 0
+        borderBottomWidth: 0,
+        display: "flex",
+        flexDirection: "row"
     },
     name: {
         padding: 5,
@@ -12,7 +14,7 @@ export const styles = StyleSheet.create({
     id: {
         fontSize: 20,
         paddingLeft: 20,
-        fontStyle: "italic",
-        color: "white",
+        paddingRight: 20,
+        alignSelf: "center"
     }
 });
