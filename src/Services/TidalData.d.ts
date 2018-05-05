@@ -43,7 +43,7 @@ interface Album extends AlbumInfo {
     readonly copyright: string;
     readonly videoCover: string;
     readonly popularity: number;
-    readonly artist: ArtistInfo;
+    readonly artist?: ArtistInfo;
     readonly artists: ArtistInfo[];
 }
 

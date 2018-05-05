@@ -51,7 +51,7 @@ class AlbumScreen extends Component<AlbumScreenProps> {
                 source={{ uri: Tidal.albumArtToUrl(this.props.album.cover).lg }}
                 style={styles.image} />
             <Text style={styles.title}>{this.props.album.title}</Text>
-            <Text style={styles.subtitle}>{this.props.album.artist.name}</Text>
+            <Text style={styles.subtitle}>{this.props.album.artist !== undefined ? this.props.album.artist.name : ""}</Text>
             <View style={styles.listContainer}>
                 {this.props.albumSongs.map(song => <View key={song.id}>
                     {this.renderSeparator()}

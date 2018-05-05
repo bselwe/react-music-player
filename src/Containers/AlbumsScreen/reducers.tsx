@@ -8,19 +8,19 @@ export let albumReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(albumReducers);
 
 export const FetchAlbumSongs = (albumId: number): Thunk =>
-(dispatch, getState) => {
-    (async () => {
-        const songs = await Tidal.getAlbumTracks(albumId);
-        dispatch(UpdateAlbumSongs(albumId, songs));
-    })();
-};
+    (dispatch, getState) => {
+        (async () => {
+            const songs = await Tidal.getAlbumTracks(albumId);
+            dispatch(UpdateAlbumSongs(albumId, songs));
+        })();
+    };
 
 export const UpdateAlbumSongs = createAction("ALBUMS/UPDATE_ALBUM_SONGS", (albumId: number, albumSongs: Track[]) => ({ albumId, albumSongs }));
 addReducer(UpdateAlbumSongs,
     (state, action) => {
         return {
             ...state,
-            albumsSongs: { 
+            albumsSongs: {
                 ...state.albumsSongs,
                 [action.payload.albumId]: action.payload.albumSongs
             }
@@ -28,12 +28,12 @@ addReducer(UpdateAlbumSongs,
     }
 );
 
-
 export const FetchAlbums = (query?: string): Thunk =>
     (dispatch, getState) => {
         (async () => {
-            query = query && query.length > 0 ? query : "money";
-            const albums = await Tidal.search(query, "albums", 30);
+            //query = query && query.length > 0 ? query : "money";
+            const albums = query !== undefined && query.length > 0 ?
+                await Tidal.search(query, "albums", 30) : await Tidal.getStaffPickAlbums();
             dispatch(UpdateAlbums(albums));
         })();
     };
