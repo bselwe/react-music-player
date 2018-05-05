@@ -5,7 +5,7 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import * as Progress from "react-native-progress";
 import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
-import SongItemAlbumScreen from "../../Components/SongItemAlbumScreen"
+import AlbumSongItem from "../../Components/AlbumSongItem"
 import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SelectSong } from "../SongsScreen/reducers";
@@ -47,7 +47,7 @@ class AlbumScreen extends Component<AlbumScreenProps> {
             <View style={styles.listContainer}>
                 {this.props.album.songs.map(song => <View key={song.id}>
                     {this.renderSeparator()}
-                    <SongItemAlbumScreen
+                    <AlbumSongItem
                         id={i++}
                         name={song.name}
                         onPress={() => this.props.navigateToSong(song.id)} /></View>)}

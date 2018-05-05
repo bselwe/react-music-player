@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
         display: "flex",
-        flex: 1,
         flexDirection: "column",
         alignItems: "center"
     },
@@ -11,6 +10,13 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: 240
     },
+    listContainer: {
+        marginTop: 20,
+        width: "100%",
+        justifyContent: 'center',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+    },    
     progressContainer: {
         marginTop: 40,
         alignSelf: "center"
