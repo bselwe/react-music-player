@@ -56,7 +56,7 @@ class SongsScreen extends Component<SongsScreenProps> {
                     <SongItem
                         name={item.title}
                         artist={item.artist.name}
-                        image={Tidal.albumArtToUrl(item.album.cover).lg}
+                        image={Tidal.albumArtToUrl(item.album.cover).md}
                         onPress={() => this.props.navigateToSong(item.id)} />}
             />
         </View>

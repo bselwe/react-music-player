@@ -3,7 +3,7 @@ import { View, Text, Button, FlatList } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
-import { SelectAlbum } from "./reducers";
+import { SelectAlbum, FetchAlbums } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
 import * as routes from "../../Infrastructure/Navigation/AlbumsNavigation";
 import Tidal from "../../Services/TidalClient";
@@ -13,6 +13,7 @@ interface AlbumsScreenStateProps {
 }
 
 interface AlbumsScreenDispatchProps {
+    fetchAlbums: (query?: string) => void;
     navigateToAlbum: (albumId: number) => void;
 }
 
@@ -25,6 +26,10 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
 
     constructor(props) {
         super(props);
+    }
+
+    componentDidMount() {
+        this.props.fetchAlbums();
     }
 
     renderSeparator = () => {
@@ -41,16 +46,17 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
     render() {
         return <View>
             <SearchBar
-                placeholder='Search' />
+                placeholder='Search'
+                onChangeText={(text) => this.props.fetchAlbums(text)}  />
             <FlatList
                 data={this.props.albums}
-                keyExtractor={(item, index) => item.id}
+                keyExtractor={(item, index) => item.id.toString()}
                 ItemSeparatorComponent={this.renderSeparator}
                 renderItem={({ item }: { item: Album }) =>
                     <AlbumItem
                         name={item.title}
                         artist={item.artist.name}
-                        image={Tidal.albumArtToUrl(item.cover).lg}
+                        image={Tidal.albumArtToUrl(item.cover).md}
                         onPress={() => this.props.navigateToAlbum(item.id)} />}
             />
         </View>
@@ -65,6 +71,9 @@ const mapStateToProps = ({ app }): AlbumsScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumsScreenDispatchProps => {
     return {
+        fetchAlbums: (query?: string) => {
+            dispatch(FetchAlbums(query));
+        },
         navigateToAlbum: (albumId: number) => {
             dispatch(SelectAlbum(albumId));
             dispatch(NavigationActions.navigate({ routeName: routes.Album }));
