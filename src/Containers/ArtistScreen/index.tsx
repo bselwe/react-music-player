@@ -1,20 +1,19 @@
 import React, { Component } from "react";
-import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid,FlatList } from "react-native";
+import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid,FlatList,ScrollView } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-// import { NavigationScreenProps, NavigationActions } from "react-navigation";
-// import { connect, Dispatch } from "react-redux";
-// import { SelectSong } from "./reducers";
+import * as routes from "../../Infrastructure/Navigation/AlbumsNavigation";
 import * as Progress from "react-native-progress";
 import { connect,Dispatch } from "react-redux";
 import AlbumItemArtistScreen from "../../Components/AlbumItemArtistScreen"
 import { styles } from "./styles";
-
+import { SelectAlbum } from "../AlbumsScreen/reducers";
+import { NavigationScreenProps, NavigationActions } from "react-navigation";
 interface ArtistScreenStateProps {
     artist: Artist;
 }
 interface ArtistScreenDispatchProps {
-    navigateToSong: (songId: string) => void;
+    navigateToAlbum: (albumId: string) => void;
 }
 
 type ArtistScreenProps = ArtistScreenStateProps & ArtistScreenDispatchProps; // & NavigationScreenProps;
@@ -37,24 +36,22 @@ class ArtistScreen extends Component<ArtistScreenProps> {
 
     render() {
         
-        return <View style={styles.container}>
+        return <ScrollView contentContainerStyle={styles.container}>
             <Image
                 source={{ uri: this.props.artist.image }}
                 style={styles.image} />
             <Text style={styles.title}>{this.props.artist.name}</Text>
             
-
-    {/* <FlatList
-            data={this.props.artist.albums}
-            keyExtractor={(item, index) => item.id}
-            ItemSeparatorComponent={this.renderSeparator}
-            renderItem={({ item } : { item: Album }) => 
-                <AlbumItemArtistScreen
-                    name={item.name}
-                    image={item.image}
-                    onPress={() => this.props.navigateToSong(item.id)} />}
-        /> */}
-        </View>;
+            <View style={styles.listContainer}>
+                {this.props.artist.albums.map(album => <View key={album.id}>
+                    {this.renderSeparator()}
+                    <AlbumItemArtistScreen
+                        name={album.name}
+                        //image={}
+                        onPress={() => this.props.navigateToAlbum(album.id)} /></View>)}
+            </View>
+    
+        </ScrollView>;
     }
 }
 
@@ -66,15 +63,15 @@ const mapStateToProps = ({ app }): ArtistScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistScreenDispatchProps => {
     return {
-        navigateToSong: (songId: string) => {
-          //  dispatch(SelectSong(songId));
-           // dispatch(NavigationActions.navigate({ routeName: routes.Song }));
+        navigateToAlbum: (albumId: string) => {
+            dispatch(SelectAlbum(albumId));
+            dispatch(NavigationActions.navigate({ routeName: routes.Album }));
         }
     }
 }
 const ArtistScreenContainer = connect(
     mapStateToProps,
-    undefined
+    mapDispatchToProps
 )(ArtistScreen);
 
 export default ArtistScreenContainer;

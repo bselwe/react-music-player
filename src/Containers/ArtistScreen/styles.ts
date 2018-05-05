@@ -11,6 +11,10 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: 240
     },
+    listContainer: {
+        marginTop: 20,
+        width: "100%",
+    },    
     progressContainer: {
         marginTop: 40,
         alignSelf: "center"
