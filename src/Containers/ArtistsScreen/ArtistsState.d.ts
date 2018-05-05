@@ -1,5 +1,5 @@
 interface ArtistsState {
-    readonly artists?: Artist[];
+    readonly artists: Artist[];
     readonly currentArtist?: Artist;
 }
 

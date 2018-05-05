@@ -7,6 +7,28 @@ import { Albums } from "../../Infrastructure/Navigation/AlbumsNavigation";
 export let albumReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(albumReducers);
 
+export const FetchAlbumSongs = (albumId: number): Thunk =>
+(dispatch, getState) => {
+    (async () => {
+        const songs = await Tidal.getAlbumTracks(albumId);
+        dispatch(UpdateAlbumSongs(albumId, songs));
+    })();
+};
+
+export const UpdateAlbumSongs = createAction("ALBUMS/UPDATE_ALBUM_SONGS", (albumId: number, albumSongs: Track[]) => ({ albumId, albumSongs }));
+addReducer(UpdateAlbumSongs,
+    (state, action) => {
+        return {
+            ...state,
+            albumsSongs: { 
+                ...state.albumsSongs,
+                [action.payload.albumId]: action.payload.albumSongs
+            }
+        }
+    }
+);
+
+
 export const FetchAlbums = (query?: string): Thunk =>
     (dispatch, getState) => {
         (async () => {
@@ -16,7 +38,7 @@ export const FetchAlbums = (query?: string): Thunk =>
         })();
     };
 
-export const UpdateAlbums = createAction("SONGS/UPDATE_ALBUMS", (albums: Album[]) => ({ albums }));
+export const UpdateAlbums = createAction("ALBUMS/UPDATE_ALBUMS", (albums: Album[]) => ({ albums }));
 addReducer(UpdateAlbums,
     (state, action) => {
         return {
@@ -26,7 +48,7 @@ addReducer(UpdateAlbums,
     }
 );
 
-export const SelectAlbum = createAction("HOME/SELECT_ALBUM", (albumId: number) => ({ albumId }));
+export const SelectAlbum = createAction("ALBUMS/SELECT_ALBUM", (albumId: number) => ({ albumId }));
 addReducer(SelectAlbum,
     (state, action) => {
         let album = state.albums.find(s => s.id == action.payload.albumId);

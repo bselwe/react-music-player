@@ -1,5 +1,5 @@
 interface SongsState {
-    readonly songs?: Track[];
+    readonly songs: Track[];
     readonly currentSong?: Track;
     readonly songDisplayed: boolean;
 }
