@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
     },
     albumCover: {
         width: "100%",
-        height: 200,
+        height: 150,
         display: "flex",
         justifyContent: "flex-end"
     },
