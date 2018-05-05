@@ -9,11 +9,13 @@ import ArtistAlbumItem from "../../Components/ArtistAlbumItem"
 import { styles } from "./styles";
 import { SelectAlbum } from "../AlbumsScreen/reducers";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
+import Tidal from "../../Services/TidalClient";
+
 interface ArtistScreenStateProps {
     artist: Artist;
 }
 interface ArtistScreenDispatchProps {
-    navigateToAlbum: (albumId: string) => void;
+    navigateToAlbum: (albumId: number) => void;
 }
 
 type ArtistScreenProps = ArtistScreenStateProps & ArtistScreenDispatchProps; // & NavigationScreenProps;
@@ -23,22 +25,19 @@ class ArtistScreen extends Component<ArtistScreenProps> {
         title: "Artist",
     };
 
-    
-
     render() {
-        
         return <ScrollView contentContainerStyle={styles.container}>
             <Image
-                source={{ uri: this.props.artist.image }}
+                source={{ uri: Tidal.artistPicToUrl(this.props.artist.picture).lg }}
                 style={styles.image} />
             <Text style={styles.title}>{this.props.artist.name}</Text>
            
             <View style={styles.listContainer}>
-                {this.props.artist.albums.map(album => <View key={album.id} style={{paddingTop: 12,paddingBottom: 12,paddingRight: 8,paddingLeft: 8,width: "50%"}}>
+                {/* {this.props.artist.albums.map(album => <View key={album.id} style={{paddingTop: 12,paddingBottom: 12,paddingRight: 8,paddingLeft: 8,width: "50%"}}>
                     <ArtistAlbumItem 
                         name={album.name}
                         image={album.image}
-                        onPress={() => this.props.navigateToAlbum(album.id)} /></View>)}
+                        onPress={() => this.props.navigateToAlbum(album.id)} /></View>)} */}
             </View>
             
     
@@ -54,7 +53,7 @@ const mapStateToProps = ({ app }): ArtistScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistScreenDispatchProps => {
     return {
-        navigateToAlbum: (albumId: string) => {
+        navigateToAlbum: (albumId: number) => {
             dispatch(SelectAlbum(albumId));
             dispatch(NavigationActions.navigate({ routeName: routes.Album }));
         }

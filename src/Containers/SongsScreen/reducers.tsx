@@ -1,23 +1,31 @@
 import { ReducerMap, createAction } from "redux-actions";
 import { addReducerFactory } from "../../Utils/AddReducer";
 import Tidal from "../../Services/TidalClient";
+import { Thunk } from "../../Utils/Thunk";
 
 export let songsReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(songsReducers);
 
-// Tidal.getTopAlbums().then(albums => {
-//     let album = albums[0];
-//     console.log(album);
-//     Tidal.getAlbumTracks(album.id).then(tracks => {
-//         let track = tracks[0];
-//         console.log(track);
-//         Tidal.getTrackStreamUrl(44593521).then(stream => {
-//             console.log(stream);
-//         })
-//     })
-// });
+export const FetchSongs = (query?: string): Thunk =>
+    (dispatch, getState) => {
+        (async () => {
+            query = query && query.length > 0 ? query : "money";
+            const songs = await Tidal.search(query, "tracks", 30);
+            dispatch(UpdateSongs(songs));
+        })();
+    };
 
-export const SelectSong = createAction("SONGS/SELECT_SONG", (songId: string) => ({ songId }));
+export const UpdateSongs = createAction("SONGS/UPDATE_SONGS", (songs: Track[]) => ({ songs }));
+addReducer(UpdateSongs,
+    (state, action) => {
+        return {
+            ...state,
+            songs: action.payload.songs
+        }
+    }
+);
+
+export const SelectSong = createAction("SONGS/SELECT_SONG", (songId: number) => ({ songId }));
 addReducer(SelectSong,
     (state, action) => {
         let song = state.songs.find(s => s.id == action.payload.songId);

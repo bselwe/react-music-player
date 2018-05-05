@@ -9,12 +9,12 @@ import * as Progress from "react-native-progress";
 import PlayIcon from "react-native-vector-icons/MaterialIcons";
 
 interface NowPlayingBarStateProps {
-    song: Song;
+    song: Track;
     songDisplayed: boolean;
 }
 
 interface NowPlayingBarDispatchProps {
-    navigateToSong: (songId: string) => void;
+    navigateToSong: (songId: number) => void;
 }
 
 type NowPlayingBarProps = NowPlayingBarStateProps & NowPlayingBarDispatchProps;
@@ -34,7 +34,7 @@ class NowPlayingBar extends React.Component<NowPlayingBarProps> {
                 borderColor="grey"
                 unfilledColor="grey"
                 color="#ffb74d" />
-            <Text style={styles.name}>{this.props.song.name}</Text>
+            <Text style={styles.name}>{this.props.song.title}</Text>
             <Text style={styles.artist}>{this.props.song.artist}</Text>
             <PlayIcon style={styles.play} size={36} name="play-circle-outline" />
         </TouchableOpacity> : null;
@@ -50,7 +50,7 @@ const mapStateToProps = ({ app }): NowPlayingBarStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): NowPlayingBarDispatchProps => {
     return {
-        navigateToSong: (songId: string) => {
+        navigateToSong: (songId: number) => {
             dispatch(NavigationActions.navigate({ routeName: routes.Song }));
         }
     }

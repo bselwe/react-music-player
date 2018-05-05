@@ -6,13 +6,14 @@ import { connect, Dispatch } from "react-redux";
 import { SelectAlbum } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
 import * as routes from "../../Infrastructure/Navigation/AlbumsNavigation";
+import Tidal from "../../Services/TidalClient";
 
 interface AlbumsScreenStateProps {
     albums: Album[];
 }
 
 interface AlbumsScreenDispatchProps {
-    navigateToAlbum: (albumId: string) => void;
+    navigateToAlbum: (albumId: number) => void;
 }
 
 type AlbumsScreenProps = AlbumsScreenStateProps & AlbumsScreenDispatchProps; // & NavigationScreenProps;
@@ -47,9 +48,9 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
                 ItemSeparatorComponent={this.renderSeparator}
                 renderItem={({ item }: { item: Album }) =>
                     <AlbumItem
-                        name={item.name}
-                        artist={item.artist}
-                        image={item.image}
+                        name={item.title}
+                        artist={item.artist.name}
+                        image={Tidal.albumArtToUrl(item.cover).lg}
                         onPress={() => this.props.navigateToAlbum(item.id)} />}
             />
         </View>
@@ -64,7 +65,7 @@ const mapStateToProps = ({ app }): AlbumsScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumsScreenDispatchProps => {
     return {
-        navigateToAlbum: (albumId: string) => {
+        navigateToAlbum: (albumId: number) => {
             dispatch(SelectAlbum(albumId));
             dispatch(NavigationActions.navigate({ routeName: routes.Album }));
         }

@@ -9,13 +9,14 @@ import AlbumSongItem from "../../Components/AlbumSongItem"
 import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SelectSong } from "../SongsScreen/reducers";
+import Tidal from "../../Services/TidalClient";
 
 interface AlbumScreenStateProps {
     album: Album;
 }
 
 interface AlbumScreenDispatchProps {
-    navigateToSong: (songId: string) => void;
+    navigateToSong: (songId: number) => void;
 }
 
 type AlbumScreenProps = AlbumScreenStateProps & AlbumScreenDispatchProps; // & NavigationScreenProps;
@@ -40,17 +41,17 @@ class AlbumScreen extends Component<AlbumScreenProps> {
         let i = 1;
         return <ScrollView contentContainerStyle={styles.container}>
             <Image
-                source={{ uri: this.props.album.image }}
+                source={{ uri: Tidal.albumArtToUrl(this.props.album.cover).lg }}
                 style={styles.image} />
-            <Text style={styles.title}>{this.props.album.name}</Text>
-            <Text style={styles.subtitle}>{this.props.album.artist}</Text>
+            <Text style={styles.title}>{this.props.album.title}</Text>
+            <Text style={styles.subtitle}>{this.props.album.artist.name}</Text>
             <View style={styles.listContainer}>
-                {this.props.album.songs.map(song => <View key={song.id}>
+                {/* {this.props.album.songs.map(song => <View key={song.id}>
                     {this.renderSeparator()}
                     <AlbumSongItem
                         id={i++}
                         name={song.name}
-                        onPress={() => this.props.navigateToSong(song.id)} /></View>)}
+                        onPress={() => this.props.navigateToSong(song.id)} /></View>)} */}
             </View>
         </ScrollView>;
     }
@@ -64,7 +65,7 @@ const mapStateToProps = ({ app }): AlbumScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumScreenDispatchProps => {
     return {
-        navigateToSong: (songId: string) => {
+        navigateToSong: (songId: number) => {
             dispatch(SelectSong(songId));
             //dispatch(NavigationActions.navigate({ routeName: routes.Song }));
         }

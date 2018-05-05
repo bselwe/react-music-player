@@ -6,9 +6,10 @@ import * as Progress from "react-native-progress";
 import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
 import { ToggleSong } from "./reducers";
+import Tidal from "../../Services/TidalClient";
 
 interface SongScreenStateProps {
-    song: Song;
+    song: Track;
 }
 
 interface SongScreenDispatchProps {
@@ -33,9 +34,9 @@ class SongScreen extends React.Component<SongScreenProps> {
     render() {
         return <View style={styles.container}>
             <Image
-                source={{ uri: this.props.song.image }}
+                source={{ uri: Tidal.albumArtToUrl(this.props.song.album.cover).lg }}
                 style={styles.image} />
-            <Text style={styles.title}>{this.props.song.name}</Text>
+            <Text style={styles.title}>{this.props.song.title}</Text>
             <Text style={styles.subtitle}>{this.props.song.artist} - {this.props.song.album}</Text>
             <View
                 style={styles.progressContainer}>

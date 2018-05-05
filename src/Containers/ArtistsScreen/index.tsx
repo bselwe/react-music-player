@@ -6,13 +6,14 @@ import { connect, Dispatch } from "react-redux";
 import { SelectArtist } from "./reducers";
 import ArtistItem from "../../Components/ArtistItem"
 import * as routes from "../../Infrastructure/Navigation/ArtistsNavigation";
+import Tidal from "../../Services/TidalClient";
 
 interface ArtistsScreenStateProps {
     artists: Artist[];
 }
 
 interface ArtistsScreenDispatchProps {
-    navigateToArtist: (artistId: string) => void;
+    navigateToArtist: (artistId: number) => void;
 }
 
 type ArtistsScreenProps = ArtistsScreenStateProps & ArtistsScreenDispatchProps; // & NavigationScreenProps;
@@ -48,7 +49,7 @@ class ArtistsScreen extends Component<ArtistsScreenProps> {
                 renderItem={({ item }: { item: Artist }) =>
                     <ArtistItem
                         name={item.name}
-                        image={item.image}
+                        image={Tidal.artistPicToUrl(item.picture).lg}
                         onPress={() => this.props.navigateToArtist(item.id)} />}
             />
         </View>
@@ -63,7 +64,7 @@ const mapStateToProps = ({ app }): ArtistsScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistsScreenDispatchProps => {
     return {
-        navigateToArtist: (artistId: string) => {
+        navigateToArtist: (artistId: number) => {
             dispatch(SelectArtist(artistId));
             dispatch(NavigationActions.navigate({ routeName: routes.Artist }));
         }
