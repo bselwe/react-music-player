@@ -15,6 +15,28 @@ export const FetchArtists = (query?: string): Thunk =>
         })();
     };
 
+export const UpdateArtistAlbums = createAction("ALBUMS/UPDATE_ARTIST_ALBUMS", (artistId: number, artistAlbums: Album[]) => ({ artistId, artistAlbums }));
+addReducer(UpdateArtistAlbums,
+    (state, action) => {
+        return {
+            ...state,
+            artistsAlbums: { 
+                ...state.artistsAlbums,
+                [action.payload.artistId]: action.payload.artistAlbums
+            }
+        }
+    }
+);
+
+export const FetchArtistAlbums = (artistId: number): Thunk =>
+    (dispatch, getState) => {
+        (async () => {
+            
+            const albums = await Tidal.getArtistAlbums(artistId);
+            dispatch(UpdateArtistAlbums(artistId, albums));
+        })();
+    };
+
 export const UpdateArtists = createAction("ARTISTS/UPDATE_ARTISTS", (artists: Artist[]) => ({ artists }));
 addReducer(UpdateArtists,
     (state, action) => {
@@ -36,3 +58,14 @@ addReducer(SelectArtist,
         };
     }
 );
+
+
+// export const FetchAlbums = (artistId: number): Thunk =>
+//     (dispatch, getState) => {
+//         (async () => {
+//             const albums = await Tidal.getArtistCompilations(artistId);
+//             dispatch(UpdateArtistAlbums(artistId, albums));
+//         })();
+//     };
+
+

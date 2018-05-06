@@ -14,8 +14,9 @@ const initialState: AppState = {
     songs: [],
     songDisplayed: false,
     artists: [],
+    artistsAlbums: {},
     albums: [],
-    albumsSongs: {}
+    albumsSongs: {},
 }
 
 const appReducer = handleActions({
