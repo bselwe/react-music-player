@@ -63746,7 +63746,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             _classCallCheck(this, Tidal);
 
             this.url = 'https://api.tidalhifi.com/v1';
-            this.webToken = 'wdgaB1CilGA-S_s2';
+            this.webToken = 'kgsOOmYk3zShYrNP';
             this.countryCode = options.countryCode || 'US';
             this.limit = options.limit || 1000;
             this.username = options.username;
@@ -63780,7 +63780,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 case 2:
                                     params = _querystring2.default.stringify({
                                         username: this.username,
-                                        password: this.password
+                                        password: this.password,
+                                        clientUniqueKey: this.webToken
                                     });
                                     _context.next = 5;
                                     return this.api({
@@ -92621,11 +92622,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         }
 
         _createClass(SongScreen, [{
-            key: "componentDidMount",
-            value: function componentDidMount() {
-                this.props.fetchSongStream(this.props.song.id);
-            }
-        }, {
             key: "componentWillMount",
             value: function componentWillMount() {
                 this.props.toggleSong(true);
@@ -92644,7 +92640,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         style: _styles.styles.container,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 18
                         }
                     },
                     _react3.default.createElement(_reactNative.Image, {
@@ -92654,7 +92650,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         style: _styles.styles.image,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 27
+                            lineNumber: 19
                         }
                     }),
                     _react3.default.createElement(
@@ -92663,7 +92659,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.title,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 28
+                                lineNumber: 20
                             }
                         },
                         this.props.song.title
@@ -92674,7 +92670,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.subtitle,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 29
+                                lineNumber: 21
                             }
                         },
                         this.props.song.artist.name,
@@ -92687,7 +92683,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.progressContainer,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 30
+                                lineNumber: 22
                             }
                         },
                         _react3.default.createElement(Progress.Bar, {
@@ -92698,7 +92694,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             color: "#ffb74d",
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 31
+                                lineNumber: 23
                             }
                         }),
                         _react3.default.createElement(
@@ -92707,7 +92703,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 style: _styles.styles.time,
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 32
+                                    lineNumber: 24
                                 }
                             },
                             _react3.default.createElement(
@@ -92716,7 +92712,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                     style: _styles.styles.time,
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 33
+                                        lineNumber: 25
                                     }
                                 },
                                 "0:00"
@@ -92727,7 +92723,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                     style: _styles.styles.time,
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 34
+                                        lineNumber: 26
                                     }
                                 },
                                 "-3:46"
@@ -92740,7 +92736,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.controlls,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 37
+                                lineNumber: 29
                             }
                         },
                         _react3.default.createElement(
@@ -92748,7 +92744,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 38
+                                    lineNumber: 30
                                 }
                             },
                             _react3.default.createElement(_Entypo2.default, {
@@ -92756,7 +92752,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 style: _styles.styles.iconFastForwardBackword,
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 39
+                                    lineNumber: 31
                                 }
                             })
                         ),
@@ -92765,7 +92761,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 41
+                                    lineNumber: 33
                                 }
                             },
                             _react3.default.createElement(_Entypo2.default, {
@@ -92773,7 +92769,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 style: _styles.styles.iconControllerPlay,
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 42
+                                    lineNumber: 34
                                 }
                             })
                         ),
@@ -92782,7 +92778,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 44
+                                    lineNumber: 36
                                 }
                             },
                             _react3.default.createElement(_Entypo2.default, {
@@ -92790,7 +92786,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 style: _styles.styles.iconFastForwardBackword,
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 45
+                                    lineNumber: 37
                                 }
                             })
                         )
@@ -92801,7 +92797,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.sound,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 48
+                                lineNumber: 40
                             }
                         },
                         _react3.default.createElement(_reactNative.Slider, {
@@ -92812,7 +92808,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             minimumTrackTintColor: "grey",
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 49
+                                lineNumber: 41
                             }
                         }),
                         _react3.default.createElement(_FontAwesome2.default, {
@@ -92820,7 +92816,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.iconSound,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 50
+                                lineNumber: 42
                             }
                         })
                     )
@@ -92844,9 +92840,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return {
-            fetchSongStream: function fetchSongStream(songId) {
-                dispatch((0, _reducers.FetchSongStream)(songId));
-            },
             toggleSong: function toggleSong(displayed) {
                 dispatch((0, _reducers.ToggleSong)(displayed));
             }
@@ -96516,6 +96509,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _MaterialIcons2 = _interopRequireDefault(_MaterialIcons);
 
+    var _reactNativeVideo = _require(_dependencyMap[9], "react-native-video");
+
+    var _reactNativeVideo2 = _interopRequireDefault(_reactNativeVideo);
+
+    var _reducers = _require(_dependencyMap[10], "../SongScreen/reducers");
+
     function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -96551,68 +96550,110 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         function NowPlayingBar(props) {
             _classCallCheck(this, NowPlayingBar);
 
-            return _possibleConstructorReturn(this, (NowPlayingBar.__proto__ || Object.getPrototypeOf(NowPlayingBar)).call(this, props));
+            var _this = _possibleConstructorReturn(this, (NowPlayingBar.__proto__ || Object.getPrototypeOf(NowPlayingBar)).call(this, props));
+
+            _this.onPlayProgress = function (_ref) {
+                var currentTime = _ref.currentTime;
+                console.log(currentTime);
+            };
+
+            _this.onPlayEnd = function () {};
+
+            return _this;
         }
 
         _createClass(NowPlayingBar, [{
+            key: "componentWillReceiveProps",
+            value: function componentWillReceiveProps(props) {
+                if (this.props.song === undefined || props.song.stream != this.props.song.stream) this.props.fetchSongStream(props.song.id);
+            }
+        }, {
             key: "render",
             value: function render() {
                 var _this2 = this;
 
-                return this.props.song && !this.props.songDisplayed ? _react3.default.createElement(
-                    _reactNative.TouchableOpacity,
+                return this.props.song ? _react3.default.createElement(
+                    _reactNative.View,
                     {
-                        style: _styles.styles.container,
-                        onPress: function onPress() {
-                            return _this2.props.navigateToSong(_this2.props.song.id);
-                        },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 14
+                            lineNumber: 25
                         }
                     },
-                    _react3.default.createElement(Progress.Bar, {
-                        style: _styles.styles.progress,
-                        progress: 0.4,
-                        borderColor: "grey",
-                        unfilledColor: "grey",
-                        color: "#ffb74d",
+                    this.props.song.stream && _react3.default.createElement(_reactNativeVideo2.default, {
+                        source: {
+                            uri: this.props.song.stream
+                        },
+                        ref: "audio",
+                        volume: 1.0,
+                        muted: false,
+                        paused: false,
+                        playInBackground: true,
+                        playWhenInactive: true,
+                        onProgress: this.onPlayProgress,
+                        onEnd: this.onPlayEnd,
+                        resizeMode: "cover",
+                        repeat: false,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 15
+                            lineNumber: 26
                         }
                     }),
-                    _react3.default.createElement(
-                        _reactNative.Text,
+                    !this.props.songDisplayed && _react3.default.createElement(
+                        _reactNative.TouchableOpacity,
                         {
-                            style: _styles.styles.name,
+                            style: _styles.styles.container,
+                            onPress: function onPress() {
+                                return _this2.props.navigateToSong(_this2.props.song.id);
+                            },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 16
+                                lineNumber: 28
                             }
                         },
-                        this.props.song.title
-                    ),
-                    _react3.default.createElement(
-                        _reactNative.Text,
-                        {
-                            style: _styles.styles.artist,
+                        _react3.default.createElement(Progress.Bar, {
+                            style: _styles.styles.progress,
+                            progress: 0.4,
+                            borderColor: "grey",
+                            unfilledColor: "grey",
+                            color: "#ffb74d",
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 17
+                                lineNumber: 30
                             }
-                        },
-                        this.props.song.artist.name
-                    ),
-                    _react3.default.createElement(_MaterialIcons2.default, {
-                        style: _styles.styles.play,
-                        size: 36,
-                        name: "play-circle-outline",
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 18
-                        }
-                    })
+                        }),
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.name,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 31
+                                }
+                            },
+                            this.props.song.title
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.artist,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 32
+                                }
+                            },
+                            this.props.song.artist.name
+                        ),
+                        _react3.default.createElement(_MaterialIcons2.default, {
+                            style: _styles.styles.play,
+                            size: 36,
+                            name: "play-circle-outline",
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 33
+                            }
+                        })
+                    )
                 ) : null;
             }
         }]);
@@ -96620,8 +96661,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         return NowPlayingBar;
     }(_react3.default.Component));
 
-    var mapStateToProps = function mapStateToProps(_ref) {
-        var app = _ref.app;
+    var mapStateToProps = function mapStateToProps(_ref2) {
+        var app = _ref2.app;
         return {
             song: app.currentSong,
             songDisplayed: app.songDisplayed
@@ -96630,6 +96671,9 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return {
+            fetchSongStream: function fetchSongStream(songId) {
+                dispatch((0, _reducers.FetchSongStream)(songId));
+            },
             navigateToSong: function navigateToSong(songId) {
                 dispatch(_reactNavigation.NavigationActions.navigate({
                     routeName: routes.Song
@@ -96640,7 +96684,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var NowPlayingBarContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NowPlayingBar);
     exports.default = NowPlayingBarContainer;
-},788,[12,22,176,580,491,579,789,763,665],"src/Containers/NowPlayingBar/index.tsx");
+},788,[12,22,176,580,491,579,789,763,665,790,520],"src/Containers/NowPlayingBar/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -96959,5 +97003,449 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         }
     });
 },796,[176],"src/Components/ArtistAlbumItem/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _react2 = _require(_dependencyMap[0], "react");
+
+  var _react3 = _interopRequireDefault(_react2);
+
+  var _index = _require(_dependencyMap[1], "./../react-transform-hmr/lib/index.js");
+
+  var _index2 = _interopRequireDefault(_index);
+
+  var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-video/Video.js";
+
+  var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+  var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+  var _propTypes = _require(_dependencyMap[2], "prop-types");
+
+  var _propTypes2 = _interopRequireDefault(_propTypes);
+
+  var _reactNative = _require(_dependencyMap[3], "react-native");
+
+  var _resolveAssetSource = _require(_dependencyMap[4], "react-native/Libraries/Image/resolveAssetSource");
+
+  var _resolveAssetSource2 = _interopRequireDefault(_resolveAssetSource);
+
+  var _VideoResizeMode = _require(_dependencyMap[5], "./VideoResizeMode.js");
+
+  var _VideoResizeMode2 = _interopRequireDefault(_VideoResizeMode);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+  var _components = {
+    Video: {
+      displayName: "Video"
+    }
+  };
+
+  var _reactTransformHmrLibIndexJs2 = (0, _index2.default)({
+    filename: "/Users/Selve/Documents/Projects/MusicPlayer/node_modules/react-native-video/Video.js",
+    components: _components,
+    locals: [module],
+    imports: [_react3.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _reactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var styles = _reactNative.StyleSheet.create({
+    base: {
+      overflow: 'hidden'
+    }
+  });
+
+  var Video = _wrapComponent("Video")(function (_Component) {
+    _inherits(Video, _Component);
+
+    function Video(props) {
+      _classCallCheck(this, Video);
+
+      var _this = _possibleConstructorReturn(this, (Video.__proto__ || Object.getPrototypeOf(Video)).call(this, props));
+
+      _this.seek = function (time) {
+        _this.setNativeProps({
+          seek: time
+        });
+      };
+
+      _this.presentFullscreenPlayer = function () {
+        _this.setNativeProps({
+          fullscreen: true
+        });
+      };
+
+      _this.dismissFullscreenPlayer = function () {
+        _this.setNativeProps({
+          fullscreen: false
+        });
+      };
+
+      _this._assignRoot = function (component) {
+        _this._root = component;
+      };
+
+      _this._onLoadStart = function (event) {
+        if (_this.props.onLoadStart) {
+          _this.props.onLoadStart(event.nativeEvent);
+        }
+      };
+
+      _this._onLoad = function (event) {
+        if (_this.props.onLoad) {
+          _this.props.onLoad(event.nativeEvent);
+        }
+      };
+
+      _this._onError = function (event) {
+        if (_this.props.onError) {
+          _this.props.onError(event.nativeEvent);
+        }
+      };
+
+      _this._onProgress = function (event) {
+        if (_this.props.onProgress) {
+          _this.props.onProgress(event.nativeEvent);
+        }
+      };
+
+      _this._onSeek = function (event) {
+        if (_this.state.showPoster) {
+          _this.setState({
+            showPoster: false
+          });
+        }
+
+        if (_this.props.onSeek) {
+          _this.props.onSeek(event.nativeEvent);
+        }
+      };
+
+      _this._onEnd = function (event) {
+        if (_this.props.onEnd) {
+          _this.props.onEnd(event.nativeEvent);
+        }
+      };
+
+      _this._onTimedMetadata = function (event) {
+        if (_this.props.onTimedMetadata) {
+          _this.props.onTimedMetadata(event.nativeEvent);
+        }
+      };
+
+      _this._onFullscreenPlayerWillPresent = function (event) {
+        if (_this.props.onFullscreenPlayerWillPresent) {
+          _this.props.onFullscreenPlayerWillPresent(event.nativeEvent);
+        }
+      };
+
+      _this._onFullscreenPlayerDidPresent = function (event) {
+        if (_this.props.onFullscreenPlayerDidPresent) {
+          _this.props.onFullscreenPlayerDidPresent(event.nativeEvent);
+        }
+      };
+
+      _this._onFullscreenPlayerWillDismiss = function (event) {
+        if (_this.props.onFullscreenPlayerWillDismiss) {
+          _this.props.onFullscreenPlayerWillDismiss(event.nativeEvent);
+        }
+      };
+
+      _this._onFullscreenPlayerDidDismiss = function (event) {
+        if (_this.props.onFullscreenPlayerDidDismiss) {
+          _this.props.onFullscreenPlayerDidDismiss(event.nativeEvent);
+        }
+      };
+
+      _this._onReadyForDisplay = function (event) {
+        if (_this.props.onReadyForDisplay) {
+          _this.props.onReadyForDisplay(event.nativeEvent);
+        }
+      };
+
+      _this._onPlaybackStalled = function (event) {
+        if (_this.props.onPlaybackStalled) {
+          _this.props.onPlaybackStalled(event.nativeEvent);
+        }
+      };
+
+      _this._onPlaybackResume = function (event) {
+        if (_this.props.onPlaybackResume) {
+          _this.props.onPlaybackResume(event.nativeEvent);
+        }
+      };
+
+      _this._onPlaybackRateChange = function (event) {
+        if (_this.state.showPoster && event.nativeEvent.playbackRate !== 0) {
+          _this.setState({
+            showPoster: false
+          });
+        }
+
+        if (_this.props.onPlaybackRateChange) {
+          _this.props.onPlaybackRateChange(event.nativeEvent);
+        }
+      };
+
+      _this._onAudioBecomingNoisy = function () {
+        if (_this.props.onAudioBecomingNoisy) {
+          _this.props.onAudioBecomingNoisy();
+        }
+      };
+
+      _this._onAudioFocusChanged = function (event) {
+        if (_this.props.onAudioFocusChanged) {
+          _this.props.onAudioFocusChanged(event.nativeEvent);
+        }
+      };
+
+      _this._onBuffer = function (event) {
+        if (_this.props.onBuffer) {
+          _this.props.onBuffer(event.nativeEvent);
+        }
+      };
+
+      _this.state = {
+        showPoster: true
+      };
+      return _this;
+    }
+
+    _createClass(Video, [{
+      key: "setNativeProps",
+      value: function setNativeProps(nativeProps) {
+        this._root.setNativeProps(nativeProps);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var resizeMode = this.props.resizeMode;
+        var source = (0, _resolveAssetSource2.default)(this.props.source) || {};
+        var uri = source.uri || '';
+
+        if (uri && uri.match(/^\//)) {
+          uri = "file://" + uri;
+        }
+
+        var isNetwork = !!(uri && uri.match(/^https?:/));
+        var isAsset = !!(uri && uri.match(/^(assets-library|file|content|ms-appx|ms-appdata):/));
+        var nativeResizeMode = void 0;
+
+        if (resizeMode === _VideoResizeMode2.default.stretch) {
+          nativeResizeMode = _reactNative.NativeModules.UIManager.RCTVideo.Constants.ScaleToFill;
+        } else if (resizeMode === _VideoResizeMode2.default.contain) {
+          nativeResizeMode = _reactNative.NativeModules.UIManager.RCTVideo.Constants.ScaleAspectFit;
+        } else if (resizeMode === _VideoResizeMode2.default.cover) {
+          nativeResizeMode = _reactNative.NativeModules.UIManager.RCTVideo.Constants.ScaleAspectFill;
+        } else {
+          nativeResizeMode = _reactNative.NativeModules.UIManager.RCTVideo.Constants.ScaleNone;
+        }
+
+        var nativeProps = _extends({}, this.props);
+
+        _extends(nativeProps, {
+          style: [styles.base, nativeProps.style],
+          resizeMode: nativeResizeMode,
+          src: {
+            uri: uri,
+            isNetwork: isNetwork,
+            isAsset: isAsset,
+            type: source.type || '',
+            mainVer: source.mainVer || 0,
+            patchVer: source.patchVer || 0
+          },
+          onVideoLoadStart: this._onLoadStart,
+          onVideoLoad: this._onLoad,
+          onVideoError: this._onError,
+          onVideoProgress: this._onProgress,
+          onVideoSeek: this._onSeek,
+          onVideoEnd: this._onEnd,
+          onVideoBuffer: this._onBuffer,
+          onTimedMetadata: this._onTimedMetadata,
+          onVideoFullscreenPlayerWillPresent: this._onFullscreenPlayerWillPresent,
+          onVideoFullscreenPlayerDidPresent: this._onFullscreenPlayerDidPresent,
+          onVideoFullscreenPlayerWillDismiss: this._onFullscreenPlayerWillDismiss,
+          onVideoFullscreenPlayerDidDismiss: this._onFullscreenPlayerDidDismiss,
+          onReadyForDisplay: this._onReadyForDisplay,
+          onPlaybackStalled: this._onPlaybackStalled,
+          onPlaybackResume: this._onPlaybackResume,
+          onPlaybackRateChange: this._onPlaybackRateChange,
+          onAudioFocusChanged: this._onAudioFocusChanged,
+          onAudioBecomingNoisy: this._onAudioBecomingNoisy
+        });
+
+        if (this.props.poster && this.state.showPoster) {
+          var posterStyle = {
+            position: 'absolute',
+            left: 0,
+            top: 0,
+            right: 0,
+            bottom: 0,
+            resizeMode: 'contain'
+          };
+          return _react3.default.createElement(
+            _reactNative.View,
+            {
+              style: nativeProps.style,
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 225
+              }
+            },
+            _react3.default.createElement(RCTVideo, _extends({
+              ref: this._assignRoot
+            }, nativeProps, {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 226
+              }
+            })),
+            _react3.default.createElement(_reactNative.Image, {
+              style: posterStyle,
+              source: {
+                uri: this.props.poster
+              },
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 230
+              }
+            })
+          );
+        }
+
+        return _react3.default.createElement(RCTVideo, _extends({
+          ref: this._assignRoot
+        }, nativeProps, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 239
+          }
+        }));
+      }
+    }]);
+
+    return Video;
+  }(_react2.Component));
+
+  exports.default = Video;
+  Video.propTypes = _extends({
+    src: _propTypes2.default.object,
+    seek: _propTypes2.default.number,
+    fullscreen: _propTypes2.default.bool,
+    onVideoLoadStart: _propTypes2.default.func,
+    onVideoLoad: _propTypes2.default.func,
+    onVideoBuffer: _propTypes2.default.func,
+    onVideoError: _propTypes2.default.func,
+    onVideoProgress: _propTypes2.default.func,
+    onVideoSeek: _propTypes2.default.func,
+    onVideoEnd: _propTypes2.default.func,
+    onTimedMetadata: _propTypes2.default.func,
+    onVideoFullscreenPlayerWillPresent: _propTypes2.default.func,
+    onVideoFullscreenPlayerDidPresent: _propTypes2.default.func,
+    onVideoFullscreenPlayerWillDismiss: _propTypes2.default.func,
+    onVideoFullscreenPlayerDidDismiss: _propTypes2.default.func,
+    source: _propTypes2.default.oneOfType([_propTypes2.default.shape({
+      uri: _propTypes2.default.string
+    }), _propTypes2.default.number]),
+    resizeMode: _propTypes2.default.string,
+    poster: _propTypes2.default.string,
+    repeat: _propTypes2.default.bool,
+    paused: _propTypes2.default.bool,
+    muted: _propTypes2.default.bool,
+    volume: _propTypes2.default.number,
+    rate: _propTypes2.default.number,
+    playInBackground: _propTypes2.default.bool,
+    playWhenInactive: _propTypes2.default.bool,
+    ignoreSilentSwitch: _propTypes2.default.oneOf(['ignore', 'obey']),
+    disableFocus: _propTypes2.default.bool,
+    controls: _propTypes2.default.bool,
+    currentTime: _propTypes2.default.number,
+    progressUpdateInterval: _propTypes2.default.number,
+    onLoadStart: _propTypes2.default.func,
+    onLoad: _propTypes2.default.func,
+    onBuffer: _propTypes2.default.func,
+    onError: _propTypes2.default.func,
+    onProgress: _propTypes2.default.func,
+    onSeek: _propTypes2.default.func,
+    onEnd: _propTypes2.default.func,
+    onFullscreenPlayerWillPresent: _propTypes2.default.func,
+    onFullscreenPlayerDidPresent: _propTypes2.default.func,
+    onFullscreenPlayerWillDismiss: _propTypes2.default.func,
+    onFullscreenPlayerDidDismiss: _propTypes2.default.func,
+    onReadyForDisplay: _propTypes2.default.func,
+    onPlaybackStalled: _propTypes2.default.func,
+    onPlaybackResume: _propTypes2.default.func,
+    onPlaybackRateChange: _propTypes2.default.func,
+    onAudioFocusChanged: _propTypes2.default.func,
+    onAudioBecomingNoisy: _propTypes2.default.func,
+    scaleX: _propTypes2.default.number,
+    scaleY: _propTypes2.default.number,
+    translateX: _propTypes2.default.number,
+    translateY: _propTypes2.default.number,
+    rotation: _propTypes2.default.number
+  }, _reactNative.View.propTypes);
+  var RCTVideo = (0, _reactNative.requireNativeComponent)('RCTVideo', Video, {
+    nativeOnly: {
+      src: true,
+      seek: true,
+      fullscreen: true
+    }
+  });
+},790,[12,22,284,176,317,791],"node_modules/react-native-video/Video.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+
+  var _keymirror = _require(_dependencyMap[0], "keymirror");
+
+  var _keymirror2 = _interopRequireDefault(_keymirror);
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  exports.default = (0, _keymirror2.default)({
+    contain: null,
+    cover: null,
+    stretch: null
+  });
+},791,[792],"node_modules/react-native-video/VideoResizeMode.js");
+__d(function (global, _require, module, exports, _dependencyMap) {
+  "use strict";
+
+  var keyMirror = function keyMirror(obj) {
+    var ret = {};
+    var key;
+
+    if (!(obj instanceof Object && !Array.isArray(obj))) {
+      throw new Error('keyMirror(...): Argument must be an object.');
+    }
+
+    for (key in obj) {
+      if (!obj.hasOwnProperty(key)) {
+        continue;
+      }
+
+      ret[key] = key;
+    }
+
+    return ret;
+  };
+
+  module.exports = keyMirror;
+},792,[],"node_modules/keymirror/index.js");
 require(186);
 require(11);

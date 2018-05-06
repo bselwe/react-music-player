@@ -17,7 +17,8 @@ class Tidal {
 
     constructor(options: TidalOptions) {
         this.url = 'https://api.tidalhifi.com/v1';
-        this.webToken = 'wdgaB1CilGA-S_s2';
+        // this.webToken = 'wdgaB1CilGA-S_s2';
+        this.webToken = 'kgsOOmYk3zShYrNP';
         this.countryCode = options.countryCode || 'US';
         this.limit = options.limit || 1000;
         this.username = options.username;
@@ -43,6 +44,7 @@ class Tidal {
         const params = qs.stringify({
             username: this.username,
             password: this.password,
+            clientUniqueKey: this.webToken
         });
 
         const res = await this.api({

@@ -65,7 +65,6 @@ interface Track {
     readonly artist: ArtistInfo;
     readonly artists: ArtistInfo[];
     readonly album: AlbumInfo;
-    readonly url: string;
 }
 
 interface TrackStream {

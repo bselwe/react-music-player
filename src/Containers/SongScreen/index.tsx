@@ -6,15 +6,13 @@ import * as Progress from "react-native-progress";
 import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
 import { ToggleSong, FetchSongStream } from "./reducers";
-import Video from "react-native-video";
 import Tidal from "../../Services/TidalClient";
 
 interface SongScreenStateProps {
-    song: Track & { stream: string };
+    song: Track;
 }
 
 interface SongScreenDispatchProps {
-    fetchSongStream: (songId: number) => void;
     toggleSong: (displayed: boolean) => void;
 }
 
@@ -25,10 +23,6 @@ class SongScreen extends React.Component<SongScreenProps> {
         title: "Song",
     };
 
-    componentDidMount() {
-        this.props.fetchSongStream(this.props.song.id);
-    }
-
     componentWillMount() {
         this.props.toggleSong(true);
     }
@@ -36,13 +30,6 @@ class SongScreen extends React.Component<SongScreenProps> {
     componentWillUnmount() {
         this.props.toggleSong(false);
     }
-
-    // onPlayProgress = ({ currentTime }) => {
-    //     console.log(currentTime);
-    // }
-
-    // onPlayEnd = () => {
-    // }
 
     render() {
         return <View style={styles.container}>
@@ -96,9 +83,6 @@ const mapStateToProps = ({ app }): SongScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): SongScreenDispatchProps => {
     return {
-        fetchSongStream: (songId: number) => {
-            dispatch(FetchSongStream(songId));
-        },
         toggleSong: (displayed: boolean) => {
             dispatch(ToggleSong(displayed));
         }
