@@ -6,19 +6,6 @@ import Tidal from "../../Services/TidalClient";
 export let songReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(songReducers);
 
-export const UpdateSongStream = createAction("SONGS/UPDATE_SONG_STREAM", (stream: TrackStream) => ({ stream }));
-addReducer(UpdateSongStream,
-    (state, action) => {
-        return {
-            ...state,
-            currentSong: {
-                ...state.currentSong,
-                stream: action.payload.stream.url
-            }
-        }
-    }
-);
-
 export const ToggleSong = createAction("SONG/TOGGLE_SONG", (displayed: boolean) => ({ displayed }));
 addReducer(ToggleSong,
     (state, action) => {

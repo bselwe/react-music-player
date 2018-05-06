@@ -9,6 +9,7 @@ import { albumsMiddleware, AlbumsNavigator, albumsRouterReducer } from './Infras
 import { artistsRouterReducer, artistsMiddleware } from './Infrastructure/Navigation/ArtistsNavigation';
 import { artistReducers } from './Containers/ArtistsScreen/reducers';
 import { albumReducers } from './Containers/AlbumsScreen/reducers';
+import { nowPlayingReducers } from './Containers/NowPlayingBar/reducers';
 
 const initialState: AppState = {
     songs: [],
@@ -22,6 +23,7 @@ const initialState: AppState = {
 const appReducer = handleActions({
     ...songsReducers,
     ...songReducers,
+    ...nowPlayingReducers,
     ...artistReducers,
     ...albumReducers
 }, initialState);

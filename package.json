@@ -7,8 +7,10 @@
     "test": "jest"
   },
   "dependencies": {
-    "@types/react-native-video": "^2.0.4",
+    "@types/moment-duration-format": "^2.2.0",
     "axios": "^0.18.0",
+    "moment": "^2.22.1",
+    "moment-duration-format": "^2.2.2",
     "querystring": "^0.2.0",
     "react": "^16.3.0-alpha.1",
     "react-native": "0.54.4",
@@ -25,10 +27,12 @@
     "tidalapi": "^0.2.3"
   },
   "devDependencies": {
+    "@types/moment": "^2.13.0",
     "@types/react": "^16.0.40",
     "@types/react-native": "^0.52.16",
     "@types/react-native-elements": "^0.18.0",
     "@types/react-native-vector-icons": "^4.6.0",
+    "@types/react-native-video": "^2.0.4",
     "@types/react-navigation": "^1.5.7",
     "@types/react-redux": "^5.0.15",
     "@types/redux-actions": "^2.2.4",

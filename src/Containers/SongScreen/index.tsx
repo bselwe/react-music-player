@@ -1,19 +1,26 @@
 import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
+import VolumeIcon from "react-native-vector-icons/Ionicons";
 import * as Progress from "react-native-progress";
 import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
-import { ToggleSong, FetchSongStream } from "./reducers";
+import { ToggleSong } from "./reducers";
 import Tidal from "../../Services/TidalClient";
+import { UpdateSongTime, UpdateSongPaused, UpdateSongMuted, UpdateSongVolume } from "../NowPlayingBar/reducers";
+import * as moment from "moment";
+import "moment-duration-format";
 
 interface SongScreenStateProps {
-    song: Track;
+    song: CurrentTrack;
 }
 
 interface SongScreenDispatchProps {
     toggleSong: (displayed: boolean) => void;
+    updateSongTime: (time: number) => void;
+    updateSongPaused: (paused: boolean) => void;
+    updateSongMuted: (muted: boolean) => void;
+    updateSongVolume: (volume: number) => void;
 }
 
 type SongScreenProps = SongScreenStateProps & SongScreenDispatchProps;
@@ -42,21 +49,22 @@ class SongScreen extends React.Component<SongScreenProps> {
                 style={styles.progressContainer}>
                 <Progress.Bar 
                     style={styles.progress}
-                    progress={0.4}
+                    width={null}
+                    progress={this.props.song.time / this.props.song.duration}
                     borderColor="grey"
                     unfilledColor="grey"
                     color="#ffb74d" />
                 <View style={styles.time}>
-                    <Text style={styles.time}>0:00</Text>
-                    <Text style={styles.time}>-3:46</Text>
+                    <Text style={styles.time}>{moment.duration(this.props.song.time, "seconds").format("m:ss", { trim: false })}</Text>
+                    <Text style={styles.time}>{moment.duration(this.props.song.duration, "seconds").format("m:ss", { trim: false })}</Text>
                 </View>
             </View>
             <View style={styles.controlls}>
                 <TouchableOpacity>
                     <EntypoIcon name="controller-fast-backward" style={styles.iconFastForwardBackword}/>
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <EntypoIcon name="controller-play" style={styles.iconControllerPlay}/>
+                <TouchableOpacity onPress={() => this.props.updateSongPaused(!this.props.song.paused)}>
+                    <EntypoIcon name={`controller-${this.props.song.paused ? 'play' : 'paus'}`} style={styles.iconControllerPlayPause}/>
                 </TouchableOpacity>
                 <TouchableOpacity>
                     <EntypoIcon name="controller-fast-forward" style={styles.iconFastForwardBackword}/>
@@ -64,12 +72,16 @@ class SongScreen extends React.Component<SongScreenProps> {
             </View>
             <View style={styles.sound}>
                 <Slider 
-                    step={1}
-                    maximumValue={100}
-                    value={60}
+                    step={0.01}
+                    maximumValue={1}
+                    onValueChange={volume => this.props.updateSongVolume(volume)}
+                    value={this.props.song.volume}
                     thumbTintColor={"#ffb74d"}
                     minimumTrackTintColor={"grey"} />
-                <FontAwesomeIcon name="volume-up" style={styles.iconSound}/>
+                <VolumeIcon 
+                    name={`md-volume-${this.props.song.muted ? 'off' : 'up'}`} 
+                    style={styles.iconSound}
+                    onPress={() => this.props.updateSongMuted(!this.props.song.muted)} />
             </View>
         </View>;
     }
@@ -83,9 +95,11 @@ const mapStateToProps = ({ app }): SongScreenStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): SongScreenDispatchProps => {
     return {
-        toggleSong: (displayed: boolean) => {
-            dispatch(ToggleSong(displayed));
-        }
+        toggleSong: (displayed: boolean) => dispatch(ToggleSong(displayed)),
+        updateSongTime: (time: number) => dispatch(UpdateSongTime(time)),
+        updateSongPaused: (paused: boolean) => dispatch(UpdateSongPaused(paused)),
+        updateSongMuted: (muted: boolean) => dispatch(UpdateSongMuted(muted)),
+        updateSongVolume: (volume: number) => dispatch(UpdateSongVolume(volume))
     }
 }
 

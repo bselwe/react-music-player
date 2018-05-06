@@ -33,7 +33,7 @@ export const SelectSong = (songId: number) =>
                 song = await Tidal.getTrack(songId);
 
             let stream = (await Tidal.getTrackStreamUrl(songId)).url;
-            dispatch(UpdateSelectedSong({ ...song, stream }));
+            dispatch(UpdateSelectedSong({ ...song, stream, paused: false, time: 0, muted: false, volume: 1.0 }));
         })();
     };
 
