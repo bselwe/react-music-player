@@ -35,7 +35,7 @@ class NowPlayingBar extends React.Component<NowPlayingBarProps> {
                 unfilledColor="grey"
                 color="#ffb74d" />
             <Text style={styles.name}>{this.props.song.title}</Text>
-            <Text style={styles.artist}>{this.props.song.artist}</Text>
+            <Text style={styles.artist}>{this.props.song.artist.name}</Text>
             <PlayIcon style={styles.play} size={36} name="play-circle-outline" />
         </TouchableOpacity> : null;
     }

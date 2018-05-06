@@ -91,7 +91,7 @@ class Tidal {
         return res.data;
     }
 
-    async getTrackStreamUrl(id: number): Promise<any> {
+    async getTrackStreamUrl(id: number): Promise<TrackStream> {
         if (!this.userId || !this.sessionId) {
             await this.login();
             return this.getTrackStreamUrl(id);
@@ -117,9 +117,7 @@ class Tidal {
         });
 
         const { items } = res.data;
-
         const tracks = items.map(item => item.item);
-
         return tracks;
     }
 
