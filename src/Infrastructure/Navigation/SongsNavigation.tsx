@@ -27,7 +27,7 @@ export const songsRouterReducer = (state = initialState, action) => {
 
 export const songsMiddleware = createReactNavigationReduxMiddleware(
     "Songs",
-    state => state.songs,
+    state => state.songsRouter,
 );
 
 const addListener = createReduxBoundAddListener("Songs");
@@ -51,7 +51,7 @@ class SongsNavigatorWithState extends React.Component<any> {
 }
   
 const mapStateToProps = state => ({
-    nav: state.songs,
+    nav: state.songsRouter,
 });
 
 export default connect(mapStateToProps)(SongsNavigatorWithState);

@@ -45,7 +45,7 @@ export const tabRouterReducer = (state = initialState, action) => {
 
 export const tabMiddleware = createReactNavigationReduxMiddleware(
     "Tab",
-    state => state.tab,
+    state => state.tabRouter,
 );
 
 const addListener = createReduxBoundAddListener("Tab");
@@ -59,7 +59,7 @@ const TabNavigatorWithState = ({ dispatch, nav }) => (
 );
   
 const mapStateToProps = state => ({
-    nav: state.tab,
+    nav: state.tabRouter,
 });
 
 export default connect(mapStateToProps)(TabNavigatorWithState);

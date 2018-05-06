@@ -8,15 +8,13 @@ import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 import PlayIcon from "react-native-vector-icons/MaterialIcons";
 import Video from "react-native-video";
-import { FetchSongStream } from "../SongScreen/reducers";
 
 interface NowPlayingBarStateProps {
-    song: Track & { stream: string };
+    song: CurrentTrack;
     songDisplayed: boolean;
 }
 
 interface NowPlayingBarDispatchProps {
-    fetchSongStream: (songId: number) => void;
     navigateToSong: (songId: number) => void;
 }
 
@@ -27,13 +25,7 @@ class NowPlayingBar extends React.Component<NowPlayingBarProps> {
         super(props);
     }
 
-    componentWillReceiveProps(props: NowPlayingBarProps) {
-        if (this.props.song === undefined || props.song.stream != this.props.song.stream)
-            this.props.fetchSongStream(props.song.id);
-    }
-
     onPlayProgress = ({ currentTime }) => {
-        console.log(currentTime);
     }
 
     onPlayEnd = () => {
@@ -80,9 +72,6 @@ const mapStateToProps = ({ app }): NowPlayingBarStateProps => {
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): NowPlayingBarDispatchProps => {
     return {
-        fetchSongStream: (songId: number) => {
-            dispatch(FetchSongStream(songId));
-        },
         navigateToSong: (songId: number) => {
             dispatch(NavigationActions.navigate({ routeName: routes.Song }));
         }

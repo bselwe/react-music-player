@@ -1,6 +1,10 @@
+interface CurrentTrack extends Track {
+    readonly stream: string;
+}
+
 interface SongsState {
     readonly songs: Track[];
-    readonly currentSong?: Track & { stream: string };
+    readonly currentSong?: CurrentTrack;
     readonly songDisplayed: boolean;
 }
 

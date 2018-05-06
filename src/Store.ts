@@ -27,10 +27,10 @@ const appReducer = handleActions({
 }, initialState);
 
 const reducers = combineReducers({
-    tab: tabRouterReducer,
-    songs: songsRouterReducer,
-    albums: albumsRouterReducer,
-    artists: artistsRouterReducer,
+    tabRouter: tabRouterReducer,
+    songsRouter: songsRouterReducer,
+    albumsRouter: albumsRouterReducer,
+    artistsRouter: artistsRouterReducer,
     app: appReducer 
 });
 

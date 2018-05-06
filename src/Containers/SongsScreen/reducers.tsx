@@ -25,14 +25,24 @@ addReducer(UpdateSongs,
     }
 );
 
-export const SelectSong = createAction("SONGS/SELECT_SONG", (songId: number) => ({ songId }));
-addReducer(SelectSong,
-    (state, action) => {
-        let song = state.songs.find(s => s.id == action.payload.songId);
+export const SelectSong = (songId: number) =>
+    (dispatch, getState: () => ({ app: AppState })) => {
+        (async () => {
+            let song = getState().app.songs.find(s => s.id == songId);
+            if (song === undefined) 
+                song = await Tidal.getTrack(songId);
 
+            let stream = (await Tidal.getTrackStreamUrl(songId)).url;
+            dispatch(UpdateSelectedSong({ ...song, stream }));
+        })();
+    };
+
+export const UpdateSelectedSong = createAction("SONGS/UPDATE_SELECTED_SONG", (song: CurrentTrack) => ({ song }));
+addReducer(UpdateSelectedSong,
+    (state, action) => {
         return {
             ...state,
-            currentSong: song
+            currentSong: action.payload.song
         };
     }
 );
