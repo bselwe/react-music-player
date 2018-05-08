@@ -9,13 +9,17 @@ import AlbumSongItem from "../../Components/AlbumSongItem"
 import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SelectSong } from "../SongsScreen/reducers";
+import Tidal from "../../Services/TidalClient";
+import { FetchAlbumSongs } from "../AlbumsScreen/reducers";
 
 interface AlbumScreenStateProps {
     album: Album;
+    albumSongs: Track[];
 }
 
 interface AlbumScreenDispatchProps {
-    navigateToSong: (songId: string) => void;
+    fetchAlbumSongs: (albumId: number) => void;
+    navigateToSong: (songId: number) => void;
 }
 
 type AlbumScreenProps = AlbumScreenStateProps & AlbumScreenDispatchProps; // & NavigationScreenProps;
@@ -24,6 +28,10 @@ class AlbumScreen extends Component<AlbumScreenProps> {
     static navigationOptions = {
         title: "Album",
     };
+
+    componentDidMount() {
+        this.props.fetchAlbumSongs(this.props.album.id);
+    }
 
     renderSeparator = () => {
         return (
@@ -40,16 +48,16 @@ class AlbumScreen extends Component<AlbumScreenProps> {
         let i = 1;
         return <ScrollView contentContainerStyle={styles.container}>
             <Image
-                source={{ uri: this.props.album.image }}
+                source={{ uri: Tidal.albumArtToUrl(this.props.album.cover).lg }}
                 style={styles.image} />
-            <Text style={styles.title}>{this.props.album.name}</Text>
-            <Text style={styles.subtitle}>{this.props.album.artist}</Text>
+            <Text style={styles.title}>{this.props.album.title}</Text>
+            <Text style={styles.subtitle}>{this.props.album.artist !== undefined ? this.props.album.artist.name : ""}</Text>
             <View style={styles.listContainer}>
-                {this.props.album.songs.map(song => <View key={song.id}>
+                {this.props.albumSongs.map(song => <View key={song.id}>
                     {this.renderSeparator()}
                     <AlbumSongItem
                         id={i++}
-                        name={song.name}
+                        name={song.title}
                         onPress={() => this.props.navigateToSong(song.id)} /></View>)}
             </View>
         </ScrollView>;
@@ -58,15 +66,18 @@ class AlbumScreen extends Component<AlbumScreenProps> {
 
 const mapStateToProps = ({ app }): AlbumScreenStateProps => {
     return {
-        album: app.currentAlbum
+        album: app.currentAlbum,
+        albumSongs: app.currentAlbum !== undefined && app.currentAlbum.id in app.albumsSongs ? app.albumsSongs[app.currentAlbum.id] : []
     }
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumScreenDispatchProps => {
     return {
-        navigateToSong: (songId: string) => {
+        fetchAlbumSongs: (albumId: number) => {
+            dispatch(FetchAlbumSongs(albumId));
+        },
+        navigateToSong: (songId: number) => {
             dispatch(SelectSong(songId));
-            //dispatch(NavigationActions.navigate({ routeName: routes.Song }));
         }
     }
 }

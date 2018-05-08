@@ -27,7 +27,7 @@ export const artistsRouterReducer = (state = initialState, action) => {
 
 export const artistsMiddleware = createReactNavigationReduxMiddleware(
     "Artists",
-    state => state.artists,
+    state => state.artistsRouter,
 );
 
 const addListener = createReduxBoundAddListener("Artists");
@@ -51,7 +51,7 @@ class ArtistsNavigatorWithState extends React.Component<any> {
 }
   
 const mapStateToProps = state => ({
-    nav: state.artists,
+    nav: state.artistsRouter,
 });
 
 export default connect(mapStateToProps)(ArtistsNavigatorWithState);

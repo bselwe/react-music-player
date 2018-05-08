@@ -27,7 +27,7 @@ export const albumsRouterReducer = (state = initialState, action) => {
 
 export const albumsMiddleware = createReactNavigationReduxMiddleware(
     "Albums",
-    state => state.albums,
+    state => state.albumsRouter,
 );
 
 const addListener = createReduxBoundAddListener("Albums");
@@ -59,7 +59,7 @@ class AlbumsNavigatorWithState extends React.Component<any> {
 }
   
 const mapStateToProps = state => ({
-    nav: state.albums,
+    nav: state.albumsRouter,
 });
 
 export default connect(mapStateToProps)(AlbumsNavigatorWithState);

@@ -1,14 +1,14 @@
-interface Song {
-    readonly id: string;
-    readonly name: string;
-    readonly artist: string;
-    readonly album: string;
-    readonly image: string;
+interface CurrentTrack extends Track {
+    readonly stream: string;
+    readonly time: number;
+    readonly paused: boolean;
+    readonly muted: boolean;
+    readonly volume: number;
 }
 
 interface SongsState {
-    readonly songs?: Song[];
-    readonly currentSong?: Song;
+    readonly songs: Track[];
+    readonly currentSong?: CurrentTrack;
     readonly songDisplayed: boolean;
 }
 

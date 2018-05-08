@@ -40,7 +40,7 @@ export const styles = StyleSheet.create({
         paddingTop: 8,
         fontSize: 18
     },
-    iconControllerPlay: {
+    iconControllerPlayPause: {
         fontSize: 50,
         marginHorizontal: 20
     },

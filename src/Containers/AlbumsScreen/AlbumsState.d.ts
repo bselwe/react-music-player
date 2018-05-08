@@ -1,14 +1,7 @@
-interface Album {
-    readonly id: string;
-    readonly name: string;
-    readonly artist: string;
-    readonly songs: Song[];
-    readonly image: string;
-}
-
 interface AlbumsState {
-    readonly albums?: Album[];
+    readonly albums: Album[];
     readonly currentAlbum?: Album;
+    readonly albumsSongs: { [albumId: number]: Track[] }
 }
 
 interface AppState extends AlbumsState {
