@@ -75,7 +75,7 @@ export const SelectPrevSong = (fromAlbum: boolean) =>
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: state.songs.indexOf(song)
+                index: state.playlist.indexOf(song)
             }
             ));
         })();
@@ -97,7 +97,7 @@ export const SelectNextSong = (fromAlbum: boolean) =>
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: state.songs.indexOf(song)
+                index: state.playlist.indexOf(song)
             }
             ));
         })();
