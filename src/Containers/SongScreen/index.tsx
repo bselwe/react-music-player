@@ -8,6 +8,7 @@ import { styles } from "./styles";
 import { ToggleSong } from "./reducers";
 import Tidal from "../../Services/TidalClient";
 import { UpdateSongTime, UpdateSongPaused, UpdateSongMuted, UpdateSongVolume } from "../NowPlayingBar/reducers";
+import { SelectPrevSong, SelectNextSong } from "../SongsScreen/reducers"
 import * as moment from "moment";
 import "moment-duration-format";
 
@@ -21,6 +22,8 @@ interface SongScreenDispatchProps {
     updateSongPaused: (paused: boolean) => void;
     updateSongMuted: (muted: boolean) => void;
     updateSongVolume: (volume: number) => void;
+    selectPrevSong: (fromAlbum: boolean) => void;
+    selectNextSong: (fromAlbum: boolean) => void;
 }
 
 type SongScreenProps = SongScreenStateProps & SongScreenDispatchProps;
@@ -60,13 +63,13 @@ class SongScreen extends React.Component<SongScreenProps> {
                 </View>
             </View>
             <View style={styles.controlls}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.selectPrevSong(false)}>
                     <EntypoIcon name="controller-fast-backward" style={styles.iconFastForwardBackword}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.updateSongPaused(!this.props.song.paused)}>
                     <EntypoIcon name={`controller-${this.props.song.paused ? 'play' : 'paus'}`} style={styles.iconControllerPlayPause}/>
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.props.selectNextSong(false)}>
                     <EntypoIcon name="controller-fast-forward" style={styles.iconFastForwardBackword}/>
                 </TouchableOpacity>
             </View>
@@ -99,7 +102,9 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): SongScreenDispatchProps =>
         updateSongTime: (time: number) => dispatch(UpdateSongTime(time)),
         updateSongPaused: (paused: boolean) => dispatch(UpdateSongPaused(paused)),
         updateSongMuted: (muted: boolean) => dispatch(UpdateSongMuted(muted)),
-        updateSongVolume: (volume: number) => dispatch(UpdateSongVolume(volume))
+        updateSongVolume: (volume: number) => dispatch(UpdateSongVolume(volume)),
+        selectPrevSong: (fromAlbum: boolean) => dispatch(SelectPrevSong()),
+        selectNextSong: (fromAlbum: boolean) => dispatch(SelectNextSong())
     }
 }
 

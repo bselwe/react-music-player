@@ -75,7 +75,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): SongsScreenDispatchProps =
             dispatch(FetchSongs(query));
         },
         navigateToSong: (songId: number) => {
-            dispatch(SelectSong(songId));
+            dispatch(SelectSong(songId, undefined));
         }
     }
 }
