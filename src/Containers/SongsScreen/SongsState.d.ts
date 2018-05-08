@@ -5,7 +5,7 @@ interface CurrentTrack extends Track {
     readonly muted: boolean;
     readonly volume: number;
     readonly index: number;
-    readonly fromAlbum: boolean;
+    readonly albumId?: number;
 }
 
 interface SongsState {

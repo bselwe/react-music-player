@@ -103,8 +103,8 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): SongScreenDispatchProps =>
         updateSongPaused: (paused: boolean) => dispatch(UpdateSongPaused(paused)),
         updateSongMuted: (muted: boolean) => dispatch(UpdateSongMuted(muted)),
         updateSongVolume: (volume: number) => dispatch(UpdateSongVolume(volume)),
-        selectPrevSong: (fromAlbum: boolean) => dispatch(SelectPrevSong(fromAlbum)),
-        selectNextSong: (fromAlbum: boolean) => dispatch(SelectNextSong(fromAlbum))
+        selectPrevSong: (fromAlbum: boolean) => dispatch(SelectPrevSong()),
+        selectNextSong: (fromAlbum: boolean) => dispatch(SelectNextSong())
     }
 }
 

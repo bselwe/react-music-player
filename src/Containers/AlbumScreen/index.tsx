@@ -19,7 +19,7 @@ interface AlbumScreenStateProps {
 
 interface AlbumScreenDispatchProps {
     fetchAlbumSongs: (albumId: number) => void;
-    navigateToSong: (songId: number) => void;
+    navigateToSong: (songId: number, albumId: number) => void;
 }
 
 type AlbumScreenProps = AlbumScreenStateProps & AlbumScreenDispatchProps; // & NavigationScreenProps;
@@ -58,7 +58,7 @@ class AlbumScreen extends Component<AlbumScreenProps> {
                     <AlbumSongItem
                         id={i++}
                         name={song.title}
-                        onPress={() => this.props.navigateToSong(song.id)} /></View>)}
+                        onPress={() => this.props.navigateToSong(song.id, this.props.album.id)} /></View>)}
             </View>
         </ScrollView>;
     }
@@ -76,8 +76,8 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumScreenDispatchProps =
         fetchAlbumSongs: (albumId: number) => {
             dispatch(FetchAlbumSongs(albumId));
         },
-        navigateToSong: (songId: number) => {
-            dispatch(SelectSong(songId));
+        navigateToSong: (songId: number, albumId: number) => {
+            dispatch(SelectSong(songId, albumId));
         }
     }
 }

@@ -25,11 +25,12 @@ addReducer(UpdateSongs,
     }
 );
 
-export const SelectSong = (songId: number, fromAlbum: boolean) =>
+export const SelectSong = (songId: number, albumId?: number) =>
     (dispatch, getState: () => ({ app: AppState })) => {
         (async () => {
             let state = getState().app;
-            let song = state.songs.find(s => s.id == songId);
+            let songs = albumId !== undefined ? state.albumsSongs[albumId] : state.songs;
+            let song = songs.find(s => s.id == songId);
             if (song === undefined)
                 song = await Tidal.getTrack(songId);
 
@@ -37,15 +38,17 @@ export const SelectSong = (songId: number, fromAlbum: boolean) =>
             dispatch(UpdateSelectedSong({
                 ...song,
                 stream,
-                fromAlbum,
+                albumId,
                 paused: false,
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: state.songs.indexOf(song)
+                index: songs.indexOf(song)
             }
             ));
-            dispatch(UpdatePlaylist(state.songs));
+
+            dispatch(UpdatePlaylist(songs));
+            
         })();
     };
 
@@ -59,7 +62,7 @@ addReducer(UpdatePlaylist,
     }
 );
 
-export const SelectPrevSong = (fromAlbum: boolean) =>
+export const SelectPrevSong = () =>
     (dispatch, getState: () => ({ app: AppState })) => {
         (async () => {
             let state = getState().app;
@@ -70,7 +73,6 @@ export const SelectPrevSong = (fromAlbum: boolean) =>
             dispatch(UpdateSelectedSong({
                 ...song,
                 stream,
-                fromAlbum,
                 paused: false,
                 time: 0,
                 muted: false,
@@ -81,7 +83,7 @@ export const SelectPrevSong = (fromAlbum: boolean) =>
         })();
     };
 
-export const SelectNextSong = (fromAlbum: boolean) =>
+export const SelectNextSong = () =>
     (dispatch, getState: () => ({ app: AppState })) => {
         (async () => {
             let state = getState().app;
@@ -92,7 +94,6 @@ export const SelectNextSong = (fromAlbum: boolean) =>
             dispatch(UpdateSelectedSong({
                 ...song,
                 stream,
-                fromAlbum,
                 paused: false,
                 time: 0,
                 muted: false,
