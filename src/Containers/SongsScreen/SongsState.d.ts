@@ -8,7 +8,9 @@ interface CurrentTrack extends Track {
 
 interface SongsState {
     readonly songs: Track[];
+    readonly playlist: Track[];
     readonly currentSong?: CurrentTrack;
+    readonly currentSongIndex: number;
     readonly songDisplayed: boolean;
 }
 

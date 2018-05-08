@@ -29,13 +29,23 @@ export const SelectSong = (songId: number) =>
     (dispatch, getState: () => ({ app: AppState })) => {
         (async () => {
             let song = getState().app.songs.find(s => s.id == songId);
-            if (song === undefined) 
+            if (song === undefined)
                 song = await Tidal.getTrack(songId);
 
             let stream = (await Tidal.getTrackStreamUrl(songId)).url;
             dispatch(UpdateSelectedSong({ ...song, stream, paused: false, time: 0, muted: false, volume: 1.0 }));
         })();
     };
+
+export const UpdatePlaylist = createAction("SONGS/UPDATE_PLAYLIST", (songs: Track[]) => ({ songs }));
+addReducer(UpdatePlaylist,
+    (state, action) => {
+        return {
+            ...state,
+            playlist: action.payload.songs
+        }
+    }
+);
 
 export const UpdateSelectedSong = createAction("SONGS/UPDATE_SELECTED_SONG", (song: CurrentTrack) => ({ song }));
 addReducer(UpdateSelectedSong,
