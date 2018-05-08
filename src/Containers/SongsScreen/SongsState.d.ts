@@ -4,13 +4,14 @@ interface CurrentTrack extends Track {
     readonly paused: boolean;
     readonly muted: boolean;
     readonly volume: number;
+    readonly index: number;
+    readonly fromAlbum: boolean;
 }
 
 interface SongsState {
     readonly songs: Track[];
     readonly playlist: Track[];
     readonly currentSong?: CurrentTrack;
-    readonly currentSongIndex: number;
     readonly songDisplayed: boolean;
 }
 

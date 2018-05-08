@@ -25,15 +25,26 @@ addReducer(UpdateSongs,
     }
 );
 
-export const SelectSong = (songId: number) =>
+export const SelectSong = (songId: number, fromAlbum: boolean) =>
     (dispatch, getState: () => ({ app: AppState })) => {
         (async () => {
-            let song = getState().app.songs.find(s => s.id == songId);
+            let state = getState().app;
+            let song = state.songs.find(s => s.id == songId);
             if (song === undefined)
                 song = await Tidal.getTrack(songId);
 
             let stream = (await Tidal.getTrackStreamUrl(songId)).url;
-            dispatch(UpdateSelectedSong({ ...song, stream, paused: false, time: 0, muted: false, volume: 1.0 }));
+            dispatch(UpdateSelectedSong({
+                ...song,
+                stream,
+                fromAlbum,
+                paused: false,
+                time: 0,
+                muted: false,
+                volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
+                index: state.songs.indexOf(song)}
+            ));
+            dispatch(UpdatePlaylist(state.songs));
         })();
     };
 
@@ -46,6 +57,28 @@ addReducer(UpdatePlaylist,
         }
     }
 );
+
+export const SelectPrevSong = (fromAlbum: boolean) =>
+    (dispatch, getState: () => ({ app: AppState })) => {
+        (async () => {
+            let state = getState().app;
+            let songIndex = state.currentSong.index - 1 < 0 ? state.playlist.length - 1 : state.currentSong.index - 1;
+            let song = state.playlist.find(s => state.playlist.indexOf(s) == songIndex);
+
+            let stream = (await Tidal.getTrackStreamUrl(song.id)).url;
+            dispatch(UpdateSelectedSong({
+                ...song,
+                stream,
+                fromAlbum,
+                paused: false,
+                time: 0,
+                muted: false,
+                volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
+                index: state.songs.indexOf(song)}
+            ));
+            dispatch(UpdatePlaylist(state.songs));
+        })();
+    };
 
 export const UpdateSelectedSong = createAction("SONGS/UPDATE_SELECTED_SONG", (song: CurrentTrack) => ({ song }));
 addReducer(UpdateSelectedSong,
