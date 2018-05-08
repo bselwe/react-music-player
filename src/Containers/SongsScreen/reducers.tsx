@@ -42,7 +42,8 @@ export const SelectSong = (songId: number, fromAlbum: boolean) =>
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: state.songs.indexOf(song)}
+                index: state.songs.indexOf(song)
+            }
             ));
             dispatch(UpdatePlaylist(state.songs));
         })();
@@ -74,9 +75,31 @@ export const SelectPrevSong = (fromAlbum: boolean) =>
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: state.songs.indexOf(song)}
+                index: state.songs.indexOf(song)
+            }
             ));
-            dispatch(UpdatePlaylist(state.songs));
+        })();
+    };
+
+export const SelectNextSong = (fromAlbum: boolean) =>
+    (dispatch, getState: () => ({ app: AppState })) => {
+        (async () => {
+            let state = getState().app;
+            let songIndex = state.currentSong.index + 1 >= state.playlist.length ? 0 : state.currentSong.index + 1;
+            let song = state.playlist.find(s => state.playlist.indexOf(s) == songIndex);
+
+            let stream = (await Tidal.getTrackStreamUrl(song.id)).url;
+            dispatch(UpdateSelectedSong({
+                ...song,
+                stream,
+                fromAlbum,
+                paused: false,
+                time: 0,
+                muted: false,
+                volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
+                index: state.songs.indexOf(song)
+            }
+            ));
         })();
     };
 
