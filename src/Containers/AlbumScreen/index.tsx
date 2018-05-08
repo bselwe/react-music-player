@@ -29,8 +29,9 @@ class AlbumScreen extends Component<AlbumScreenProps> {
         title: "Album",
     };
 
-    componentDidMount() {
-        this.props.fetchAlbumSongs(this.props.album.id);
+    componentWillReceiveProps(props: AlbumScreenProps) {
+        if (this.props.albumSongs.length == 0 && props.album !== undefined)
+            this.props.fetchAlbumSongs(props.album.id);
     }
 
     renderSeparator = () => {
@@ -45,8 +46,10 @@ class AlbumScreen extends Component<AlbumScreenProps> {
     };
 
     render() {
+        console.log(this.props.album);
+        console.log(this.props.albumSongs);
         let i = 1;
-        return <ScrollView contentContainerStyle={styles.container}>
+        return this.props.album !== undefined ? <ScrollView contentContainerStyle={styles.container}>
             <Image
                 source={{ uri: Tidal.albumArtToUrl(this.props.album.cover).lg }}
                 style={styles.image} />
@@ -60,7 +63,7 @@ class AlbumScreen extends Component<AlbumScreenProps> {
                         name={song.title}
                         onPress={() => this.props.navigateToSong(song.id, this.props.album.id)} /></View>)}
             </View>
-        </ScrollView>;
+        </ScrollView> : null
     }
 }
 

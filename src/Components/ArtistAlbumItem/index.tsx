@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableNativeFeedback, Image, ImageBackground } from "react-native";
+import { View, Text, TouchableNativeFeedback, TouchableOpacity, Image, ImageBackground } from "react-native";
 import { styles } from "./styles";
 
 interface ArtistAlbumItemProps {
@@ -10,7 +10,7 @@ interface ArtistAlbumItemProps {
 
 export default class ArtistAlbumItem extends Component<ArtistAlbumItemProps> {
     render() {
-        return <TouchableNativeFeedback 
+        return <TouchableOpacity 
         onPress={this.props.onPress}
         style={styles.container}>
        
@@ -26,6 +26,6 @@ export default class ArtistAlbumItem extends Component<ArtistAlbumItemProps> {
              </ImageBackground>
             
         
-        </TouchableNativeFeedback>;
+        </TouchableOpacity>;
     }
 }
