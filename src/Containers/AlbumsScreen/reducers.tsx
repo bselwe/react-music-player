@@ -48,14 +48,24 @@ addReducer(UpdateAlbums,
     }
 );
 
-export const SelectAlbum = createAction("ALBUMS/SELECT_ALBUM", (albumId: number) => ({ albumId }));
-addReducer(SelectAlbum,
-    (state, action) => {
-        let album = state.albums.find(s => s.id == action.payload.albumId);
+export const SelectAlbum = (albumId: number) =>
+    (dispatch, getState: () => ({ app: AppState })) => {
+        (async () => {
+            let state = getState().app;
+            let album = state.albums.find(s => s.id == albumId);
 
+            if(album == undefined)
+                album = await Tidal.getAlbum(albumId);
+            dispatch(UpdateSelectedAlbum(album));
+        })();
+    };
+
+export const UpdateSelectedAlbum = createAction("ALBUMS/UPDATE_SELECTED_ALBUM", (album: Album) => ({ album }));
+addReducer(UpdateSelectedAlbum,
+    (state, action) => {
         return {
             ...state,
-            currentAlbum: album
+            currentAlbum: action.payload.album
         };
     }
 );
