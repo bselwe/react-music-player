@@ -6,7 +6,6 @@ import * as Progress from "react-native-progress";
 import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
 import AlbumSongItem from "../../Components/AlbumSongItem"
-import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SelectSong } from "../SongsScreen/reducers";
 import Tidal from "../../Services/TidalClient";
@@ -67,10 +66,10 @@ class AlbumScreen extends Component<AlbumScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }): AlbumScreenStateProps => {
+const mapStateToProps = (state: AppState): AlbumScreenStateProps => {
     return {
-        album: app.currentAlbum,
-        albumSongs: app.currentAlbum !== undefined && app.currentAlbum.id in app.albumsSongs ? app.albumsSongs[app.currentAlbum.id] : []
+        album: state.currentAlbum,
+        albumSongs: state.currentAlbum !== undefined && state.currentAlbum.id in state.albumsSongs ? state.albumsSongs[state.currentAlbum.id] : []
     }
 }
 

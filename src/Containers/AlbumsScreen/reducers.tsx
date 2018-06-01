@@ -49,9 +49,9 @@ addReducer(UpdateAlbums,
 );
 
 export const SelectAlbum = (albumId: number) =>
-    (dispatch, getState: () => ({ app: AppState })) => {
+    (dispatch, getState: () => AppState) => {
         (async () => {
-            let state = getState().app;
+            let state = getState();
             let album = state.albums.find(s => s.id == albumId);
 
             if(album == undefined)

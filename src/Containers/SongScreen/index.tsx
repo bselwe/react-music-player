@@ -11,6 +11,7 @@ import { UpdateSongTime, UpdateSongPaused, UpdateSongMuted, UpdateSongVolume } f
 import { SelectPrevSong, SelectNextSong } from "../SongsScreen/reducers"
 import * as moment from "moment";
 import "moment-duration-format";
+import Toolbar from "../../Infrastructure/Navigation/Toolbar";
 
 interface SongScreenStateProps {
     song: CurrentTrack;
@@ -29,10 +30,6 @@ interface SongScreenDispatchProps {
 type SongScreenProps = SongScreenStateProps & SongScreenDispatchProps;
 
 class SongScreen extends React.Component<SongScreenProps> {
-    static navigationOptions = {
-        title: "Song",
-    };
-
     componentWillMount() {
         this.props.toggleSong(true);
     }
@@ -43,6 +40,7 @@ class SongScreen extends React.Component<SongScreenProps> {
 
     render() {
         return <View style={styles.container}>
+            <Toolbar title={this.props.song.title} />
             <Image
                 source={{ uri: Tidal.albumArtToUrl(this.props.song.album.cover).lg }}
                 style={styles.image} />
@@ -90,9 +88,9 @@ class SongScreen extends React.Component<SongScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }): SongScreenStateProps => {
+const mapStateToProps = (state: AppState): SongScreenStateProps => {
     return {
-        song: app.currentSong
+        song: state.currentSong
     }
 }
 

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@types/moment-duration-format": "^2.2.0",
+    "@types/react-router-native": "^4.2.3",
     "axios": "^0.18.0",
     "moment": "^2.22.1",
     "moment-duration-format": "^2.2.2",
@@ -22,6 +23,7 @@
     "react-navigation": "^1.5.11",
     "react-navigation-redux-helpers": "^1.0.5",
     "react-redux": "^5.0.7",
+    "react-router-native": "^4.2.0",
     "redux": "^3.6.0",
     "redux-actions": "^2.3.0",
     "tidalapi": "^0.2.3"

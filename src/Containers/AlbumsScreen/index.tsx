@@ -5,7 +5,6 @@ import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
 import { SelectAlbum, FetchAlbums } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
-import * as routes from "../../Infrastructure/Navigation/AlbumsNavigation";
 import Tidal from "../../Services/TidalClient";
 
 interface AlbumsScreenStateProps {
@@ -69,9 +68,9 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }): AlbumsScreenStateProps => {
+const mapStateToProps = (state: AppState): AlbumsScreenStateProps => {
     return {
-        albums: app.albums
+        albums: state.albums
     }
 }
 
@@ -82,7 +81,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumsScreenDispatchProps 
         },
         navigateToAlbum: (albumId: number) => {
             dispatch(SelectAlbum(albumId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Album }));
+            // FIX dispatch(NavigationActions.navigate({ routeName: routes.Album }));
         }
     }
 }

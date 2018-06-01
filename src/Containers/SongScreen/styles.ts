@@ -5,7 +5,8 @@ export const styles = StyleSheet.create({
         display: "flex",
         flex: 1,
         flexDirection: "column",
-        alignItems: "center"
+        alignItems: "center",
+        height: "100%"
     },
     image: {
         width: "100%",

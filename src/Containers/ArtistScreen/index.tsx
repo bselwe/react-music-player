@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid,FlatList,ScrollView } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import * as routes from "../../Infrastructure/Navigation/AlbumsNavigation";
+import * as routes from "../../Infrastructure/Navigation/Routes";
 import * as Progress from "react-native-progress";
 import { connect,Dispatch } from "react-redux";
 import ArtistAlbumItem from "../../Components/ArtistAlbumItem"
@@ -56,10 +56,10 @@ class ArtistScreen extends Component<ArtistScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }:{app: AppState}): ArtistScreenStateProps => {
+const mapStateToProps = (state: AppState): ArtistScreenStateProps => {
     return {
-        artist: app.currentArtist,
-        artistAlbums: app.currentArtist !== undefined && app.currentArtist.id in app.artistsAlbums ? app.artistsAlbums[app.currentArtist.id] : []
+        artist: state.currentArtist,
+        artistAlbums: state.currentArtist !== undefined && state.currentArtist.id in state.artistsAlbums ? state.artistsAlbums[state.currentArtist.id] : []
     }
 }
 
@@ -70,7 +70,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistScreenDispatchProps 
         },
         navigateToAlbum: (albumId: number) => {
             dispatch(SelectAlbum(albumId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Album }));
+            // FIX dispatch(NavigationActions.navigate({ routeName: routes.Album }));
         }
     }
 }

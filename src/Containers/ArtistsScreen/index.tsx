@@ -5,7 +5,7 @@ import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
 import { SelectArtist, FetchArtists } from "./reducers";
 import ArtistItem from "../../Components/ArtistItem"
-import * as routes from "../../Infrastructure/Navigation/ArtistsNavigation";
+import * as routes from "../../Infrastructure/Navigation/Routes";
 import Tidal from "../../Services/TidalClient";
 
 interface ArtistsScreenStateProps {
@@ -68,9 +68,9 @@ class ArtistsScreen extends Component<ArtistsScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }): ArtistsScreenStateProps => {
+const mapStateToProps = (state: AppState): ArtistsScreenStateProps => {
     return {
-        artists: app.artists
+        artists: state.artists
     }
 }
 
@@ -78,7 +78,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistsScreenDispatchProps
     return {
         navigateToArtist: (artistId: number) => {
             dispatch(SelectArtist(artistId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Artist }));
+            // FIX dispatch(NavigationActions.navigate({ routeName: routes.Artist }));
         },
         fetchArtists: (query ?: string) =>{
             dispatch(FetchArtists(query));

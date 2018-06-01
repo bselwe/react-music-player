@@ -3,12 +3,13 @@ import { View, Text, Button, FlatList, TouchableOpacity } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { connect, Dispatch } from "react-redux";
 import SongItem from "../../Components/SongItem"
-import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
+import * as routes from "../../Infrastructure/Navigation/Routes";
 import { styles } from "./styles";
 import * as Progress from "react-native-progress";
 import PlayIcon from "react-native-vector-icons/MaterialIcons";
 import Video from "react-native-video";
 import { UpdateSongTime, UpdateSongPaused } from "./reducers";
+import { Link } from "react-router-native";
 
 interface NowPlayingBarStateProps {
     song: CurrentTrack;
@@ -16,7 +17,6 @@ interface NowPlayingBarStateProps {
 }
 
 interface NowPlayingBarDispatchProps {
-    navigateToSong: (songId: number) => void;
     updateSongTime: (time: number) => void;
     updateSongPaused: (paused: boolean) => void;
 }
@@ -50,41 +50,39 @@ class NowPlayingBar extends React.Component<NowPlayingBarProps> {
                 resizeMode="cover"
                 repeat={false}/>}
 
-            {!this.props.songDisplayed && <TouchableOpacity 
-                style={styles.container}
-                onPress={() => this.props.navigateToSong(this.props.song.id)}>
-
-                <Progress.Bar 
-                    style={styles.progress}
-                    width={null}
-                    progress={this.props.song.time / this.props.song.duration}
-                    borderColor="grey"
-                    unfilledColor="grey"
-                    color="#ffb74d" />
-                <Text style={styles.name}>{this.props.song.title}</Text>
-                <Text style={styles.artist}>{this.props.song.artist.name}</Text>
-                <PlayIcon
-                    style={styles.play} 
-                    size={36} 
-                    name={`${this.props.song.paused ? 'play' : 'pause'}-circle-outline`}
-                    onPress={() => this.props.updateSongPaused(!this.props.song.paused)} />
-                </TouchableOpacity>}
+            {!this.props.songDisplayed && <Link
+                to={routes.Song}>
+                <View 
+                    style={styles.container}>
+                    <Progress.Bar 
+                        style={styles.progress}
+                        width={null}
+                        progress={this.props.song.time / this.props.song.duration}
+                        borderColor="grey"
+                        unfilledColor="grey"
+                        color="#ffb74d" />
+                    <Text style={styles.name}>{this.props.song.title}</Text>
+                    <Text style={styles.artist}>{this.props.song.artist.name}</Text>
+                    <PlayIcon
+                        style={styles.play} 
+                        size={36} 
+                        name={`${this.props.song.paused ? 'play' : 'pause'}-circle-outline`}
+                        onPress={() => this.props.updateSongPaused(!this.props.song.paused)} />
+                </View>
+                </Link>}
         </View> : null;
     }
 }
 
-const mapStateToProps = ({ app }): NowPlayingBarStateProps => {
+const mapStateToProps = (state: AppState): NowPlayingBarStateProps => {
     return {
-        song: app.currentSong,
-        songDisplayed: app.songDisplayed
+        song: state.currentSong,
+        songDisplayed: state.songDisplayed
     }
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): NowPlayingBarDispatchProps => {
     return {
-        navigateToSong: (songId: number) => {
-            dispatch(NavigationActions.navigate({ routeName: routes.Song }));
-        },
         updateSongTime: (time: number) => {
             dispatch(UpdateSongTime(time));
         },

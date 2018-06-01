@@ -5,7 +5,6 @@ import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
 import { SelectSong, FetchSongs } from "./reducers";
 import SongItem from "../../Components/SongItem"
-import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 import Tidal from "../../Services/TidalClient";
 
 interface SongsScreenStateProps {
@@ -44,7 +43,7 @@ class SongsScreen extends Component<SongsScreenProps> {
     };
 
     render() {
-        return <View>
+        return <View style={{ height: "100%" }}>
             <SearchBar
                 placeholder='Search'
                 onChangeText={(text) => this.props.fetchSongs(text)} />
@@ -63,9 +62,9 @@ class SongsScreen extends Component<SongsScreenProps> {
     }
 }
 
-const mapStateToProps = ({ app }): SongsScreenStateProps => {
+const mapStateToProps = (state: AppState): SongsScreenStateProps => {
     return {
-        songs: app.songs
+        songs: state.songs
     }
 }
 
