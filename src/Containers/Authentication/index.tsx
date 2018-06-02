@@ -1,6 +1,7 @@
-import * as React from "react";
+import React, { Component } from "react";
+import { View } from "react-native";
 import { connect } from "react-redux";
-//import { SignIn } from "../SignIn/index";
+import SignIn from "../SignIn";
 
 interface AuthenticationProps {
     children?: React.ReactNode;
@@ -12,4 +13,4 @@ export const Authentication = connect(
             isSignedIn: state.isSignedIn
         };
     }
-)(props => props.isSignedIn ? <div>{props.children}</div> : <SignIn />);
+)(props => props.isSignedIn ? <View>{props.children}</View> : <SignIn/>);

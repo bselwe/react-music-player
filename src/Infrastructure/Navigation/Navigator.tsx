@@ -10,24 +10,27 @@ import ArtistsScreen from "../../Containers/ArtistsScreen";
 import ArtistScreen from "../../Containers/ArtistScreen";
 import NowPlayingBar from "../../Containers/NowPlayingBar";
 import TabBar from "./TabBar";
+import { Authentication } from "../../Containers/Authentication";
 
 export default function Navigator() {
     return (
         <NativeRouter>
             <View style={{ flex: 1 }}>
-                <Switch>
-                    <Route path={routes.Songs} exact component={SongsScreen} /> 
-                    <Route path={routes.Song} exact component={SongScreen} /> 
-                    <Route path={routes.Albums} exact component={AlbumsScreen} />
-                    <Route path={routes.Album} exact component={AlbumScreen} />
-                    <Route path={routes.Artists} exact component={ArtistsScreen} />
-                    <Route path={routes.Artist} exact component={ArtistScreen} />
-                </Switch>
+                <Authentication>
+                    <Switch>
+                        <Route path={routes.Songs} exact component={SongsScreen} />
+                        <Route path={routes.Song} exact component={SongScreen} />
+                        <Route path={routes.Albums} exact component={AlbumsScreen} />
+                        <Route path={routes.Album} exact component={AlbumScreen} />
+                        <Route path={routes.Artists} exact component={ArtistsScreen} />
+                        <Route path={routes.Artist} exact component={ArtistScreen} />
+                    </Switch>
 
-                <View>
-                    <NowPlayingBar />
-                    <TabBar />
-                </View>
+                    <View>
+                        <NowPlayingBar />
+                        <TabBar />
+                    </View>
+                </Authentication>
             </View>
         </NativeRouter>
     );
