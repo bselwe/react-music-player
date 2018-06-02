@@ -1,4 +1,5 @@
-import { tokenStorage, TokenStorage } from "./LocalTokenStorage";
+import { tokenStorage, TokenStorage } from "./TokenStorage";
+import encode from "form-urlencoded";
 import cfg from "../Configuration/Config";
 
 const Client = "chefsbook_manager";
@@ -7,8 +8,6 @@ const Scopes = "api/chefsbook_management offline_access openid profile email";
 export class CannotRefreshToken extends Error { }
 
 export class LoginManager {
-    private callbacks: (() => void)[] = [];
-
     constructor(
         private storage: TokenStorage,
         private endpoint: string,
@@ -18,47 +17,46 @@ export class LoginManager {
     }
 
     public signOut() {
-        this.storage.token = null;
-        this.storage.refreshToken = null;
-        this.storage.expirationDate = null;
-
-        this.notify();
+        this.storage.setToken(null);
+        this.storage.setRefreshToken(null);
+        this.storage.setExpirationDate(null);
     }
 
-    public get isSigned() {
-        return this.storage.token !== null;
+    public async isSigned() {
+        return (await this.storage.getToken()) !== null;
     }
 
     public async getToken() {
-        if (!this.storage.token) {
+        if (!(await this.storage.getToken())) {
             throw new Error("Not signed in");
         }
-        if (this.storage.expirationDate && this.storage.expirationDate < new Date()) {
+        let expDate = await this.storage.getExpirationDate();
+        if (expDate && expDate < new Date()) {
             if (!await this.tryRefreshToken()) {
                 throw new CannotRefreshToken("Cannot refresh access token after it has expired");
             }
         }
-        return this.storage.token;
+        return await this.storage.getToken;
     }
 
-    public trySignInWithGoogle(accessToken: string): Promise<boolean> {
-        return this.acquireToken(this.buildSignInWithGoogleRequest(accessToken));
+    public trySignIn(username: string, password: string): Promise<boolean> {
+        return this.acquireToken(this.buildSignInRequest(username, password));
     }
 
     public async tryRefreshToken(): Promise<boolean> {
-        return this.acquireToken(this.buildRefreshRequest());
+        return this.acquireToken(await this.buildRefreshRequest());
     }
 
-    public onChange(callback: () => void) {
-        this.callbacks.push(callback);
-    }
+    // public onChange(callback: () => void) {
+    //     this.callbacks.push(callback);
+    // }
 
-    public removeOnChange(callback: () => void) {
-        let idx = this.callbacks.indexOf(callback);
-        if (idx !== -1) {
-            this.callbacks.splice(idx, 1);
-        }
-    }
+    // public removeOnChange(callback: () => void) {
+    //     let idx = this.callbacks.indexOf(callback);
+    //     if (idx !== -1) {
+    //         this.callbacks.splice(idx, 1);
+    //     }
+    // }
 
     private async acquireToken(init: RequestInit) {
         try {
@@ -75,14 +73,13 @@ export class LoginManager {
 
             let tokenResult = await result.json();
 
-            this.storage.token = tokenResult.access_token;
-            this.storage.refreshToken = tokenResult.refresh_token;
+            await this.storage.setToken(tokenResult.access_token);
+            await this.storage.setRefreshToken(tokenResult.refresh_token);
 
             let expDate = new Date();
             expDate.setSeconds(new Date().getSeconds() + tokenResult.expires_in);
-            this.storage.expirationDate = expDate;
+            await this.storage.setExpirationDate(expDate);
 
-            this.notify();
             return true;
         } catch (e) {
             console.warn("Cannot call Auth server ", e);
@@ -90,12 +87,14 @@ export class LoginManager {
         }
     }
 
-    private buildSignInWithGoogleRequest(accessToken: string): RequestInit {
-        let params = new URLSearchParams();
-        params.append("grant_type", "google");
-        params.append("scope", this.scopes);
-        params.append("assertion", accessToken);
-
+    public buildSignInRequest(username: string, password: string): RequestInit {
+        let data = {
+            "grant_type": "password",
+            "scope": this.scopes,
+            "username": username,
+            "password": password
+        };
+        let params = encode(data);
         return {
             method: "POST",
             headers: this.prepareHeaders(),
@@ -103,11 +102,12 @@ export class LoginManager {
         };
     }
 
-    private buildRefreshRequest() {
-        let params = new URLSearchParams();
-        params.append("grant_type", "refresh_token");
-        params.append("scope", this.scopes);
-        params.append("refresh_token", this.storage.refreshToken || "");
+    private async buildRefreshRequest(): Promise<RequestInit> {
+        let params = encode({
+            "grant_type": "refresh_token",
+            "scope": this.scopes,
+            "refresh_token": await this.storage.getRefreshToken() || ""
+        });
 
         return {
             method: "POST",
@@ -121,12 +121,6 @@ export class LoginManager {
         let sec = btoa(this.client + ":" + this.secret);
         headers.append("Authorization", "Basic " + sec);
         return headers;
-    }
-
-    private notify() {
-        for (let c of this.callbacks) {
-            c();
-        }
     }
 }
 
