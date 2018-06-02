@@ -43,6 +43,11 @@ export class LoginManager {
         return this.acquireToken(this.buildSignInRequest(username, password));
     }
 
+    //TODO: implement
+    public trySignUp(username: string, password: string): any {
+        return null;
+    }
+
     public async tryRefreshToken(): Promise<boolean> {
         return this.acquireToken(await this.buildRefreshRequest());
     }
