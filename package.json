@@ -20,8 +20,6 @@
     "react-native-progress": "^3.4.0",
     "react-native-vector-icons": "^4.6.0",
     "react-native-video": "^2.0.0",
-    "react-navigation": "^1.5.11",
-    "react-navigation-redux-helpers": "^1.0.5",
     "react-redux": "^5.0.7",
     "react-router-native": "^4.2.0",
     "redux": "^3.6.0",
