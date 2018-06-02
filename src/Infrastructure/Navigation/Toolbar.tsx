@@ -9,6 +9,14 @@ export interface ToolbarProps {
 }
 
 const styles = StyleSheet.create({
+    view: {
+        height: 49
+    },
+    divider: {
+        width: "100%",
+        height: 1,
+        backgroundColor: "#D9D9DB"
+    },
     container: {
         width: "100%",
         display: "flex",
@@ -36,7 +44,7 @@ const styles = StyleSheet.create({
 
 class Toolbar extends React.Component<ToolbarProps & RouteComponentProps<any>, {}> {
     render() {
-        return <View style={{ height: 48 }}>
+        return <View style={styles.view}>
             <View style={styles.container}>
                 <TouchableOpacity
                     style={styles.button} 
@@ -46,6 +54,7 @@ class Toolbar extends React.Component<ToolbarProps & RouteComponentProps<any>, {
                 <Text style={styles.title}>{this.props.title}</Text>
                 <View />
             </View>
+            <View style={styles.divider} />
         </View>;
     }
 }
