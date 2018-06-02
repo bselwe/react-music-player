@@ -1,32 +1,42 @@
-// import * as actions from '../../src/Containers/SongsScreen/reducers'
-// ​
-// describe('actions', () => {
-//   it('should create an action to update songs', () => {
-//     expect(actions.UpdateSongs(text)).toEqual(expectedAction)
-//   })
-// })
+import { songsReducers, UpdateSongs, UpdatePlaylist, UpdateSelectedSong } from "../../src/Containers/SongsScreen/reducers";
 
-import configureStore from 'redux-mock-store' //ES6 modules
-import * as action from '../../src/Containers/SongsScreen/reducers'
-const { configureStore } = require('redux-mock-store') //CommonJS
+const initialState: AppState = {
+    songs: [],
+    songDisplayed: false,
+    artists: [],
+    artistsAlbums: {},
+    albums: [],
+    albumsSongs: {},
+    playlist: []
+}
 
-const middlewares = []
-const mockStore = configureStore(middlewares)
+const modelSongs: Track[] = [{ id: 1, title: "Song1", duration: 2, trackNumber: 1, volumeNumber: 1, popularity: 1, copyright: "yes", artist: null, artists: null, album: null },
+{ id: 1, title: "Song2", duration: 2, trackNumber: 2, volumeNumber: 2, popularity: 2, copyright: "yes", artist: null, artists: null, album: null }]
 
-// You would import the action from your codebase in a real scenario
-//const addTodo = () => ({ type: 'ADD_TODO' })
+const modelCurrentSong: CurrentTrack = {...modelSongs[0], stream: "stream", time: 2, paused: true, muted: false, volume: 10, index: 1, albumId: 1}
 
-it('should dispatch action', () => {
+describe('Songs actions', () => {
+    it('Should update songs', () => {
+        const reducer: any = songsReducers[UpdateSongs.toString()];
+        expect(reducer(initialState, UpdateSongs(modelSongs))).toEqual({
+            ...initialState,
+            songs: modelSongs
+        });
+    });
 
-  // Initialize mockstore with empty state
-  const initialState = {}
-  const store = mockStore(initialState)
+    it('Should update playlist', () => {
+        const reducer: any = songsReducers[UpdatePlaylist.toString()];
+        expect(reducer(initialState, UpdatePlaylist(modelSongs))).toEqual({
+            ...initialState,
+            playlist: modelSongs
+        });
+    });
 
-  // Dispatch the action
-  store.dispatch(action.UpdateSongs)
-
-  // Test if your store dispatched the expected actions
-  const actions = store.getActions()
-  const expectedPayload = { type: 'SONGS/UPDATE_SONGS' }
-  expect(actions).toEqual([expectedPayload])
+    it('Should update current song', () => {
+        const reducer: any = songsReducers[UpdateSelectedSong.toString()];
+        expect(reducer(initialState, UpdateSelectedSong(modelCurrentSong))).toEqual({
+            ...initialState,
+            currentSong: modelCurrentSong
+        });
+    });
 })
