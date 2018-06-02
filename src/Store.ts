@@ -15,7 +15,7 @@ export const initialState: AppState = {
     artistsAlbums: {},
     albums: [],
     albumsSongs: {},
-    playlist: []
+    isSignedIn: false
 }
 
 const appReducer = handleActions({
