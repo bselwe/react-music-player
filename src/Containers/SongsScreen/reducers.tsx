@@ -26,9 +26,9 @@ addReducer(UpdateSongs,
 );
 
 export const SelectSong = (songId: number, albumId?: number) =>
-    (dispatch, getState: () => ({ app: AppState })) => {
+    (dispatch, getState: () => AppState) => {
         (async () => {
-            let state = getState().app;
+            let state = getState();
             let songs = albumId !== undefined ? state.albumsSongs[albumId] : state.songs;
             let song = songs.find(s => s.id == songId);
             if (song === undefined)
@@ -48,7 +48,6 @@ export const SelectSong = (songId: number, albumId?: number) =>
             ));
 
             dispatch(UpdatePlaylist(songs));
-
         })();
     };
 
@@ -63,9 +62,9 @@ addReducer(UpdatePlaylist,
 );
 
 export const SelectPrevSong = () =>
-    (dispatch, getState: () => ({ app: AppState })) => {
+    (dispatch, getState: () => AppState) => {
         (async () => {
-            let state = getState().app;
+            let state = getState();
             let songIndex = state.currentSong.index - 1 < 0 ? state.playlist.length - 1 : state.currentSong.index - 1;
             let song = state.playlist.find(s => state.playlist.indexOf(s) == songIndex);
 
@@ -84,9 +83,9 @@ export const SelectPrevSong = () =>
     };
 
 export const SelectNextSong = () =>
-    (dispatch, getState: () => ({ app: AppState })) => {
+    (dispatch, getState: () => AppState) => {
         (async () => {
-            let state = getState().app;
+            let state = getState();
             let songIndex = state.currentSong.index + 1 >= state.playlist.length ? 0 : state.currentSong.index + 1;
             let song = state.playlist.find(s => state.playlist.indexOf(s) == songIndex);
 

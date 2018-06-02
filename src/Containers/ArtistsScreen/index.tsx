@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { View, Text, Button, FlatList } from "react-native";
+import { View, Text, Button, FlatList, ScrollView } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SearchBar } from 'react-native-elements';
+import { withRouter, RouteComponentProps } from "react-router-native";
 import { connect, Dispatch } from "react-redux";
 import { SelectArtist, FetchArtists } from "./reducers";
 import ArtistItem from "../../Components/ArtistItem"
-import * as routes from "../../Infrastructure/Navigation/ArtistsNavigation";
+import * as routes from "../../Infrastructure/Navigation/Routes";
 import Tidal from "../../Services/TidalClient";
 
 interface ArtistsScreenStateProps {
@@ -17,13 +18,9 @@ interface ArtistsScreenDispatchProps {
     fetchArtists: (query?: string) => void;
 }
 
-type ArtistsScreenProps = ArtistsScreenStateProps & ArtistsScreenDispatchProps; // & NavigationScreenProps;
+type ArtistsScreenProps = ArtistsScreenStateProps & ArtistsScreenDispatchProps & RouteComponentProps<any>;
 
 class ArtistsScreen extends Component<ArtistsScreenProps> {
-    static navigationOptions = {
-        title: "Artists",
-    };
-
     constructor(props) {
         super(props);
     }
@@ -50,7 +47,7 @@ class ArtistsScreen extends Component<ArtistsScreenProps> {
     };
 
     render() {
-        return <View>
+        return <ScrollView>
             <SearchBar
                 placeholder='Search' 
                 onChangeText={(text) => this.props.fetchArtists(text)} />
@@ -64,21 +61,21 @@ class ArtistsScreen extends Component<ArtistsScreenProps> {
                         image={this.getArtistImage(item.picture)}
                         onPress={() => this.props.navigateToArtist(item.id)} />}
             />
-        </View>
+        </ScrollView>
     }
 }
 
-const mapStateToProps = ({ app }): ArtistsScreenStateProps => {
+const mapStateToProps = (state: AppState): ArtistsScreenStateProps => {
     return {
-        artists: app.artists
+        artists: state.artists
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistsScreenDispatchProps => {
+const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: RouteComponentProps<any>): ArtistsScreenDispatchProps => {
     return {
         navigateToArtist: (artistId: number) => {
             dispatch(SelectArtist(artistId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Artist }));
+            ownProps.history.push(routes.Artist);
         },
         fetchArtists: (query ?: string) =>{
             dispatch(FetchArtists(query));
@@ -86,9 +83,9 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistsScreenDispatchProps
     }
 }
 
-const ArtistsScreenContainer = connect(
+const ArtistsScreenContainer = withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(ArtistsScreen);
+)(ArtistsScreen));
 
 export default ArtistsScreenContainer;

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { View, Text, Button, FlatList } from "react-native";
+import { View, Text, Button, FlatList, ScrollView } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
 import { SelectSong, FetchSongs } from "./reducers";
 import SongItem from "../../Components/SongItem"
-import * as routes from "../../Infrastructure/Navigation/SongsNavigation";
 import Tidal from "../../Services/TidalClient";
 
 interface SongsScreenStateProps {
@@ -20,10 +19,6 @@ interface SongsScreenDispatchProps {
 type SongsScreenProps = SongsScreenStateProps & SongsScreenDispatchProps; // & NavigationScreenProps;
 
 class SongsScreen extends Component<SongsScreenProps> {
-    static navigationOptions = {
-        title: "Songs",
-    };
-
     constructor(props) {
         super(props);
     }
@@ -44,7 +39,7 @@ class SongsScreen extends Component<SongsScreenProps> {
     };
 
     render() {
-        return <View>
+        return <ScrollView>
             <SearchBar
                 placeholder='Search'
                 onChangeText={(text) => this.props.fetchSongs(text)} />
@@ -59,13 +54,13 @@ class SongsScreen extends Component<SongsScreenProps> {
                         image={Tidal.albumArtToUrl(item.album.cover).md}
                         onPress={() => this.props.navigateToSong(item.id)} />}
             />
-        </View>
+        </ScrollView>
     }
 }
 
-const mapStateToProps = ({ app }): SongsScreenStateProps => {
+const mapStateToProps = (state: AppState): SongsScreenStateProps => {
     return {
-        songs: app.songs
+        songs: state.songs
     }
 }
 

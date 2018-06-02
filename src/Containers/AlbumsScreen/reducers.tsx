@@ -2,7 +2,6 @@ import { ReducerMap, createAction } from "redux-actions";
 import { addReducerFactory } from "../../Utils/AddReducer";
 import Tidal from "../../Services/TidalClient";
 import { Thunk } from "../../Utils/Thunk";
-import { Albums } from "../../Infrastructure/Navigation/AlbumsNavigation";
 
 export let albumReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(albumReducers);
@@ -49,9 +48,9 @@ addReducer(UpdateAlbums,
 );
 
 export const SelectAlbum = (albumId: number) =>
-    (dispatch, getState: () => ({ app: AppState })) => {
+    (dispatch, getState: () => AppState) => {
         (async () => {
-            let state = getState().app;
+            let state = getState();
             let album = state.albums.find(s => s.id == albumId);
 
             if(album == undefined)

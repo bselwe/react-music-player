@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
         display: "flex",
         flex: 1,
         flexDirection: "column",
-        alignItems: "center"
+        justifyContent: "center"
     },
     image: {
         width: "100%",
@@ -37,6 +37,7 @@ export const styles = StyleSheet.create({
         flexGrow: 1
     },
     subtitle: {
+        textAlign: "center",
         paddingTop: 8,
         fontSize: 18
     },
@@ -48,8 +49,9 @@ export const styles = StyleSheet.create({
         fontSize: 50
     },
     sound: {
+        flexGrow: 1,
         width: 300,
-        flexGrow: 1
+        alignSelf: "center"
     },
     iconSound: {
         fontSize: 21,

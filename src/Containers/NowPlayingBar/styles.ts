@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        flexGrow: 1
+        flexGrow: 1,
+        backgroundColor: "white"
     },
     progress: {
         width: "100%",

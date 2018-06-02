@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { View, Text, Button, FlatList } from "react-native";
+import { View, Text, Button, FlatList, ScrollView } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
+import { withRouter, RouteComponentProps } from "react-router-native";
 import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
 import { SelectAlbum, FetchAlbums } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
-import * as routes from "../../Infrastructure/Navigation/AlbumsNavigation";
 import Tidal from "../../Services/TidalClient";
+import * as routes from "../../Infrastructure/Navigation/Routes";
 
 interface AlbumsScreenStateProps {
     albums: Album[];
@@ -17,13 +18,9 @@ interface AlbumsScreenDispatchProps {
     navigateToAlbum: (albumId: number) => void;
 }
 
-type AlbumsScreenProps = AlbumsScreenStateProps & AlbumsScreenDispatchProps; // & NavigationScreenProps;
+type AlbumsScreenProps = AlbumsScreenStateProps & AlbumsScreenDispatchProps & RouteComponentProps<any>;
 
 class AlbumsScreen extends Component<AlbumsScreenProps> {
-    static navigationOptions = {
-        title: "Albums",
-    };
-
     constructor(props) {
         super(props);
     }
@@ -50,7 +47,7 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
     };
 
     render() {
-        return <View>
+        return <ScrollView>
             <SearchBar
                 placeholder='Search'
                 onChangeText={(text) => this.props.fetchAlbums(text)}  />
@@ -65,31 +62,31 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
                         image={this.getAlbumImage(item.cover)}
                         onPress={() => this.props.navigateToAlbum(item.id)} />}
             />
-        </View>
+        </ScrollView>
     }
 }
 
-const mapStateToProps = ({ app }): AlbumsScreenStateProps => {
+const mapStateToProps = (state: AppState): AlbumsScreenStateProps => {
     return {
-        albums: app.albums
+        albums: state.albums
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>): AlbumsScreenDispatchProps => {
+const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: RouteComponentProps<any>): AlbumsScreenDispatchProps => {
     return {
         fetchAlbums: (query?: string) => {
             dispatch(FetchAlbums(query));
         },
         navigateToAlbum: (albumId: number) => {
             dispatch(SelectAlbum(albumId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Album }));
+            ownProps.history.push(routes.Album);
         }
     }
 }
 
-const AlbumsScreenContainer = connect(
+const AlbumsScreenContainer = withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(AlbumsScreen);
+)(AlbumsScreen));
 
 export default AlbumsScreenContainer;

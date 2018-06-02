@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid,FlatList,ScrollView } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
-import * as routes from "../../Infrastructure/Navigation/AlbumsNavigation";
+import { withRouter, RouteComponentProps } from "react-router-native";
+import * as routes from "../../Infrastructure/Navigation/Routes";
 import * as Progress from "react-native-progress";
 import { connect,Dispatch } from "react-redux";
 import ArtistAlbumItem from "../../Components/ArtistAlbumItem"
@@ -11,6 +12,8 @@ import { SelectAlbum } from "../AlbumsScreen/reducers";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import Tidal from "../../Services/TidalClient";
 import { FetchArtistAlbums } from "../ArtistsScreen/reducers";
+import Toolbar from "../../Infrastructure/Navigation/Toolbar";
+
 interface ArtistScreenStateProps {
     artist: Artist;
     artistAlbums: Album[];
@@ -20,13 +23,9 @@ interface ArtistScreenDispatchProps {
     fetchArtistAlbums: (artistId: number) => void;
 }
 
-type ArtistScreenProps = ArtistScreenStateProps & ArtistScreenDispatchProps; // & NavigationScreenProps;
+type ArtistScreenProps = ArtistScreenStateProps & ArtistScreenDispatchProps & RouteComponentProps<any>;
 
 class ArtistScreen extends Component<ArtistScreenProps> {
-    static navigationOptions = {
-        title: "Artist",
-    };
-
     componentDidMount() {
         this.props.fetchArtistAlbums(this.props.artist.id);
     }
@@ -37,46 +36,47 @@ class ArtistScreen extends Component<ArtistScreenProps> {
         return Tidal.artistPicToUrl(picture).lg;
     }
     render() {
-        return <ScrollView contentContainerStyle={styles.container}>
-            <Image
-                source={{ uri: this.getArtistImage(this.props.artist.picture) }}
-                style={styles.image} />
-            <Text style={styles.title}>{this.props.artist.name}</Text>
-           
-            <View style={styles.listContainer}>
-                {this.props.artistAlbums.map(album => <View key={album.id} style={{paddingTop: 12,paddingBottom: 12,paddingRight: 8,paddingLeft: 8,width: "50%"}}>
-                    <ArtistAlbumItem 
-                        name={album.title}
-                        image={Tidal.albumArtToUrl(album.cover).lg}
-                        onPress={() => this.props.navigateToAlbum(album.id)} /></View>)}
-            </View>
+        return <View style={{ flex: 1 }}>
+            <Toolbar title={this.props.artist.name} />
+            <ScrollView contentContainerStyle={styles.container}>
+                <Image
+                    source={{ uri: this.getArtistImage(this.props.artist.picture) }}
+                    style={styles.image} />
+                <Text style={styles.title}>{this.props.artist.name}</Text>
             
-    
-        </ScrollView>;
+                <View style={styles.listContainer}>
+                    {this.props.artistAlbums.map(album => <View key={album.id} style={{paddingTop: 12,paddingBottom: 12,paddingRight: 8,paddingLeft: 8,width: "50%"}}>
+                        <ArtistAlbumItem 
+                            name={album.title}
+                            image={Tidal.albumArtToUrl(album.cover).lg}
+                            onPress={() => this.props.navigateToAlbum(album.id)} /></View>)}
+                </View>
+            </ScrollView>
+        </View>
     }
 }
 
-const mapStateToProps = ({ app }:{app: AppState}): ArtistScreenStateProps => {
+const mapStateToProps = (state: AppState): ArtistScreenStateProps => {
     return {
-        artist: app.currentArtist,
-        artistAlbums: app.currentArtist !== undefined && app.currentArtist.id in app.artistsAlbums ? app.artistsAlbums[app.currentArtist.id] : []
+        artist: state.currentArtist,
+        artistAlbums: state.currentArtist !== undefined && state.currentArtist.id in state.artistsAlbums ? state.artistsAlbums[state.currentArtist.id] : []
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>): ArtistScreenDispatchProps => {
+const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: RouteComponentProps<any>): ArtistScreenDispatchProps => {
     return {
         fetchArtistAlbums: (artistId: number) => {
             dispatch(FetchArtistAlbums(artistId));
         },
         navigateToAlbum: (albumId: number) => {
             dispatch(SelectAlbum(albumId));
-            dispatch(NavigationActions.navigate({ routeName: routes.Album }));
+            ownProps.history.push(routes.Album);
         }
     }
 }
-const ArtistScreenContainer = connect(
+const ArtistScreenContainer = withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(ArtistScreen);
+)(ArtistScreen));
 
 export default ArtistScreenContainer;
