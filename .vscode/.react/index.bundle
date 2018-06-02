@@ -66207,9 +66207,29 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _SongScreen2 = _interopRequireDefault(_SongScreen);
 
-    var _NowPlayingBar = _require(_dependencyMap[6], "../../Containers/NowPlayingBar");
+    var _AlbumsScreen = _require(_dependencyMap[6], "../../Containers/AlbumsScreen");
+
+    var _AlbumsScreen2 = _interopRequireDefault(_AlbumsScreen);
+
+    var _AlbumScreen = _require(_dependencyMap[7], "../../Containers/AlbumScreen");
+
+    var _AlbumScreen2 = _interopRequireDefault(_AlbumScreen);
+
+    var _ArtistsScreen = _require(_dependencyMap[8], "../../Containers/ArtistsScreen");
+
+    var _ArtistsScreen2 = _interopRequireDefault(_ArtistsScreen);
+
+    var _ArtistScreen = _require(_dependencyMap[9], "../../Containers/ArtistScreen");
+
+    var _ArtistScreen2 = _interopRequireDefault(_ArtistScreen);
+
+    var _NowPlayingBar = _require(_dependencyMap[10], "../../Containers/NowPlayingBar");
 
     var _NowPlayingBar2 = _interopRequireDefault(_NowPlayingBar);
+
+    var _TabBar = _require(_dependencyMap[11], "./TabBar");
+
+    var _TabBar2 = _interopRequireDefault(_TabBar);
 
     function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -66221,18 +66241,18 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 9
+                    lineNumber: 14
                 }
             },
             _react2.default.createElement(
                 _reactNative.View,
                 {
                     style: {
-                        height: "100%"
+                        flex: 1
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 10
+                        lineNumber: 15
                     }
                 },
                 _react2.default.createElement(
@@ -66240,7 +66260,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 11
+                            lineNumber: 16
                         }
                     },
                     _react2.default.createElement(_reactRouterNative.Route, {
@@ -66249,7 +66269,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         component: _SongsScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 12
+                            lineNumber: 17
                         }
                     }),
                     _react2.default.createElement(_reactRouterNative.Route, {
@@ -66258,70 +66278,71 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         component: _SongScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 13
+                            lineNumber: 18
                         }
                     }),
                     _react2.default.createElement(_reactRouterNative.Route, {
                         path: routes.Albums,
                         exact: true,
-                        component: _SongsScreen2.default,
+                        component: _AlbumsScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 14
+                            lineNumber: 19
                         }
                     }),
                     _react2.default.createElement(_reactRouterNative.Route, {
                         path: routes.Album,
                         exact: true,
-                        component: _SongsScreen2.default,
+                        component: _AlbumScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 15
+                            lineNumber: 20
                         }
                     }),
                     _react2.default.createElement(_reactRouterNative.Route, {
                         path: routes.Artists,
                         exact: true,
-                        component: _SongsScreen2.default,
+                        component: _ArtistsScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 16
+                            lineNumber: 21
                         }
                     }),
                     _react2.default.createElement(_reactRouterNative.Route, {
                         path: routes.Artist,
                         exact: true,
-                        component: _SongsScreen2.default,
+                        component: _ArtistScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 17
+                            lineNumber: 22
                         }
                     })
                 ),
                 _react2.default.createElement(
                     _reactNative.View,
                     {
-                        style: {
-                            position: "absolute",
-                            bottom: 0,
-                            width: "100%"
-                        },
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
+                            lineNumber: 25
                         }
                     },
                     _react2.default.createElement(_NowPlayingBar2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 26
+                        }
+                    }),
+                    _react2.default.createElement(_TabBar2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 27
                         }
                     })
                 )
             )
         );
     }
-},582,[12,176,583,611,612,716,729],"src/Infrastructure/Navigation/Navigator.tsx");
+},582,[12,176,583,611,612,716,735,738,742,745,729,749],"src/Infrastructure/Navigation/Navigator.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -69672,11 +69693,8 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 var _this2 = this;
 
                 return _react3.default.createElement(
-                    _reactNative.View,
+                    _reactNative.ScrollView,
                     {
-                        style: {
-                            height: "100%"
-                        },
                         __source: {
                             fileName: _jsxFileName,
                             lineNumber: 22
@@ -69724,10 +69742,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
         return SongsScreen;
     }(_react2.Component));
-
-    SongsScreen.navigationOptions = {
-        title: "Songs"
-    };
 
     var mapStateToProps = function mapStateToProps(state) {
         return {
@@ -86144,8 +86158,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             display: "flex",
             flex: 1,
             flexDirection: "column",
-            alignItems: "center",
-            height: "100%"
+            justifyContent: "center"
         },
         image: {
             width: "100%",
@@ -86177,6 +86190,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             flexGrow: 1
         },
         subtitle: {
+            textAlign: "center",
             paddingTop: 8,
             fontSize: 18
         },
@@ -86188,8 +86202,9 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             fontSize: 50
         },
         sound: {
+            flexGrow: 1,
             width: 300,
-            flexGrow: 1
+            alignSelf: "center"
         },
         iconSound: {
             fontSize: 21,
@@ -92439,22 +92454,25 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     }
 
     var styles = _reactNative.StyleSheet.create({
-        button: {
-            width: "100%",
-            paddingLeft: 16,
-            paddingRight: 16
-        },
         container: {
-            height: 56,
+            width: "100%",
             display: "flex",
             flexDirection: "row",
             justifyContent: "flex-start",
             alignItems: "center",
             flexGrow: 1
         },
+        button: {
+            display: "flex",
+            alignSelf: "flex-start",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100%",
+            paddingLeft: 18,
+            paddingRight: 18
+        },
         icon: {
-            fontSize: 24,
-            paddingRight: 12
+            fontSize: 24
         },
         title: {
             fontSize: 18
@@ -92476,15 +92494,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 var _this2 = this;
 
                 return _react3.default.createElement(
-                    _reactNative.TouchableHighlight,
+                    _reactNative.View,
                     {
-                        onPress: function onPress() {
-                            return _this2.props.history.goBack();
+                        style: {
+                            height: 48
                         },
-                        style: styles.button,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 30
+                            lineNumber: 33
                         }
                     },
                     _react3.default.createElement(
@@ -92493,24 +92510,37 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: styles.container,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 31
+                                lineNumber: 34
                             }
                         },
-                        _react3.default.createElement(_Feather2.default, {
-                            style: styles.icon,
-                            name: "arrow-left",
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 32
-                            }
-                        }),
+                        _react3.default.createElement(
+                            _reactNative.TouchableOpacity,
+                            {
+                                style: styles.button,
+                                onPress: function onPress() {
+                                    return _this2.props.history.goBack();
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 35
+                                }
+                            },
+                            _react3.default.createElement(_Feather2.default, {
+                                style: styles.icon,
+                                name: "arrow-left",
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 36
+                                }
+                            })
+                        ),
                         _react3.default.createElement(
                             _reactNative.Text,
                             {
                                 style: styles.title,
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 33
+                                    lineNumber: 38
                                 }
                             },
                             this.props.title
@@ -92518,7 +92548,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         _react3.default.createElement(_reactNative.View, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 34
+                                lineNumber: 39
                             }
                         })
                     )
@@ -92531,5 +92561,1805 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     exports.default = (0, _reactRouterNative.withRouter)(Toolbar);
 },734,[12,22,176,583,681],"src/Infrastructure/Navigation/Toolbar.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/AlbumsScreen/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactRouterNative = _require(_dependencyMap[3], "react-router-native");
+
+    var _reactNativeElements = _require(_dependencyMap[4], "react-native-elements");
+
+    var _reactRedux = _require(_dependencyMap[5], "react-redux");
+
+    var _reducers = _require(_dependencyMap[6], "./reducers");
+
+    var _AlbumItem = _require(_dependencyMap[7], "../../Components/AlbumItem");
+
+    var _AlbumItem2 = _interopRequireDefault(_AlbumItem);
+
+    var _TidalClient = _require(_dependencyMap[8], "../../Services/TidalClient");
+
+    var _TidalClient2 = _interopRequireDefault(_TidalClient);
+
+    var _Routes = _require(_dependencyMap[9], "../../Infrastructure/Navigation/Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        AlbumsScreen: {
+            displayName: "AlbumsScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/AlbumsScreen/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var AlbumsScreen = _wrapComponent("AlbumsScreen")(function (_Component) {
+        _inherits(AlbumsScreen, _Component);
+
+        function AlbumsScreen(props) {
+            _classCallCheck(this, AlbumsScreen);
+
+            var _this = _possibleConstructorReturn(this, (AlbumsScreen.__proto__ || Object.getPrototypeOf(AlbumsScreen)).call(this, props));
+
+            _this.renderSeparator = function () {
+                return _react3.default.createElement(_reactNative.View, {
+                    style: {
+                        height: 1,
+                        backgroundColor: "#CED0CE"
+                    },
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 14
+                    }
+                });
+            };
+
+            return _this;
+        }
+
+        _createClass(AlbumsScreen, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                this.props.fetchAlbums();
+            }
+        }, {
+            key: "getAlbumImage",
+            value: function getAlbumImage(picture) {
+                if (picture == undefined || picture.length == 0) return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAUVBMVEW1tbX///+2trbR0dGvr6/MzMyysrL7+/v19fWkpKSoqKienp69vb3BwcHi4uLX19fs7OyUlJSLi4vn5+eHh4eampqSkpLHx8f29vbb29vU1NQBbJK+AAADJElEQVR4nO3c21bqMBSF4SSE9EipIFR5/wfdLQe3Cu2Va63OjPnfOOpN+EZ6IAF1IfdccHlHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U/n3pmt546sLdfmrQG1BbmC5+6hjVRlQXbq7CMnuh36mNaCXs1CbRSqg3iWbCUuuBYSb0nRLRTugvOpeiodBfVGbRUug/NYimQpVr0VboeyduNBb6opUmWgt9MQgTzYXeb2WJKxAKE+2EH/+JoieqnXAI3243giPaCbd10389NAQn0VAYQ7N9HGzkiJZCF+r2cVFmKnQhPi5GuQWxrXA8vs+i3Jtwa6GLt+3FspYa0VzoUnk9zFl4+43Ygt9e6FLuc+hin7swddNhI/U61iIsTrkLuypj4fU6HOqchcV4JHaSrkE4vW/r3zIWpmkJ1YqdpGsQHsc7qdwUrkDoxsvwIvY0XIHwepI2me5i3H7z4f1e8CS1F46L/OMhz93Eh7A6vUfJ12AudCEF0ZdgL5SOwr8uV+H9+5Zx/JGlMLnhsy/H+m7rMhSm0BX+q6LMTTj6/OsyEaahmAFmIkzbOZ/3Qw7CNMwD/S6Hb+61C0C1L5hKClO/JBQb9leSwt0S0MvtzPxMUDhtwCwkuer9nqRw9kEx1QluzfxIULh4n/G11pf1BYWLl2F31lrTCArDAvDjnMPfW8RyXtiIfdT0lOSd5jIPlPsg5inRJ/7MzbR/07qPTokKX99NN+96p6iTfucdnmfxWB1Et0efEl49Vb/Wv109TqDu3pfwCjg01f4xj8Vxd1D3ye9ihNScq9i2ITaHwymq+zR2okJIsa6qOqZg4FPaLw3X5Md5Pbjynrd+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOIX7v+0IuP+AeAhGRGRvocjAAAAAElFTkSuQmCC";
+                return _TidalClient2.default.albumArtToUrl(picture).md;
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                var _this2 = this;
+
+                return _react3.default.createElement(
+                    _reactNative.ScrollView,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 29
+                        }
+                    },
+                    _react3.default.createElement(_reactNativeElements.SearchBar, {
+                        placeholder: "Search",
+                        onChangeText: function onChangeText(text) {
+                            return _this2.props.fetchAlbums(text);
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 30
+                        }
+                    }),
+                    _react3.default.createElement(_reactNative.FlatList, {
+                        data: this.props.albums,
+                        keyExtractor: function keyExtractor(item, index) {
+                            return item.id.toString();
+                        },
+                        ItemSeparatorComponent: this.renderSeparator,
+                        renderItem: function renderItem(_ref) {
+                            var item = _ref.item;
+                            return _react3.default.createElement(_AlbumItem2.default, {
+                                name: item.title,
+                                artist: item.artist !== undefined ? item.artist.name : "",
+                                image: _this2.getAlbumImage(item.cover),
+                                onPress: function onPress() {
+                                    return _this2.props.navigateToAlbum(item.id);
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 31
+                                }
+                            });
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 31
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return AlbumsScreen;
+    }(_react2.Component));
+
+    var mapStateToProps = function mapStateToProps(state) {
+        return {
+            albums: state.albums
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+        return {
+            fetchAlbums: function fetchAlbums(query) {
+                dispatch((0, _reducers.FetchAlbums)(query));
+            },
+            navigateToAlbum: function navigateToAlbum(albumId) {
+                dispatch((0, _reducers.SelectAlbum)(albumId));
+                ownProps.history.push(routes.Album);
+            }
+        };
+    };
+
+    var AlbumsScreenContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AlbumsScreen));
+    exports.default = AlbumsScreenContainer;
+},735,[12,22,176,583,613,491,580,736,546,611],"src/Containers/AlbumsScreen/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/AlbumItem/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _styles = _require(_dependencyMap[3], "./styles");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        AlbumItem: {
+            displayName: "AlbumItem"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/AlbumItem/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var AlbumItem = _wrapComponent("AlbumItem")(function (_Component) {
+        _inherits(AlbumItem, _Component);
+
+        function AlbumItem() {
+            _classCallCheck(this, AlbumItem);
+
+            return _possibleConstructorReturn(this, (AlbumItem.__proto__ || Object.getPrototypeOf(AlbumItem)).apply(this, arguments));
+        }
+
+        _createClass(AlbumItem, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.TouchableOpacity,
+                    {
+                        onPress: this.props.onPress,
+                        style: _styles.styles.container,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 6
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.ImageBackground,
+                        {
+                            source: {
+                                uri: this.props.image
+                            },
+                            style: _styles.styles.albumCover,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 7
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.ImageBackground,
+                            {
+                                source: undefined,
+                                style: _styles.styles.shader,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 8
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                {
+                                    style: _styles.styles.name,
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 9
+                                    }
+                                },
+                                this.props.name
+                            ),
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                {
+                                    style: _styles.styles.artist,
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 10
+                                    }
+                                },
+                                this.props.artist
+                            )
+                        )
+                    )
+                );
+            }
+        }]);
+
+        return AlbumItem;
+    }(_react2.Component));
+
+    exports.default = AlbumItem;
+},736,[12,22,176,737],"src/Components/AlbumItem/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        container: {
+            borderTopWidth: 0,
+            borderBottomWidth: 0
+        },
+        albumCover: {
+            width: "100%",
+            height: 150,
+            display: "flex",
+            justifyContent: "flex-end"
+        },
+        shader: {
+            height: 60,
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "rgba(52, 52, 52, 0.6)"
+        },
+        name: {
+            fontSize: 20,
+            fontWeight: "bold",
+            paddingLeft: 20,
+            color: "white"
+        },
+        artist: {
+            fontSize: 20,
+            paddingLeft: 20,
+            fontStyle: "italic",
+            color: "white"
+        }
+    });
+},737,[176],"src/Components/AlbumItem/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/AlbumScreen/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactRedux = _require(_dependencyMap[3], "react-redux");
+
+    var _styles = _require(_dependencyMap[4], "./styles");
+
+    var _AlbumSongItem = _require(_dependencyMap[5], "../../Components/AlbumSongItem");
+
+    var _AlbumSongItem2 = _interopRequireDefault(_AlbumSongItem);
+
+    var _reducers = _require(_dependencyMap[6], "../SongsScreen/reducers");
+
+    var _TidalClient = _require(_dependencyMap[7], "../../Services/TidalClient");
+
+    var _TidalClient2 = _interopRequireDefault(_TidalClient);
+
+    var _reducers2 = _require(_dependencyMap[8], "../AlbumsScreen/reducers");
+
+    var _Toolbar = _require(_dependencyMap[9], "../../Infrastructure/Navigation/Toolbar");
+
+    var _Toolbar2 = _interopRequireDefault(_Toolbar);
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        AlbumScreen: {
+            displayName: "AlbumScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/AlbumScreen/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var AlbumScreen = _wrapComponent("AlbumScreen")(function (_Component) {
+        _inherits(AlbumScreen, _Component);
+
+        function AlbumScreen() {
+            _classCallCheck(this, AlbumScreen);
+
+            var _this = _possibleConstructorReturn(this, (AlbumScreen.__proto__ || Object.getPrototypeOf(AlbumScreen)).apply(this, arguments));
+
+            _this.renderSeparator = function () {
+                return _react3.default.createElement(_reactNative.View, {
+                    style: {
+                        height: 1,
+                        backgroundColor: "#CED0CE"
+                    },
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 14
+                    }
+                });
+            };
+
+            return _this;
+        }
+
+        _createClass(AlbumScreen, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                if (this.props.album != undefined) this.props.fetchAlbumSongs(this.props.album.id);
+            }
+        }, {
+            key: "componentWillReceiveProps",
+            value: function componentWillReceiveProps(props) {
+                if (this.props.albumSongs.length == 0 && props.album !== undefined) this.props.fetchAlbumSongs(props.album.id);
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                var _this2 = this;
+
+                var i = 1;
+                return this.props.album !== undefined ? _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: {
+                            flex: 1
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 30
+                        }
+                    },
+                    _react3.default.createElement(_Toolbar2.default, {
+                        title: this.props.album.title,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 31
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.ScrollView,
+                        {
+                            contentContainerStyle: _styles.styles.container,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 32
+                            }
+                        },
+                        _react3.default.createElement(_reactNative.Image, {
+                            source: {
+                                uri: _TidalClient2.default.albumArtToUrl(this.props.album.cover).lg
+                            },
+                            style: _styles.styles.image,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 33
+                            }
+                        }),
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.title,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 34
+                                }
+                            },
+                            this.props.album.title
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.subtitle,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 35
+                                }
+                            },
+                            this.props.album.artist !== undefined ? this.props.album.artist.name : ""
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.View,
+                            {
+                                style: _styles.styles.listContainer,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 36
+                                }
+                            },
+                            this.props.albumSongs.map(function (song) {
+                                return _react3.default.createElement(
+                                    _reactNative.View,
+                                    {
+                                        key: song.id,
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 37
+                                        }
+                                    },
+                                    _this2.renderSeparator(),
+                                    _react3.default.createElement(_AlbumSongItem2.default, {
+                                        id: i++,
+                                        name: song.title,
+                                        onPress: function onPress() {
+                                            return _this2.props.navigateToSong(song.id, _this2.props.album.id);
+                                        },
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 39
+                                        }
+                                    })
+                                );
+                            })
+                        )
+                    )
+                ) : null;
+            }
+        }]);
+
+        return AlbumScreen;
+    }(_react2.Component));
+
+    var mapStateToProps = function mapStateToProps(state) {
+        return {
+            album: state.currentAlbum,
+            albumSongs: state.currentAlbum !== undefined && state.currentAlbum.id in state.albumsSongs ? state.albumsSongs[state.currentAlbum.id] : []
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+        return {
+            fetchAlbumSongs: function fetchAlbumSongs(albumId) {
+                dispatch((0, _reducers2.FetchAlbumSongs)(albumId));
+            },
+            navigateToSong: function navigateToSong(songId, albumId) {
+                dispatch((0, _reducers.SelectSong)(songId, albumId));
+            }
+        };
+    };
+
+    var AlbumScreenContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AlbumScreen);
+    exports.default = AlbumScreenContainer;
+},738,[12,22,176,491,739,740,545,546,580,734],"src/Containers/AlbumScreen/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        container: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+        },
+        image: {
+            width: "100%",
+            height: 240
+        },
+        listContainer: {
+            marginTop: 20,
+            width: "100%"
+        },
+        title: {
+            textAlign: "center",
+            paddingTop: 24,
+            fontSize: 24,
+            fontWeight: "bold"
+        },
+        subtitle: {
+            paddingTop: 8,
+            fontSize: 18
+        }
+    });
+},739,[176],"src/Containers/AlbumScreen/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/AlbumSongItem/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _styles = _require(_dependencyMap[3], "./styles");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        AlbumSongItem: {
+            displayName: "AlbumSongItem"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/AlbumSongItem/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var AlbumSongItem = _wrapComponent("AlbumSongItem")(function (_Component) {
+        _inherits(AlbumSongItem, _Component);
+
+        function AlbumSongItem() {
+            _classCallCheck(this, AlbumSongItem);
+
+            return _possibleConstructorReturn(this, (AlbumSongItem.__proto__ || Object.getPrototypeOf(AlbumSongItem)).apply(this, arguments));
+        }
+
+        _createClass(AlbumSongItem, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.TouchableNativeFeedback,
+                    {
+                        onPress: this.props.onPress,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 6
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        {
+                            style: _styles.styles.container,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 7
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.id,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 8
+                                }
+                            },
+                            this.props.id
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.name,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 9
+                                }
+                            },
+                            this.props.name
+                        )
+                    )
+                );
+            }
+        }]);
+
+        return AlbumSongItem;
+    }(_react2.Component));
+
+    exports.default = AlbumSongItem;
+},740,[12,22,176,741],"src/Components/AlbumSongItem/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        container: {
+            borderTopWidth: 0,
+            borderBottomWidth: 0,
+            display: "flex",
+            flexDirection: "row"
+        },
+        name: {
+            padding: 5,
+            fontSize: 20
+        },
+        id: {
+            fontSize: 20,
+            paddingLeft: 20,
+            paddingRight: 20,
+            alignSelf: "center"
+        }
+    });
+},741,[176],"src/Components/AlbumSongItem/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/ArtistsScreen/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactNativeElements = _require(_dependencyMap[3], "react-native-elements");
+
+    var _reactRouterNative = _require(_dependencyMap[4], "react-router-native");
+
+    var _reactRedux = _require(_dependencyMap[5], "react-redux");
+
+    var _reducers = _require(_dependencyMap[6], "./reducers");
+
+    var _ArtistItem = _require(_dependencyMap[7], "../../Components/ArtistItem");
+
+    var _ArtistItem2 = _interopRequireDefault(_ArtistItem);
+
+    var _Routes = _require(_dependencyMap[8], "../../Infrastructure/Navigation/Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    var _TidalClient = _require(_dependencyMap[9], "../../Services/TidalClient");
+
+    var _TidalClient2 = _interopRequireDefault(_TidalClient);
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        ArtistsScreen: {
+            displayName: "ArtistsScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/ArtistsScreen/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var ArtistsScreen = _wrapComponent("ArtistsScreen")(function (_Component) {
+        _inherits(ArtistsScreen, _Component);
+
+        function ArtistsScreen(props) {
+            _classCallCheck(this, ArtistsScreen);
+
+            var _this = _possibleConstructorReturn(this, (ArtistsScreen.__proto__ || Object.getPrototypeOf(ArtistsScreen)).call(this, props));
+
+            _this.renderSeparator = function () {
+                return _react3.default.createElement(_reactNative.View, {
+                    style: {
+                        height: 1,
+                        backgroundColor: "#CED0CE"
+                    },
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 14
+                    }
+                });
+            };
+
+            return _this;
+        }
+
+        _createClass(ArtistsScreen, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                this.props.fetchArtists();
+            }
+        }, {
+            key: "getArtistImage",
+            value: function getArtistImage(picture) {
+                if (picture == undefined || picture.length == 0) return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAUVBMVEW1tbX///+2trbR0dGvr6/MzMyysrL7+/v19fWkpKSoqKienp69vb3BwcHi4uLX19fs7OyUlJSLi4vn5+eHh4eampqSkpLHx8f29vbb29vU1NQBbJK+AAADJElEQVR4nO3c21bqMBSF4SSE9EipIFR5/wfdLQe3Cu2Va63OjPnfOOpN+EZ6IAF1IfdccHlHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U/n3pmt546sLdfmrQG1BbmC5+6hjVRlQXbq7CMnuh36mNaCXs1CbRSqg3iWbCUuuBYSb0nRLRTugvOpeiodBfVGbRUug/NYimQpVr0VboeyduNBb6opUmWgt9MQgTzYXeb2WJKxAKE+2EH/+JoieqnXAI3243giPaCbd10389NAQn0VAYQ7N9HGzkiJZCF+r2cVFmKnQhPi5GuQWxrXA8vs+i3Jtwa6GLt+3FspYa0VzoUnk9zFl4+43Ygt9e6FLuc+hin7swddNhI/U61iIsTrkLuypj4fU6HOqchcV4JHaSrkE4vW/r3zIWpmkJ1YqdpGsQHsc7qdwUrkDoxsvwIvY0XIHwepI2me5i3H7z4f1e8CS1F46L/OMhz93Eh7A6vUfJ12AudCEF0ZdgL5SOwr8uV+H9+5Zx/JGlMLnhsy/H+m7rMhSm0BX+q6LMTTj6/OsyEaahmAFmIkzbOZ/3Qw7CNMwD/S6Hb+61C0C1L5hKClO/JBQb9leSwt0S0MvtzPxMUDhtwCwkuer9nqRw9kEx1QluzfxIULh4n/G11pf1BYWLl2F31lrTCArDAvDjnMPfW8RyXtiIfdT0lOSd5jIPlPsg5inRJ/7MzbR/07qPTokKX99NN+96p6iTfucdnmfxWB1Et0efEl49Vb/Wv109TqDu3pfwCjg01f4xj8Vxd1D3ye9ihNScq9i2ITaHwymq+zR2okJIsa6qOqZg4FPaLw3X5Md5Pbjynrd+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOIX7v+0IuP+AeAhGRGRvocjAAAAAElFTkSuQmCC";
+                return _TidalClient2.default.artistPicToUrl(picture).lg;
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                var _this2 = this;
+
+                return _react3.default.createElement(
+                    _reactNative.ScrollView,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 29
+                        }
+                    },
+                    _react3.default.createElement(_reactNativeElements.SearchBar, {
+                        placeholder: "Search",
+                        onChangeText: function onChangeText(text) {
+                            return _this2.props.fetchArtists(text);
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 30
+                        }
+                    }),
+                    _react3.default.createElement(_reactNative.FlatList, {
+                        data: this.props.artists,
+                        keyExtractor: function keyExtractor(item, index) {
+                            return item.id.toString();
+                        },
+                        ItemSeparatorComponent: this.renderSeparator,
+                        renderItem: function renderItem(_ref) {
+                            var item = _ref.item;
+                            return _react3.default.createElement(_ArtistItem2.default, {
+                                name: item.name,
+                                image: _this2.getArtistImage(item.picture),
+                                onPress: function onPress() {
+                                    return _this2.props.navigateToArtist(item.id);
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 31
+                                }
+                            });
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 31
+                        }
+                    })
+                );
+            }
+        }]);
+
+        return ArtistsScreen;
+    }(_react2.Component));
+
+    var mapStateToProps = function mapStateToProps(state) {
+        return {
+            artists: state.artists
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+        return {
+            navigateToArtist: function navigateToArtist(artistId) {
+                dispatch((0, _reducers.SelectArtist)(artistId));
+                ownProps.history.push(routes.Artist);
+            },
+            fetchArtists: function fetchArtists(query) {
+                dispatch((0, _reducers.FetchArtists)(query));
+            }
+        };
+    };
+
+    var ArtistsScreenContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ArtistsScreen));
+    exports.default = ArtistsScreenContainer;
+},742,[12,22,176,613,583,491,579,743,611,546],"src/Containers/ArtistsScreen/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/ArtistItem/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _styles = _require(_dependencyMap[3], "./styles");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        ArtistItem: {
+            displayName: "ArtistItem"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/ArtistItem/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var ArtistItem = _wrapComponent("ArtistItem")(function (_Component) {
+        _inherits(ArtistItem, _Component);
+
+        function ArtistItem() {
+            _classCallCheck(this, ArtistItem);
+
+            return _possibleConstructorReturn(this, (ArtistItem.__proto__ || Object.getPrototypeOf(ArtistItem)).apply(this, arguments));
+        }
+
+        _createClass(ArtistItem, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.TouchableOpacity,
+                    {
+                        onPress: this.props.onPress,
+                        style: _styles.styles.container,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 6
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.ImageBackground,
+                        {
+                            source: {
+                                uri: this.props.image
+                            },
+                            style: _styles.styles.albumCover,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 7
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.ImageBackground,
+                            {
+                                source: undefined,
+                                style: _styles.styles.shader,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 8
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                {
+                                    style: _styles.styles.name,
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 9
+                                    }
+                                },
+                                this.props.name
+                            )
+                        )
+                    )
+                );
+            }
+        }]);
+
+        return ArtistItem;
+    }(_react2.Component));
+
+    exports.default = ArtistItem;
+},743,[12,22,176,744],"src/Components/ArtistItem/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        container: {
+            borderTopWidth: 0,
+            borderBottomWidth: 0
+        },
+        albumCover: {
+            width: "100%",
+            height: 150,
+            display: "flex",
+            justifyContent: "flex-end"
+        },
+        shader: {
+            height: 60,
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "rgba(52, 52, 52, 0.6)"
+        },
+        name: {
+            fontSize: 20,
+            fontWeight: "bold",
+            paddingLeft: 20,
+            color: "white"
+        },
+        artist: {
+            fontSize: 20,
+            paddingLeft: 20,
+            fontStyle: "italic",
+            color: "white"
+        }
+    });
+},744,[176],"src/Components/ArtistItem/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/ArtistScreen/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactRouterNative = _require(_dependencyMap[3], "react-router-native");
+
+    var _Routes = _require(_dependencyMap[4], "../../Infrastructure/Navigation/Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    var _reactRedux = _require(_dependencyMap[5], "react-redux");
+
+    var _ArtistAlbumItem = _require(_dependencyMap[6], "../../Components/ArtistAlbumItem");
+
+    var _ArtistAlbumItem2 = _interopRequireDefault(_ArtistAlbumItem);
+
+    var _styles = _require(_dependencyMap[7], "./styles");
+
+    var _reducers = _require(_dependencyMap[8], "../AlbumsScreen/reducers");
+
+    var _TidalClient = _require(_dependencyMap[9], "../../Services/TidalClient");
+
+    var _TidalClient2 = _interopRequireDefault(_TidalClient);
+
+    var _reducers2 = _require(_dependencyMap[10], "../ArtistsScreen/reducers");
+
+    var _Toolbar = _require(_dependencyMap[11], "../../Infrastructure/Navigation/Toolbar");
+
+    var _Toolbar2 = _interopRequireDefault(_Toolbar);
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        ArtistScreen: {
+            displayName: "ArtistScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/ArtistScreen/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var ArtistScreen = _wrapComponent("ArtistScreen")(function (_Component) {
+        _inherits(ArtistScreen, _Component);
+
+        function ArtistScreen() {
+            _classCallCheck(this, ArtistScreen);
+
+            return _possibleConstructorReturn(this, (ArtistScreen.__proto__ || Object.getPrototypeOf(ArtistScreen)).apply(this, arguments));
+        }
+
+        _createClass(ArtistScreen, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                this.props.fetchArtistAlbums(this.props.artist.id);
+            }
+        }, {
+            key: "getArtistImage",
+            value: function getArtistImage(picture) {
+                if (picture == undefined || picture.length == 0) return "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAUVBMVEW1tbX///+2trbR0dGvr6/MzMyysrL7+/v19fWkpKSoqKienp69vb3BwcHi4uLX19fs7OyUlJSLi4vn5+eHh4eampqSkpLHx8f29vbb29vU1NQBbJK+AAADJElEQVR4nO3c21bqMBSF4SSE9EipIFR5/wfdLQe3Cu2Va63OjPnfOOpN+EZ6IAF1IfdccHlHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U/n3pmt546sLdfmrQG1BbmC5+6hjVRlQXbq7CMnuh36mNaCXs1CbRSqg3iWbCUuuBYSb0nRLRTugvOpeiodBfVGbRUug/NYimQpVr0VboeyduNBb6opUmWgt9MQgTzYXeb2WJKxAKE+2EH/+JoieqnXAI3243giPaCbd10389NAQn0VAYQ7N9HGzkiJZCF+r2cVFmKnQhPi5GuQWxrXA8vs+i3Jtwa6GLt+3FspYa0VzoUnk9zFl4+43Ygt9e6FLuc+hin7swddNhI/U61iIsTrkLuypj4fU6HOqchcV4JHaSrkE4vW/r3zIWpmkJ1YqdpGsQHsc7qdwUrkDoxsvwIvY0XIHwepI2me5i3H7z4f1e8CS1F46L/OMhz93Eh7A6vUfJ12AudCEF0ZdgL5SOwr8uV+H9+5Zx/JGlMLnhsy/H+m7rMhSm0BX+q6LMTTj6/OsyEaahmAFmIkzbOZ/3Qw7CNMwD/S6Hb+61C0C1L5hKClO/JBQb9leSwt0S0MvtzPxMUDhtwCwkuer9nqRw9kEx1QluzfxIULh4n/G11pf1BYWLl2F31lrTCArDAvDjnMPfW8RyXtiIfdT0lOSd5jIPlPsg5inRJ/7MzbR/07qPTokKX99NN+96p6iTfucdnmfxWB1Et0efEl49Vb/Wv109TqDu3pfwCjg01f4xj8Vxd1D3ye9ihNScq9i2ITaHwymq+zR2okJIsa6qOqZg4FPaLw3X5Md5Pbjynrd+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOJHIX4U4kchfhTiRyF+FOIX7v+0IuP+AeAhGRGRvocjAAAAAElFTkSuQmCC";
+                return _TidalClient2.default.artistPicToUrl(picture).lg;
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                var _this2 = this;
+
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: {
+                            flex: 1
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 22
+                        }
+                    },
+                    _react3.default.createElement(_Toolbar2.default, {
+                        title: this.props.artist.name,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 23
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.ScrollView,
+                        {
+                            contentContainerStyle: _styles.styles.container,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 24
+                            }
+                        },
+                        _react3.default.createElement(_reactNative.Image, {
+                            source: {
+                                uri: this.getArtistImage(this.props.artist.picture)
+                            },
+                            style: _styles.styles.image,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 25
+                            }
+                        }),
+                        _react3.default.createElement(
+                            _reactNative.Text,
+                            {
+                                style: _styles.styles.title,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 26
+                                }
+                            },
+                            this.props.artist.name
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.View,
+                            {
+                                style: _styles.styles.listContainer,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 28
+                                }
+                            },
+                            this.props.artistAlbums.map(function (album) {
+                                return _react3.default.createElement(
+                                    _reactNative.View,
+                                    {
+                                        key: album.id,
+                                        style: {
+                                            paddingTop: 12,
+                                            paddingBottom: 12,
+                                            paddingRight: 8,
+                                            paddingLeft: 8,
+                                            width: "50%"
+                                        },
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 29
+                                        }
+                                    },
+                                    _react3.default.createElement(_ArtistAlbumItem2.default, {
+                                        name: album.title,
+                                        image: _TidalClient2.default.albumArtToUrl(album.cover).lg,
+                                        onPress: function onPress() {
+                                            return _this2.props.navigateToAlbum(album.id);
+                                        },
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 30
+                                        }
+                                    })
+                                );
+                            })
+                        )
+                    )
+                );
+            }
+        }]);
+
+        return ArtistScreen;
+    }(_react2.Component));
+
+    var mapStateToProps = function mapStateToProps(state) {
+        return {
+            artist: state.currentArtist,
+            artistAlbums: state.currentArtist !== undefined && state.currentArtist.id in state.artistsAlbums ? state.artistsAlbums[state.currentArtist.id] : []
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+        return {
+            fetchArtistAlbums: function fetchArtistAlbums(artistId) {
+                dispatch((0, _reducers2.FetchArtistAlbums)(artistId));
+            },
+            navigateToAlbum: function navigateToAlbum(albumId) {
+                dispatch((0, _reducers.SelectAlbum)(albumId));
+                ownProps.history.push(routes.Album);
+            }
+        };
+    };
+
+    var ArtistScreenContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ArtistScreen));
+    exports.default = ArtistScreenContainer;
+},745,[12,22,176,583,611,491,746,748,580,546,579,734],"src/Containers/ArtistScreen/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/ArtistAlbumItem/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _styles = _require(_dependencyMap[3], "./styles");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        ArtistAlbumItem: {
+            displayName: "ArtistAlbumItem"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Components/ArtistAlbumItem/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var ArtistAlbumItem = _wrapComponent("ArtistAlbumItem")(function (_Component) {
+        _inherits(ArtistAlbumItem, _Component);
+
+        function ArtistAlbumItem() {
+            _classCallCheck(this, ArtistAlbumItem);
+
+            return _possibleConstructorReturn(this, (ArtistAlbumItem.__proto__ || Object.getPrototypeOf(ArtistAlbumItem)).apply(this, arguments));
+        }
+
+        _createClass(ArtistAlbumItem, [{
+            key: "render",
+            value: function render() {
+                return _react3.default.createElement(
+                    _reactNative.TouchableOpacity,
+                    {
+                        onPress: this.props.onPress,
+                        style: _styles.styles.container,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 6
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.ImageBackground,
+                        {
+                            source: {
+                                uri: this.props.image
+                            },
+                            style: _styles.styles.albumCover,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 9
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.ImageBackground,
+                            {
+                                source: undefined,
+                                style: _styles.styles.shader,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 10
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                {
+                                    style: _styles.styles.name,
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 11
+                                    }
+                                },
+                                this.props.name
+                            )
+                        )
+                    )
+                );
+            }
+        }]);
+
+        return ArtistAlbumItem;
+    }(_react2.Component));
+
+    exports.default = ArtistAlbumItem;
+},746,[12,22,176,747],"src/Components/ArtistAlbumItem/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        container: {
+            borderTopWidth: 0,
+            borderBottomWidth: 0
+        },
+        albumCover: {
+            width: "100%",
+            height: 80,
+            display: "flex"
+        },
+        shader: {
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            backgroundColor: "rgba(52, 52, 52, 0.6)"
+        },
+        name: {
+            fontSize: 20,
+            fontStyle: "italic",
+            paddingRight: 20,
+            paddingLeft: 20,
+            color: "white"
+        }
+    });
+},747,[176],"src/Components/ArtistAlbumItem/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.styles = undefined;
+
+    var _reactNative = _require(_dependencyMap[0], "react-native");
+
+    var styles = exports.styles = _reactNative.StyleSheet.create({
+        container: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+        },
+        image: {
+            width: "100%",
+            height: 240
+        },
+        listContainer: {
+            marginTop: 20,
+            width: "100%",
+            justifyContent: 'center',
+            flexDirection: 'row',
+            flexWrap: 'wrap'
+        },
+        progressContainer: {
+            marginTop: 40,
+            alignSelf: "center"
+        },
+        progress: {
+            width: 300
+        },
+        time: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between"
+        },
+        title: {
+            textAlign: "center",
+            paddingTop: 24,
+            fontSize: 24,
+            fontWeight: "bold"
+        },
+        controlls: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            flexGrow: 1
+        },
+        subtitle: {
+            paddingTop: 8,
+            fontSize: 18
+        },
+        iconControllerPlay: {
+            fontSize: 90,
+            marginHorizontal: 20
+        },
+        iconFastForwardBackword: {
+            fontSize: 55
+        },
+        sound: {
+            width: 300,
+            flexGrow: 1
+        },
+        iconSound: {
+            fontSize: 21,
+            marginTop: 5,
+            alignSelf: "center"
+        }
+    });
+},748,[176],"src/Containers/ArtistScreen/styles.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Infrastructure/Navigation/TabBar.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactRouterNative = _require(_dependencyMap[3], "react-router-native");
+
+    var _Entypo = _require(_dependencyMap[4], "react-native-vector-icons/Entypo");
+
+    var _Entypo2 = _interopRequireDefault(_Entypo);
+
+    var _MaterialCommunityIcons = _require(_dependencyMap[5], "react-native-vector-icons/MaterialCommunityIcons");
+
+    var _MaterialCommunityIcons2 = _interopRequireDefault(_MaterialCommunityIcons);
+
+    var _Routes = _require(_dependencyMap[6], "./Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        TabBar: {
+            displayName: "TabBar"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Infrastructure/Navigation/TabBar.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var Tab;
+
+    (function (Tab) {
+        Tab[Tab["Songs"] = 0] = "Songs";
+        Tab[Tab["Albums"] = 1] = "Albums";
+        Tab[Tab["Artists"] = 2] = "Artists";
+    })(Tab || (Tab = {}));
+
+    ;
+
+    var TabBar = _wrapComponent("TabBar")(function (_React$Component) {
+        _inherits(TabBar, _React$Component);
+
+        function TabBar() {
+            _classCallCheck(this, TabBar);
+
+            var _this = _possibleConstructorReturn(this, (TabBar.__proto__ || Object.getPrototypeOf(TabBar)).apply(this, arguments));
+
+            _this.activeColor = "#406CEE";
+            _this.inactiveColor = "grey";
+
+            _this.selectTab = function (tab) {
+                switch (tab) {
+                    case Tab.Songs:
+                        _this.props.history.replace(routes.Songs);
+
+                        break;
+
+                    case Tab.Albums:
+                        _this.props.history.replace(routes.Albums);
+
+                        break;
+
+                    case Tab.Artists:
+                        _this.props.history.replace(routes.Artists);
+
+                        break;
+                }
+            };
+
+            return _this;
+        }
+
+        _createClass(TabBar, [{
+            key: "render",
+            value: function render() {
+                var _this2 = this;
+
+                return this.shouldDisplayTabBar() ? _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 36
+                        }
+                    },
+                    _react3.default.createElement(_reactNative.View, {
+                        style: styles.divider,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 37
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.View,
+                        {
+                            style: styles.container,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 38
+                            }
+                        },
+                        _react3.default.createElement(
+                            _reactNative.TouchableOpacity,
+                            {
+                                style: styles.button,
+                                onPress: function onPress() {
+                                    return _this2.selectTab(Tab.Songs);
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 39
+                                }
+                            },
+                            _react3.default.createElement(_Entypo2.default, {
+                                size: 28,
+                                name: "folder-music",
+                                color: this.isCurrentTab(routes.Songs) ? this.activeColor : this.inactiveColor,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 40
+                                }
+                            }),
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                {
+                                    style: {
+                                        fontSize: 12,
+                                        color: this.isCurrentTab(routes.Songs) ? this.activeColor : this.inactiveColor
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 41
+                                    }
+                                },
+                                "Songs"
+                            )
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.TouchableOpacity,
+                            {
+                                style: styles.button,
+                                onPress: function onPress() {
+                                    return _this2.selectTab(Tab.Albums);
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 43
+                                }
+                            },
+                            _react3.default.createElement(_MaterialCommunityIcons2.default, {
+                                size: 28,
+                                name: "album",
+                                color: this.isCurrentTab(routes.Albums) ? this.activeColor : this.inactiveColor,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 44
+                                }
+                            }),
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                {
+                                    style: {
+                                        fontSize: 12,
+                                        color: this.isCurrentTab(routes.Albums) ? this.activeColor : this.inactiveColor
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 45
+                                    }
+                                },
+                                "Albums"
+                            )
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.TouchableOpacity,
+                            {
+                                style: styles.button,
+                                onPress: function onPress() {
+                                    return _this2.selectTab(Tab.Artists);
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 47
+                                }
+                            },
+                            _react3.default.createElement(_MaterialCommunityIcons2.default, {
+                                size: 28,
+                                name: "artist",
+                                color: this.isCurrentTab(routes.Artists) ? this.activeColor : this.inactiveColor,
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 48
+                                }
+                            }),
+                            _react3.default.createElement(
+                                _reactNative.Text,
+                                {
+                                    style: {
+                                        fontSize: 12,
+                                        color: this.isCurrentTab(routes.Artists) ? this.activeColor : this.inactiveColor
+                                    },
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 49
+                                    }
+                                },
+                                "Artists"
+                            )
+                        )
+                    )
+                ) : null;
+            }
+        }, {
+            key: "shouldDisplayTabBar",
+            value: function shouldDisplayTabBar() {
+                return [routes.Songs, routes.Albums, routes.Artists].indexOf(this.props.location.pathname) !== -1;
+            }
+        }, {
+            key: "isCurrentTab",
+            value: function isCurrentTab(tab) {
+                return this.props.location.pathname == tab;
+            }
+        }]);
+
+        return TabBar;
+    }(_react3.default.Component));
+
+    var styles = _reactNative.StyleSheet.create({
+        divider: {
+            width: "100%",
+            height: 1,
+            backgroundColor: "#D9D9DB"
+        },
+        container: {
+            width: "100%",
+            paddingLeft: 8,
+            paddingRight: 8,
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            flexGrow: 1,
+            backgroundColor: "white"
+        },
+        button: {
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            flexGrow: 1,
+            paddingTop: 4,
+            paddingBottom: 4
+        }
+    });
+
+    exports.default = (0, _reactRouterNative.withRouter)(TabBar);
+},749,[12,22,176,583,675,667,611],"src/Infrastructure/Navigation/TabBar.tsx");
 require(186);
 require(11);

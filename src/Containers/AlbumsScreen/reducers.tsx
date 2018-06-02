@@ -2,7 +2,6 @@ import { ReducerMap, createAction } from "redux-actions";
 import { addReducerFactory } from "../../Utils/AddReducer";
 import Tidal from "../../Services/TidalClient";
 import { Thunk } from "../../Utils/Thunk";
-import { Albums } from "../../Infrastructure/Navigation/AlbumsNavigation";
 
 export let albumReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(albumReducers);

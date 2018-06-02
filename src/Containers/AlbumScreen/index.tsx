@@ -10,6 +10,7 @@ import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SelectSong } from "../SongsScreen/reducers";
 import Tidal from "../../Services/TidalClient";
 import { FetchAlbumSongs } from "../AlbumsScreen/reducers";
+import Toolbar from "../../Infrastructure/Navigation/Toolbar";
 
 interface AlbumScreenStateProps {
     album: Album;
@@ -24,9 +25,10 @@ interface AlbumScreenDispatchProps {
 type AlbumScreenProps = AlbumScreenStateProps & AlbumScreenDispatchProps; // & NavigationScreenProps;
 
 class AlbumScreen extends Component<AlbumScreenProps> {
-    static navigationOptions = {
-        title: "Album",
-    };
+    componentDidMount() {
+        if (this.props.album != undefined)
+            this.props.fetchAlbumSongs(this.props.album.id);
+    }
 
     componentWillReceiveProps(props: AlbumScreenProps) {
         if (this.props.albumSongs.length == 0 && props.album !== undefined)
@@ -45,24 +47,25 @@ class AlbumScreen extends Component<AlbumScreenProps> {
     };
 
     render() {
-        console.log(this.props.album);
-        console.log(this.props.albumSongs);
         let i = 1;
-        return this.props.album !== undefined ? <ScrollView contentContainerStyle={styles.container}>
-            <Image
-                source={{ uri: Tidal.albumArtToUrl(this.props.album.cover).lg }}
-                style={styles.image} />
-            <Text style={styles.title}>{this.props.album.title}</Text>
-            <Text style={styles.subtitle}>{this.props.album.artist !== undefined ? this.props.album.artist.name : ""}</Text>
-            <View style={styles.listContainer}>
-                {this.props.albumSongs.map(song => <View key={song.id}>
-                    {this.renderSeparator()}
-                    <AlbumSongItem
-                        id={i++}
-                        name={song.title}
-                        onPress={() => this.props.navigateToSong(song.id, this.props.album.id)} /></View>)}
-            </View>
-        </ScrollView> : null
+        return this.props.album !== undefined ? <View style={{ flex: 1 }}>
+            <Toolbar title={this.props.album.title} />
+            <ScrollView contentContainerStyle={styles.container}>
+                <Image
+                    source={{ uri: Tidal.albumArtToUrl(this.props.album.cover).lg }}
+                    style={styles.image} />
+                <Text style={styles.title}>{this.props.album.title}</Text>
+                <Text style={styles.subtitle}>{this.props.album.artist !== undefined ? this.props.album.artist.name : ""}</Text>
+                <View style={styles.listContainer}>
+                    {this.props.albumSongs.map(song => <View key={song.id}>
+                        {this.renderSeparator()}
+                        <AlbumSongItem
+                            id={i++}
+                            name={song.title}
+                            onPress={() => this.props.navigateToSong(song.id, this.props.album.id)} /></View>)}
+                </View>
+            </ScrollView>
+        </View> : null;
     }
 }
 
