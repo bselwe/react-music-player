@@ -10,14 +10,14 @@ const Form = t.form.Form;
 
 // Form model
 const User = t.struct({
-    username: t.String,
+    email: t.String,
     password: t.String,
 });
 
 var options = {
     fields: {
-      username: {
-        label: 'User name' // <= label for the name field
+        email: {
+        label: 'User email' // <= label for the name field
       },
       password: {
         label: 'Password', // <= label for the name field
@@ -49,6 +49,9 @@ class SignIn extends React.Component<SignInProps> {
             <View>
                 <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
                     <Text style={styles.buttonText}>Login</Text>
+                </TouchableHighlight>
+                <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
+                    <Text style={styles.buttonText}>Sign up</Text>
                 </TouchableHighlight>
             </View>
         </View>;
