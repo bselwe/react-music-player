@@ -11,13 +11,14 @@ import { artistReducers } from './Containers/ArtistsScreen/reducers';
 import { albumReducers } from './Containers/AlbumsScreen/reducers';
 import { nowPlayingReducers } from './Containers/NowPlayingBar/reducers';
 
-const initialState: AppState = {
+export const initialState: AppState = {
     songs: [],
     songDisplayed: false,
     artists: [],
     artistsAlbums: {},
     albums: [],
     albumsSongs: {},
+    playlist: []
 }
 
 const appReducer = handleActions({
