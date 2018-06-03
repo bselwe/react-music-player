@@ -1,4 +1,32 @@
 declare module Models {
+    interface NewFavouriteTrackDTO {
+        Id: string;
+        Title: string;
+        Artist: string;
+        Photo: string;
+    }
+
+    interface TrackDTO {
+        Id: string;
+        Title: string;
+        Artist: string;
+        Photo: string;
+    }
+
+    interface SignUpDTO {
+        FirstName: string;
+        LastName: string;
+        Email: string;
+        Password: string;
+    }
+
+    interface UserInfoDTO {
+        Id: string;
+        FirstName: string;
+        LastName: string;
+        Email: string;
+    }
+
     interface ResponseSuccess<TResponse> {
         IsSuccess: true;
         StatusCode: number;

@@ -2,55 +2,25 @@ import config from "../Configuration/Config";
 import { HttpClient } from "./HttpClient";
 
 class ApiClient extends HttpClient {
-    // public fetchUserRecipes = () => {
-    //     return this.get<Models.RecipeDTO[]>(
-    //         `/api/recipes/me`);
-    // }
+    public addFavourite = (dto: Models.NewFavouriteTrackDTO) => {
+        return this.post<{}>(
+            `/api/tracks`, dto);
+    }
 
-    // public filterRecipes = (dto: Models.FilterRecipeDTO) => {
-    //     return this.post<Models.RecipeDTO[]>(
-    //         `/api/recipes/filter`, dto);
-    // }
+    public fetchFavourites = () => {
+        return this.get<Models.TrackDTO[]>(
+            `/api/tracks`);
+    }
 
-    // public fetchRecipe = (recipeId: string) => {
-    //     return this.get<Models.RecipeDetailsDTO>(
-    //         `/api/recipes/${recipeId}`);
-    // }
+    public signUp = (dto: Models.SignUpDTO) => {
+        return this.post<Models.SignUpDTO>(
+            `/api/account`);
+    }
 
-    // public createRecipe = (dto: Models.NewRecipeDTO) => {
-    //     return this.post<{}>(
-    //         `/api/recipes`, dto);
-    // }
-
-    // public updateRecipe = (recipeId: string, dto: Models.UpdateRecipeDTO) => {
-    //     return this.put<{}>(
-    //         `/api/recipes/${recipeId}`, dto);
-    // }
-
-    // public deleteRecipe = (recipeId: string) => {
-    //     return this.delete<{}>(
-    //         `/api/recipes/${recipeId}`);
-    // }
-
-    // public fetchTags = () => {
-    //     return this.get<Models.TagDTO[]>(
-    //         `/api/tags`);
-    // }
-
-    // public fetchCart = () => {
-    //     return this.get<Models.IngredientDTO[][]>(
-    //         `/api/cart`);
-    // }
-
-    // public addToCart = (recipeId: string) => {
-    //     return this.post<{}>(
-    //         `/api/cart/${recipeId}`);
-    // }
-
-    // public deleteCart = () => {
-    //     return this.delete<{}>(
-    //         `/api/cart`);
-    // }
+    public fetchUserInfo = () => {
+        return this.get<Models.UserInfoDTO>(
+            `/api/account`);
+    }
 }
 
 export const apiClient = new ApiClient(config.apiEndpoint);
