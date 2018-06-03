@@ -2,8 +2,8 @@ import { tokenStorage, TokenStorage } from "./TokenStorage";
 import encode from "form-urlencoded";
 import cfg from "../Configuration/Config";
 
-const Client = "chefsbook_manager";
-const Scopes = "api/chefsbook_management offline_access openid profile email";
+const Client = "music_player_user";
+const Scopes = "api/music_player_user offline_access openid profile email";
 
 export class CannotRefreshToken extends Error { }
 
@@ -129,4 +129,4 @@ export class LoginManager {
     }
 }
 
-export const loginManager = new LoginManager(tokenStorage, cfg.authEndpoint, cfg.authSecret, Client, Scopes);
+export const loginManager = new LoginManager(tokenStorage, cfg.apiEndpoint, cfg.authSecret, Client, Scopes);
