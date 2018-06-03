@@ -36,7 +36,7 @@ export class LoginManager {
                 throw new CannotRefreshToken("Cannot refresh access token after it has expired");
             }
         }
-        return await this.storage.getToken;
+        return await this.storage.getToken();
     }
 
     public trySignIn(username: string, password: string): Promise<boolean> {
