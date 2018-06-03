@@ -4,3 +4,5 @@ export const Artists = "/artists";
 export const Artist = "/artist";
 export const Albums = "/albums";
 export const Album = "/album";
+export const SignIn = "/signin";
+export const SignUp = "/signup";
