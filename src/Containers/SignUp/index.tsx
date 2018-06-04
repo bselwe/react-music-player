@@ -9,7 +9,7 @@ import t from 'tcomb-form-native';
 const Form = t.form.Form;
 
 // Form model
-const User = t.struct({
+const signUpData = t.struct({
     name: t.String,
     lastname: t.String,
     email: t.String,
@@ -18,16 +18,11 @@ const User = t.struct({
 
 var options = {
     fields: {
-      name: {
-        label: 'Your name'
-      },
-      lastname: {
-        label: 'Your last name'
-      },
       password: {
         secureTextEntry: true
       }
-    }
+    },
+    auto: 'placeholders'
   };
 
 interface SignUpStateProps {
@@ -48,9 +43,9 @@ class SignUp extends React.Component<SignUpProps> {
     render() {
         return <View style={styles.container}>
             <Text style={styles.title}>Sign up</Text>
-            <Form ref="form" type={User} options={options}/>
+            <Form ref="form" type={signUpData} options={options}/>
             <View>
-                <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#99d9f4'>
+                <TouchableHighlight style={styles.button} onPress={this.onPress} underlayColor='#FFC570'>
                     <Text style={styles.buttonText}>Sign up</Text>
                 </TouchableHighlight>
             </View>

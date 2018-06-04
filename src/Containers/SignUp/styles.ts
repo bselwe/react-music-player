@@ -34,13 +34,14 @@ export const styles = StyleSheet.create({
         alignSelf: 'center'
       },
       button: {
+        marginTop: 20,
         height: 36,
-        backgroundColor: '#48BBEC',
-        borderColor: '#48BBEC',
-        borderWidth: 1,
+        width: "40%",
+        backgroundColor: '#ffb74d',
+        borderWidth: 0,
         borderRadius: 8,
         marginBottom: 10,
-        alignSelf: 'stretch',
+        alignSelf: 'center',
         justifyContent: 'center'
       }
 });
