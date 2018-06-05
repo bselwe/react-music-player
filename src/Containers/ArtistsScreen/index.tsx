@@ -8,6 +8,7 @@ import { SelectArtist, FetchArtists } from "./reducers";
 import ArtistItem from "../../Components/ArtistItem"
 import * as routes from "../../Infrastructure/Navigation/Routes";
 import Tidal from "../../Services/TidalClient";
+import SettingsBar from "../../Components/SettingsBar"
 
 interface ArtistsScreenStateProps {
     artists: Artist[];
@@ -48,9 +49,7 @@ class ArtistsScreen extends Component<ArtistsScreenProps> {
 
     render() {
         return <ScrollView>
-            <SearchBar
-                placeholder='Search' 
-                onChangeText={(text) => this.props.fetchArtists(text)} />
+            <SettingsBar onChangeText={(text) => this.props.fetchArtists(text)}/>
             <FlatList
                 data={this.props.artists}
                 keyExtractor={(item, index) => item.id.toString()}

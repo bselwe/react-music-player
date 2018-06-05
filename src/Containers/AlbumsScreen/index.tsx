@@ -8,6 +8,7 @@ import { SelectAlbum, FetchAlbums } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
 import Tidal from "../../Services/TidalClient";
 import * as routes from "../../Infrastructure/Navigation/Routes";
+import SettingsBar from "../../Components/SettingsBar"
 
 interface AlbumsScreenStateProps {
     albums: Album[];
@@ -48,9 +49,7 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
 
     render() {
         return <ScrollView>
-            <SearchBar
-                placeholder='Search'
-                onChangeText={(text) => this.props.fetchAlbums(text)}  />
+            <SettingsBar onChangeText={(text) => this.props.fetchAlbums(text)}/>
             <FlatList
                 data={this.props.albums}
                 keyExtractor={(item, index) => item.id.toString()}
