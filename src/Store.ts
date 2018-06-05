@@ -18,7 +18,6 @@ export const initialState: AppState = {
     artistsAlbums: {},
     albums: [],
     albumsSongs: {},
-    isSignedIn: false,
     favourites: []
 }
 
