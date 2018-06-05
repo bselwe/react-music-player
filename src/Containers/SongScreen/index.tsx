@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid } from "react-native";
+import FavoriteButton from "../../Components/FavoriteButton"
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import VolumeIcon from "react-native-vector-icons/Ionicons";
 import FeatherIcon from "react-native-vector-icons/Feather";
@@ -47,9 +48,7 @@ class SongScreen extends React.Component<SongScreenProps> {
                 style={styles.image} />
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>{this.props.song.title}</Text>
-                <TouchableOpacity>
-                    <FeatherIcon name="star" style={styles.iconFavorite} />
-                </TouchableOpacity>
+                <FavoriteButton onPress={() => {}}/>
             </View>
             <Text style={styles.subtitle}>{this.props.song.artist.name} - {this.props.song.album.title}</Text>
             <View

@@ -54,10 +54,6 @@ export const styles = StyleSheet.create({
     iconFastForwardBackword: {
         fontSize: 50
     },
-    iconFavorite: {
-        fontSize: 25,
-        marginLeft: 10
-    },
     sound: {
         flexGrow: 1,
         width: 300,
