@@ -62,7 +62,7 @@ class TabBar extends React.Component<RouteComponentProps<any>, {}> {
     }
 
     shouldDisplayTabBar(): boolean {
-        return [routes.Songs, routes.Albums, routes.Artists,routes.Favorites].indexOf(this.props.location.pathname) !== -1;
+        return [routes.Songs, routes.Albums, routes.Artists, routes.Favorites].indexOf(this.props.location.pathname) !== -1;
     }
 
     isCurrentTab(tab: string) {

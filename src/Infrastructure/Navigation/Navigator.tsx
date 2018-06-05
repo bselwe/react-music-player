@@ -32,6 +32,7 @@ export default function Navigator() {
                     <PrivateRoute path={routes.Album} exact component={AlbumScreen} />
                     <PrivateRoute path={routes.Artists} exact component={ArtistsScreen} />
                     <PrivateRoute path={routes.Artist} exact component={ArtistScreen} />
+                    <PrivateRoute path={routes.Favorites} exact component={FavoritesScreen} />
                 </Switch>
 
                 <View>

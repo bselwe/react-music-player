@@ -40,9 +40,6 @@ class FavoritesScreen extends Component<FavoritesScreenProps> {
 
     render() {
         return <ScrollView>
-            <SearchBar
-                placeholder='Search'
-                onChangeText={(text) => this.props.fetchSongs(text)} />
             <FlatList
                 data={this.props.songs}
                 keyExtractor={(item, index) => item.id.toString()}
