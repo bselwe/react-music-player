@@ -5,7 +5,7 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import { withRouter, RouteComponentProps } from "react-router-native";
 import * as routes from "../../Infrastructure/Navigation/Routes";
 import * as Progress from "react-native-progress";
-import { connect,Dispatch } from "react-redux";
+import { connect, Dispatch } from "react-redux";
 import ArtistAlbumItem from "../../Components/ArtistAlbumItem"
 import { styles } from "./styles";
 import { SelectAlbum } from "../AlbumsScreen/reducers";

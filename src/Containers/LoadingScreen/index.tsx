@@ -4,7 +4,6 @@ import { connect, Dispatch } from "react-redux";
 import { FetchUserInfo } from "../SignInScreen/reducers";
 import { Redirect } from "react-router-native";
 import * as routes from "../../Infrastructure/Navigation/Routes";
-import { loginManager } from "../../Services/LoginManager";
 
 interface LoadingScreenStateProps {
     isSignedIn?: boolean;

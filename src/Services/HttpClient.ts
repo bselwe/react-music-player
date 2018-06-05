@@ -39,7 +39,7 @@ export class HttpClient {
                 let token = await loginManager.getToken();
                 headers.append("Authorization", `Bearer ${token}`);
             }
-
+            
             const requestInit: RequestInit = {
                 method: this.getRequestMethod(method),
                 headers,

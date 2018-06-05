@@ -5,6 +5,7 @@ import { SignUpWithPassword } from "./reducers";
 import { styles } from "./styles";
 import { RouteComponentProps, withRouter } from "react-router-native";
 import * as routes from "../../Infrastructure/Navigation/Routes";
+import { Redirect } from "react-router-native";
 
 interface SignUpState {
     name: string,
@@ -12,8 +13,10 @@ interface SignUpState {
     email: string,
     password: string
 }
+
 interface SignUpStateProps {
     readonly signUpError?: string;
+    readonly signUpResult?: boolean;
 }
 
 interface SignUpDispatchProps {
@@ -27,10 +30,10 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
     constructor(props) {
         super(props)
         this.state = {
-            name: "",
-            lastname: "",
-            email: "",
-            password: ""
+            name: "Bartosz",
+            lastname: "Selwesiuk",
+            email: "bselwe+a@gmail.com",
+            password: "a"
         }
     }
 
@@ -39,6 +42,9 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
     }
 
     render() {
+        if (this.props.signUpResult !== undefined && this.props.signUpResult)
+            return <Redirect to={routes.SignIn} />
+
         return <View style={styles.container}>
             <Text style={styles.title}>Sign up</Text>
             <TextInput
@@ -68,7 +74,7 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
                 </TouchableHighlight>
                 <TouchableOpacity onPress={() => this.props.navigateToSignIn()}>
                     <View>
-                        <Text style={styles.buttonText}>Go to Sign in</Text>
+                        <Text style={styles.buttonText}>Go to Login</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -78,7 +84,8 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
 
 const mapStateToProps = (state: AppState): SignUpStateProps => {
     return {
-        signUpError: state.signUpError
+        signUpError: state.signUpError,
+        signUpResult: state.signUpResult
     }
 }
 

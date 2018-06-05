@@ -3,6 +3,7 @@ interface UserState {
     readonly isSignedIn?: boolean;
     readonly signInError?: string;
     readonly signUpError?: string;
+    readonly signUpResult?: boolean;
 }
 
 interface AppState extends UserState {
