@@ -8,7 +8,7 @@ import { SelectAlbum, FetchAlbums } from "./reducers";
 import AlbumItem from "../../Components/AlbumItem"
 import Tidal from "../../Services/TidalClient";
 import * as routes from "../../Infrastructure/Navigation/Routes";
-import SettingsBar from "../../Components/SettingsBar"
+import SettingsBar from "../SettingsBar";
 
 interface AlbumsScreenStateProps {
     albums: Album[];

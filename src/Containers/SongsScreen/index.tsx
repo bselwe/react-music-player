@@ -3,8 +3,8 @@ import { View, Text, Button, FlatList, ScrollView } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { connect, Dispatch } from "react-redux";
 import { SelectSong, FetchSongs } from "./reducers";
-import SettingsBar from "../../Components/SettingsBar"
-import SongItem from "../../Components/SongItem"
+import SettingsBar from "../SettingsBar";
+import SongItem from "../../Components/SongItem";
 import Tidal from "../../Services/TidalClient";
 
 interface SongsScreenStateProps {

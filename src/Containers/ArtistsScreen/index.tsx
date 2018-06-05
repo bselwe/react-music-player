@@ -8,8 +8,7 @@ import { SelectArtist, FetchArtists } from "./reducers";
 import ArtistItem from "../../Components/ArtistItem"
 import * as routes from "../../Infrastructure/Navigation/Routes";
 import Tidal from "../../Services/TidalClient";
-import SettingsBar from "../../Components/SettingsBar"
-
+import SettingsBar from "../SettingsBar"
 interface ArtistsScreenStateProps {
     artists: Artist[];
 }
