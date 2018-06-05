@@ -35,7 +35,7 @@ export class HttpClient {
                 headers.append("Content-Type", "application/json; charset=UTF-8");
             }
 
-            if (loginManager.isSigned) {
+            if (await loginManager.isSigned()) {
                 let token = await loginManager.getToken();
                 headers.append("Authorization", `Bearer ${token}`);
             }
