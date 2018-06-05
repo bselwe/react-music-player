@@ -66967,8 +66967,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
 
-    var _LoginManager = _require(_dependencyMap[2], "../../Services/LoginManager");
-
     var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
         return new (P || (P = Promise))(function (resolve, reject) {
             function fulfilled(value) {
@@ -67000,39 +66998,29 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     var singUpReducers = exports.singUpReducers = {};
     var addReducer = (0, _AddReducer.addReducerFactory)(singUpReducers);
 
-    var SignUpWithPassword = exports.SignUpWithPassword = function SignUpWithPassword(username, password) {
+    var SignUpWithPassword = exports.SignUpWithPassword = function SignUpWithPassword(name, lastname, email, password) {
         return function (dispatch, getState) {
             return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
-                var isSignedUp;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
                             case 0:
-                                _context.prev = 0;
-                                _context.next = 3;
-                                return _LoginManager.loginManager.trySignUp(username, password);
+                                try {
+                                    dispatch(SetSignedUp({
+                                        signUpError: !isSignedUp ? "Nie udało się zarejestrować" : undefined
+                                    }));
+                                } catch (_a) {
+                                    dispatch(SetSignedUp({
+                                        signUpError: "Wystąpił problem z rejestracją"
+                                    }));
+                                }
 
-                            case 3:
-                                isSignedUp = _context.sent;
-                                dispatch(SetSignedUp({
-                                    signUpError: !isSignedUp ? "Nie udało się zarejestrować" : undefined
-                                }));
-                                _context.next = 10;
-                                break;
-
-                            case 7:
-                                _context.prev = 7;
-                                _context.t0 = _context["catch"](0);
-                                dispatch(SetSignedUp({
-                                    signUpError: "Wystąpił problem z rejestracją"
-                                }));
-
-                            case 10:
+                            case 1:
                             case "end":
                                 return _context.stop();
                         }
                     }
-                }, _callee, this, [[0, 7]]);
+                }, _callee, this);
             }));
         };
     };
@@ -67043,7 +67031,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             SignUpError: action.payload ? action.payload.signUpError : undefined
         });
     });
-},587,[521,544,583],"src/Containers/SignUpScreen/reducers.tsx");
+},587,[521,544],"src/Containers/SignUpScreen/reducers.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -70567,13 +70555,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                     isSignedIn = _a.isSignedIn,
                     rest = __rest(_a, ["component", "isSignedIn"]);
 
-                console.log("Is signed in: " + isSignedIn);
                 return _react3.default.createElement(_reactRouterNative.Route, _extends({}, rest, {
                     render: function render(props) {
                         return isSignedIn ? _react3.default.createElement(Component, _extends({}, props, {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 18
+                                lineNumber: 17
                             }
                         })) : _react3.default.createElement(_reactRouterNative.Redirect, {
                             to: {
@@ -70584,13 +70571,13 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 19
+                                lineNumber: 18
                             }
                         });
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 17
                     }
                 }));
             }
@@ -94493,13 +94480,20 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             value: function render() {
                 var _this2 = this;
 
-                return _react3.default.createElement(
+                var _ref = this.props.location.state || {
+                    from: {
+                        pathname: routes.Songs
+                    }
+                },
+                    from = _ref.from;
+
+                return !this.props.isSignedIn ? _react3.default.createElement(
                     _reactNative.View,
                     {
                         style: _styles.styles.container,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 21
                         }
                     },
                     _react3.default.createElement(
@@ -94508,7 +94502,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.title,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 21
+                                lineNumber: 22
                             }
                         },
                         "Login"
@@ -94523,7 +94517,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         placeholder: "Email",
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 22
+                            lineNumber: 23
                         }
                     }),
                     _react3.default.createElement(_reactNative.TextInput, {
@@ -94534,9 +94528,10 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         },
                         value: this.state.password,
                         placeholder: "Password",
+                        secureTextEntry: true,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 23
+                            lineNumber: 24
                         }
                     }),
                     _react3.default.createElement(
@@ -94544,7 +94539,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 24
+                                lineNumber: 25
                             }
                         },
                         this.props.signInError
@@ -94554,7 +94549,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 25
+                                lineNumber: 26
                             }
                         },
                         _react3.default.createElement(
@@ -94567,7 +94562,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 underlayColor: "#FFC570",
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 26
+                                    lineNumber: 27
                                 }
                             },
                             _react3.default.createElement(
@@ -94576,7 +94571,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                     style: _styles.styles.buttonText,
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 27
+                                        lineNumber: 28
                                     }
                                 },
                                 "Login"
@@ -94590,7 +94585,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 },
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 29
+                                    lineNumber: 30
                                 }
                             },
                             _react3.default.createElement(
@@ -94598,7 +94593,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 30
+                                        lineNumber: 31
                                     }
                                 },
                                 _react3.default.createElement(
@@ -94607,15 +94602,21 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                         style: _styles.styles.buttonText,
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 31
+                                            lineNumber: 32
                                         }
                                     },
-                                    "Sign up"
+                                    "Go to Sign up"
                                 )
                             )
                         )
                     )
-                );
+                ) : _react3.default.createElement(_reactRouterNative.Redirect, {
+                    to: from,
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 36
+                    }
+                });
             }
         }]);
 
@@ -94624,6 +94625,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var mapStateToProps = function mapStateToProps(state) {
         return {
+            isSignedIn: state.isSignedIn,
             signInError: state.signInError
         };
     };
@@ -94634,7 +94636,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                 dispatch((0, _reducers.SignInWithPassword)(username, password));
             },
             navigateToSignUp: function navigateToSignUp() {
-                ownProps.history.push(routes.SignUp);
+                ownProps.history.replace(routes.SignUp);
             }
         };
     };
@@ -94711,6 +94713,14 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _styles = _require(_dependencyMap[5], "./styles");
 
+    var _reactRouterNative = _require(_dependencyMap[6], "react-router-native");
+
+    var _Routes = _require(_dependencyMap[7], "../../Infrastructure/Navigation/Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
     function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
     function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -94741,27 +94751,37 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     var SignUp = _wrapComponent("SignUp")(function (_React$Component) {
         _inherits(SignUp, _React$Component);
 
-        function SignUp() {
+        function SignUp(props) {
             _classCallCheck(this, SignUp);
 
-            return _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).apply(this, arguments));
+            var _this = _possibleConstructorReturn(this, (SignUp.__proto__ || Object.getPrototypeOf(SignUp)).call(this, props));
+
+            _this.state = {
+                name: "",
+                lastname: "",
+                email: "",
+                password: ""
+            };
+            return _this;
         }
 
         _createClass(SignUp, [{
-            key: "onPress",
-            value: function onPress() {
-                console.log("Form submitted.");
+            key: "onSignUpPress",
+            value: function onSignUpPress() {
+                this.props.signUp(this.state.name, this.state.lastname, this.state.email, this.state.password);
             }
         }, {
             key: "render",
             value: function render() {
+                var _this2 = this;
+
                 return _react3.default.createElement(
                     _reactNative.View,
                     {
                         style: _styles.styles.container,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 11
+                            lineNumber: 22
                         }
                     },
                     _react3.default.createElement(
@@ -94770,28 +94790,92 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                             style: _styles.styles.title,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 12
+                                lineNumber: 23
                             }
                         },
                         "Sign up"
+                    ),
+                    _react3.default.createElement(_reactNative.TextInput, {
+                        onChangeText: function onChangeText(name) {
+                            return _this2.setState({
+                                name: name
+                            });
+                        },
+                        value: this.state.name,
+                        placeholder: "Name",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 24
+                        }
+                    }),
+                    _react3.default.createElement(_reactNative.TextInput, {
+                        onChangeText: function onChangeText(lastname) {
+                            return _this2.setState({
+                                lastname: lastname
+                            });
+                        },
+                        value: this.state.lastname,
+                        placeholder: "Last name",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 25
+                        }
+                    }),
+                    _react3.default.createElement(_reactNative.TextInput, {
+                        onChangeText: function onChangeText(email) {
+                            return _this2.setState({
+                                email: email
+                            });
+                        },
+                        value: this.state.email,
+                        placeholder: "Email",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 26
+                        }
+                    }),
+                    _react3.default.createElement(_reactNative.TextInput, {
+                        onChangeText: function onChangeText(password) {
+                            return _this2.setState({
+                                password: password
+                            });
+                        },
+                        value: this.state.password,
+                        placeholder: "Password",
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 27
+                        }
+                    }),
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 28
+                            }
+                        },
+                        this.props.signUpError
                     ),
                     _react3.default.createElement(
                         _reactNative.View,
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 13
+                                lineNumber: 29
                             }
                         },
                         _react3.default.createElement(
                             _reactNative.TouchableHighlight,
                             {
                                 style: _styles.styles.button,
-                                onPress: this.onPress,
+                                onPress: function onPress() {
+                                    return _this2.onSignUpPress();
+                                },
                                 underlayColor: "#FFC570",
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 14
+                                    lineNumber: 30
                                 }
                             },
                             _react3.default.createElement(
@@ -94800,10 +94884,42 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                                     style: _styles.styles.buttonText,
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 15
+                                        lineNumber: 31
                                     }
                                 },
                                 "Sign up"
+                            )
+                        ),
+                        _react3.default.createElement(
+                            _reactNative.TouchableOpacity,
+                            {
+                                onPress: function onPress() {
+                                    return _this2.props.navigateToSignIn();
+                                },
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 33
+                                }
+                            },
+                            _react3.default.createElement(
+                                _reactNative.View,
+                                {
+                                    __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 34
+                                    }
+                                },
+                                _react3.default.createElement(
+                                    _reactNative.Text,
+                                    {
+                                        style: _styles.styles.buttonText,
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 35
+                                        }
+                                    },
+                                    "Go to Sign in"
+                                )
                             )
                         )
                     )
@@ -94816,21 +94932,24 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var mapStateToProps = function mapStateToProps(state) {
         return {
-            SignUpError: state.signUpError
+            signUpError: state.signUpError
         };
     };
 
-    var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+    var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
         return {
-            SignUp: function SignUp(username, password) {
-                dispatch((0, _reducers.SignUpWithPassword)(username, password));
+            signUp: function signUp(name, lastname, email, password) {
+                dispatch((0, _reducers.SignUpWithPassword)(name, lastname, email, password));
+            },
+            navigateToSignIn: function navigateToSignIn() {
+                ownProps.history.replace(routes.SignIn);
             }
         };
     };
 
-    var SignUpContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SignUp);
+    var SignUpContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SignUp));
     exports.default = SignUpContainer;
-},753,[12,22,176,491,587,754],"src/Containers/SignUpScreen/index.tsx");
+},753,[12,22,176,491,587,754,589,618],"src/Containers/SignUpScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true

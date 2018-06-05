@@ -11,10 +11,11 @@ const addReducer = addReducerFactory(singUpReducers);
 export const SignUpWithPassword = (name: string, lastname: string, email: string, password: string) =>
     async (dispatch: Dispatch<any>, getState: () => AppState) => {
         try {
-            const isSignedUp = await loginManager.trySignUp(email, password);
+            // const isSignedUp = await loginManager.trySignUp(email, password);
+            const signedUp = true;
 
             dispatch(SetSignedUp({
-                signUpError: !isSignedUp ? ("Nie udało się zarejestrować") : undefined
+                signUpError: !signedUp ? ("Nie udało się zarejestrować") : undefined
             }));
         }
         catch {

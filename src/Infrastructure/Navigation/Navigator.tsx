@@ -19,14 +19,15 @@ export default function Navigator() {
         <NativeRouter>
             <View style={{ flex: 1 }}>
                 <Switch>
+                    <Route path={routes.Loading} exact component={LoadingSreen} />
+                    <Route path={routes.SignIn} exact component={SignInScreen} />
+                    <Route path={routes.SignUp} exact component={SignUpScreen} />
                     <PrivateRoute path={routes.Songs} exact component={SongsScreen} />
                     <PrivateRoute path={routes.Song} exact component={SongScreen} />
                     <PrivateRoute path={routes.Albums} exact component={AlbumsScreen} />
                     <PrivateRoute path={routes.Album} exact component={AlbumScreen} />
                     <PrivateRoute path={routes.Artists} exact component={ArtistsScreen} />
                     <PrivateRoute path={routes.Artist} exact component={ArtistScreen} />
-                    <Route path={routes.SignIn} exact component={SignInScreen} />
-                    <Route path={routes.SignUp} exact component={SignUpScreen} />
                 </Switch>
 
                 <View>

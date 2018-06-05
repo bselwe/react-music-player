@@ -1,22 +1,5 @@
 import { StyleSheet } from "react-native";
 
-// stylesheet.textbox.normal.borderWidth = 0;
-// stylesheet.textbox.error.borderWidth = 0;
-// stylesheet.textbox.normal.marginBottom = 0;
-// stylesheet.textbox.error.marginBottom = 0;
-
-// stylesheet.textboxView.normal.borderWidth = 0;
-// stylesheet.textboxView.error.borderWidth = 0;
-// stylesheet.textboxView.normal.borderRadius = 0;
-// stylesheet.textboxView.error.borderRadius = 0;
-// stylesheet.textboxView.normal.borderBottomWidth = 1;
-// stylesheet.textboxView.error.borderBottomWidth = 1;
-// stylesheet.textbox.normal.marginBottom = 5;
-// stylesheet.textbox.error.marginBottom = 5;
-
-// stylesheet.textbox.normal.fontSize = 20;
-// stylesheet.textbox.normal.color = "white";
-
 export const styles = StyleSheet.create({
   container: {
     display: "flex",

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, RouteComponentProps } from "react-router-native";
+import { withRouter, RouteComponentProps, Redirect } from "react-router-native";
 import { View, Text, TouchableHighlight, TouchableWithoutFeedback, TouchableOpacity, TextInput, AsyncStorage } from "react-native";
 import { connect, Dispatch } from "react-redux";
 import { SignInWithPassword } from "./reducers";
@@ -14,6 +14,7 @@ interface SignInState {
 }
 
 interface SignInStateProps {
+    isSignedIn: boolean;
     signInError?: string;
 }
 
@@ -38,7 +39,9 @@ class SignIn extends React.Component<SignInProps, SignInState> {
     }
 
     render() {
-        return <View style={styles.container}>
+        const { from } = this.props.location.state || { from: { pathname: routes.Songs } };
+
+        return !this.props.isSignedIn ? <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
             <TextInput
                 onChangeText={email => this.setState({ email })}
@@ -58,16 +61,17 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                 </TouchableHighlight>
                 <TouchableOpacity onPress={() => this.props.navigateToSignUp()}>
                     <View>
-                        <Text style={styles.buttonText}>Sign up</Text>
+                        <Text style={styles.buttonText}>Go to Sign up</Text>
                     </View>
                 </TouchableOpacity>
             </View>
-        </View>;
+        </View> : <Redirect to={from} />;
     }
 }
 
 const mapStateToProps = (state: AppState): SignInStateProps => {
     return {
+        isSignedIn: state.isSignedIn,
         signInError: state.signInError
     }
 }
@@ -78,7 +82,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: SignInProps): Sig
             dispatch(SignInWithPassword(username, password));
         },
         navigateToSignUp: () => {
-            ownProps.history.push(routes.SignUp);
+            ownProps.history.replace(routes.SignUp);
         }
     };
 }

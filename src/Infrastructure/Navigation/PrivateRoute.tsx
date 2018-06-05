@@ -11,8 +11,6 @@ class PrivateRoute extends React.Component<PrivateRouteProps> {
     render() {
         let { component: Component, isSignedIn, ...rest } = this.props;
 
-        console.log("Is signed in: " + isSignedIn);
-
         return <Route {...rest} render={props => (
             isSignedIn ? <Component {...props} /> :
             <Redirect to={{ pathname: routes.SignIn, state: { from: props.location } }} />

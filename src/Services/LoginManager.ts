@@ -60,7 +60,7 @@ export class LoginManager {
                 }
                 return false;
             }
-
+            
             let tokenResult = await result.json();
 
             await this.storage.setToken(tokenResult.access_token);

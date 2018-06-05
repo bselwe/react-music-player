@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { View, Text, TouchableHighlight, TextInput } from "react-native";
+import { View, Text, TouchableHighlight, TouchableOpacity, TextInput } from "react-native";
 import { connect, Dispatch } from "react-redux";
 import { SignUpWithPassword } from "./reducers";
 import { styles } from "./styles";
+import { RouteComponentProps, withRouter } from "react-router-native";
+import * as routes from "../../Infrastructure/Navigation/Routes";
 
 interface SignUpState {
     name: string,
@@ -16,6 +18,7 @@ interface SignUpStateProps {
 
 interface SignUpDispatchProps {
     readonly signUp: (name: string, lastname: string, email: string, password: string) => void;
+    readonly navigateToSignIn: () => void;
 }
 
 export type SignUpProps = SignUpDispatchProps & SignUpStateProps;
@@ -38,8 +41,6 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
     render() {
         return <View style={styles.container}>
             <Text style={styles.title}>Sign up</Text>
-<<<<<<< HEAD
-=======
             <TextInput
                 onChangeText={name => this.setState({ name })}
                 value={this.state.name}
@@ -61,11 +62,15 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
                 placeholder="Password"
             />
             <Text>{this.props.signUpError}</Text>
->>>>>>> Fix SignUp screen
             <View>
                 <TouchableHighlight style={styles.button} onPress={() => this.onSignUpPress()} underlayColor='#FFC570'>
                     <Text style={styles.buttonText}>Sign up</Text>
                 </TouchableHighlight>
+                <TouchableOpacity onPress={() => this.props.navigateToSignIn()}>
+                    <View>
+                        <Text style={styles.buttonText}>Go to Sign in</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>;
     }
@@ -77,17 +82,20 @@ const mapStateToProps = (state: AppState): SignUpStateProps => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>): SignUpDispatchProps => {
+const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: RouteComponentProps<any>): SignUpDispatchProps => {
     return {
         signUp: (name, lastname, email, password) => {
             dispatch(SignUpWithPassword(name, lastname, email, password));
+        },
+        navigateToSignIn: () => {
+            ownProps.history.replace(routes.SignIn);
         }
     };
 }
 
-const SignUpContainer = connect(
+const SignUpContainer = withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(SignUp);
+)(SignUp));
 
 export default SignUpContainer;
