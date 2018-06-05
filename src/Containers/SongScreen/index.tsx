@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Image, TouchableOpacity, Slider, ProgressBarAndroid } from "react-native";
 import EntypoIcon from "react-native-vector-icons/Entypo";
 import VolumeIcon from "react-native-vector-icons/Ionicons";
+import FeatherIcon from "react-native-vector-icons/Feather";
 import * as Progress from "react-native-progress";
 import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
@@ -44,11 +45,16 @@ class SongScreen extends React.Component<SongScreenProps> {
             <Image
                 source={{ uri: Tidal.albumArtToUrl(this.props.song.album.cover).lg }}
                 style={styles.image} />
-            <Text style={styles.title}>{this.props.song.title}</Text>
+            <View style={styles.titleContainer}>
+                <Text style={styles.title}>{this.props.song.title}</Text>
+                <TouchableOpacity>
+                    <FeatherIcon name="star" style={styles.iconFavorite} />
+                </TouchableOpacity>
+            </View>
             <Text style={styles.subtitle}>{this.props.song.artist.name} - {this.props.song.album.title}</Text>
             <View
                 style={styles.progressContainer}>
-                <Progress.Bar 
+                <Progress.Bar
                     style={styles.progress}
                     width={null}
                     progress={this.props.song.time / this.props.song.duration}
@@ -62,25 +68,25 @@ class SongScreen extends React.Component<SongScreenProps> {
             </View>
             <View style={styles.controlls}>
                 <TouchableOpacity onPress={() => this.props.selectPrevSong(false)}>
-                    <EntypoIcon name="controller-fast-backward" style={styles.iconFastForwardBackword}/>
+                    <EntypoIcon name="controller-fast-backward" style={styles.iconFastForwardBackword} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.updateSongPaused(!this.props.song.paused)}>
-                    <EntypoIcon name={`controller-${this.props.song.paused ? 'play' : 'paus'}`} style={styles.iconControllerPlayPause}/>
+                    <EntypoIcon name={`controller-${this.props.song.paused ? 'play' : 'paus'}`} style={styles.iconControllerPlayPause} />
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.selectNextSong(false)}>
-                    <EntypoIcon name="controller-fast-forward" style={styles.iconFastForwardBackword}/>
+                    <EntypoIcon name="controller-fast-forward" style={styles.iconFastForwardBackword} />
                 </TouchableOpacity>
             </View>
             <View style={styles.sound}>
-                <Slider 
+                <Slider
                     step={0.01}
                     maximumValue={1}
                     onValueChange={volume => this.props.updateSongVolume(volume)}
                     value={this.props.song.volume}
                     thumbTintColor={"#ffb74d"}
                     minimumTrackTintColor={"grey"} />
-                <VolumeIcon 
-                    name={`md-volume-${this.props.song.muted ? 'off' : 'up'}`} 
+                <VolumeIcon
+                    name={`md-volume-${this.props.song.muted ? 'off' : 'up'}`}
                     style={styles.iconSound}
                     onPress={() => this.props.updateSongMuted(!this.props.song.muted)} />
             </View>
