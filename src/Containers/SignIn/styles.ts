@@ -1,23 +1,21 @@
 import { StyleSheet } from "react-native";
-import t from 'tcomb-form-native';
 
-const stylesheet = t.form.Form.stylesheet;
+// stylesheet.textbox.normal.borderWidth = 0;
+// stylesheet.textbox.error.borderWidth = 0;
+// stylesheet.textbox.normal.marginBottom = 0;
+// stylesheet.textbox.error.marginBottom = 0;
 
-stylesheet.textbox.normal.borderWidth = 0;
-stylesheet.textbox.error.borderWidth = 0;
-stylesheet.textbox.normal.marginBottom = 0;
-stylesheet.textbox.error.marginBottom = 0;
+// stylesheet.textboxView.normal.borderWidth = 0;
+// stylesheet.textboxView.error.borderWidth = 0;
+// stylesheet.textboxView.normal.borderRadius = 0;
+// stylesheet.textboxView.error.borderRadius = 0;
+// stylesheet.textboxView.normal.borderBottomWidth = 1;
+// stylesheet.textboxView.error.borderBottomWidth = 1;
+// stylesheet.textbox.normal.marginBottom = 5;
+// stylesheet.textbox.error.marginBottom = 5;
 
-stylesheet.textboxView.normal.borderWidth = 0;
-stylesheet.textboxView.error.borderWidth = 0;
-stylesheet.textboxView.normal.borderRadius = 0;
-stylesheet.textboxView.error.borderRadius = 0;
-stylesheet.textboxView.normal.borderBottomWidth = 1;
-stylesheet.textboxView.error.borderBottomWidth = 1;
-stylesheet.textbox.normal.marginBottom = 5;
-stylesheet.textbox.error.marginBottom = 5;
-
-stylesheet.textbox.normal.fontSize = 20;
+// stylesheet.textbox.normal.fontSize = 20;
+// stylesheet.textbox.normal.color = "white";
 
 export const styles = StyleSheet.create({
   container: {
@@ -31,19 +29,6 @@ export const styles = StyleSheet.create({
   formContainer: {
     backgroundColor: "white"
   },
-  // title: {
-  //     textAlign: "center",
-  //     paddingTop: 24,
-  //     fontSize: 24,
-  //     fontWeight: "bold",
-  //     color: "white"
-  // }
-  // container: {
-  //     justifyContent: 'center',
-  //     marginTop: 50,
-  //     padding: 20,
-  //     backgroundColor: "rgba(52, 52, 52, 0.5)",
-  //   },
   title: {
     fontSize: 30,
     alignSelf: 'center',
