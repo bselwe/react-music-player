@@ -71,3 +71,15 @@ addReducer(SetUserInfo, (state, action) => {
         userInfo: action.payload.userInfo
     };
 });
+
+export const SignOutFromStore = createAction("ACCOUNT/SIGN_OUT");
+addReducer(SignOutFromStore, (state) => {
+    return {
+        ...state,
+        isSignedIn: false,
+        signInError: undefined,
+        userInfo: undefined,
+        signUpError: undefined,
+        signUpResult: undefined
+    };
+});
