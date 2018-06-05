@@ -1,3 +1,4 @@
+import { loginManager } from './Services/LoginManager';
 import { songReducers } from './Containers/SongScreen/reducers';
 import { songsReducers } from './Containers/SongsScreen/reducers';
 import { handleActions } from "redux-actions";
@@ -6,6 +7,8 @@ import thunk from "redux-thunk";
 import { artistReducers } from './Containers/ArtistsScreen/reducers';
 import { albumReducers } from './Containers/AlbumsScreen/reducers';
 import { nowPlayingReducers } from './Containers/NowPlayingBar/reducers';
+import { singInReducers } from './Containers/SignIn/reducers';
+import { singUpReducers } from './Containers/SignUp/reducers';
 
 export const initialState: AppState = {
     songs: [],
@@ -23,7 +26,9 @@ const appReducer = handleActions({
     ...songReducers,
     ...nowPlayingReducers,
     ...artistReducers,
-    ...albumReducers
+    ...albumReducers,
+    ...singInReducers,
+    ...singUpReducers
 }, initialState);
 
 let store: Store<any> = createStore(

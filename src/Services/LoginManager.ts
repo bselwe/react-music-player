@@ -1,6 +1,6 @@
 import { tokenStorage, TokenStorage } from "./TokenStorage";
-import encode from "form-urlencoded";
 import cfg from "../Configuration/Config";
+import base64 from "base-64";
 
 const Client = "music_player_user";
 const Scopes = "api/music_player_user offline_access openid profile email";
@@ -39,33 +39,18 @@ export class LoginManager {
         return await this.storage.getToken();
     }
 
-    public trySignIn(username: string, password: string): Promise<boolean> {
+    public trySignIn = (username: string, password: string): Promise<boolean> => {
         return this.acquireToken(this.buildSignInRequest(username, password));
-    }
-
-    //TODO: implement
-    public trySignUp(username: string, password: string): any {
-        return null;
     }
 
     public async tryRefreshToken(): Promise<boolean> {
         return this.acquireToken(await this.buildRefreshRequest());
     }
 
-    // public onChange(callback: () => void) {
-    //     this.callbacks.push(callback);
-    // }
-
-    // public removeOnChange(callback: () => void) {
-    //     let idx = this.callbacks.indexOf(callback);
-    //     if (idx !== -1) {
-    //         this.callbacks.splice(idx, 1);
-    //     }
-    // }
-
     private async acquireToken(init: RequestInit) {
         try {
             let result = await fetch(this.endpoint + "/connect/token", init);
+
             if (!result.ok) {
                 if (result.status === 400) {
                     console.warn("Cannot sign user in, invalid username or password/refresh token, user will need to sign-in again");
@@ -92,14 +77,15 @@ export class LoginManager {
         }
     }
 
-    public buildSignInRequest(username: string, password: string): RequestInit {
-        let data = {
+    public buildSignInRequest = (username: string, password: string): RequestInit => {
+        let params = this.encodeData({
+            "client_id": Client,
             "grant_type": "password",
             "scope": this.scopes,
             "username": username,
             "password": password
-        };
-        let params = encode(data);
+        });
+
         return {
             method: "POST",
             headers: this.prepareHeaders(),
@@ -108,7 +94,8 @@ export class LoginManager {
     }
 
     private async buildRefreshRequest(): Promise<RequestInit> {
-        let params = encode({
+        let params = this.encodeData({
+            "client_id": Client,
             "grant_type": "refresh_token",
             "scope": this.scopes,
             "refresh_token": await this.storage.getRefreshToken() || ""
@@ -123,9 +110,20 @@ export class LoginManager {
 
     private prepareHeaders() {
         let headers = new Headers();
-        let sec = btoa(this.client + ":" + this.secret);
+        let sec = base64.encode(this.client + ":" + this.secret);
+        headers.append("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
         headers.append("Authorization", "Basic " + sec);
         return headers;
+    }
+
+    private encodeData(data: {}): string {
+        let formBody = [];
+        for (var property in data) {
+            var encodedKey = encodeURIComponent(property);
+            var encodedValue = encodeURIComponent(data[property]);
+            formBody.push(encodedKey + "=" + encodedValue);
+        }
+        return formBody.join("&");
     }
 }
 

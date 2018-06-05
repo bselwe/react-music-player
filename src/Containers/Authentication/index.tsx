@@ -16,7 +16,7 @@ export const Authentication = connect(
             isSignedIn: state.isSignedIn
         };
     }
-)(props => props.isSignedIn ? <View>{props.children}</View> : <Switch>
+)(props => props.isSignedIn ? <View style={{ flex: 1 }}>{props.children}</View> : <Switch>
     <Route path={routes.SignIn} exact component={SignIn} />
     <Route path={routes.SignUp} exact component={SignUp} />
 </Switch>);

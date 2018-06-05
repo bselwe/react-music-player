@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { withRouter, RouteComponentProps } from "react-router-native";
-import { View, Text, TouchableHighlight, TouchableWithoutFeedback, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, TouchableHighlight, TouchableWithoutFeedback, TouchableOpacity, TextInput, AsyncStorage } from "react-native";
 import { connect, Dispatch } from "react-redux";
 import { SignInWithPassword } from "./reducers";
 import { styles } from "./styles";
 import * as routes from "../../Infrastructure/Navigation/Routes";
+import { tokenStorage } from "../../Services/TokenStorage";
+import { loginManager } from "../../Services/LoginManager";
 
 // var options = {
 //     fields: {
@@ -35,9 +37,15 @@ class SignIn extends React.Component<SignInProps, SignInState> {
     constructor(props) {
         super(props)
         this.state = {
-            email: "",
-            password: ""
+            email: "bselwesiuk@gmail.com",
+            password: "a"
         }
+    }
+
+    componentDidMount() {
+        AsyncStorage.getItem("token").then(halo => console.log(halo));
+        AsyncStorage.getItem("refresh_token").then(halo => console.log(halo));
+        AsyncStorage.getItem("expiration_date").then(halo => console.log(halo));
     }
 
     onSignInPress() {
@@ -84,7 +92,8 @@ const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: SignInProps): Sig
             dispatch(SignInWithPassword(username, password));
         },
         navigateToSignUp: () => {
-            ownProps.history.replace(routes.SignUp);
+            console.log(ownProps.history);
+            ownProps.history.push(routes.SignUp);
         }
     };
 }
