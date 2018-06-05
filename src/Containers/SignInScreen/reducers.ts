@@ -3,6 +3,7 @@ import { addReducerFactory } from "../../Utils/AddReducer";
 import { Dispatch } from "react-redux";
 import { Thunk } from "../../Utils/Thunk";
 import { loginManager } from "../../Services/LoginManager"
+import { apiClient } from "../../Services/ApiClient";
 
 export let singInReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(singInReducers);
@@ -38,5 +39,35 @@ addReducer(SetSignedIn, (state, action) => {
         ...state,
         isSignedIn,
         signInError: action.payload ? action.payload.signInError : undefined
+    };
+});
+
+export const FetchUserInfo = () =>
+    async (dispatch: Dispatch<any>, getState: () => AppState) => {
+        try {
+            let isSignedIn = await loginManager.isSigned();
+            dispatch(SetSignedIn({ isSignedIn }));
+
+            if (isSignedIn)
+            {
+                let res = await apiClient.fetchUserInfo();
+                if (res.IsSuccess)
+                    dispatch(SetUserInfo(res.Response));
+                else
+                    dispatch(SetUserInfo(undefined));
+            }
+            else
+                dispatch(SetUserInfo(undefined));
+        }
+        catch {
+            dispatch(SetUserInfo(undefined));
+        }
+    };
+
+const SetUserInfo = createAction("LOADING/SET_USER_INFO", (userInfo: Models.UserInfoDTO) => ({ userInfo }));
+addReducer(SetUserInfo, (state, action) => {
+    return {
+        ...state,
+        userInfo: action.payload.userInfo
     };
 });

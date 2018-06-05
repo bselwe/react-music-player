@@ -10,7 +10,9 @@ import AlbumScreen from "../../Containers/AlbumScreen";
 import ArtistsScreen from "../../Containers/ArtistsScreen";
 import ArtistScreen from "../../Containers/ArtistScreen";
 import SignInScreen from "../../Containers/SignInScreen";
+import LoadingScreen from "../../Containers/LoadingScreen";
 import SignUpScreen from "../../Containers/SignUpScreen";
+import AfterSignInScreen from "../../Containers/AfterSignInScreen";
 import NowPlayingBar from "../../Containers/NowPlayingBar";
 import TabBar from "./TabBar";
 
@@ -19,8 +21,9 @@ export default function Navigator() {
         <NativeRouter>
             <View style={{ flex: 1 }}>
                 <Switch>
-                    <Route path={routes.Loading} exact component={LoadingSreen} />
+                    <Route path={routes.Loading} exact component={LoadingScreen} />
                     <Route path={routes.SignIn} exact component={SignInScreen} />
+                    <Route path={routes.AfterSignIn} exact component={AfterSignInScreen} />
                     <Route path={routes.SignUp} exact component={SignUpScreen} />
                     <PrivateRoute path={routes.Songs} exact component={SongsScreen} />
                     <PrivateRoute path={routes.Song} exact component={SongScreen} />

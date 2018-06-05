@@ -62597,38 +62597,12 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         artists: [],
         artistsAlbums: {},
         albums: [],
-        albumsSongs: {},
-        isSignedIn: false
+        albumsSongs: {}
     };
     var appReducer = (0, _reduxActions.handleActions)(_extends({}, _reducers2.songsReducers, _reducers.songReducers, _reducers5.nowPlayingReducers, _reducers3.artistReducers, _reducers4.albumReducers, _reducers6.singInReducers, _reducers7.singUpReducers), initialState);
     var store = (0, _redux.createStore)(appReducer, (0, _redux.applyMiddleware)(_reduxThunk2.default));
     exports.default = store;
-},519,[520,545,521,502,578,579,580,581,582,587],"src/Store.ts");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.ToggleSong = exports.songReducers = undefined;
-
-    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
-
-    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
-
-    var songReducers = exports.songReducers = {};
-    var addReducer = (0, _AddReducer.addReducerFactory)(songReducers);
-    var ToggleSong = exports.ToggleSong = (0, _reduxActions.createAction)("SONG/TOGGLE_SONG", function (displayed) {
-        return {
-            displayed: displayed
-        };
-    });
-    addReducer(ToggleSong, function (state, action) {
-        return _extends({}, state, {
-            songDisplayed: action.payload.displayed
-        });
-    });
-},520,[521,544],"src/Containers/SongScreen/reducers.tsx");
+},519,[764,763,521,502,578,762,761,765,767,766],"src/Store.ts");
 __d(function (global, _require, module, exports, _dependencyMap) {
   'use strict';
 
@@ -63590,250 +63564,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
         return addReducer;
     }
 },544,[],"src/Utils/AddReducer.ts");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.UpdateSelectedSong = exports.SelectNextSong = exports.SelectPrevSong = exports.UpdatePlaylist = exports.SelectSong = exports.UpdateSongs = exports.FetchSongs = exports.songsReducers = undefined;
-
-    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-    var _this = this;
-
-    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
-
-    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
-
-    var _TidalClient = _require(_dependencyMap[2], "../../Services/TidalClient");
-
-    var _TidalClient2 = _interopRequireDefault(_TidalClient);
-
-    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) {
-                try {
-                    step(generator.next(value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function rejected(value) {
-                try {
-                    step(generator["throw"](value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function step(result) {
-                result.done ? resolve(result.value) : new P(function (resolve) {
-                    resolve(result.value);
-                }).then(fulfilled, rejected);
-            }
-
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-    };
-
-    var songsReducers = exports.songsReducers = {};
-    var addReducer = (0, _AddReducer.addReducerFactory)(songsReducers);
-
-    var FetchSongs = exports.FetchSongs = function FetchSongs(query) {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
-                    var songs;
-                    return regeneratorRuntime.wrap(function _callee$(_context) {
-                        while (1) {
-                            switch (_context.prev = _context.next) {
-                                case 0:
-                                    query = query && query.length > 0 ? query : "money";
-                                    _context.next = 3;
-                                    return _TidalClient2.default.search(query, "tracks", 30);
-
-                                case 3:
-                                    songs = _context.sent;
-                                    dispatch(UpdateSongs(songs));
-
-                                case 5:
-                                case "end":
-                                    return _context.stop();
-                            }
-                        }
-                    }, _callee, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdateSongs = exports.UpdateSongs = (0, _reduxActions.createAction)("SONGS/UPDATE_SONGS", function (songs) {
-        return {
-            songs: songs
-        };
-    });
-    addReducer(UpdateSongs, function (state, action) {
-        return _extends({}, state, {
-            songs: action.payload.songs
-        });
-    });
-
-    var SelectSong = exports.SelectSong = function SelectSong(songId, albumId) {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
-                    var state, songs, song, stream;
-                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                        while (1) {
-                            switch (_context2.prev = _context2.next) {
-                                case 0:
-                                    state = getState();
-                                    songs = albumId !== undefined ? state.albumsSongs[albumId] : state.songs;
-                                    song = songs.find(function (s) {
-                                        return s.id == songId;
-                                    });
-
-                                    if (!(song === undefined)) {
-                                        _context2.next = 7;
-                                        break;
-                                    }
-
-                                    _context2.next = 6;
-                                    return _TidalClient2.default.getTrack(songId);
-
-                                case 6:
-                                    song = _context2.sent;
-
-                                case 7:
-                                    _context2.next = 9;
-                                    return _TidalClient2.default.getTrackStreamUrl(songId);
-
-                                case 9:
-                                    stream = _context2.sent.url;
-                                    dispatch(UpdateSelectedSong(_extends({}, song, {
-                                        stream: stream,
-                                        albumId: albumId,
-                                        paused: false,
-                                        time: 0,
-                                        muted: false,
-                                        volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                                        index: songs.indexOf(song)
-                                    })));
-                                    dispatch(UpdatePlaylist(songs));
-
-                                case 12:
-                                case "end":
-                                    return _context2.stop();
-                            }
-                        }
-                    }, _callee2, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdatePlaylist = exports.UpdatePlaylist = (0, _reduxActions.createAction)("SONGS/UPDATE_PLAYLIST", function (songs) {
-        return {
-            songs: songs
-        };
-    });
-    addReducer(UpdatePlaylist, function (state, action) {
-        return _extends({}, state, {
-            playlist: action.payload.songs
-        });
-    });
-
-    var SelectPrevSong = exports.SelectPrevSong = function SelectPrevSong() {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee3() {
-                    var state, songIndex, song, stream;
-                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
-                        while (1) {
-                            switch (_context3.prev = _context3.next) {
-                                case 0:
-                                    state = getState();
-                                    songIndex = state.currentSong.index - 1 < 0 ? state.playlist.length - 1 : state.currentSong.index - 1;
-                                    song = state.playlist.find(function (s) {
-                                        return state.playlist.indexOf(s) == songIndex;
-                                    });
-                                    _context3.next = 5;
-                                    return _TidalClient2.default.getTrackStreamUrl(song.id);
-
-                                case 5:
-                                    stream = _context3.sent.url;
-                                    dispatch(UpdateSelectedSong(_extends({}, song, {
-                                        stream: stream,
-                                        paused: false,
-                                        time: 0,
-                                        muted: false,
-                                        volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                                        index: state.playlist.indexOf(song)
-                                    })));
-
-                                case 7:
-                                case "end":
-                                    return _context3.stop();
-                            }
-                        }
-                    }, _callee3, this);
-                }));
-            })();
-        };
-    };
-
-    var SelectNextSong = exports.SelectNextSong = function SelectNextSong() {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee4() {
-                    var state, songIndex, song, stream;
-                    return regeneratorRuntime.wrap(function _callee4$(_context4) {
-                        while (1) {
-                            switch (_context4.prev = _context4.next) {
-                                case 0:
-                                    state = getState();
-                                    songIndex = state.currentSong.index + 1 >= state.playlist.length ? 0 : state.currentSong.index + 1;
-                                    song = state.playlist.find(function (s) {
-                                        return state.playlist.indexOf(s) == songIndex;
-                                    });
-                                    _context4.next = 5;
-                                    return _TidalClient2.default.getTrackStreamUrl(song.id);
-
-                                case 5:
-                                    stream = _context4.sent.url;
-                                    dispatch(UpdateSelectedSong(_extends({}, song, {
-                                        stream: stream,
-                                        paused: false,
-                                        time: 0,
-                                        muted: false,
-                                        volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                                        index: state.playlist.indexOf(song)
-                                    })));
-
-                                case 7:
-                                case "end":
-                                    return _context4.stop();
-                            }
-                        }
-                    }, _callee4, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdateSelectedSong = exports.UpdateSelectedSong = (0, _reduxActions.createAction)("SONGS/UPDATE_SELECTED_SONG", function (song) {
-        return {
-            song: song
-        };
-    });
-    addReducer(UpdateSelectedSong, function (state, action) {
-        return _extends({}, state, {
-            currentSong: action.payload.song
-        });
-    });
-},545,[521,544,546],"src/Containers/SongsScreen/reducers.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -65786,505 +65516,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.SelectArtist = exports.UpdateArtists = exports.FetchArtistAlbums = exports.UpdateArtistAlbums = exports.FetchArtists = exports.artistReducers = undefined;
-
-    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-    var _this = this;
-
-    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
-
-    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
-
-    var _TidalClient = _require(_dependencyMap[2], "../../Services/TidalClient");
-
-    var _TidalClient2 = _interopRequireDefault(_TidalClient);
-
-    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-    function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) {
-                try {
-                    step(generator.next(value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function rejected(value) {
-                try {
-                    step(generator["throw"](value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function step(result) {
-                result.done ? resolve(result.value) : new P(function (resolve) {
-                    resolve(result.value);
-                }).then(fulfilled, rejected);
-            }
-
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-    };
-
-    var artistReducers = exports.artistReducers = {};
-    var addReducer = (0, _AddReducer.addReducerFactory)(artistReducers);
-
-    var FetchArtists = exports.FetchArtists = function FetchArtists(query) {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
-                    var artist;
-                    return regeneratorRuntime.wrap(function _callee$(_context) {
-                        while (1) {
-                            switch (_context.prev = _context.next) {
-                                case 0:
-                                    query = query && query.length > 0 ? query : "Ada";
-                                    _context.next = 3;
-                                    return _TidalClient2.default.search(query, "artists", 30);
-
-                                case 3:
-                                    artist = _context.sent;
-                                    dispatch(UpdateArtists(artist));
-
-                                case 5:
-                                case "end":
-                                    return _context.stop();
-                            }
-                        }
-                    }, _callee, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdateArtistAlbums = exports.UpdateArtistAlbums = (0, _reduxActions.createAction)("ALBUMS/UPDATE_ARTIST_ALBUMS", function (artistId, artistAlbums) {
-        return {
-            artistId: artistId,
-            artistAlbums: artistAlbums
-        };
-    });
-    addReducer(UpdateArtistAlbums, function (state, action) {
-        return _extends({}, state, {
-            artistsAlbums: _extends({}, state.artistsAlbums, _defineProperty({}, action.payload.artistId, action.payload.artistAlbums))
-        });
-    });
-
-    var FetchArtistAlbums = exports.FetchArtistAlbums = function FetchArtistAlbums(artistId) {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
-                    var albums;
-                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                        while (1) {
-                            switch (_context2.prev = _context2.next) {
-                                case 0:
-                                    _context2.next = 2;
-                                    return _TidalClient2.default.getArtistAlbums(artistId);
-
-                                case 2:
-                                    albums = _context2.sent;
-                                    dispatch(UpdateArtistAlbums(artistId, albums));
-
-                                case 4:
-                                case "end":
-                                    return _context2.stop();
-                            }
-                        }
-                    }, _callee2, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdateArtists = exports.UpdateArtists = (0, _reduxActions.createAction)("ARTISTS/UPDATE_ARTISTS", function (artists) {
-        return {
-            artists: artists
-        };
-    });
-    addReducer(UpdateArtists, function (state, action) {
-        return _extends({}, state, {
-            artists: action.payload.artists
-        });
-    });
-    var SelectArtist = exports.SelectArtist = (0, _reduxActions.createAction)("ARTISTS/SELECT_ARTIST", function (artistId) {
-        return {
-            artistId: artistId
-        };
-    });
-    addReducer(SelectArtist, function (state, action) {
-        var artist = state.artists.find(function (s) {
-            return s.id == action.payload.artistId;
-        });
-        return _extends({}, state, {
-            currentArtist: artist
-        });
-    });
-},579,[521,544,546],"src/Containers/ArtistsScreen/reducers.tsx");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.UpdateSelectedAlbum = exports.SelectAlbum = exports.UpdateAlbums = exports.FetchAlbums = exports.UpdateAlbumSongs = exports.FetchAlbumSongs = exports.albumReducers = undefined;
-
-    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-    var _this = this;
-
-    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
-
-    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
-
-    var _TidalClient = _require(_dependencyMap[2], "../../Services/TidalClient");
-
-    var _TidalClient2 = _interopRequireDefault(_TidalClient);
-
-    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-    function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) {
-                try {
-                    step(generator.next(value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function rejected(value) {
-                try {
-                    step(generator["throw"](value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function step(result) {
-                result.done ? resolve(result.value) : new P(function (resolve) {
-                    resolve(result.value);
-                }).then(fulfilled, rejected);
-            }
-
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-    };
-
-    var albumReducers = exports.albumReducers = {};
-    var addReducer = (0, _AddReducer.addReducerFactory)(albumReducers);
-
-    var FetchAlbumSongs = exports.FetchAlbumSongs = function FetchAlbumSongs(albumId) {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
-                    var songs;
-                    return regeneratorRuntime.wrap(function _callee$(_context) {
-                        while (1) {
-                            switch (_context.prev = _context.next) {
-                                case 0:
-                                    _context.next = 2;
-                                    return _TidalClient2.default.getAlbumTracks(albumId);
-
-                                case 2:
-                                    songs = _context.sent;
-                                    dispatch(UpdateAlbumSongs(albumId, songs));
-
-                                case 4:
-                                case "end":
-                                    return _context.stop();
-                            }
-                        }
-                    }, _callee, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdateAlbumSongs = exports.UpdateAlbumSongs = (0, _reduxActions.createAction)("ALBUMS/UPDATE_ALBUM_SONGS", function (albumId, albumSongs) {
-        return {
-            albumId: albumId,
-            albumSongs: albumSongs
-        };
-    });
-    addReducer(UpdateAlbumSongs, function (state, action) {
-        return _extends({}, state, {
-            albumsSongs: _extends({}, state.albumsSongs, _defineProperty({}, action.payload.albumId, action.payload.albumSongs))
-        });
-    });
-
-    var FetchAlbums = exports.FetchAlbums = function FetchAlbums(query) {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
-                    var albums;
-                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                        while (1) {
-                            switch (_context2.prev = _context2.next) {
-                                case 0:
-                                    if (!(query !== undefined && query.length > 0)) {
-                                        _context2.next = 6;
-                                        break;
-                                    }
-
-                                    _context2.next = 3;
-                                    return _TidalClient2.default.search(query, "albums", 30);
-
-                                case 3:
-                                    _context2.t0 = _context2.sent;
-                                    _context2.next = 9;
-                                    break;
-
-                                case 6:
-                                    _context2.next = 8;
-                                    return _TidalClient2.default.getStaffPickAlbums();
-
-                                case 8:
-                                    _context2.t0 = _context2.sent;
-
-                                case 9:
-                                    albums = _context2.t0;
-                                    dispatch(UpdateAlbums(albums));
-
-                                case 11:
-                                case "end":
-                                    return _context2.stop();
-                            }
-                        }
-                    }, _callee2, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdateAlbums = exports.UpdateAlbums = (0, _reduxActions.createAction)("ALBUMS/UPDATE_ALBUMS", function (albums) {
-        return {
-            albums: albums
-        };
-    });
-    addReducer(UpdateAlbums, function (state, action) {
-        return _extends({}, state, {
-            albums: action.payload.albums
-        });
-    });
-
-    var SelectAlbum = exports.SelectAlbum = function SelectAlbum(albumId) {
-        return function (dispatch, getState) {
-            (function () {
-                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee3() {
-                    var state, album;
-                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
-                        while (1) {
-                            switch (_context3.prev = _context3.next) {
-                                case 0:
-                                    state = getState();
-                                    album = state.albums.find(function (s) {
-                                        return s.id == albumId;
-                                    });
-
-                                    if (!(album == undefined)) {
-                                        _context3.next = 6;
-                                        break;
-                                    }
-
-                                    _context3.next = 5;
-                                    return _TidalClient2.default.getAlbum(albumId);
-
-                                case 5:
-                                    album = _context3.sent;
-
-                                case 6:
-                                    dispatch(UpdateSelectedAlbum(album));
-
-                                case 7:
-                                case "end":
-                                    return _context3.stop();
-                            }
-                        }
-                    }, _callee3, this);
-                }));
-            })();
-        };
-    };
-
-    var UpdateSelectedAlbum = exports.UpdateSelectedAlbum = (0, _reduxActions.createAction)("ALBUMS/UPDATE_SELECTED_ALBUM", function (album) {
-        return {
-            album: album
-        };
-    });
-    addReducer(UpdateSelectedAlbum, function (state, action) {
-        return _extends({}, state, {
-            currentAlbum: action.payload.album
-        });
-    });
-},580,[521,544,546],"src/Containers/AlbumsScreen/reducers.tsx");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.UpdateSongVolume = exports.UpdateSongMuted = exports.UpdateSongPaused = exports.UpdateSongTime = exports.nowPlayingReducers = undefined;
-
-    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
-
-    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
-
-    var nowPlayingReducers = exports.nowPlayingReducers = {};
-    var addReducer = (0, _AddReducer.addReducerFactory)(nowPlayingReducers);
-    var UpdateSongTime = exports.UpdateSongTime = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_TIME", function (time) {
-        return {
-            time: time
-        };
-    });
-    addReducer(UpdateSongTime, function (state, action) {
-        return _extends({}, state, {
-            currentSong: _extends({}, state.currentSong, {
-                time: action.payload.time
-            })
-        });
-    });
-    var UpdateSongPaused = exports.UpdateSongPaused = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_PAUSED", function (paused) {
-        return {
-            paused: paused
-        };
-    });
-    addReducer(UpdateSongPaused, function (state, action) {
-        return _extends({}, state, {
-            currentSong: _extends({}, state.currentSong, {
-                paused: action.payload.paused
-            })
-        });
-    });
-    var UpdateSongMuted = exports.UpdateSongMuted = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_MUTED", function (muted) {
-        return {
-            muted: muted
-        };
-    });
-    addReducer(UpdateSongMuted, function (state, action) {
-        return _extends({}, state, {
-            currentSong: _extends({}, state.currentSong, {
-                muted: action.payload.muted
-            })
-        });
-    });
-    var UpdateSongVolume = exports.UpdateSongVolume = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_VOLUME", function (volume) {
-        return {
-            volume: volume
-        };
-    });
-    addReducer(UpdateSongVolume, function (state, action) {
-        return _extends({}, state, {
-            currentSong: _extends({}, state.currentSong, {
-                volume: action.payload.volume
-            })
-        });
-    });
-},581,[521,544],"src/Containers/NowPlayingBar/reducers.tsx");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.SignInWithPassword = exports.singInReducers = undefined;
-
-    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-    var _this = this;
-
-    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
-
-    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
-
-    var _LoginManager = _require(_dependencyMap[2], "../../Services/LoginManager");
-
-    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) {
-                try {
-                    step(generator.next(value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function rejected(value) {
-                try {
-                    step(generator["throw"](value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function step(result) {
-                result.done ? resolve(result.value) : new P(function (resolve) {
-                    resolve(result.value);
-                }).then(fulfilled, rejected);
-            }
-
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-    };
-
-    var singInReducers = exports.singInReducers = {};
-    var addReducer = (0, _AddReducer.addReducerFactory)(singInReducers);
-
-    var SignInWithPassword = exports.SignInWithPassword = function SignInWithPassword(username, password) {
-        return function (dispatch, getState) {
-            return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
-                var isSignedIn;
-                return regeneratorRuntime.wrap(function _callee$(_context) {
-                    while (1) {
-                        switch (_context.prev = _context.next) {
-                            case 0:
-                                _context.prev = 0;
-                                _context.next = 3;
-                                return _LoginManager.loginManager.trySignIn(username, password);
-
-                            case 3:
-                                isSignedIn = _context.sent;
-                                dispatch(SetSignedIn({
-                                    isSignedIn: isSignedIn,
-                                    signInError: !isSignedIn ? "Nie udało się zalogować" : undefined
-                                }));
-                                _context.next = 10;
-                                break;
-
-                            case 7:
-                                _context.prev = 7;
-                                _context.t0 = _context["catch"](0);
-                                dispatch(SetSignedIn({
-                                    isSignedIn: false,
-                                    signInError: "Wystąpił problem z logowaniem"
-                                }));
-
-                            case 10:
-                            case "end":
-                                return _context.stop();
-                        }
-                    }
-                }, _callee, this, [[0, 7]]);
-            }));
-        };
-    };
-
-    var SetSignedIn = (0, _reduxActions.createAction)("ACCOUNT/INTERNAL_SET_SIGNED_IN");
-    addReducer(SetSignedIn, function (state, action) {
-        var isSignedIn = !!action.payload && action.payload.isSignedIn;
-        return _extends({}, state, {
-            isSignedIn: isSignedIn,
-            signInError: action.payload ? action.payload.signInError : undefined
-        });
-    });
-},582,[521,544,583],"src/Containers/SignInScreen/reducers.tsx");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
     exports.loginManager = exports.LoginManager = exports.CannotRefreshToken = undefined;
 
     var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -66957,85 +66188,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
     });
-    exports.SignUpWithPassword = exports.singUpReducers = undefined;
-
-    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-    var _this = this;
-
-    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
-
-    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
-
-    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
-        return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) {
-                try {
-                    step(generator.next(value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function rejected(value) {
-                try {
-                    step(generator["throw"](value));
-                } catch (e) {
-                    reject(e);
-                }
-            }
-
-            function step(result) {
-                result.done ? resolve(result.value) : new P(function (resolve) {
-                    resolve(result.value);
-                }).then(fulfilled, rejected);
-            }
-
-            step((generator = generator.apply(thisArg, _arguments || [])).next());
-        });
-    };
-
-    var singUpReducers = exports.singUpReducers = {};
-    var addReducer = (0, _AddReducer.addReducerFactory)(singUpReducers);
-
-    var SignUpWithPassword = exports.SignUpWithPassword = function SignUpWithPassword(name, lastname, email, password) {
-        return function (dispatch, getState) {
-            return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
-                return regeneratorRuntime.wrap(function _callee$(_context) {
-                    while (1) {
-                        switch (_context.prev = _context.next) {
-                            case 0:
-                                try {
-                                    dispatch(SetSignedUp({
-                                        signUpError: !isSignedUp ? "Nie udało się zarejestrować" : undefined
-                                    }));
-                                } catch (_a) {
-                                    dispatch(SetSignedUp({
-                                        signUpError: "Wystąpił problem z rejestracją"
-                                    }));
-                                }
-
-                            case 1:
-                            case "end":
-                                return _context.stop();
-                        }
-                    }
-                }, _callee, this);
-            }));
-        };
-    };
-
-    var SetSignedUp = (0, _reduxActions.createAction)("ACCOUNT/INTERNAL_SET_SIGNED_UP");
-    addReducer(SetSignedUp, function (state, action) {
-        return _extends({}, state, {
-            SignUpError: action.payload ? action.payload.signUpError : undefined
-        });
-    });
-},587,[521,544],"src/Containers/SignUpScreen/reducers.tsx");
-__d(function (global, _require, module, exports, _dependencyMap) {
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
     var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Infrastructure/Navigation/Navigator.tsx";
     exports.default = Navigator;
 
@@ -67083,15 +66235,23 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var _SignInScreen2 = _interopRequireDefault(_SignInScreen);
 
-    var _SignUpScreen = _require(_dependencyMap[12], "../../Containers/SignUpScreen");
+    var _LoadingScreen = _require(_dependencyMap[12], "../../Containers/LoadingScreen");
+
+    var _LoadingScreen2 = _interopRequireDefault(_LoadingScreen);
+
+    var _SignUpScreen = _require(_dependencyMap[13], "../../Containers/SignUpScreen");
 
     var _SignUpScreen2 = _interopRequireDefault(_SignUpScreen);
 
-    var _NowPlayingBar = _require(_dependencyMap[13], "../../Containers/NowPlayingBar");
+    var _AfterSignInScreen = _require(_dependencyMap[14], "../../Containers/AfterSignInScreen");
+
+    var _AfterSignInScreen2 = _interopRequireDefault(_AfterSignInScreen);
+
+    var _NowPlayingBar = _require(_dependencyMap[15], "../../Containers/NowPlayingBar");
 
     var _NowPlayingBar2 = _interopRequireDefault(_NowPlayingBar);
 
-    var _TabBar = _require(_dependencyMap[14], "./TabBar");
+    var _TabBar = _require(_dependencyMap[16], "./TabBar");
 
     var _TabBar2 = _interopRequireDefault(_TabBar);
 
@@ -67105,7 +66265,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 17
+                    lineNumber: 19
                 }
             },
             _react2.default.createElement(
@@ -67116,7 +66276,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                     },
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 18
+                        lineNumber: 20
                     }
                 },
                 _react2.default.createElement(
@@ -67124,61 +66284,16 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
-                        }
-                    },
-                    _react2.default.createElement(_PrivateRoute2.default, {
-                        path: routes.Songs,
-                        exact: true,
-                        component: _SongsScreen2.default,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 20
-                        }
-                    }),
-                    _react2.default.createElement(_PrivateRoute2.default, {
-                        path: routes.Song,
-                        exact: true,
-                        component: _SongScreen2.default,
-                        __source: {
-                            fileName: _jsxFileName,
                             lineNumber: 21
                         }
-                    }),
-                    _react2.default.createElement(_PrivateRoute2.default, {
-                        path: routes.Albums,
+                    },
+                    _react2.default.createElement(_reactRouterNative.Route, {
+                        path: routes.Loading,
                         exact: true,
-                        component: _AlbumsScreen2.default,
+                        component: _LoadingScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
                             lineNumber: 22
-                        }
-                    }),
-                    _react2.default.createElement(_PrivateRoute2.default, {
-                        path: routes.Album,
-                        exact: true,
-                        component: _AlbumScreen2.default,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 23
-                        }
-                    }),
-                    _react2.default.createElement(_PrivateRoute2.default, {
-                        path: routes.Artists,
-                        exact: true,
-                        component: _ArtistsScreen2.default,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 24
-                        }
-                    }),
-                    _react2.default.createElement(_PrivateRoute2.default, {
-                        path: routes.Artist,
-                        exact: true,
-                        component: _ArtistScreen2.default,
-                        __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 25
                         }
                     }),
                     _react2.default.createElement(_reactRouterNative.Route, {
@@ -67187,7 +66302,16 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         component: _SignInScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 26
+                            lineNumber: 23
+                        }
+                    }),
+                    _react2.default.createElement(_reactRouterNative.Route, {
+                        path: routes.AfterSignIn,
+                        exact: true,
+                        component: _AfterSignInScreen2.default,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 24
                         }
                     }),
                     _react2.default.createElement(_reactRouterNative.Route, {
@@ -67196,7 +66320,61 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         component: _SignUpScreen2.default,
                         __source: {
                             fileName: _jsxFileName,
+                            lineNumber: 25
+                        }
+                    }),
+                    _react2.default.createElement(_PrivateRoute2.default, {
+                        path: routes.Songs,
+                        exact: true,
+                        component: _SongsScreen2.default,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 26
+                        }
+                    }),
+                    _react2.default.createElement(_PrivateRoute2.default, {
+                        path: routes.Song,
+                        exact: true,
+                        component: _SongScreen2.default,
+                        __source: {
+                            fileName: _jsxFileName,
                             lineNumber: 27
+                        }
+                    }),
+                    _react2.default.createElement(_PrivateRoute2.default, {
+                        path: routes.Albums,
+                        exact: true,
+                        component: _AlbumsScreen2.default,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 28
+                        }
+                    }),
+                    _react2.default.createElement(_PrivateRoute2.default, {
+                        path: routes.Album,
+                        exact: true,
+                        component: _AlbumScreen2.default,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 29
+                        }
+                    }),
+                    _react2.default.createElement(_PrivateRoute2.default, {
+                        path: routes.Artists,
+                        exact: true,
+                        component: _ArtistsScreen2.default,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 30
+                        }
+                    }),
+                    _react2.default.createElement(_PrivateRoute2.default, {
+                        path: routes.Artist,
+                        exact: true,
+                        component: _ArtistScreen2.default,
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 31
                         }
                     })
                 ),
@@ -67205,26 +66383,26 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 30
+                            lineNumber: 34
                         }
                     },
                     _react2.default.createElement(_NowPlayingBar2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 31
+                            lineNumber: 35
                         }
                     }),
                     _react2.default.createElement(_TabBar2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 32
+                            lineNumber: 36
                         }
                     })
                 )
             )
         );
     }
-},588,[12,176,589,617,618,619,723,737,740,744,747,751,753,755,760],"src/Infrastructure/Navigation/Navigator.tsx");
+},588,[12,176,589,617,618,619,723,737,740,744,747,751,768,753,772,755,760],"src/Infrastructure/Navigation/Navigator.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -70597,13 +69775,15 @@ __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  var Songs = exports.Songs = "/";
+  var Loading = exports.Loading = "/";
+  var Songs = exports.Songs = "/songs";
   var Song = exports.Song = "/song";
   var Artists = exports.Artists = "/artists";
   var Artist = exports.Artist = "/artist";
   var Albums = exports.Albums = "/albums";
   var Album = exports.Album = "/album";
   var SignIn = exports.SignIn = "/signin";
+  var AfterSignIn = exports.AfterSignIn = "/after-signin";
   var SignUp = exports.SignUp = "/signup";
 },618,[],"src/Infrastructure/Navigation/Routes.ts");
 __d(function (global, _require, module, exports, _dependencyMap) {
@@ -70770,7 +69950,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var SongsScreenContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SongsScreen);
     exports.default = SongsScreenContainer;
-},619,[12,22,176,620,491,545,721,546],"src/Containers/SongsScreen/index.tsx");
+},619,[12,22,176,620,491,763,721,546],"src/Containers/SongsScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -85560,7 +84740,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var SongScreenContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SongScreen);
     exports.default = SongScreenContainer;
-},723,[12,22,176,682,676,724,491,733,520,546,581,545,734,735,736],"src/Containers/SongScreen/index.tsx");
+},723,[12,22,176,682,676,724,491,733,764,546,765,763,734,735,736],"src/Containers/SongScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -93063,7 +92243,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var AlbumsScreenContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AlbumsScreen));
     exports.default = AlbumsScreenContainer;
-},737,[12,22,176,589,620,491,580,738,546,618],"src/Containers/AlbumsScreen/index.tsx");
+},737,[12,22,176,589,620,491,761,738,546,618],"src/Containers/AlbumsScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -93455,7 +92635,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var AlbumScreenContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AlbumScreen);
     exports.default = AlbumScreenContainer;
-},740,[12,22,176,491,741,742,545,546,580,736],"src/Containers/AlbumScreen/index.tsx");
+},740,[12,22,176,491,741,742,763,546,761,736],"src/Containers/AlbumScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -93805,7 +92985,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var ArtistsScreenContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ArtistsScreen));
     exports.default = ArtistsScreenContainer;
-},744,[12,22,176,620,589,491,579,745,618,546],"src/Containers/ArtistsScreen/index.tsx");
+},744,[12,22,176,620,589,491,762,745,618,546],"src/Containers/ArtistsScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -94175,7 +93355,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var ArtistScreenContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(ArtistScreen));
     exports.default = ArtistScreenContainer;
-},747,[12,22,176,589,618,491,748,750,580,546,579,736],"src/Containers/ArtistScreen/index.tsx");
+},747,[12,22,176,589,618,491,748,750,761,546,762,736],"src/Containers/ArtistScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -94480,13 +93660,6 @@ __d(function (global, _require, module, exports, _dependencyMap) {
             value: function render() {
                 var _this2 = this;
 
-                var _ref = this.props.location.state || {
-                    from: {
-                        pathname: routes.Songs
-                    }
-                },
-                    from = _ref.from;
-
                 return !this.props.isSignedIn ? _react3.default.createElement(
                     _reactNative.View,
                     {
@@ -94611,7 +93784,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
                         )
                     )
                 ) : _react3.default.createElement(_reactRouterNative.Redirect, {
-                    to: from,
+                    to: routes.AfterSignIn,
                     __source: {
                         fileName: _jsxFileName,
                         lineNumber: 36
@@ -94643,7 +93816,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var SignInContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SignIn));
     exports.default = SignInContainer;
-},751,[12,22,589,176,491,582,752,618],"src/Containers/SignInScreen/index.tsx");
+},751,[12,22,589,176,491,767,752,618],"src/Containers/SignInScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -94949,7 +94122,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var SignUpContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SignUp));
     exports.default = SignUpContainer;
-},753,[12,22,176,491,587,754,589,618],"src/Containers/SignUpScreen/index.tsx");
+},753,[12,22,176,491,766,754,589,618],"src/Containers/SignUpScreen/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -95209,7 +94382,7 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     var NowPlayingBarContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NowPlayingBar);
     exports.default = NowPlayingBarContainer;
-},755,[12,22,176,491,618,756,724,626,757,581,589],"src/Containers/NowPlayingBar/index.tsx");
+},755,[12,22,176,491,618,756,724,626,757,765,589],"src/Containers/NowPlayingBar/index.tsx");
 __d(function (global, _require, module, exports, _dependencyMap) {
     Object.defineProperty(exports, "__esModule", {
         value: true
@@ -95978,5 +95151,1514 @@ __d(function (global, _require, module, exports, _dependencyMap) {
 
     exports.default = (0, _reactRouterNative.withRouter)(TabBar);
 },760,[12,22,176,589,682,674,618],"src/Infrastructure/Navigation/TabBar.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.UpdateSelectedAlbum = exports.SelectAlbum = exports.UpdateAlbums = exports.FetchAlbums = exports.UpdateAlbumSongs = exports.FetchAlbumSongs = exports.albumReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _this = this;
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var _TidalClient = _require(_dependencyMap[2], "../../Services/TidalClient");
+
+    var _TidalClient2 = _interopRequireDefault(_TidalClient);
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function step(result) {
+                result.done ? resolve(result.value) : new P(function (resolve) {
+                    resolve(result.value);
+                }).then(fulfilled, rejected);
+            }
+
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+
+    var albumReducers = exports.albumReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(albumReducers);
+
+    var FetchAlbumSongs = exports.FetchAlbumSongs = function FetchAlbumSongs(albumId) {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
+                    var songs;
+                    return regeneratorRuntime.wrap(function _callee$(_context) {
+                        while (1) {
+                            switch (_context.prev = _context.next) {
+                                case 0:
+                                    _context.next = 2;
+                                    return _TidalClient2.default.getAlbumTracks(albumId);
+
+                                case 2:
+                                    songs = _context.sent;
+                                    dispatch(UpdateAlbumSongs(albumId, songs));
+
+                                case 4:
+                                case "end":
+                                    return _context.stop();
+                            }
+                        }
+                    }, _callee, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdateAlbumSongs = exports.UpdateAlbumSongs = (0, _reduxActions.createAction)("ALBUMS/UPDATE_ALBUM_SONGS", function (albumId, albumSongs) {
+        return {
+            albumId: albumId,
+            albumSongs: albumSongs
+        };
+    });
+    addReducer(UpdateAlbumSongs, function (state, action) {
+        return _extends({}, state, {
+            albumsSongs: _extends({}, state.albumsSongs, _defineProperty({}, action.payload.albumId, action.payload.albumSongs))
+        });
+    });
+
+    var FetchAlbums = exports.FetchAlbums = function FetchAlbums(query) {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
+                    var albums;
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                        while (1) {
+                            switch (_context2.prev = _context2.next) {
+                                case 0:
+                                    if (!(query !== undefined && query.length > 0)) {
+                                        _context2.next = 6;
+                                        break;
+                                    }
+
+                                    _context2.next = 3;
+                                    return _TidalClient2.default.search(query, "albums", 30);
+
+                                case 3:
+                                    _context2.t0 = _context2.sent;
+                                    _context2.next = 9;
+                                    break;
+
+                                case 6:
+                                    _context2.next = 8;
+                                    return _TidalClient2.default.getStaffPickAlbums();
+
+                                case 8:
+                                    _context2.t0 = _context2.sent;
+
+                                case 9:
+                                    albums = _context2.t0;
+                                    dispatch(UpdateAlbums(albums));
+
+                                case 11:
+                                case "end":
+                                    return _context2.stop();
+                            }
+                        }
+                    }, _callee2, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdateAlbums = exports.UpdateAlbums = (0, _reduxActions.createAction)("ALBUMS/UPDATE_ALBUMS", function (albums) {
+        return {
+            albums: albums
+        };
+    });
+    addReducer(UpdateAlbums, function (state, action) {
+        return _extends({}, state, {
+            albums: action.payload.albums
+        });
+    });
+
+    var SelectAlbum = exports.SelectAlbum = function SelectAlbum(albumId) {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee3() {
+                    var state, album;
+                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                        while (1) {
+                            switch (_context3.prev = _context3.next) {
+                                case 0:
+                                    state = getState();
+                                    album = state.albums.find(function (s) {
+                                        return s.id == albumId;
+                                    });
+
+                                    if (!(album == undefined)) {
+                                        _context3.next = 6;
+                                        break;
+                                    }
+
+                                    _context3.next = 5;
+                                    return _TidalClient2.default.getAlbum(albumId);
+
+                                case 5:
+                                    album = _context3.sent;
+
+                                case 6:
+                                    dispatch(UpdateSelectedAlbum(album));
+
+                                case 7:
+                                case "end":
+                                    return _context3.stop();
+                            }
+                        }
+                    }, _callee3, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdateSelectedAlbum = exports.UpdateSelectedAlbum = (0, _reduxActions.createAction)("ALBUMS/UPDATE_SELECTED_ALBUM", function (album) {
+        return {
+            album: album
+        };
+    });
+    addReducer(UpdateSelectedAlbum, function (state, action) {
+        return _extends({}, state, {
+            currentAlbum: action.payload.album
+        });
+    });
+},761,[521,544,546],"src/Containers/AlbumsScreen/reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.SelectArtist = exports.UpdateArtists = exports.FetchArtistAlbums = exports.UpdateArtistAlbums = exports.FetchArtists = exports.artistReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _this = this;
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var _TidalClient = _require(_dependencyMap[2], "../../Services/TidalClient");
+
+    var _TidalClient2 = _interopRequireDefault(_TidalClient);
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function step(result) {
+                result.done ? resolve(result.value) : new P(function (resolve) {
+                    resolve(result.value);
+                }).then(fulfilled, rejected);
+            }
+
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+
+    var artistReducers = exports.artistReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(artistReducers);
+
+    var FetchArtists = exports.FetchArtists = function FetchArtists(query) {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
+                    var artist;
+                    return regeneratorRuntime.wrap(function _callee$(_context) {
+                        while (1) {
+                            switch (_context.prev = _context.next) {
+                                case 0:
+                                    query = query && query.length > 0 ? query : "Ada";
+                                    _context.next = 3;
+                                    return _TidalClient2.default.search(query, "artists", 30);
+
+                                case 3:
+                                    artist = _context.sent;
+                                    dispatch(UpdateArtists(artist));
+
+                                case 5:
+                                case "end":
+                                    return _context.stop();
+                            }
+                        }
+                    }, _callee, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdateArtistAlbums = exports.UpdateArtistAlbums = (0, _reduxActions.createAction)("ALBUMS/UPDATE_ARTIST_ALBUMS", function (artistId, artistAlbums) {
+        return {
+            artistId: artistId,
+            artistAlbums: artistAlbums
+        };
+    });
+    addReducer(UpdateArtistAlbums, function (state, action) {
+        return _extends({}, state, {
+            artistsAlbums: _extends({}, state.artistsAlbums, _defineProperty({}, action.payload.artistId, action.payload.artistAlbums))
+        });
+    });
+
+    var FetchArtistAlbums = exports.FetchArtistAlbums = function FetchArtistAlbums(artistId) {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
+                    var albums;
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                        while (1) {
+                            switch (_context2.prev = _context2.next) {
+                                case 0:
+                                    _context2.next = 2;
+                                    return _TidalClient2.default.getArtistAlbums(artistId);
+
+                                case 2:
+                                    albums = _context2.sent;
+                                    dispatch(UpdateArtistAlbums(artistId, albums));
+
+                                case 4:
+                                case "end":
+                                    return _context2.stop();
+                            }
+                        }
+                    }, _callee2, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdateArtists = exports.UpdateArtists = (0, _reduxActions.createAction)("ARTISTS/UPDATE_ARTISTS", function (artists) {
+        return {
+            artists: artists
+        };
+    });
+    addReducer(UpdateArtists, function (state, action) {
+        return _extends({}, state, {
+            artists: action.payload.artists
+        });
+    });
+    var SelectArtist = exports.SelectArtist = (0, _reduxActions.createAction)("ARTISTS/SELECT_ARTIST", function (artistId) {
+        return {
+            artistId: artistId
+        };
+    });
+    addReducer(SelectArtist, function (state, action) {
+        var artist = state.artists.find(function (s) {
+            return s.id == action.payload.artistId;
+        });
+        return _extends({}, state, {
+            currentArtist: artist
+        });
+    });
+},762,[521,544,546],"src/Containers/ArtistsScreen/reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.UpdateSelectedSong = exports.SelectNextSong = exports.SelectPrevSong = exports.UpdatePlaylist = exports.SelectSong = exports.UpdateSongs = exports.FetchSongs = exports.songsReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _this = this;
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var _TidalClient = _require(_dependencyMap[2], "../../Services/TidalClient");
+
+    var _TidalClient2 = _interopRequireDefault(_TidalClient);
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function step(result) {
+                result.done ? resolve(result.value) : new P(function (resolve) {
+                    resolve(result.value);
+                }).then(fulfilled, rejected);
+            }
+
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+
+    var songsReducers = exports.songsReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(songsReducers);
+
+    var FetchSongs = exports.FetchSongs = function FetchSongs(query) {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
+                    var songs;
+                    return regeneratorRuntime.wrap(function _callee$(_context) {
+                        while (1) {
+                            switch (_context.prev = _context.next) {
+                                case 0:
+                                    query = query && query.length > 0 ? query : "money";
+                                    _context.next = 3;
+                                    return _TidalClient2.default.search(query, "tracks", 30);
+
+                                case 3:
+                                    songs = _context.sent;
+                                    dispatch(UpdateSongs(songs));
+
+                                case 5:
+                                case "end":
+                                    return _context.stop();
+                            }
+                        }
+                    }, _callee, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdateSongs = exports.UpdateSongs = (0, _reduxActions.createAction)("SONGS/UPDATE_SONGS", function (songs) {
+        return {
+            songs: songs
+        };
+    });
+    addReducer(UpdateSongs, function (state, action) {
+        return _extends({}, state, {
+            songs: action.payload.songs
+        });
+    });
+
+    var SelectSong = exports.SelectSong = function SelectSong(songId, albumId) {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
+                    var state, songs, song, stream;
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                        while (1) {
+                            switch (_context2.prev = _context2.next) {
+                                case 0:
+                                    state = getState();
+                                    songs = albumId !== undefined ? state.albumsSongs[albumId] : state.songs;
+                                    song = songs.find(function (s) {
+                                        return s.id == songId;
+                                    });
+
+                                    if (!(song === undefined)) {
+                                        _context2.next = 7;
+                                        break;
+                                    }
+
+                                    _context2.next = 6;
+                                    return _TidalClient2.default.getTrack(songId);
+
+                                case 6:
+                                    song = _context2.sent;
+
+                                case 7:
+                                    _context2.next = 9;
+                                    return _TidalClient2.default.getTrackStreamUrl(songId);
+
+                                case 9:
+                                    stream = _context2.sent.url;
+                                    dispatch(UpdateSelectedSong(_extends({}, song, {
+                                        stream: stream,
+                                        albumId: albumId,
+                                        paused: false,
+                                        time: 0,
+                                        muted: false,
+                                        volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
+                                        index: songs.indexOf(song)
+                                    })));
+                                    dispatch(UpdatePlaylist(songs));
+
+                                case 12:
+                                case "end":
+                                    return _context2.stop();
+                            }
+                        }
+                    }, _callee2, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdatePlaylist = exports.UpdatePlaylist = (0, _reduxActions.createAction)("SONGS/UPDATE_PLAYLIST", function (songs) {
+        return {
+            songs: songs
+        };
+    });
+    addReducer(UpdatePlaylist, function (state, action) {
+        return _extends({}, state, {
+            playlist: action.payload.songs
+        });
+    });
+
+    var SelectPrevSong = exports.SelectPrevSong = function SelectPrevSong() {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee3() {
+                    var state, songIndex, song, stream;
+                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                        while (1) {
+                            switch (_context3.prev = _context3.next) {
+                                case 0:
+                                    state = getState();
+                                    songIndex = state.currentSong.index - 1 < 0 ? state.playlist.length - 1 : state.currentSong.index - 1;
+                                    song = state.playlist.find(function (s) {
+                                        return state.playlist.indexOf(s) == songIndex;
+                                    });
+                                    _context3.next = 5;
+                                    return _TidalClient2.default.getTrackStreamUrl(song.id);
+
+                                case 5:
+                                    stream = _context3.sent.url;
+                                    dispatch(UpdateSelectedSong(_extends({}, song, {
+                                        stream: stream,
+                                        paused: false,
+                                        time: 0,
+                                        muted: false,
+                                        volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
+                                        index: state.playlist.indexOf(song)
+                                    })));
+
+                                case 7:
+                                case "end":
+                                    return _context3.stop();
+                            }
+                        }
+                    }, _callee3, this);
+                }));
+            })();
+        };
+    };
+
+    var SelectNextSong = exports.SelectNextSong = function SelectNextSong() {
+        return function (dispatch, getState) {
+            (function () {
+                return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee4() {
+                    var state, songIndex, song, stream;
+                    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                        while (1) {
+                            switch (_context4.prev = _context4.next) {
+                                case 0:
+                                    state = getState();
+                                    songIndex = state.currentSong.index + 1 >= state.playlist.length ? 0 : state.currentSong.index + 1;
+                                    song = state.playlist.find(function (s) {
+                                        return state.playlist.indexOf(s) == songIndex;
+                                    });
+                                    _context4.next = 5;
+                                    return _TidalClient2.default.getTrackStreamUrl(song.id);
+
+                                case 5:
+                                    stream = _context4.sent.url;
+                                    dispatch(UpdateSelectedSong(_extends({}, song, {
+                                        stream: stream,
+                                        paused: false,
+                                        time: 0,
+                                        muted: false,
+                                        volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
+                                        index: state.playlist.indexOf(song)
+                                    })));
+
+                                case 7:
+                                case "end":
+                                    return _context4.stop();
+                            }
+                        }
+                    }, _callee4, this);
+                }));
+            })();
+        };
+    };
+
+    var UpdateSelectedSong = exports.UpdateSelectedSong = (0, _reduxActions.createAction)("SONGS/UPDATE_SELECTED_SONG", function (song) {
+        return {
+            song: song
+        };
+    });
+    addReducer(UpdateSelectedSong, function (state, action) {
+        return _extends({}, state, {
+            currentSong: action.payload.song
+        });
+    });
+},763,[521,544,546],"src/Containers/SongsScreen/reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.ToggleSong = exports.songReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var songReducers = exports.songReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(songReducers);
+    var ToggleSong = exports.ToggleSong = (0, _reduxActions.createAction)("SONG/TOGGLE_SONG", function (displayed) {
+        return {
+            displayed: displayed
+        };
+    });
+    addReducer(ToggleSong, function (state, action) {
+        return _extends({}, state, {
+            songDisplayed: action.payload.displayed
+        });
+    });
+},764,[521,544],"src/Containers/SongScreen/reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.UpdateSongVolume = exports.UpdateSongMuted = exports.UpdateSongPaused = exports.UpdateSongTime = exports.nowPlayingReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var nowPlayingReducers = exports.nowPlayingReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(nowPlayingReducers);
+    var UpdateSongTime = exports.UpdateSongTime = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_TIME", function (time) {
+        return {
+            time: time
+        };
+    });
+    addReducer(UpdateSongTime, function (state, action) {
+        return _extends({}, state, {
+            currentSong: _extends({}, state.currentSong, {
+                time: action.payload.time
+            })
+        });
+    });
+    var UpdateSongPaused = exports.UpdateSongPaused = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_PAUSED", function (paused) {
+        return {
+            paused: paused
+        };
+    });
+    addReducer(UpdateSongPaused, function (state, action) {
+        return _extends({}, state, {
+            currentSong: _extends({}, state.currentSong, {
+                paused: action.payload.paused
+            })
+        });
+    });
+    var UpdateSongMuted = exports.UpdateSongMuted = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_MUTED", function (muted) {
+        return {
+            muted: muted
+        };
+    });
+    addReducer(UpdateSongMuted, function (state, action) {
+        return _extends({}, state, {
+            currentSong: _extends({}, state.currentSong, {
+                muted: action.payload.muted
+            })
+        });
+    });
+    var UpdateSongVolume = exports.UpdateSongVolume = (0, _reduxActions.createAction)("NOW_PLAYING/UPDATE_SONG_VOLUME", function (volume) {
+        return {
+            volume: volume
+        };
+    });
+    addReducer(UpdateSongVolume, function (state, action) {
+        return _extends({}, state, {
+            currentSong: _extends({}, state.currentSong, {
+                volume: action.payload.volume
+            })
+        });
+    });
+},765,[521,544],"src/Containers/NowPlayingBar/reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.SignUpWithPassword = exports.singUpReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _this = this;
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function step(result) {
+                result.done ? resolve(result.value) : new P(function (resolve) {
+                    resolve(result.value);
+                }).then(fulfilled, rejected);
+            }
+
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+
+    var singUpReducers = exports.singUpReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(singUpReducers);
+
+    var SignUpWithPassword = exports.SignUpWithPassword = function SignUpWithPassword(name, lastname, email, password) {
+        return function (dispatch, getState) {
+            return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
+                var signedUp;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                try {
+                                    signedUp = true;
+                                    dispatch(SetSignedUp({
+                                        signUpError: !signedUp ? "Nie udało się zarejestrować" : undefined
+                                    }));
+                                } catch (_a) {
+                                    dispatch(SetSignedUp({
+                                        signUpError: "Wystąpił problem z rejestracją"
+                                    }));
+                                }
+
+                            case 1:
+                            case "end":
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this);
+            }));
+        };
+    };
+
+    var SetSignedUp = (0, _reduxActions.createAction)("ACCOUNT/INTERNAL_SET_SIGNED_UP");
+    addReducer(SetSignedUp, function (state, action) {
+        return _extends({}, state, {
+            SignUpError: action.payload ? action.payload.signUpError : undefined
+        });
+    });
+},766,[521,544],"src/Containers/SignUpScreen/reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.FetchUserInfo = exports.SignInWithPassword = exports.singInReducers = undefined;
+
+    var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+    var _this = this;
+
+    var _reduxActions = _require(_dependencyMap[0], "redux-actions");
+
+    var _AddReducer = _require(_dependencyMap[1], "../../Utils/AddReducer");
+
+    var _LoginManager = _require(_dependencyMap[2], "../../Services/LoginManager");
+
+    var _ApiClient = _require(_dependencyMap[3], "../../Services/ApiClient");
+
+    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function step(result) {
+                result.done ? resolve(result.value) : new P(function (resolve) {
+                    resolve(result.value);
+                }).then(fulfilled, rejected);
+            }
+
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+
+    var singInReducers = exports.singInReducers = {};
+    var addReducer = (0, _AddReducer.addReducerFactory)(singInReducers);
+
+    var SignInWithPassword = exports.SignInWithPassword = function SignInWithPassword(username, password) {
+        return function (dispatch, getState) {
+            return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee() {
+                var isSignedIn;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                _context.prev = 0;
+                                _context.next = 3;
+                                return _LoginManager.loginManager.trySignIn(username, password);
+
+                            case 3:
+                                isSignedIn = _context.sent;
+                                dispatch(SetSignedIn({
+                                    isSignedIn: isSignedIn,
+                                    signInError: !isSignedIn ? "Nie udało się zalogować" : undefined
+                                }));
+                                _context.next = 10;
+                                break;
+
+                            case 7:
+                                _context.prev = 7;
+                                _context.t0 = _context["catch"](0);
+                                dispatch(SetSignedIn({
+                                    isSignedIn: false,
+                                    signInError: "Wystąpił problem z logowaniem"
+                                }));
+
+                            case 10:
+                            case "end":
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this, [[0, 7]]);
+            }));
+        };
+    };
+
+    var SetSignedIn = (0, _reduxActions.createAction)("ACCOUNT/INTERNAL_SET_SIGNED_IN");
+    addReducer(SetSignedIn, function (state, action) {
+        var isSignedIn = !!action.payload && action.payload.isSignedIn;
+        return _extends({}, state, {
+            isSignedIn: isSignedIn,
+            signInError: action.payload ? action.payload.signInError : undefined
+        });
+    });
+
+    var FetchUserInfo = exports.FetchUserInfo = function FetchUserInfo() {
+        return function (dispatch, getState) {
+            return __awaiter(_this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
+                var isSignedIn, res;
+                return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                    while (1) {
+                        switch (_context2.prev = _context2.next) {
+                            case 0:
+                                _context2.prev = 0;
+                                _context2.next = 3;
+                                return _LoginManager.loginManager.isSigned();
+
+                            case 3:
+                                isSignedIn = _context2.sent;
+                                dispatch(SetSignedIn({
+                                    isSignedIn: isSignedIn
+                                }));
+
+                                if (!isSignedIn) {
+                                    _context2.next = 12;
+                                    break;
+                                }
+
+                                _context2.next = 8;
+                                return _ApiClient.apiClient.fetchUserInfo();
+
+                            case 8:
+                                res = _context2.sent;
+                                if (res.IsSuccess) dispatch(SetUserInfo(res.Response));else dispatch(SetUserInfo(undefined));
+                                _context2.next = 13;
+                                break;
+
+                            case 12:
+                                dispatch(SetUserInfo(undefined));
+
+                            case 13:
+                                _context2.next = 18;
+                                break;
+
+                            case 15:
+                                _context2.prev = 15;
+                                _context2.t0 = _context2["catch"](0);
+                                dispatch(SetUserInfo(undefined));
+
+                            case 18:
+                            case "end":
+                                return _context2.stop();
+                        }
+                    }
+                }, _callee2, this, [[0, 15]]);
+            }));
+        };
+    };
+
+    var SetUserInfo = (0, _reduxActions.createAction)("LOADING/SET_USER_INFO", function (userInfo) {
+        return {
+            userInfo: userInfo
+        };
+    });
+    addReducer(SetUserInfo, function (state, action) {
+        return _extends({}, state, {
+            userInfo: action.payload.userInfo
+        });
+    });
+},767,[521,544,583,770],"src/Containers/SignInScreen/reducers.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/LoadingScreen/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactRedux = _require(_dependencyMap[2], "react-redux");
+
+    var _reducers = _require(_dependencyMap[3], "../SignInScreen/reducers");
+
+    var _reactRouterNative = _require(_dependencyMap[4], "react-router-native");
+
+    var _Routes = _require(_dependencyMap[5], "../../Infrastructure/Navigation/Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        LoadingScreen: {
+            displayName: "LoadingScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/LoadingScreen/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var LoadingScreen = _wrapComponent("LoadingScreen")(function (_Component) {
+        _inherits(LoadingScreen, _Component);
+
+        function LoadingScreen() {
+            _classCallCheck(this, LoadingScreen);
+
+            return _possibleConstructorReturn(this, (LoadingScreen.__proto__ || Object.getPrototypeOf(LoadingScreen)).apply(this, arguments));
+        }
+
+        _createClass(LoadingScreen, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                this.props.loadUserInfo();
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                return this.props.isSignedIn !== undefined ? this.props.isSignedIn ? _react3.default.createElement(_reactRouterNative.Redirect, {
+                    to: routes.Songs,
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 12
+                    }
+                }) : _react3.default.createElement(_reactRouterNative.Redirect, {
+                    to: routes.SignIn,
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 12
+                    }
+                }) : null;
+            }
+        }]);
+
+        return LoadingScreen;
+    }(_react2.Component));
+
+    var mapStateToProps = function mapStateToProps(state) {
+        return {
+            isSignedIn: state.isSignedIn
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+        return {
+            loadUserInfo: function loadUserInfo() {
+                dispatch((0, _reducers.FetchUserInfo)());
+            }
+        };
+    };
+
+    var LoadingScreenContainer = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(LoadingScreen);
+    exports.default = LoadingScreenContainer;
+},768,[12,22,491,767,589,618],"src/Containers/LoadingScreen/index.tsx");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.apiClient = undefined;
+
+    var _Config = _require(_dependencyMap[0], "../Configuration/Config");
+
+    var _Config2 = _interopRequireDefault(_Config);
+
+    var _HttpClient2 = _require(_dependencyMap[1], "./HttpClient");
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var ApiClient = function (_HttpClient) {
+        _inherits(ApiClient, _HttpClient);
+
+        function ApiClient() {
+            _classCallCheck(this, ApiClient);
+
+            var _this = _possibleConstructorReturn(this, (ApiClient.__proto__ || Object.getPrototypeOf(ApiClient)).apply(this, arguments));
+
+            _this.addFavourite = function (dto) {
+                return _this.post("/api/tracks", dto);
+            };
+
+            _this.fetchFavourites = function () {
+                return _this.get("/api/tracks");
+            };
+
+            _this.signUp = function (dto) {
+                return _this.post("/api/account");
+            };
+
+            _this.fetchUserInfo = function () {
+                return _this.get("/api/account");
+            };
+
+            return _this;
+        }
+
+        return ApiClient;
+    }(_HttpClient2.HttpClient);
+
+    var apiClient = exports.apiClient = new ApiClient(_Config2.default.apiEndpoint);
+},770,[585,771],"src/Services/ApiClient.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.HttpClient = exports.UnauthorizedRequest = undefined;
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _LoginManager = _require(_dependencyMap[0], "./LoginManager");
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
+        return new (P || (P = Promise))(function (resolve, reject) {
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                } catch (e) {
+                    reject(e);
+                }
+            }
+
+            function step(result) {
+                result.done ? resolve(result.value) : new P(function (resolve) {
+                    resolve(result.value);
+                }).then(fulfilled, rejected);
+            }
+
+            step((generator = generator.apply(thisArg, _arguments || [])).next());
+        });
+    };
+
+    var UnauthorizedRequest = exports.UnauthorizedRequest = function (_Error) {
+        _inherits(UnauthorizedRequest, _Error);
+
+        function UnauthorizedRequest() {
+            _classCallCheck(this, UnauthorizedRequest);
+
+            return _possibleConstructorReturn(this, (UnauthorizedRequest.__proto__ || Object.getPrototypeOf(UnauthorizedRequest)).apply(this, arguments));
+        }
+
+        return UnauthorizedRequest;
+    }(Error);
+
+    var RequestMethod;
+
+    (function (RequestMethod) {
+        RequestMethod[RequestMethod["Get"] = 0] = "Get";
+        RequestMethod[RequestMethod["Post"] = 1] = "Post";
+        RequestMethod[RequestMethod["Put"] = 2] = "Put";
+        RequestMethod[RequestMethod["Delete"] = 3] = "Delete";
+    })(RequestMethod || (RequestMethod = {}));
+
+    var HttpClient = exports.HttpClient = function () {
+        function HttpClient(baseUrl) {
+            _classCallCheck(this, HttpClient);
+
+            this.baseUrl = baseUrl;
+        }
+
+        _createClass(HttpClient, [{
+            key: "get",
+            value: function get(url) {
+                return this.executeRequest(url, RequestMethod.Get);
+            }
+        }, {
+            key: "post",
+            value: function post(url, data) {
+                return this.executeRequest(url, RequestMethod.Post, data);
+            }
+        }, {
+            key: "put",
+            value: function put(url, data) {
+                return this.executeRequest(url, RequestMethod.Put, data);
+            }
+        }, {
+            key: "delete",
+            value: function _delete(url, data) {
+                return this.executeRequest(url, RequestMethod.Delete, data);
+            }
+        }, {
+            key: "executeRequest",
+            value: function executeRequest(url, method, data) {
+                return __awaiter(this, void 0, void 0, regeneratorRuntime.mark(function _callee2() {
+                    var _this2 = this;
+
+                    var makeRequest, response;
+                    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                        while (1) {
+                            switch (_context2.prev = _context2.next) {
+                                case 0:
+                                    makeRequest = function makeRequest() {
+                                        return __awaiter(_this2, void 0, void 0, regeneratorRuntime.mark(function _callee() {
+                                            var headers, token, requestInit;
+                                            return regeneratorRuntime.wrap(function _callee$(_context) {
+                                                while (1) {
+                                                    switch (_context.prev = _context.next) {
+                                                        case 0:
+                                                            headers = new Headers();
+
+                                                            if (method !== RequestMethod.Get) {
+                                                                headers.append("Content-Type", "application/json; charset=UTF-8");
+                                                            }
+
+                                                            _context.next = 4;
+                                                            return _LoginManager.loginManager.isSigned();
+
+                                                        case 4:
+                                                            if (!_context.sent) {
+                                                                _context.next = 9;
+                                                                break;
+                                                            }
+
+                                                            _context.next = 7;
+                                                            return _LoginManager.loginManager.getToken();
+
+                                                        case 7:
+                                                            token = _context.sent;
+                                                            headers.append("Authorization", "Bearer " + token);
+
+                                                        case 9:
+                                                            requestInit = {
+                                                                method: this.getRequestMethod(method),
+                                                                headers: headers,
+                                                                body: data ? JSON.stringify(data) : undefined
+                                                            };
+                                                            _context.next = 12;
+                                                            return fetch(this.baseUrl + url, requestInit);
+
+                                                        case 12:
+                                                            return _context.abrupt("return", _context.sent);
+
+                                                        case 13:
+                                                        case "end":
+                                                            return _context.stop();
+                                                    }
+                                                }
+                                            }, _callee, this);
+                                        }));
+                                    };
+
+                                    _context2.next = 3;
+                                    return makeRequest();
+
+                                case 3:
+                                    response = _context2.sent;
+                                    _context2.next = 6;
+                                    return this.handleResponse(response, makeRequest);
+
+                                case 6:
+                                    return _context2.abrupt("return", _context2.sent);
+
+                                case 7:
+                                case "end":
+                                    return _context2.stop();
+                            }
+                        }
+                    }, _callee2, this);
+                }));
+            }
+        }, {
+            key: "handleResponse",
+            value: function handleResponse(response, makeRequest) {
+                return __awaiter(this, void 0, void 0, regeneratorRuntime.mark(function _callee3() {
+                    var body;
+                    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+                        while (1) {
+                            switch (_context3.prev = _context3.next) {
+                                case 0:
+                                    if (!(response.status === 401)) {
+                                        _context3.next = 18;
+                                        break;
+                                    }
+
+                                    if (!_LoginManager.loginManager) {
+                                        _context3.next = 17;
+                                        break;
+                                    }
+
+                                    if (!makeRequest) {
+                                        _context3.next = 14;
+                                        break;
+                                    }
+
+                                    _context3.next = 5;
+                                    return _LoginManager.loginManager.tryRefreshToken();
+
+                                case 5:
+                                    if (_context3.sent) {
+                                        _context3.next = 7;
+                                        break;
+                                    }
+
+                                    throw new _LoginManager.CannotRefreshToken("Cannot refresh access token after the server returned 401 Unauthorized");
+
+                                case 7:
+                                    _context3.t0 = this;
+                                    _context3.next = 10;
+                                    return makeRequest();
+
+                                case 10:
+                                    _context3.t1 = _context3.sent;
+                                    return _context3.abrupt("return", _context3.t0.handleResponse.call(_context3.t0, _context3.t1));
+
+                                case 14:
+                                    throw new UnauthorizedRequest("The request has not been authorized and token refresh did not help");
+
+                                case 15:
+                                    _context3.next = 18;
+                                    break;
+
+                                case 17:
+                                    throw new UnauthorizedRequest("User need to be authenticated to execute the command/query");
+
+                                case 18:
+                                    body = {};
+                                    _context3.prev = 19;
+                                    _context3.next = 22;
+                                    return response.json();
+
+                                case 22:
+                                    body = _context3.sent;
+                                    _context3.next = 27;
+                                    break;
+
+                                case 25:
+                                    _context3.prev = 25;
+                                    _context3.t2 = _context3["catch"](19);
+
+                                case 27:
+                                    if (!(response.status >= 200 && response.status < 300)) {
+                                        _context3.next = 31;
+                                        break;
+                                    }
+
+                                    return _context3.abrupt("return", {
+                                        IsSuccess: true,
+                                        StatusCode: response.status,
+                                        Response: body
+                                    });
+
+                                case 31:
+                                    return _context3.abrupt("return", {
+                                        IsSuccess: false,
+                                        StatusCode: response.status,
+                                        Error: body
+                                    });
+
+                                case 32:
+                                case "end":
+                                    return _context3.stop();
+                            }
+                        }
+                    }, _callee3, this, [[19, 25]]);
+                }));
+            }
+        }, {
+            key: "getRequestMethod",
+            value: function getRequestMethod(method) {
+                switch (method) {
+                    case RequestMethod.Get:
+                        return "GET";
+
+                    case RequestMethod.Post:
+                        return "POST";
+
+                    case RequestMethod.Put:
+                        return "PUT";
+
+                    case RequestMethod.Delete:
+                        return "DELETE";
+                }
+            }
+        }]);
+
+        return HttpClient;
+    }();
+},771,[583],"src/Services/HttpClient.ts");
+__d(function (global, _require, module, exports, _dependencyMap) {
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+
+    var _react2 = _require(_dependencyMap[0], "react");
+
+    var _react3 = _interopRequireDefault(_react2);
+
+    var _index = _require(_dependencyMap[1], "./../../../node_modules/react-transform-hmr/lib/index.js");
+
+    var _index2 = _interopRequireDefault(_index);
+
+    var _jsxFileName = "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/AfterSignInScreen/index.tsx";
+
+    var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+    var _reactNative = _require(_dependencyMap[2], "react-native");
+
+    var _reactRedux = _require(_dependencyMap[3], "react-redux");
+
+    var _reactRouterNative = _require(_dependencyMap[4], "react-router-native");
+
+    var _Routes = _require(_dependencyMap[5], "../../Infrastructure/Navigation/Routes");
+
+    var routes = _interopRequireWildcard(_Routes);
+
+    var _reducers = _require(_dependencyMap[6], "../SignInScreen/reducers");
+
+    function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+    function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+    function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+    function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+    function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+    var _components = {
+        AfterLoginScreen: {
+            displayName: "AfterLoginScreen"
+        }
+    };
+
+    var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+        filename: "/Users/Selve/Documents/Projects/MusicPlayer/src/Containers/AfterSignInScreen/index.tsx",
+        components: _components,
+        locals: [module],
+        imports: [_react3.default]
+    });
+
+    function _wrapComponent(id) {
+        return function (Component) {
+            return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+        };
+    }
+
+    var AfterLoginScreen = _wrapComponent("AfterLoginScreen")(function (_Component) {
+        _inherits(AfterLoginScreen, _Component);
+
+        function AfterLoginScreen() {
+            _classCallCheck(this, AfterLoginScreen);
+
+            return _possibleConstructorReturn(this, (AfterLoginScreen.__proto__ || Object.getPrototypeOf(AfterLoginScreen)).apply(this, arguments));
+        }
+
+        _createClass(AfterLoginScreen, [{
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                this.props.loadUserInfo();
+            }
+        }, {
+            key: "printWelcomeMessage",
+            value: function printWelcomeMessage(userInfo) {
+                return "Welcome " + userInfo.FirstName + " " + userInfo.LastName + "!";
+            }
+        }, {
+            key: "navigateToSongs",
+            value: function navigateToSongs() {
+                var _this2 = this;
+
+                setTimeout(function () {
+                    _this2.props.navigateToSongs();
+                }, 1000);
+            }
+        }, {
+            key: "render",
+            value: function render() {
+                if (this.props.userInfo !== undefined) this.navigateToSongs();
+                return _react3.default.createElement(
+                    _reactNative.View,
+                    {
+                        style: {
+                            flex: 1,
+                            justifyContent: "center"
+                        },
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 22
+                        }
+                    },
+                    _react3.default.createElement(
+                        _reactNative.Text,
+                        {
+                            style: {
+                                textAlign: "center"
+                            },
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 23
+                            }
+                        },
+                        this.props.userInfo !== undefined ? this.printWelcomeMessage(this.props.userInfo) : "Loading..."
+                    )
+                );
+            }
+        }]);
+
+        return AfterLoginScreen;
+    }(_react2.Component));
+
+    var mapStateToProps = function mapStateToProps(state) {
+        return {
+            userInfo: state.userInfo
+        };
+    };
+
+    var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
+        return {
+            loadUserInfo: function loadUserInfo() {
+                dispatch((0, _reducers.FetchUserInfo)());
+            },
+            navigateToSongs: function navigateToSongs() {
+                ownProps.history.replace(routes.Songs);
+            }
+        };
+    };
+
+    var AfterLoginScreenContainer = (0, _reactRouterNative.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(AfterLoginScreen));
+    exports.default = AfterLoginScreenContainer;
+},772,[12,22,176,491,589,618,767],"src/Containers/AfterSignInScreen/index.tsx");
 require(186);
 require(11);

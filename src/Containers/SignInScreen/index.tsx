@@ -39,7 +39,7 @@ class SignIn extends React.Component<SignInProps, SignInState> {
     }
 
     render() {
-        const { from } = this.props.location.state || { from: { pathname: routes.Songs } };
+        // const { from } = this.props.location.state || { from: { pathname: routes.Songs } };
 
         return !this.props.isSignedIn ? <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
@@ -65,7 +65,7 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                     </View>
                 </TouchableOpacity>
             </View>
-        </View> : <Redirect to={from} />;
+        </View> : <Redirect to={routes.AfterSignIn} />;
     }
 }
 
