@@ -9,19 +9,6 @@ export const styles = StyleSheet.create({
         backgroundColor: "rgba(52, 52, 52, 0.5)",
         padding: 20
     },
-    // title: {
-    //     textAlign: "center",
-    //     paddingTop: 24,
-    //     fontSize: 24,
-    //     fontWeight: "bold",
-    //     color: "white"
-    // }
-    // container: {
-    //     justifyContent: 'center',
-    //     marginTop: 50,
-    //     padding: 20,
-    //     backgroundColor: "rgba(52, 52, 52, 0.5)",
-    //   },
       title: {
         fontSize: 30,
         alignSelf: 'center',

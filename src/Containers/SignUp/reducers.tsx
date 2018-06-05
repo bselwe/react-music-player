@@ -8,10 +8,10 @@ import { loginManager } from "../../Services/LoginManager"
 export let singUpReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(singUpReducers);
 
-export const SignUpWithPassword = (username: string, password: string) =>
+export const SignUpWithPassword = (name: string, lastname: string, email: string, password: string) =>
     async (dispatch: Dispatch<any>, getState: () => AppState) => {
         try {
-            const isSignedUp = await loginManager.trySignUp(username, password);
+            const isSignedUp = await loginManager.trySignUp(email, password);
 
             dispatch(SetSignedUp({
                 signUpError: !isSignedUp ? ("Nie udało się zarejestrować") : undefined
