@@ -8,15 +8,6 @@ import * as routes from "../../Infrastructure/Navigation/Routes";
 import { tokenStorage } from "../../Services/TokenStorage";
 import { loginManager } from "../../Services/LoginManager";
 
-// var options = {
-//     fields: {
-//         password: {
-//             secureTextEntry: true
-//         }
-//     },
-//     auto: 'placeholders',
-// };
-
 interface SignInState {
     email: string,
     password: string
@@ -64,6 +55,7 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 placeholder="Password"
+                secureTextEntry={true}
             />
             <Text>{this.props.signInError}</Text>
             <View>
@@ -92,7 +84,10 @@ const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: SignInProps): Sig
             dispatch(SignInWithPassword(username, password));
         },
         navigateToSignUp: () => {
+<<<<<<< HEAD
             console.log(ownProps.history);
+=======
+>>>>>>> Add SignIn and SignUp reducers to store
             ownProps.history.push(routes.SignUp);
         }
     };
