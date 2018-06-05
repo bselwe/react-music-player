@@ -8,7 +8,7 @@ class ApiClient extends HttpClient {
     }
 
     public isFavourite = (id: number) => {
-        return this.get<Models.IsFavouriteTrackDTO[]>(
+        return this.get<Models.IsFavouriteTrackDTO>(
             `/api/tracks/${id}`);
     }
 
