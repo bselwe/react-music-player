@@ -14,7 +14,7 @@ class ApiClient extends HttpClient {
 
     public signUp = (dto: Models.SignUpDTO) => {
         return this.post<Models.SignUpDTO>(
-            `/api/account`);
+            `/api/account`, dto);
     }
 
     public fetchUserInfo = () => {

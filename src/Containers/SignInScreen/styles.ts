@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
-    backgroundColor: "rgba(52, 52, 52, 0.7)",
+    backgroundColor: "rgba(52, 52, 52, 0.5)",
     padding: 20
   },
   formContainer: {
