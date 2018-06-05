@@ -6,12 +6,14 @@ import Icon from "react-native-vector-icons/Feather";
 import SongIcon from "react-native-vector-icons/Entypo";
 import AlbumIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import ArtistIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import FavoriteIcon from "react-native-vector-icons/FontAwesome";
 import * as routes from "./Routes";
 
 enum Tab {
     Songs,
     Albums,
-    Artists
+    Artists,
+    Favorites
 };
 
 class TabBar extends React.Component<RouteComponentProps<any>, {}> {
@@ -28,6 +30,9 @@ class TabBar extends React.Component<RouteComponentProps<any>, {}> {
                 break;
             case Tab.Artists:
                 this.props.history.replace(routes.Artists);
+                break;
+            case Tab.Favorites:
+                this.props.history.replace(routes.Favorites);
                 break;
         }
     }
@@ -48,12 +53,16 @@ class TabBar extends React.Component<RouteComponentProps<any>, {}> {
                     <ArtistIcon size={28} name="artist" color={this.isCurrentTab(routes.Artists) ? this.activeColor : this.inactiveColor} />
                     <Text style={{ fontSize: 12, color: this.isCurrentTab(routes.Artists) ? this.activeColor : this.inactiveColor }}>Artists</Text>
                 </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => this.selectTab(Tab.Favorites)}>
+                    <FavoriteIcon size={28} name="star" color={this.isCurrentTab(routes.Favorites) ? this.activeColor : this.inactiveColor} />
+                    <Text style={{ fontSize: 12, color: this.isCurrentTab(routes.Favorites) ? this.activeColor : this.inactiveColor }}>Favorites</Text>
+                </TouchableOpacity>
             </View>
         </View> : null
     }
 
     shouldDisplayTabBar(): boolean {
-        return [routes.Songs, routes.Albums, routes.Artists].indexOf(this.props.location.pathname) !== -1;
+        return [routes.Songs, routes.Albums, routes.Artists,routes.Favorites].indexOf(this.props.location.pathname) !== -1;
     }
 
     isCurrentTab(tab: string) {

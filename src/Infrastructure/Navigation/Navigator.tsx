@@ -8,6 +8,7 @@ import SongScreen from "../../Containers/SongScreen";
 import AlbumsScreen from "../../Containers/AlbumsScreen";
 import AlbumScreen from "../../Containers/AlbumScreen";
 import ArtistsScreen from "../../Containers/ArtistsScreen";
+import FavoritesScreen from "../../Containers/FavoritesScreen";
 import ArtistScreen from "../../Containers/ArtistScreen";
 import SignInScreen from "../../Containers/SignInScreen";
 import LoadingScreen from "../../Containers/LoadingScreen";
