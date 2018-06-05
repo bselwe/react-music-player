@@ -7,8 +7,8 @@ import thunk from "redux-thunk";
 import { artistReducers } from './Containers/ArtistsScreen/reducers';
 import { albumReducers } from './Containers/AlbumsScreen/reducers';
 import { nowPlayingReducers } from './Containers/NowPlayingBar/reducers';
-import { singInReducers } from './Containers/SignIn/reducers';
-import { singUpReducers } from './Containers/SignUp/reducers';
+import { singInReducers } from './Containers/SignInScreen/reducers';
+import { singUpReducers } from './Containers/SignUpScreen/reducers';
 
 export const initialState: AppState = {
     songs: [],

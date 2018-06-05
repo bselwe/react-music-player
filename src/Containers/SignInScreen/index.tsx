@@ -33,12 +33,6 @@ class SignIn extends React.Component<SignInProps, SignInState> {
         }
     }
 
-    componentDidMount() {
-        AsyncStorage.getItem("token").then(halo => console.log(halo));
-        AsyncStorage.getItem("refresh_token").then(halo => console.log(halo));
-        AsyncStorage.getItem("expiration_date").then(halo => console.log(halo));
-    }
-
     onSignInPress() {
         this.props.signIn(this.state.email, this.state.password);
     }
@@ -84,10 +78,6 @@ const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: SignInProps): Sig
             dispatch(SignInWithPassword(username, password));
         },
         navigateToSignUp: () => {
-<<<<<<< HEAD
-            console.log(ownProps.history);
-=======
->>>>>>> Add SignIn and SignUp reducers to store
             ownProps.history.push(routes.SignUp);
         }
     };
