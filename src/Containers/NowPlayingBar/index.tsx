@@ -9,7 +9,7 @@ import * as Progress from "react-native-progress";
 import PlayIcon from "react-native-vector-icons/MaterialIcons";
 import Video from "react-native-video";
 import { UpdateSongTime, UpdateSongPaused } from "./reducers";
-import { Link } from "react-router-native";
+import { Link, RouteComponentProps, withRouter } from "react-router-native";
 
 interface NowPlayingBarStateProps {
     song: CurrentTrack;
@@ -21,7 +21,7 @@ interface NowPlayingBarDispatchProps {
     updateSongPaused: (paused: boolean) => void;
 }
 
-type NowPlayingBarProps = NowPlayingBarStateProps & NowPlayingBarDispatchProps;
+type NowPlayingBarProps = NowPlayingBarStateProps & NowPlayingBarDispatchProps & RouteComponentProps<any>;
 
 class NowPlayingBar extends React.Component<NowPlayingBarProps> {
     constructor(props) {
@@ -36,8 +36,12 @@ class NowPlayingBar extends React.Component<NowPlayingBarProps> {
         this.props.updateSongPaused(true);
     }
 
+    shouldDisplayNowPlayingBar(): boolean {
+        return [routes.SignIn, routes.SignUp].indexOf(this.props.location.pathname) === -1;
+    }
+
     render() {
-        return this.props.song ? <View>
+        return this.props.song && this.shouldDisplayNowPlayingBar() ? <View>
             {this.props.song.stream && <Video source={{uri: this.props.song.stream }}
                 ref="audio"
                 volume={this.props.song.volume}
@@ -81,7 +85,7 @@ const mapStateToProps = (state: AppState): NowPlayingBarStateProps => {
     }
 }
 
-const mapDispatchToProps = (dispatch: Dispatch<any>): NowPlayingBarDispatchProps => {
+const mapDispatchToProps = (dispatch: Dispatch<any>, ownProps: RouteComponentProps<any>): NowPlayingBarDispatchProps => {
     return {
         updateSongTime: (time: number) => {
             dispatch(UpdateSongTime(time));
@@ -92,9 +96,9 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): NowPlayingBarDispatchProps
     }
 }
 
-const NowPlayingBarContainer = connect(
+const NowPlayingBarContainer = withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(NowPlayingBar);
+)(NowPlayingBar));
 
 export default NowPlayingBarContainer;

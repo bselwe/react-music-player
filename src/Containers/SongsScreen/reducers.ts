@@ -2,6 +2,7 @@ import { ReducerMap, createAction } from "redux-actions";
 import { addReducerFactory } from "../../Utils/AddReducer";
 import Tidal from "../../Services/TidalClient";
 import { Thunk } from "../../Utils/Thunk";
+import { apiClient } from "../../Services/ApiClient";
 
 export let songsReducers: ReducerMap<AppState, any> = {};
 const addReducer = addReducerFactory(songsReducers);
@@ -34,6 +35,7 @@ export const SelectSong = (songId: number, albumId?: number) =>
             if (song === undefined)
                 song = await Tidal.getTrack(songId);
 
+            let isFavoriteResponse = await apiClient.isFavourite(song.id);
             let stream = (await Tidal.getTrackStreamUrl(songId)).url;
             dispatch(UpdateSelectedSong({
                 ...song,
@@ -43,7 +45,8 @@ export const SelectSong = (songId: number, albumId?: number) =>
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: songs.indexOf(song)
+                index: songs.indexOf(song),
+                isFavorite: isFavoriteResponse.IsSuccess ? isFavoriteResponse.Response.IsFavourite : false
             }
             ));
 
@@ -68,6 +71,7 @@ export const SelectPrevSong = () =>
             let songIndex = state.currentSong.index - 1 < 0 ? state.playlist.length - 1 : state.currentSong.index - 1;
             let song = state.playlist.find(s => state.playlist.indexOf(s) == songIndex);
 
+            let isFavoriteResponse = await apiClient.isFavourite(song.id);
             let stream = (await Tidal.getTrackStreamUrl(song.id)).url;
             dispatch(UpdateSelectedSong({
                 ...song,
@@ -76,7 +80,8 @@ export const SelectPrevSong = () =>
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: state.playlist.indexOf(song)
+                index: state.playlist.indexOf(song),
+                isFavorite: isFavoriteResponse.IsSuccess ? isFavoriteResponse.Response.IsFavourite : false
             }
             ));
         })();
@@ -89,6 +94,7 @@ export const SelectNextSong = () =>
             let songIndex = state.currentSong.index + 1 >= state.playlist.length ? 0 : state.currentSong.index + 1;
             let song = state.playlist.find(s => state.playlist.indexOf(s) == songIndex);
 
+            let isFavoriteResponse = await apiClient.isFavourite(song.id);
             let stream = (await Tidal.getTrackStreamUrl(song.id)).url;
             dispatch(UpdateSelectedSong({
                 ...song,
@@ -97,7 +103,8 @@ export const SelectNextSong = () =>
                 time: 0,
                 muted: false,
                 volume: state.currentSong !== undefined ? state.currentSong.volume : 1.0,
-                index: state.playlist.indexOf(song)
+                index: state.playlist.indexOf(song),
+                isFavorite: isFavoriteResponse.IsSuccess ? isFavoriteResponse.Response.IsFavourite : false
             }
             ));
         })();

@@ -6,6 +6,7 @@ interface CurrentTrack extends Track {
     readonly volume: number;
     readonly index: number;
     readonly albumId?: number;
+    readonly isFavorite: boolean;
 }
 
 interface SongsState {

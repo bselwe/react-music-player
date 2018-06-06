@@ -15,6 +15,13 @@ export const styles = StyleSheet.create({
         marginTop: 36,
         alignSelf: "center"
     },    
+    titleContainer: {
+        marginTop: 20,
+        alignSelf: "center",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center"
+    },    
     progress: {
         width: 300
     },   
@@ -25,7 +32,6 @@ export const styles = StyleSheet.create({
     },
     title: {
         textAlign: "center",
-        paddingTop: 24,
         fontSize: 24,
         fontWeight: "bold"
     },
