@@ -81,6 +81,8 @@ addReducer(SignOutFromStore, (state) => {
         userInfo: undefined,
         signUpError: undefined,
         signUpResult: undefined,
-        favorites: []
+        favorites: [],
+        currentSong: undefined,
+        songDisplayed: false
     };
 });
