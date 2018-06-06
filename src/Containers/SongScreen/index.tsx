@@ -49,7 +49,7 @@ class SongScreen extends React.Component<SongScreenProps> {
                 style={styles.image} />
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>{this.props.song.title}</Text>
-                <FavoriteButton initialIsSelected={this.props.song.isFavorite} onPress={(isSelected) => this.props.updateFavorite(isSelected)}/>
+                <FavoriteButton isSelected={this.props.song.isFavorite} onSelected={(isSelected) => this.props.updateFavorite(isSelected)}/>
             </View>
             <Text style={styles.subtitle}>{this.props.song.artist.name} - {this.props.song.album.title}</Text>
             <View
