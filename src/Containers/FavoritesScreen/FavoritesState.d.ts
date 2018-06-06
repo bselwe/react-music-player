@@ -1,5 +1,5 @@
 interface FavoritesState {
-    readonly favourites: Track[];
+    readonly favorites: Models.TrackDTO[];
 }
 
 interface AppState extends FavoritesState {

@@ -15,3 +15,16 @@ addReducer(ToggleSong,
         };
     }
 );
+
+export const UpdateFavorite = createAction("SONG/UPDATE_FAVORITE", (isFavorite: boolean) => ({ isFavorite }));
+addReducer(UpdateFavorite,
+    (state, action) => {
+        return {
+            ...state,
+            currentSong: {
+                ...state.currentSong,
+                isFavorite: action.payload.isFavorite
+            }
+        };
+    }
+);

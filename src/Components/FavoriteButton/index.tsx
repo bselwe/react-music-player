@@ -8,21 +8,22 @@ interface FavoriteButtonState {
 }
 
 interface FavoriteButtonProps {
-    onPress: () => void;
+    initialIsSelected: boolean;
+    onPress: (isSelected: boolean) => void;
 }
 
 export default class FavoriteButton extends Component<FavoriteButtonProps, FavoriteButtonState> {
     constructor(props) {
         super(props)
         this.state = {
-            //TODO: Fetch from database
-            isSelected: false
+            isSelected: this.props.initialIsSelected
         }
     }
 
     onPress() {
-        this.setState({ isSelected: !this.state.isSelected });
-        if (!this.state.isSelected)
+        let isSelected = !this.state.isSelected;
+        this.setState({ isSelected });
+        if (isSelected)
             ToastAndroid.showWithGravity(
                 'Track added to favorites',
                 ToastAndroid.SHORT,
@@ -34,6 +35,7 @@ export default class FavoriteButton extends Component<FavoriteButtonProps, Favor
                 ToastAndroid.SHORT,
                 ToastAndroid.BOTTOM
             );
+        this.props.onPress( isSelected );
     }
 
     render() {

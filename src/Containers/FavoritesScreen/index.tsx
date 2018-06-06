@@ -3,16 +3,17 @@ import { View, Text, Button, FlatList, ScrollView } from "react-native";
 import { NavigationScreenProps, NavigationActions } from "react-navigation";
 import { SearchBar } from 'react-native-elements';
 import { connect, Dispatch } from "react-redux";
-import { SelectSong, FetchSongs } from "./reducers";
+import { FetchFavorites } from "./reducers";
 import SongItem from "../../Components/SongItem"
 import Tidal from "../../Services/TidalClient";
+import { SelectSong } from "../SongsScreen/reducers";
 
 interface FavoritesScreenStateProps {
-    songs: Track[];
+    favorites: Models.TrackDTO[];
 }
 
 interface FavoritesScreenDispatchProps {
-    fetchSongs: (query?: string) => void;
+    fetchFavorites: () => void;
     navigateToSong: (songId: number) => void;
 }
 
@@ -24,7 +25,7 @@ class FavoritesScreen extends Component<FavoritesScreenProps> {
     }
 
     componentDidMount() {
-        this.props.fetchSongs();
+        this.props.fetchFavorites();
     }
 
     renderSeparator = () => {
@@ -41,15 +42,15 @@ class FavoritesScreen extends Component<FavoritesScreenProps> {
     render() {
         return <ScrollView>
             <FlatList
-                data={this.props.songs}
-                keyExtractor={(item, index) => item.id.toString()}
+                data={this.props.favorites}
+                keyExtractor={(item, index) => item.Id.toString()}
                 ItemSeparatorComponent={this.renderSeparator}
-                renderItem={({ item }: { item: Track }) =>
+                renderItem={({ item }: { item: Models.TrackDTO }) =>
                     <SongItem
-                        name={item.title}
-                        artist={item.artist.name}
-                        image={Tidal.albumArtToUrl(item.album.cover).md}
-                        onPress={() => this.props.navigateToSong(item.id)} />}
+                        name={item.Title}
+                        artist={item.Artist}
+                        image={Tidal.albumArtToUrl(item.Photo).md}
+                        onPress={() => this.props.navigateToSong(item.Id)} />}
             />
         </ScrollView>
     }
@@ -57,14 +58,14 @@ class FavoritesScreen extends Component<FavoritesScreenProps> {
 
 const mapStateToProps = (state: AppState): FavoritesScreenStateProps => {
     return {
-        songs: state.songs
+        favorites: state.favorites
     }
 }
 
 const mapDispatchToProps = (dispatch: Dispatch<any>): FavoritesScreenDispatchProps => {
     return {
-        fetchSongs: (query?: string) => {
-            dispatch(FetchSongs(query));
+        fetchFavorites: () => {
+            dispatch(FetchFavorites());
         },
         navigateToSong: (songId: number) => {
             dispatch(SelectSong(songId, undefined));

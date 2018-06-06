@@ -7,7 +7,7 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 import * as Progress from "react-native-progress";
 import { connect, Dispatch } from "react-redux";
 import { styles } from "./styles";
-import { ToggleSong } from "./reducers";
+import { ToggleSong, UpdateFavorite } from "./reducers";
 import Tidal from "../../Services/TidalClient";
 import { UpdateSongTime, UpdateSongPaused, UpdateSongMuted, UpdateSongVolume } from "../NowPlayingBar/reducers";
 import { SelectPrevSong, SelectNextSong } from "../SongsScreen/reducers"
@@ -27,6 +27,7 @@ interface SongScreenDispatchProps {
     updateSongVolume: (volume: number) => void;
     selectPrevSong: (fromAlbum: boolean) => void;
     selectNextSong: (fromAlbum: boolean) => void;
+    updateFavorite: (isSelected: boolean) => void;
 }
 
 type SongScreenProps = SongScreenStateProps & SongScreenDispatchProps;
@@ -48,7 +49,7 @@ class SongScreen extends React.Component<SongScreenProps> {
                 style={styles.image} />
             <View style={styles.titleContainer}>
                 <Text style={styles.title}>{this.props.song.title}</Text>
-                <FavoriteButton onPress={() => {}}/>
+                <FavoriteButton initialIsSelected={this.props.song.isFavorite} onPress={(isSelected) => this.props.updateFavorite(isSelected)}/>
             </View>
             <Text style={styles.subtitle}>{this.props.song.artist.name} - {this.props.song.album.title}</Text>
             <View
@@ -107,7 +108,8 @@ const mapDispatchToProps = (dispatch: Dispatch<any>): SongScreenDispatchProps =>
         updateSongMuted: (muted: boolean) => dispatch(UpdateSongMuted(muted)),
         updateSongVolume: (volume: number) => dispatch(UpdateSongVolume(volume)),
         selectPrevSong: (fromAlbum: boolean) => dispatch(SelectPrevSong()),
-        selectNextSong: (fromAlbum: boolean) => dispatch(SelectNextSong())
+        selectNextSong: (fromAlbum: boolean) => dispatch(SelectNextSong()),
+        updateFavorite: (isSelected: boolean) => dispatch(UpdateFavorite(isSelected))
     }
 }
 
