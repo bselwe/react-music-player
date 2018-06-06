@@ -30,10 +30,10 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
     constructor(props) {
         super(props)
         this.state = {
-            name: "Bartosz",
-            lastname: "Selwesiuk",
-            email: "bselwe+a@gmail.com",
-            password: "a"
+            name: "",
+            lastname: "",
+            email: "",
+            password: ""
         }
     }
 
