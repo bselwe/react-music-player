@@ -66,6 +66,7 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 placeholder="Password"
+                secureTextEntry={true}
             />
             <Text>{this.props.signUpError}</Text>
             <View>
