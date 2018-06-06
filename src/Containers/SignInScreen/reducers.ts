@@ -80,6 +80,7 @@ addReducer(SignOutFromStore, (state) => {
         signInError: undefined,
         userInfo: undefined,
         signUpError: undefined,
-        signUpResult: undefined
+        signUpResult: undefined,
+        favorites: []
     };
 });

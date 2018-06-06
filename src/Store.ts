@@ -9,6 +9,7 @@ import { albumReducers } from './Containers/AlbumsScreen/reducers';
 import { nowPlayingReducers } from './Containers/NowPlayingBar/reducers';
 import { singInReducers } from './Containers/SignInScreen/reducers';
 import { singUpReducers } from './Containers/SignUpScreen/reducers';
+import { favoritesReducers } from './Containers/FavoritesScreen/reducers';
 
 export const initialState: AppState = {
     songs: [],
@@ -18,7 +19,7 @@ export const initialState: AppState = {
     artistsAlbums: {},
     albums: [],
     albumsSongs: {},
-    favourites: []
+    favorites: []
 }
 
 const appReducer = handleActions({
@@ -28,7 +29,8 @@ const appReducer = handleActions({
     ...artistReducers,
     ...albumReducers,
     ...singInReducers,
-    ...singUpReducers
+    ...singUpReducers,
+    ...favoritesReducers
 }, initialState);
 
 let store: Store<any> = createStore(
