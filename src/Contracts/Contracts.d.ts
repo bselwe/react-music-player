@@ -1,18 +1,22 @@
 declare module Models {
     interface IsFavouriteTrackDTO {
-        Id: string;
+        Id: number;
         IsFavourite: boolean;
     }
 
-    interface NewFavouriteTrackDTO {
-        Id: string;
+    interface AddFavouriteTrackDTO {
+        Id: number;
         Title: string;
         Artist: string;
         Photo: string;
     }
 
+    interface RemoveFavouriteTrackDTO {
+        Id: number;
+    }
+
     interface TrackDTO {
-        Id: string;
+        Id: number;
         Title: string;
         Artist: string;
         Photo: string;
