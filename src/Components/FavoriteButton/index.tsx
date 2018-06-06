@@ -3,26 +3,14 @@ import { View, Text, TouchableOpacity, Image, ImageBackground, ToastAndroid } fr
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { styles } from "./styles";
 
-interface FavoriteButtonState {
-    isSelected: boolean;
-}
-
 interface FavoriteButtonProps {
-    initialIsSelected: boolean;
-    onPress: (isSelected: boolean) => void;
+    isSelected: boolean;
+    onSelected: (isSelected: boolean) => void;
 }
 
-export default class FavoriteButton extends Component<FavoriteButtonProps, FavoriteButtonState> {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isSelected: this.props.initialIsSelected
-        }
-    }
-
+export default class FavoriteButton extends Component<FavoriteButtonProps> {
     onPress() {
-        let isSelected = !this.state.isSelected;
-        this.setState({ isSelected });
+        let isSelected = !this.props.isSelected;
         if (isSelected)
             ToastAndroid.showWithGravity(
                 'Track added to favorites',
@@ -35,12 +23,12 @@ export default class FavoriteButton extends Component<FavoriteButtonProps, Favor
                 ToastAndroid.SHORT,
                 ToastAndroid.BOTTOM
             );
-        this.props.onPress( isSelected );
+        this.props.onSelected( isSelected );
     }
 
     render() {
-        var style = this.state.isSelected ? styles.iconFavoriteSelected : styles.iconFavoriteUnselected;
-        var name = this.state.isSelected ? "star" : "star-o";
+        var style = this.props.isSelected ? styles.iconFavoriteSelected : styles.iconFavoriteUnselected;
+        var name = this.props.isSelected ? "star" : "star-o";
         return <TouchableOpacity>
             <FontAwesome name={name} style={style} onPress={() => this.onPress()} />
         </TouchableOpacity>
