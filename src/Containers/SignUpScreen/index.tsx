@@ -47,22 +47,22 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
 
         return <View style={styles.container}>
             <Text style={styles.title}>Sign up</Text>
-            <TextInput
+            <TextInput style={styles.input}
                 onChangeText={name => this.setState({ name })}
                 value={this.state.name}
                 placeholder="Name"
             />
-            <TextInput
+            <TextInput style={styles.input}
                 onChangeText={lastname => this.setState({ lastname })}
                 value={this.state.lastname}
                 placeholder="Last name"
             />
-            <TextInput
+            <TextInput style={styles.input}
                 onChangeText={email => this.setState({ email })}
                 value={this.state.email}
                 placeholder="Email"
             />
-            <TextInput
+            <TextInput style={styles.input}
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 placeholder="Password"

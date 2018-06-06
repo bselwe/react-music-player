@@ -30,5 +30,8 @@ export const styles = StyleSheet.create({
         marginBottom: 10,
         alignSelf: 'center',
         justifyContent: 'center'
+      },
+      input: {
+        borderBottomWidth: 1
       }
 });

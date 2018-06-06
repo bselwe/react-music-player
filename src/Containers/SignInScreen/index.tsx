@@ -43,12 +43,12 @@ class SignIn extends React.Component<SignInProps, SignInState> {
 
         return !this.props.isSignedIn ? <View style={styles.container}>
             <Text style={styles.title}>Login</Text>
-            <TextInput
+            <TextInput style={styles.input}
                 onChangeText={email => this.setState({ email })}
                 value={this.state.email}
                 placeholder="Email"
             />
-            <TextInput
+            <TextInput style={styles.input}
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 placeholder="Password"
