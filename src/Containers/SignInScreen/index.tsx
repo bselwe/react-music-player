@@ -7,6 +7,7 @@ import { styles } from "./styles";
 import * as routes from "../../Infrastructure/Navigation/Routes";
 import { tokenStorage } from "../../Services/TokenStorage";
 import { loginManager } from "../../Services/LoginManager";
+import SongsScreen from "../SongsScreen";
 
 interface SignInState {
     email: string,
@@ -42,16 +43,22 @@ class SignIn extends React.Component<SignInProps, SignInState> {
         // const { from } = this.props.location.state || { from: { pathname: routes.Songs } };
 
         return !this.props.isSignedIn ? <View style={styles.container}>
+            <View style={{ position: "absolute", width: "100%", height: "100%", opacity: 0.2, backgroundColor: "black" }} pointerEvents="none">
+                <SongsScreen />
+            </View>
+
             <Text style={styles.title}>Login</Text>
             <TextInput style={styles.input}
                 onChangeText={email => this.setState({ email })}
                 value={this.state.email}
                 placeholder="Email"
+                placeholderTextColor={"grey"}
             />
             <TextInput style={styles.input}
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 placeholder="Password"
+                placeholderTextColor={"grey"}
                 secureTextEntry={true}
             />
             <Text>{this.props.signInError}</Text>
@@ -61,7 +68,7 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                 </TouchableHighlight>
                 <TouchableOpacity onPress={() => this.props.navigateToSignUp()}>
                     <View>
-                        <Text style={styles.buttonText}>Go to Sign up</Text>
+                        <Text style={styles.buttonTextSignUp}>Sign up</Text>
                     </View>
                 </TouchableOpacity>
             </View>

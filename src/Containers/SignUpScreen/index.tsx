@@ -6,6 +6,7 @@ import { styles } from "./styles";
 import { RouteComponentProps, withRouter } from "react-router-native";
 import * as routes from "../../Infrastructure/Navigation/Routes";
 import { Redirect } from "react-router-native";
+import SongsScreen from "../SongsScreen";
 
 interface SignUpState {
     name: string,
@@ -46,6 +47,9 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
             return <Redirect to={routes.SignIn} />
 
         return <View style={styles.container}>
+            <View style={{ position: "absolute", width: "100%", height: "100%", opacity: 0.2, backgroundColor: "black" }} pointerEvents="none">
+                <SongsScreen />
+            </View>
             <Text style={styles.title}>Sign up</Text>
             <TextInput style={styles.input}
                 onChangeText={name => this.setState({ name })}
@@ -75,7 +79,7 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
                 </TouchableHighlight>
                 <TouchableOpacity onPress={() => this.props.navigateToSignIn()}>
                     <View>
-                        <Text style={styles.buttonText}>Go to Login</Text>
+                        <Text style={styles.buttonTextSignUp}>Login</Text>
                     </View>
                 </TouchableOpacity>
             </View>
