@@ -39,10 +39,12 @@ class SongsScreen extends Component<SongsScreenProps> {
     };
 
     render() {
+        let songs = this.props.songs.sort((a, b) => a.title < b.title ? -1 : 1);
+
         return <ScrollView>
             <SettingsBar onChangeText={(text) => this.props.fetchSongs(text)}/>
             <FlatList
-                data={this.props.songs}
+                data={songs}
                 keyExtractor={(item, index) => item.id.toString()}
                 ItemSeparatorComponent={this.renderSeparator}
                 renderItem={({ item }: { item: Track }) =>

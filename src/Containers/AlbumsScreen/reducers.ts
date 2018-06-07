@@ -30,7 +30,6 @@ addReducer(UpdateAlbumSongs,
 export const FetchAlbums = (query?: string): Thunk =>
     (dispatch, getState) => {
         (async () => {
-            //query = query && query.length > 0 ? query : "money";
             const albums = query !== undefined && query.length > 0 ?
                 await Tidal.search(query, "albums", 30) : await Tidal.getStaffPickAlbums();
             dispatch(UpdateAlbums(albums));

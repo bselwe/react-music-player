@@ -47,10 +47,12 @@ class ArtistsScreen extends Component<ArtistsScreenProps> {
     };
 
     render() {
+        let artists = this.props.artists.sort((a, b) => a.name < b.name ? -1 : 1);
+
         return <ScrollView>
             <SettingsBar onChangeText={(text) => this.props.fetchArtists(text)}/>
             <FlatList
-                data={this.props.artists}
+                data={artists}
                 keyExtractor={(item, index) => item.id.toString()}
                 ItemSeparatorComponent={this.renderSeparator}
                 renderItem={({ item }: { item: Artist }) =>
