@@ -6,8 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "center",
-    backgroundColor: "rgba(52, 52, 52, 0.5)",
-    padding: 20
+    backgroundColor: "rgba(52, 52, 52, 0.5)"
   },
   formContainer: {
     backgroundColor: "white"
@@ -35,6 +34,8 @@ export const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   input: {
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    marginLeft: 20,
+    marginRight: 20
   }
 });

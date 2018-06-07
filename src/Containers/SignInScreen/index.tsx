@@ -7,6 +7,7 @@ import { styles } from "./styles";
 import * as routes from "../../Infrastructure/Navigation/Routes";
 import { tokenStorage } from "../../Services/TokenStorage";
 import { loginManager } from "../../Services/LoginManager";
+import SongsScreen from "../SongsScreen";
 
 interface SignInState {
     email: string,
@@ -42,6 +43,10 @@ class SignIn extends React.Component<SignInProps, SignInState> {
         // const { from } = this.props.location.state || { from: { pathname: routes.Songs } };
 
         return !this.props.isSignedIn ? <View style={styles.container}>
+            <View style={{ position: "absolute", width: "100%", height: "100%", opacity: 0.2, backgroundColor: "white" }} pointerEvents="none">
+                <SongsScreen />
+            </View>
+
             <Text style={styles.title}>Login</Text>
             <TextInput style={styles.input}
                 onChangeText={email => this.setState({ email })}
