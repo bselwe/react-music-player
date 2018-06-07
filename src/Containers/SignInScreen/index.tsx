@@ -52,11 +52,13 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                 onChangeText={email => this.setState({ email })}
                 value={this.state.email}
                 placeholder="Email"
+                placeholderTextColor={"#D0D0D0"}
             />
             <TextInput style={styles.input}
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 placeholder="Password"
+                placeholderTextColor={"#D0D0D0"}
                 secureTextEntry={true}
             />
             <Text>{this.props.signInError}</Text>

@@ -36,6 +36,8 @@ export const styles = StyleSheet.create({
   input: {
     borderBottomWidth: 1,
     marginLeft: 20,
-    marginRight: 20
+    marginRight: 20,
+    color: "white",
+    borderColor: "white"
   }
 });
