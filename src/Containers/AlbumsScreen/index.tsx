@@ -48,10 +48,12 @@ class AlbumsScreen extends Component<AlbumsScreenProps> {
     };
 
     render() {
+        let albums = this.props.albums.sort((a, b) => a.title < b.title ? -1 : 1);
+
         return <ScrollView>
             <SettingsBar onChangeText={(text) => this.props.fetchAlbums(text)}/>
             <FlatList
-                data={this.props.albums}
+                data={albums}
                 keyExtractor={(item, index) => item.id.toString()}
                 ItemSeparatorComponent={this.renderSeparator}
                 renderItem={({ item }: { item: Album }) =>

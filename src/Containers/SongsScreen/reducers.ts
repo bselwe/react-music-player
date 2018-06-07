@@ -10,7 +10,7 @@ const addReducer = addReducerFactory(songsReducers);
 export const FetchSongs = (query?: string): Thunk =>
     (dispatch, getState) => {
         (async () => {
-            query = query && query.length > 0 ? query : "money";
+            query = query && query.length > 0 ? query : "a";
             const songs = await Tidal.search(query, "tracks", 30);
             dispatch(UpdateSongs(songs));
         })();

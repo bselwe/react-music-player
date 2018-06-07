@@ -40,9 +40,11 @@ class FavoritesScreen extends Component<FavoritesScreenProps> {
     };
 
     render() {
+        let favorites = this.props.favorites.sort((a, b) => a.Title < b.Title ? -1 : 1);
+
         return <ScrollView>
             <FlatList
-                data={this.props.favorites}
+                data={favorites}
                 keyExtractor={(item, index) => item.Id.toString()}
                 ItemSeparatorComponent={this.renderSeparator}
                 renderItem={({ item }: { item: Models.TrackDTO }) =>

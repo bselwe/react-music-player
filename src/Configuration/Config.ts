@@ -4,7 +4,7 @@ interface Configuration {
 }
 
 const config: Configuration = {
-    apiEndpoint: "http://192.168.111.46:5000",
+    apiEndpoint: "http://10.0.2.2:5000",
     authSecret: "secret"
 };
 
