@@ -34,8 +34,8 @@ class AfterLoginScreen extends Component<AfterLoginScreenProps> {
         if (this.props.userInfo !== undefined)
             this.navigateToSongs();
 
-        return <View style={{ flex: 1, justifyContent: "center" }}>
-            <Text style={{ textAlign: "center" }}>
+        return <View style={{ flex: 1, justifyContent: "center", backgroundColor: "rgb(57, 62, 66)" }}>
+            <Text style={{ textAlign: "center", fontSize: 22, color: "rgb(122, 134, 144)" }}>
                 {this.props.userInfo !== undefined ? this.printWelcomeMessage(this.props.userInfo) : "Loading..."}
             </Text>
         </View>
