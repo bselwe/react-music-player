@@ -18,6 +18,12 @@ export const styles = StyleSheet.create({
     color: "white",
     fontWeight: "bold"
   },
+  error: {
+    marginTop: 15,
+    color: "#ffb74d",
+    marginLeft: 55,
+    fontSize: 17
+  },
   buttonText: {
     fontSize: 22,
     color: 'white',

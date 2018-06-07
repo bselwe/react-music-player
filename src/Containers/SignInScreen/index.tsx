@@ -61,7 +61,7 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                 placeholderTextColor={"grey"}
                 secureTextEntry={true}
             />
-            <Text>{this.props.signInError}</Text>
+            <Text style={styles.error}>{this.props.signInError}</Text>
             <View>
                 <TouchableHighlight style={styles.button} onPress={() => this.onSignInPress()} underlayColor='#FFC570'>
                     <Text style={styles.buttonText}>Login</Text>

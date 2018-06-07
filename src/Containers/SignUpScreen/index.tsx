@@ -72,7 +72,7 @@ class SignUp extends React.Component<SignUpProps, SignUpState> {
                 placeholder="Password"
                 secureTextEntry={true}
             />
-            <Text>{this.props.signUpError}</Text>
+            <Text style={styles.error}>{this.props.signUpError}</Text>
             <View>
                 <TouchableHighlight style={styles.button} onPress={() => this.onSignUpPress()} underlayColor='#FFC570'>
                     <Text style={styles.buttonText}>Sign up</Text>
