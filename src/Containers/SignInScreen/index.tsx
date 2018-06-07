@@ -43,7 +43,7 @@ class SignIn extends React.Component<SignInProps, SignInState> {
         // const { from } = this.props.location.state || { from: { pathname: routes.Songs } };
 
         return !this.props.isSignedIn ? <View style={styles.container}>
-            <View style={{ position: "absolute", width: "100%", height: "100%", opacity: 0.2, backgroundColor: "white" }} pointerEvents="none">
+            <View style={{ position: "absolute", width: "100%", height: "100%", opacity: 0.2, backgroundColor: "black" }} pointerEvents="none">
                 <SongsScreen />
             </View>
 
@@ -52,13 +52,13 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                 onChangeText={email => this.setState({ email })}
                 value={this.state.email}
                 placeholder="Email"
-                placeholderTextColor={"#D0D0D0"}
+                placeholderTextColor={"grey"}
             />
             <TextInput style={styles.input}
                 onChangeText={password => this.setState({ password })}
                 value={this.state.password}
                 placeholder="Password"
-                placeholderTextColor={"#D0D0D0"}
+                placeholderTextColor={"grey"}
                 secureTextEntry={true}
             />
             <Text>{this.props.signInError}</Text>
@@ -68,7 +68,7 @@ class SignIn extends React.Component<SignInProps, SignInState> {
                 </TouchableHighlight>
                 <TouchableOpacity onPress={() => this.props.navigateToSignUp()}>
                     <View>
-                        <Text style={styles.buttonText}>Go to Sign up</Text>
+                        <Text style={styles.buttonTextSignUp}>Sign up</Text>
                     </View>
                 </TouchableOpacity>
             </View>
